@@ -1,0 +1,7 @@
+--------------- Rebuild Started: 07/03/2020 13:42:34 Project: main.c, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/main.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c main.c -o .\CortexM0\ARM_GCC_541\Debug\main.o
+In file included from main.c:3:0:
+ledControl.h:26:21: warning: backslash-newline at end of file
+ #define RGB_LED_OFF \
+                     ^
+--------------- Rebuild Succeeded: 07/03/2020 13:42:35 ---------------

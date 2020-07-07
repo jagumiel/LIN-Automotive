@@ -1,0 +1,6 @@
+D:\Users\jagumiel\Documents\PSoC Creator\LIN-Master-Orders\LIN-Master-Orders.cydsn\LIN-Master-Orders.cyprj|3d29f4e2-ec93-4c62-ad7b-9f25a711f6f6
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|73046e8d-1b72-47ce-be1e-aea6d2321ec8
+D:\Users\jagumiel\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|031f1561-2adb-4b63-8526-9decfc74fcbf
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|7110307d-12f0-48d4-8add-9f597c766eb8
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|aa863605-4a01-44d4-b04d-00bfd2bf0bfb
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|995fa0fd-7cd5-477e-a1a9-a43bac0ca42d

@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="5f2be1a5-0687-4501-bb8c-cf21cb8211bf">
+<CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf type_name="CyDesigner.Common.ProjMgmt.GUI.CyBookmarkData" version="1">
+<indicators />
+</CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf>
+</dataGuid>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="LIN-Master-Orders-000\LIN-Master-Orders\Header Files">
+<ExpandedNodeIds>
+<v>LIN-Master-Orders-000</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\TopDesign</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\LIN-Master-Orders.cydwr</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\LIN-Master-Orders.cydwr\Pins</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\LIN-Master-Orders.cydwr\Analog</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\LIN-Master-Orders.cydwr\Clocks</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\LIN-Master-Orders.cydwr\Interrupts</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\LIN-Master-Orders.cydwr\System</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\LIN-Master-Orders.cydwr\Directives</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\LIN-Master-Orders.cydwr\Flash Security</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Header Files</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Header Files\cyapicallbacks.h</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Header Files\ledControl.h</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Header Files\LIN_Frame_Calculations.h</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Source Files</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Source Files\main.c</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>LIN-Master-Orders-000</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\TopDesign</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\LIN-Master-Orders.cydwr</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\LIN-Master-Orders.cydwr\Pins</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\LIN-Master-Orders.cydwr\Analog</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\LIN-Master-Orders.cydwr\Clocks</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\LIN-Master-Orders.cydwr\Interrupts</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\LIN-Master-Orders.cydwr\System</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\LIN-Master-Orders.cydwr\Directives</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\LIN-Master-Orders.cydwr\Flash Security</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Header Files</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Header Files\cyapicallbacks.h</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Header Files\ledControl.h</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Header Files\LIN_Frame_Calculations.h</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Source Files</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Source Files\main.c</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4\cy_boot</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4\cy_lfclk</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4\Em_EEPROM_Dynamic</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4\LED_BLUE</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4\LED_GREEN</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4\LED_RED</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4\NSLP</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4\SW1</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4\SW2</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4\SW3</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4\UART_MASTER</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4\UART_MASTER_rx</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4\UART_MASTER_SCB_IRQ</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4\UART_MASTER_SCBCLK</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4\UART_MASTER_tx</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4\cycodeshareexport.ld</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4\cycodeshareimport.ld</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4\cycodeshareimport.scat</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4\cydevice_trm.h</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4\cydevicegnu_trm.inc</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4\cydeviceiar_trm.inc</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4\cydevicerv_trm.inc</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4\cydisabledsheets.h</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4\cyfitter.h</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4\cyfitter_cfg.c</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4\cyfitter_cfg.h</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4\cyfittergnu.inc</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4\cyfitteriar.inc</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Generated_Source\PSoC4\cyfitterrv.inc</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>LIN-Master-Orders-000</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\TopDesign</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>LIN-Master-Orders-000</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\TopDesign</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>LIN-Master-Orders-000</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_BLUE.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_BLUE_PM.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_GREEN.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_GREEN_PM.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_RED.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_RED_PM.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\NSLP.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\NSLP_PM.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\SW1.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\SW1_PM.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\SW2.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\SW2_PM.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\SW3.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\SW3_PM.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_BOOT.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_PM.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_rx.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_rx_PM.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_SCB_IRQ.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_SCBCLK.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_SPI_UART.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_SPI_UART_INT.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_tx.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_tx_PM.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_UART.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_UART_BOOT.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\LIN-Master-Orders.elf</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\LIN-Master-Orders.hex</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\LIN-Master-Orders.map</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\LIN-Master-Orders.gpdsc</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\LIN-Master-Orders.rpt</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\LIN-Master-Orders_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>LIN-Master-Orders-000</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_BLUE.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_BLUE_PM.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_GREEN.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_GREEN_PM.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_RED.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\LED_RED_PM.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\NSLP.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\NSLP_PM.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\SW1.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\SW1_PM.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\SW2.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\SW2_PM.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\SW3.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\SW3_PM.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_BOOT.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_PM.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_rx.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_rx_PM.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_SCB_IRQ.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_SCBCLK.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_SPI_UART.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_SPI_UART_INT.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_tx.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_tx_PM.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_UART.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_UART_BOOT.lst</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\LIN-Master-Orders.elf</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\LIN-Master-Orders.hex</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\CortexM0\ARM_GCC_541\Debug\LIN-Master-Orders.map</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\LIN-Master-Orders.gpdsc</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\LIN-Master-Orders.rpt</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>LIN-Master-Orders-000</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\PSoC 4 Architecture TRM</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\PSoC 4200 Family Datasheet</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\System Reference Guides</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\System Reference Guides\cy_boot_v5_80</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\System Reference Guides\cy_lfclk_v1_20</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\cy_pins_v2_20</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\LED_v1_0</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\LED_v1_0\LED_v1_0.pdf</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Power_v1_0</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Power_v1_0\Power_v1_0.pdf</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Resistor_v1_0</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Resistor_v1_0\Resistor_v1_0.pdf</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\SCB_P4_v4_0.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>LIN-Master-Orders-000</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\PSoC 4 Architecture TRM</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\PSoC 4200 Family Datasheet</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\System Reference Guides</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\System Reference Guides\cy_boot_v5_80</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\System Reference Guides\cy_lfclk_v1_20</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\cy_pins_v2_20</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\LED_v1_0</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\LED_v1_0\LED_v1_0.pdf</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Power_v1_0</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Power_v1_0\Power_v1_0.pdf</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Resistor_v1_0</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\Resistor_v1_0\Resistor_v1_0.pdf</v>
+<v>LIN-Master-Orders-000\LIN-Master-Orders\SCB_P4_v4_0.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\main.c" />
+<name v=".\LIN-Master-Orders.cydwr" />
+<name v=".\TopDesign\TopDesign.cysch" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1479, 718" SelectedTabbedMdiWindow="360eca1a-101a-43a0-970f-95611f15338b"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="95066294-b57d-46f0-9011-c86ab31564db" /><DocumentWindow Key="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Master-Orders\LIN-Master-Orders.cydsn\main.c" Guid="360eca1a-101a-43a0-970f-95611f15338b" /><DocumentWindow Key="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Master-Orders\LIN-Master-Orders.cydsn\LIN-Master-Orders.cydwr" Guid="88e994f2-396f-4924-a43e-7e0a65f21f20" /><DocumentWindow Key="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Master-Orders\LIN-Master-Orders.cydsn\TopDesign\TopDesign.cysch" Guid="d12ff768-b653-4097-bff3-ebf5a66f01f6" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>
