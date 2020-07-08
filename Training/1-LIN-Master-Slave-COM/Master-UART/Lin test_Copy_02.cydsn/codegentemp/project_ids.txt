@@ -1,0 +1,6 @@
+D:\Users\jagumiel\Desktop\Lin test_Copy_02.cydsn\Lin test_Copy_02.cyprj|cd227cd8-c48c-4872-bc7d-e77704263350
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|ae6af8bf-19da-4f02-9485-ca4110121bac
+D:\Users\jagumiel\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|d2362c5a-eae5-418f-ad74-78606dde3d6e
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|4508cd28-94f1-40e4-b3ae-c6baab423dd3
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|031e800f-3f46-4f4f-853b-7a62c3e9e9c2
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|2da33f3c-ebe2-4a2f-904a-6666b8d45f1f

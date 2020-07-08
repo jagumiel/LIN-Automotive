@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="5f2be1a5-0687-4501-bb8c-cf21cb8211bf">
+<CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf type_name="CyDesigner.Common.ProjMgmt.GUI.CyBookmarkData" version="1">
+<indicators />
+</CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf>
+</dataGuid>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Lin test_Copy_02-000\Lin test_Copy_02\TopDesign">
+<ExpandedNodeIds>
+<v>Lin test_Copy_02-000</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\TopDesign</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\Lin test_Copy_02.cydwr</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\Lin test_Copy_02.cydwr\Pins</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\Lin test_Copy_02.cydwr\Analog</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\Lin test_Copy_02.cydwr\Clocks</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\Lin test_Copy_02.cydwr\Interrupts</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\Lin test_Copy_02.cydwr\System</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\Lin test_Copy_02.cydwr\Directives</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\Lin test_Copy_02.cydwr\Flash Security</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\Header Files</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\Header Files\cyapicallbacks.h</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\Source Files</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\Source Files\main.c</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\Generated_Source</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\Generated_Source\PSoC4</v>
+</ExpandedNodeIds>
+<VisibleNodeIds />
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Lin test_Copy_02-000</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\TopDesign</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\TopDesign\TopDesign.cysch</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\TopDesign\TopDesign_01.cymacro</v>
+</ExpandedNodeIds>
+<VisibleNodeIds />
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Lin test_Copy_02-000</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_2.lst</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_2_PM.lst</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER.lst</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_BOOT.lst</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_PM.lst</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_rx.lst</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_rx_PM.lst</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_SCB_IRQ.lst</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_SCBCLK.lst</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_SPI_UART.lst</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_SPI_UART_INT.lst</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_tx.lst</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_tx_PM.lst</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_UART.lst</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug\Listing Files\UART_MASTER_UART_BOOT.lst</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug\Lin test_Copy_02.elf</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug\Lin test_Copy_02.hex</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\CortexM0\ARM_GCC_541\Debug\Lin test_Copy_02.map</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\Lin test_Copy_02.gpdsc</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\Lin test_Copy_02.rpt</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\Lin test_Copy_02_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds />
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Lin test_Copy_02-000</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\PSoC 4 Architecture TRM</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\PSoC 4200 BLE Family Datasheet</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\System Reference Guides</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\System Reference Guides\cy_boot_v5_80</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\System Reference Guides\cy_lfclk_v1_20</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\cy_pins_v2_20.pdf</v>
+<v>Lin test_Copy_02-000\Lin test_Copy_02\SCB_P4_v4_0.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds />
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+<dataGuid v="6c335137-fa19-46ce-bc2d-2fbeb6d5f2a2">
+<CyGuid_70084457-cd6a-4593-9ed0-7f6eeb432dc2 type_name="CyDesigner.Common.ProjMgmt.GUI.CyDependenciesCustomData" version="1">
+<dictName v=".\Lin test_Copy_02.cyprj">
+<listName />
+</dictName>
+</CyGuid_70084457-cd6a-4593-9ed0-7f6eeb432dc2>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\Lin test_Copy_02.cydwr" />
+<name v=".\TopDesign\TopDesign.cysch" />
+<name v=".\main.c" />
+<name v=".\Generated_Source\PSoC4\UART_MASTER.c" />
+<name v=".\Generated_Source\PSoC4\UART_MASTER_SPI_UART.h" />
+<name v=".\Generated_Source\PSoC4\UART_MASTER_UART.c" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1343, 718" SelectedTabbedMdiWindow="d0e76dfc-8875-4359-a012-e40c54325d44"><DocumentWindow Key="D:\Users\jagumiel\Desktop\Lin test_Copy_02.cydsn\Lin test_Copy_02.cydwr" Guid="cca706a6-f5ec-47ba-9537-4260024bf574" /><DocumentWindow Key="D:\Users\jagumiel\Desktop\Lin test_Copy_02.cydsn\TopDesign\TopDesign.cysch" Guid="f8e163d3-8c25-4866-874c-8c56ccc9d8c6" /><DocumentWindow Key="D:\Users\jagumiel\Desktop\Lin test_Copy_02.cydsn\main.c" Guid="d0e76dfc-8875-4359-a012-e40c54325d44" /><DocumentWindow Key="D:\Users\jagumiel\Desktop\Lin test_Copy_02.cydsn\Generated_Source\PSoC4\UART_MASTER.c" Guid="44e27835-0b0c-4d65-a7c6-c5e58c8f7ddc" /><DocumentWindow Key="D:\Users\jagumiel\Desktop\Lin test_Copy_02.cydsn\Generated_Source\PSoC4\UART_MASTER_SPI_UART.h" Guid="96b7a973-662b-42d1-8529-a3cb5315515f" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="95066294-b57d-46f0-9011-c86ab31564db" /><DocumentWindow Key="D:\Users\jagumiel\Desktop\Lin test_Copy_02.cydsn\Generated_Source\PSoC4\UART_MASTER_UART.c" Guid="79ba8723-00a9-4f33-af00-a4cd7e7cf0d8" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>

@@ -1,0 +1,11 @@
+# Lin test_Copy_02
+# 2020-06-29 11:46:06Z
+
+# IO_6@[IOP=(0)][IoId=(6)] is reserved: SWDDebugEnabled
+dont_use_io iocell 0 6
+# IO_7@[IOP=(0)][IoId=(7)] is reserved: SWDDebugEnabled
+dont_use_io iocell 0 7
+set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
+set_io "\UART_MASTER:tx(0)\" iocell 1 5
+set_io "\UART_MASTER:rx(0)\" iocell 1 4
+set_io "Pin_2(0)" iocell 2 2

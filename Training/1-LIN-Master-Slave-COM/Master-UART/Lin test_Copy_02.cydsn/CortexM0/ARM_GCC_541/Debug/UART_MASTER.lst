@@ -1,0 +1,1915 @@
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"UART_MASTER.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.UART_MASTER_ScbEnableIntr,"ax",%progbits
+  20              		.align	2
+  21              		.code	16
+  22              		.thumb_func
+  23              		.type	UART_MASTER_ScbEnableIntr, %function
+  24              	UART_MASTER_ScbEnableIntr:
+  25              	.LFB9:
+  26              		.file 1 "Generated_Source\\PSoC4\\UART_MASTER.c"
+   1:Generated_Source\PSoC4/UART_MASTER.c **** /***************************************************************************//**
+   2:Generated_Source\PSoC4/UART_MASTER.c **** * \file UART_MASTER.c
+   3:Generated_Source\PSoC4/UART_MASTER.c **** * \version 4.0
+   4:Generated_Source\PSoC4/UART_MASTER.c **** *
+   5:Generated_Source\PSoC4/UART_MASTER.c **** * \brief
+   6:Generated_Source\PSoC4/UART_MASTER.c **** *  This file provides the source code to the API for the SCB Component.
+   7:Generated_Source\PSoC4/UART_MASTER.c **** *
+   8:Generated_Source\PSoC4/UART_MASTER.c **** * Note:
+   9:Generated_Source\PSoC4/UART_MASTER.c **** *
+  10:Generated_Source\PSoC4/UART_MASTER.c **** *******************************************************************************
+  11:Generated_Source\PSoC4/UART_MASTER.c **** * \copyright
+  12:Generated_Source\PSoC4/UART_MASTER.c **** * Copyright 2013-2017, Cypress Semiconductor Corporation.  All rights reserved.
+  13:Generated_Source\PSoC4/UART_MASTER.c **** * You may use this file only in accordance with the license, terms, conditions,
+  14:Generated_Source\PSoC4/UART_MASTER.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  15:Generated_Source\PSoC4/UART_MASTER.c **** * the software package with which this file was provided.
+  16:Generated_Source\PSoC4/UART_MASTER.c **** *******************************************************************************/
+  17:Generated_Source\PSoC4/UART_MASTER.c **** 
+  18:Generated_Source\PSoC4/UART_MASTER.c **** #include "UART_MASTER_PVT.h"
+  19:Generated_Source\PSoC4/UART_MASTER.c **** 
+  20:Generated_Source\PSoC4/UART_MASTER.c **** #if (UART_MASTER_SCB_MODE_I2C_INC)
+  21:Generated_Source\PSoC4/UART_MASTER.c ****     #include "UART_MASTER_I2C_PVT.h"
+  22:Generated_Source\PSoC4/UART_MASTER.c **** #endif /* (UART_MASTER_SCB_MODE_I2C_INC) */
+  23:Generated_Source\PSoC4/UART_MASTER.c **** 
+  24:Generated_Source\PSoC4/UART_MASTER.c **** #if (UART_MASTER_SCB_MODE_EZI2C_INC)
+  25:Generated_Source\PSoC4/UART_MASTER.c ****     #include "UART_MASTER_EZI2C_PVT.h"
+  26:Generated_Source\PSoC4/UART_MASTER.c **** #endif /* (UART_MASTER_SCB_MODE_EZI2C_INC) */
+  27:Generated_Source\PSoC4/UART_MASTER.c **** 
+  28:Generated_Source\PSoC4/UART_MASTER.c **** #if (UART_MASTER_SCB_MODE_SPI_INC || UART_MASTER_SCB_MODE_UART_INC)
+  29:Generated_Source\PSoC4/UART_MASTER.c ****     #include "UART_MASTER_SPI_UART_PVT.h"
+  30:Generated_Source\PSoC4/UART_MASTER.c **** #endif /* (UART_MASTER_SCB_MODE_SPI_INC || UART_MASTER_SCB_MODE_UART_INC) */
+  31:Generated_Source\PSoC4/UART_MASTER.c **** 
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 2
+
+
+  32:Generated_Source\PSoC4/UART_MASTER.c **** 
+  33:Generated_Source\PSoC4/UART_MASTER.c **** /***************************************
+  34:Generated_Source\PSoC4/UART_MASTER.c **** *    Run Time Configuration Vars
+  35:Generated_Source\PSoC4/UART_MASTER.c **** ***************************************/
+  36:Generated_Source\PSoC4/UART_MASTER.c **** 
+  37:Generated_Source\PSoC4/UART_MASTER.c **** /* Stores internal component configuration for Unconfigured mode */
+  38:Generated_Source\PSoC4/UART_MASTER.c **** #if (UART_MASTER_SCB_MODE_UNCONFIG_CONST_CFG)
+  39:Generated_Source\PSoC4/UART_MASTER.c ****     /* Common configuration variables */
+  40:Generated_Source\PSoC4/UART_MASTER.c ****     uint8 UART_MASTER_scbMode = UART_MASTER_SCB_MODE_UNCONFIG;
+  41:Generated_Source\PSoC4/UART_MASTER.c ****     uint8 UART_MASTER_scbEnableWake;
+  42:Generated_Source\PSoC4/UART_MASTER.c ****     uint8 UART_MASTER_scbEnableIntr;
+  43:Generated_Source\PSoC4/UART_MASTER.c **** 
+  44:Generated_Source\PSoC4/UART_MASTER.c ****     /* I2C configuration variables */
+  45:Generated_Source\PSoC4/UART_MASTER.c ****     uint8 UART_MASTER_mode;
+  46:Generated_Source\PSoC4/UART_MASTER.c ****     uint8 UART_MASTER_acceptAddr;
+  47:Generated_Source\PSoC4/UART_MASTER.c **** 
+  48:Generated_Source\PSoC4/UART_MASTER.c ****     /* SPI/UART configuration variables */
+  49:Generated_Source\PSoC4/UART_MASTER.c ****     volatile uint8 * UART_MASTER_rxBuffer;
+  50:Generated_Source\PSoC4/UART_MASTER.c ****     uint8  UART_MASTER_rxDataBits;
+  51:Generated_Source\PSoC4/UART_MASTER.c ****     uint32 UART_MASTER_rxBufferSize;
+  52:Generated_Source\PSoC4/UART_MASTER.c **** 
+  53:Generated_Source\PSoC4/UART_MASTER.c ****     volatile uint8 * UART_MASTER_txBuffer;
+  54:Generated_Source\PSoC4/UART_MASTER.c ****     uint8  UART_MASTER_txDataBits;
+  55:Generated_Source\PSoC4/UART_MASTER.c ****     uint32 UART_MASTER_txBufferSize;
+  56:Generated_Source\PSoC4/UART_MASTER.c **** 
+  57:Generated_Source\PSoC4/UART_MASTER.c ****     /* EZI2C configuration variables */
+  58:Generated_Source\PSoC4/UART_MASTER.c ****     uint8 UART_MASTER_numberOfAddr;
+  59:Generated_Source\PSoC4/UART_MASTER.c ****     uint8 UART_MASTER_subAddrSize;
+  60:Generated_Source\PSoC4/UART_MASTER.c **** #endif /* (UART_MASTER_SCB_MODE_UNCONFIG_CONST_CFG) */
+  61:Generated_Source\PSoC4/UART_MASTER.c **** 
+  62:Generated_Source\PSoC4/UART_MASTER.c **** 
+  63:Generated_Source\PSoC4/UART_MASTER.c **** /***************************************
+  64:Generated_Source\PSoC4/UART_MASTER.c **** *     Common SCB Vars
+  65:Generated_Source\PSoC4/UART_MASTER.c **** ***************************************/
+  66:Generated_Source\PSoC4/UART_MASTER.c **** /**
+  67:Generated_Source\PSoC4/UART_MASTER.c **** * \addtogroup group_general
+  68:Generated_Source\PSoC4/UART_MASTER.c **** * \{
+  69:Generated_Source\PSoC4/UART_MASTER.c **** */
+  70:Generated_Source\PSoC4/UART_MASTER.c **** 
+  71:Generated_Source\PSoC4/UART_MASTER.c **** /** UART_MASTER_initVar indicates whether the UART_MASTER 
+  72:Generated_Source\PSoC4/UART_MASTER.c **** *  component has been initialized. The variable is initialized to 0 
+  73:Generated_Source\PSoC4/UART_MASTER.c **** *  and set to 1 the first time SCB_Start() is called. This allows 
+  74:Generated_Source\PSoC4/UART_MASTER.c **** *  the component to restart without reinitialization after the first 
+  75:Generated_Source\PSoC4/UART_MASTER.c **** *  call to the UART_MASTER_Start() routine.
+  76:Generated_Source\PSoC4/UART_MASTER.c **** *
+  77:Generated_Source\PSoC4/UART_MASTER.c **** *  If re-initialization of the component is required, then the 
+  78:Generated_Source\PSoC4/UART_MASTER.c **** *  UART_MASTER_Init() function can be called before the 
+  79:Generated_Source\PSoC4/UART_MASTER.c **** *  UART_MASTER_Start() or UART_MASTER_Enable() function.
+  80:Generated_Source\PSoC4/UART_MASTER.c **** */
+  81:Generated_Source\PSoC4/UART_MASTER.c **** uint8 UART_MASTER_initVar = 0u;
+  82:Generated_Source\PSoC4/UART_MASTER.c **** 
+  83:Generated_Source\PSoC4/UART_MASTER.c **** 
+  84:Generated_Source\PSoC4/UART_MASTER.c **** #if (! (UART_MASTER_SCB_MODE_I2C_CONST_CFG || \
+  85:Generated_Source\PSoC4/UART_MASTER.c ****         UART_MASTER_SCB_MODE_EZI2C_CONST_CFG))
+  86:Generated_Source\PSoC4/UART_MASTER.c ****     /** This global variable stores TX interrupt sources after 
+  87:Generated_Source\PSoC4/UART_MASTER.c ****     * UART_MASTER_Stop() is called. Only these TX interrupt sources 
+  88:Generated_Source\PSoC4/UART_MASTER.c ****     * will be restored on a subsequent UART_MASTER_Enable() call.
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 3
+
+
+  89:Generated_Source\PSoC4/UART_MASTER.c ****     */
+  90:Generated_Source\PSoC4/UART_MASTER.c ****     uint16 UART_MASTER_IntrTxMask = 0u;
+  91:Generated_Source\PSoC4/UART_MASTER.c **** #endif /* (! (UART_MASTER_SCB_MODE_I2C_CONST_CFG || \
+  92:Generated_Source\PSoC4/UART_MASTER.c ****               UART_MASTER_SCB_MODE_EZI2C_CONST_CFG)) */
+  93:Generated_Source\PSoC4/UART_MASTER.c **** /** \} globals */
+  94:Generated_Source\PSoC4/UART_MASTER.c **** 
+  95:Generated_Source\PSoC4/UART_MASTER.c **** #if (UART_MASTER_SCB_IRQ_INTERNAL)
+  96:Generated_Source\PSoC4/UART_MASTER.c **** #if !defined (CY_REMOVE_UART_MASTER_CUSTOM_INTR_HANDLER)
+  97:Generated_Source\PSoC4/UART_MASTER.c ****     void (*UART_MASTER_customIntrHandler)(void) = NULL;
+  98:Generated_Source\PSoC4/UART_MASTER.c **** #endif /* !defined (CY_REMOVE_UART_MASTER_CUSTOM_INTR_HANDLER) */
+  99:Generated_Source\PSoC4/UART_MASTER.c **** #endif /* (UART_MASTER_SCB_IRQ_INTERNAL) */
+ 100:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 101:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 102:Generated_Source\PSoC4/UART_MASTER.c **** /***************************************
+ 103:Generated_Source\PSoC4/UART_MASTER.c **** *    Private Function Prototypes
+ 104:Generated_Source\PSoC4/UART_MASTER.c **** ***************************************/
+ 105:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 106:Generated_Source\PSoC4/UART_MASTER.c **** static void UART_MASTER_ScbEnableIntr(void);
+ 107:Generated_Source\PSoC4/UART_MASTER.c **** static void UART_MASTER_ScbModeStop(void);
+ 108:Generated_Source\PSoC4/UART_MASTER.c **** static void UART_MASTER_ScbModePostEnable(void);
+ 109:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 110:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 111:Generated_Source\PSoC4/UART_MASTER.c **** /*******************************************************************************
+ 112:Generated_Source\PSoC4/UART_MASTER.c **** * Function Name: UART_MASTER_Init
+ 113:Generated_Source\PSoC4/UART_MASTER.c **** ****************************************************************************//**
+ 114:Generated_Source\PSoC4/UART_MASTER.c **** *
+ 115:Generated_Source\PSoC4/UART_MASTER.c **** *  Initializes the UART_MASTER component to operate in one of the selected
+ 116:Generated_Source\PSoC4/UART_MASTER.c **** *  configurations: I2C, SPI, UART or EZI2C.
+ 117:Generated_Source\PSoC4/UART_MASTER.c **** *  When the configuration is set to "Unconfigured SCB", this function does
+ 118:Generated_Source\PSoC4/UART_MASTER.c **** *  not do any initialization. Use mode-specific initialization APIs instead:
+ 119:Generated_Source\PSoC4/UART_MASTER.c **** *  UART_MASTER_I2CInit, UART_MASTER_SpiInit, 
+ 120:Generated_Source\PSoC4/UART_MASTER.c **** *  UART_MASTER_UartInit or UART_MASTER_EzI2CInit.
+ 121:Generated_Source\PSoC4/UART_MASTER.c **** *
+ 122:Generated_Source\PSoC4/UART_MASTER.c **** *******************************************************************************/
+ 123:Generated_Source\PSoC4/UART_MASTER.c **** void UART_MASTER_Init(void)
+ 124:Generated_Source\PSoC4/UART_MASTER.c **** {
+ 125:Generated_Source\PSoC4/UART_MASTER.c **** #if (UART_MASTER_SCB_MODE_UNCONFIG_CONST_CFG)
+ 126:Generated_Source\PSoC4/UART_MASTER.c ****     if (UART_MASTER_SCB_MODE_UNCONFIG_RUNTM_CFG)
+ 127:Generated_Source\PSoC4/UART_MASTER.c ****     {
+ 128:Generated_Source\PSoC4/UART_MASTER.c ****         UART_MASTER_initVar = 0u;
+ 129:Generated_Source\PSoC4/UART_MASTER.c ****     }
+ 130:Generated_Source\PSoC4/UART_MASTER.c ****     else
+ 131:Generated_Source\PSoC4/UART_MASTER.c ****     {
+ 132:Generated_Source\PSoC4/UART_MASTER.c ****         /* Initialization was done before this function call */
+ 133:Generated_Source\PSoC4/UART_MASTER.c ****     }
+ 134:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 135:Generated_Source\PSoC4/UART_MASTER.c **** #elif (UART_MASTER_SCB_MODE_I2C_CONST_CFG)
+ 136:Generated_Source\PSoC4/UART_MASTER.c ****     UART_MASTER_I2CInit();
+ 137:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 138:Generated_Source\PSoC4/UART_MASTER.c **** #elif (UART_MASTER_SCB_MODE_SPI_CONST_CFG)
+ 139:Generated_Source\PSoC4/UART_MASTER.c ****     UART_MASTER_SpiInit();
+ 140:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 141:Generated_Source\PSoC4/UART_MASTER.c **** #elif (UART_MASTER_SCB_MODE_UART_CONST_CFG)
+ 142:Generated_Source\PSoC4/UART_MASTER.c ****     UART_MASTER_UartInit();
+ 143:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 144:Generated_Source\PSoC4/UART_MASTER.c **** #elif (UART_MASTER_SCB_MODE_EZI2C_CONST_CFG)
+ 145:Generated_Source\PSoC4/UART_MASTER.c ****     UART_MASTER_EzI2CInit();
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 4
+
+
+ 146:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 147:Generated_Source\PSoC4/UART_MASTER.c **** #endif /* (UART_MASTER_SCB_MODE_UNCONFIG_CONST_CFG) */
+ 148:Generated_Source\PSoC4/UART_MASTER.c **** }
+ 149:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 150:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 151:Generated_Source\PSoC4/UART_MASTER.c **** /*******************************************************************************
+ 152:Generated_Source\PSoC4/UART_MASTER.c **** * Function Name: UART_MASTER_Enable
+ 153:Generated_Source\PSoC4/UART_MASTER.c **** ****************************************************************************//**
+ 154:Generated_Source\PSoC4/UART_MASTER.c **** *
+ 155:Generated_Source\PSoC4/UART_MASTER.c **** *  Enables UART_MASTER component operation: activates the hardware and 
+ 156:Generated_Source\PSoC4/UART_MASTER.c **** *  internal interrupt. It also restores TX interrupt sources disabled after the 
+ 157:Generated_Source\PSoC4/UART_MASTER.c **** *  UART_MASTER_Stop() function was called (note that level-triggered TX 
+ 158:Generated_Source\PSoC4/UART_MASTER.c **** *  interrupt sources remain disabled to not cause code lock-up).
+ 159:Generated_Source\PSoC4/UART_MASTER.c **** *  For I2C and EZI2C modes the interrupt is internal and mandatory for 
+ 160:Generated_Source\PSoC4/UART_MASTER.c **** *  operation. For SPI and UART modes the interrupt can be configured as none, 
+ 161:Generated_Source\PSoC4/UART_MASTER.c **** *  internal or external.
+ 162:Generated_Source\PSoC4/UART_MASTER.c **** *  The UART_MASTER configuration should be not changed when the component
+ 163:Generated_Source\PSoC4/UART_MASTER.c **** *  is enabled. Any configuration changes should be made after disabling the 
+ 164:Generated_Source\PSoC4/UART_MASTER.c **** *  component.
+ 165:Generated_Source\PSoC4/UART_MASTER.c **** *  When configuration is set to “Unconfigured UART_MASTER”, the component 
+ 166:Generated_Source\PSoC4/UART_MASTER.c **** *  must first be initialized to operate in one of the following configurations: 
+ 167:Generated_Source\PSoC4/UART_MASTER.c **** *  I2C, SPI, UART or EZ I2C, using the mode-specific initialization API. 
+ 168:Generated_Source\PSoC4/UART_MASTER.c **** *  Otherwise this function does not enable the component.
+ 169:Generated_Source\PSoC4/UART_MASTER.c **** *
+ 170:Generated_Source\PSoC4/UART_MASTER.c **** *******************************************************************************/
+ 171:Generated_Source\PSoC4/UART_MASTER.c **** void UART_MASTER_Enable(void)
+ 172:Generated_Source\PSoC4/UART_MASTER.c **** {
+ 173:Generated_Source\PSoC4/UART_MASTER.c **** #if (UART_MASTER_SCB_MODE_UNCONFIG_CONST_CFG)
+ 174:Generated_Source\PSoC4/UART_MASTER.c ****     /* Enable SCB block, only if it is already configured */
+ 175:Generated_Source\PSoC4/UART_MASTER.c ****     if (!UART_MASTER_SCB_MODE_UNCONFIG_RUNTM_CFG)
+ 176:Generated_Source\PSoC4/UART_MASTER.c ****     {
+ 177:Generated_Source\PSoC4/UART_MASTER.c ****         UART_MASTER_CTRL_REG |= UART_MASTER_CTRL_ENABLED;
+ 178:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 179:Generated_Source\PSoC4/UART_MASTER.c ****         UART_MASTER_ScbEnableIntr();
+ 180:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 181:Generated_Source\PSoC4/UART_MASTER.c ****         /* Call PostEnable function specific to current operation mode */
+ 182:Generated_Source\PSoC4/UART_MASTER.c ****         UART_MASTER_ScbModePostEnable();
+ 183:Generated_Source\PSoC4/UART_MASTER.c ****     }
+ 184:Generated_Source\PSoC4/UART_MASTER.c **** #else
+ 185:Generated_Source\PSoC4/UART_MASTER.c ****     UART_MASTER_CTRL_REG |= UART_MASTER_CTRL_ENABLED;
+ 186:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 187:Generated_Source\PSoC4/UART_MASTER.c ****     UART_MASTER_ScbEnableIntr();
+ 188:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 189:Generated_Source\PSoC4/UART_MASTER.c ****     /* Call PostEnable function specific to current operation mode */
+ 190:Generated_Source\PSoC4/UART_MASTER.c ****     UART_MASTER_ScbModePostEnable();
+ 191:Generated_Source\PSoC4/UART_MASTER.c **** #endif /* (UART_MASTER_SCB_MODE_UNCONFIG_CONST_CFG) */
+ 192:Generated_Source\PSoC4/UART_MASTER.c **** }
+ 193:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 194:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 195:Generated_Source\PSoC4/UART_MASTER.c **** /*******************************************************************************
+ 196:Generated_Source\PSoC4/UART_MASTER.c **** * Function Name: UART_MASTER_Start
+ 197:Generated_Source\PSoC4/UART_MASTER.c **** ****************************************************************************//**
+ 198:Generated_Source\PSoC4/UART_MASTER.c **** *
+ 199:Generated_Source\PSoC4/UART_MASTER.c **** *  Invokes UART_MASTER_Init() and UART_MASTER_Enable().
+ 200:Generated_Source\PSoC4/UART_MASTER.c **** *  After this function call, the component is enabled and ready for operation.
+ 201:Generated_Source\PSoC4/UART_MASTER.c **** *  When configuration is set to "Unconfigured SCB", the component must first be
+ 202:Generated_Source\PSoC4/UART_MASTER.c **** *  initialized to operate in one of the following configurations: I2C, SPI, UART
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 5
+
+
+ 203:Generated_Source\PSoC4/UART_MASTER.c **** *  or EZI2C. Otherwise this function does not enable the component.
+ 204:Generated_Source\PSoC4/UART_MASTER.c **** *
+ 205:Generated_Source\PSoC4/UART_MASTER.c **** * \globalvars
+ 206:Generated_Source\PSoC4/UART_MASTER.c **** *  UART_MASTER_initVar - used to check initial configuration, modified
+ 207:Generated_Source\PSoC4/UART_MASTER.c **** *  on first function call.
+ 208:Generated_Source\PSoC4/UART_MASTER.c **** *
+ 209:Generated_Source\PSoC4/UART_MASTER.c **** *******************************************************************************/
+ 210:Generated_Source\PSoC4/UART_MASTER.c **** void UART_MASTER_Start(void)
+ 211:Generated_Source\PSoC4/UART_MASTER.c **** {
+ 212:Generated_Source\PSoC4/UART_MASTER.c ****     if (0u == UART_MASTER_initVar)
+ 213:Generated_Source\PSoC4/UART_MASTER.c ****     {
+ 214:Generated_Source\PSoC4/UART_MASTER.c ****         UART_MASTER_Init();
+ 215:Generated_Source\PSoC4/UART_MASTER.c ****         UART_MASTER_initVar = 1u; /* Component was initialized */
+ 216:Generated_Source\PSoC4/UART_MASTER.c ****     }
+ 217:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 218:Generated_Source\PSoC4/UART_MASTER.c ****     UART_MASTER_Enable();
+ 219:Generated_Source\PSoC4/UART_MASTER.c **** }
+ 220:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 221:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 222:Generated_Source\PSoC4/UART_MASTER.c **** /*******************************************************************************
+ 223:Generated_Source\PSoC4/UART_MASTER.c **** * Function Name: UART_MASTER_Stop
+ 224:Generated_Source\PSoC4/UART_MASTER.c **** ****************************************************************************//**
+ 225:Generated_Source\PSoC4/UART_MASTER.c **** *
+ 226:Generated_Source\PSoC4/UART_MASTER.c **** *  Disables the UART_MASTER component: disable the hardware and internal 
+ 227:Generated_Source\PSoC4/UART_MASTER.c **** *  interrupt. It also disables all TX interrupt sources so as not to cause an 
+ 228:Generated_Source\PSoC4/UART_MASTER.c **** *  unexpected interrupt trigger because after the component is enabled, the 
+ 229:Generated_Source\PSoC4/UART_MASTER.c **** *  TX FIFO is empty.
+ 230:Generated_Source\PSoC4/UART_MASTER.c **** *  Refer to the function UART_MASTER_Enable() for the interrupt 
+ 231:Generated_Source\PSoC4/UART_MASTER.c **** *  configuration details.
+ 232:Generated_Source\PSoC4/UART_MASTER.c **** *  This function disables the SCB component without checking to see if 
+ 233:Generated_Source\PSoC4/UART_MASTER.c **** *  communication is in progress. Before calling this function it may be 
+ 234:Generated_Source\PSoC4/UART_MASTER.c **** *  necessary to check the status of communication to make sure communication 
+ 235:Generated_Source\PSoC4/UART_MASTER.c **** *  is complete. If this is not done then communication could be stopped mid 
+ 236:Generated_Source\PSoC4/UART_MASTER.c **** *  byte and corrupted data could result.
+ 237:Generated_Source\PSoC4/UART_MASTER.c **** *
+ 238:Generated_Source\PSoC4/UART_MASTER.c **** *******************************************************************************/
+ 239:Generated_Source\PSoC4/UART_MASTER.c **** void UART_MASTER_Stop(void)
+ 240:Generated_Source\PSoC4/UART_MASTER.c **** {
+ 241:Generated_Source\PSoC4/UART_MASTER.c **** #if (UART_MASTER_SCB_IRQ_INTERNAL)
+ 242:Generated_Source\PSoC4/UART_MASTER.c ****     UART_MASTER_DisableInt();
+ 243:Generated_Source\PSoC4/UART_MASTER.c **** #endif /* (UART_MASTER_SCB_IRQ_INTERNAL) */
+ 244:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 245:Generated_Source\PSoC4/UART_MASTER.c ****     /* Call Stop function specific to current operation mode */
+ 246:Generated_Source\PSoC4/UART_MASTER.c ****     UART_MASTER_ScbModeStop();
+ 247:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 248:Generated_Source\PSoC4/UART_MASTER.c ****     /* Disable SCB IP */
+ 249:Generated_Source\PSoC4/UART_MASTER.c ****     UART_MASTER_CTRL_REG &= (uint32) ~UART_MASTER_CTRL_ENABLED;
+ 250:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 251:Generated_Source\PSoC4/UART_MASTER.c ****     /* Disable all TX interrupt sources so as not to cause an unexpected
+ 252:Generated_Source\PSoC4/UART_MASTER.c ****     * interrupt trigger after the component will be enabled because the 
+ 253:Generated_Source\PSoC4/UART_MASTER.c ****     * TX FIFO is empty.
+ 254:Generated_Source\PSoC4/UART_MASTER.c ****     * For SCB IP v0, it is critical as it does not mask-out interrupt
+ 255:Generated_Source\PSoC4/UART_MASTER.c ****     * sources when it is disabled. This can cause a code lock-up in the
+ 256:Generated_Source\PSoC4/UART_MASTER.c ****     * interrupt handler because TX FIFO cannot be loaded after the block
+ 257:Generated_Source\PSoC4/UART_MASTER.c ****     * is disabled.
+ 258:Generated_Source\PSoC4/UART_MASTER.c ****     */
+ 259:Generated_Source\PSoC4/UART_MASTER.c ****     UART_MASTER_SetTxInterruptMode(UART_MASTER_NO_INTR_SOURCES);
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 6
+
+
+ 260:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 261:Generated_Source\PSoC4/UART_MASTER.c **** #if (UART_MASTER_SCB_IRQ_INTERNAL)
+ 262:Generated_Source\PSoC4/UART_MASTER.c ****     UART_MASTER_ClearPendingInt();
+ 263:Generated_Source\PSoC4/UART_MASTER.c **** #endif /* (UART_MASTER_SCB_IRQ_INTERNAL) */
+ 264:Generated_Source\PSoC4/UART_MASTER.c **** }
+ 265:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 266:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 267:Generated_Source\PSoC4/UART_MASTER.c **** /*******************************************************************************
+ 268:Generated_Source\PSoC4/UART_MASTER.c **** * Function Name: UART_MASTER_SetRxFifoLevel
+ 269:Generated_Source\PSoC4/UART_MASTER.c **** ****************************************************************************//**
+ 270:Generated_Source\PSoC4/UART_MASTER.c **** *
+ 271:Generated_Source\PSoC4/UART_MASTER.c **** *  Sets level in the RX FIFO to generate a RX level interrupt.
+ 272:Generated_Source\PSoC4/UART_MASTER.c **** *  When the RX FIFO has more entries than the RX FIFO level an RX level
+ 273:Generated_Source\PSoC4/UART_MASTER.c **** *  interrupt request is generated.
+ 274:Generated_Source\PSoC4/UART_MASTER.c **** *
+ 275:Generated_Source\PSoC4/UART_MASTER.c **** *  \param level: Level in the RX FIFO to generate RX level interrupt.
+ 276:Generated_Source\PSoC4/UART_MASTER.c **** *   The range of valid level values is between 0 and RX FIFO depth - 1.
+ 277:Generated_Source\PSoC4/UART_MASTER.c **** *
+ 278:Generated_Source\PSoC4/UART_MASTER.c **** *******************************************************************************/
+ 279:Generated_Source\PSoC4/UART_MASTER.c **** void UART_MASTER_SetRxFifoLevel(uint32 level)
+ 280:Generated_Source\PSoC4/UART_MASTER.c **** {
+ 281:Generated_Source\PSoC4/UART_MASTER.c ****     uint32 rxFifoCtrl;
+ 282:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 283:Generated_Source\PSoC4/UART_MASTER.c ****     rxFifoCtrl = UART_MASTER_RX_FIFO_CTRL_REG;
+ 284:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 285:Generated_Source\PSoC4/UART_MASTER.c ****     rxFifoCtrl &= ((uint32) ~UART_MASTER_RX_FIFO_CTRL_TRIGGER_LEVEL_MASK); /* Clear level mask bits
+ 286:Generated_Source\PSoC4/UART_MASTER.c ****     rxFifoCtrl |= ((uint32) (UART_MASTER_RX_FIFO_CTRL_TRIGGER_LEVEL_MASK & level));
+ 287:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 288:Generated_Source\PSoC4/UART_MASTER.c ****     UART_MASTER_RX_FIFO_CTRL_REG = rxFifoCtrl;
+ 289:Generated_Source\PSoC4/UART_MASTER.c **** }
+ 290:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 291:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 292:Generated_Source\PSoC4/UART_MASTER.c **** /*******************************************************************************
+ 293:Generated_Source\PSoC4/UART_MASTER.c **** * Function Name: UART_MASTER_SetTxFifoLevel
+ 294:Generated_Source\PSoC4/UART_MASTER.c **** ****************************************************************************//**
+ 295:Generated_Source\PSoC4/UART_MASTER.c **** *
+ 296:Generated_Source\PSoC4/UART_MASTER.c **** *  Sets level in the TX FIFO to generate a TX level interrupt.
+ 297:Generated_Source\PSoC4/UART_MASTER.c **** *  When the TX FIFO has less entries than the TX FIFO level an TX level
+ 298:Generated_Source\PSoC4/UART_MASTER.c **** *  interrupt request is generated.
+ 299:Generated_Source\PSoC4/UART_MASTER.c **** *
+ 300:Generated_Source\PSoC4/UART_MASTER.c **** *  \param level: Level in the TX FIFO to generate TX level interrupt.
+ 301:Generated_Source\PSoC4/UART_MASTER.c **** *   The range of valid level values is between 0 and TX FIFO depth - 1.
+ 302:Generated_Source\PSoC4/UART_MASTER.c **** *
+ 303:Generated_Source\PSoC4/UART_MASTER.c **** *******************************************************************************/
+ 304:Generated_Source\PSoC4/UART_MASTER.c **** void UART_MASTER_SetTxFifoLevel(uint32 level)
+ 305:Generated_Source\PSoC4/UART_MASTER.c **** {
+ 306:Generated_Source\PSoC4/UART_MASTER.c ****     uint32 txFifoCtrl;
+ 307:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 308:Generated_Source\PSoC4/UART_MASTER.c ****     txFifoCtrl = UART_MASTER_TX_FIFO_CTRL_REG;
+ 309:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 310:Generated_Source\PSoC4/UART_MASTER.c ****     txFifoCtrl &= ((uint32) ~UART_MASTER_TX_FIFO_CTRL_TRIGGER_LEVEL_MASK); /* Clear level mask bits
+ 311:Generated_Source\PSoC4/UART_MASTER.c ****     txFifoCtrl |= ((uint32) (UART_MASTER_TX_FIFO_CTRL_TRIGGER_LEVEL_MASK & level));
+ 312:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 313:Generated_Source\PSoC4/UART_MASTER.c ****     UART_MASTER_TX_FIFO_CTRL_REG = txFifoCtrl;
+ 314:Generated_Source\PSoC4/UART_MASTER.c **** }
+ 315:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 316:Generated_Source\PSoC4/UART_MASTER.c **** 
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 7
+
+
+ 317:Generated_Source\PSoC4/UART_MASTER.c **** #if (UART_MASTER_SCB_IRQ_INTERNAL)
+ 318:Generated_Source\PSoC4/UART_MASTER.c ****     /*******************************************************************************
+ 319:Generated_Source\PSoC4/UART_MASTER.c ****     * Function Name: UART_MASTER_SetCustomInterruptHandler
+ 320:Generated_Source\PSoC4/UART_MASTER.c ****     ****************************************************************************//**
+ 321:Generated_Source\PSoC4/UART_MASTER.c ****     *
+ 322:Generated_Source\PSoC4/UART_MASTER.c ****     *  Registers a function to be called by the internal interrupt handler.
+ 323:Generated_Source\PSoC4/UART_MASTER.c ****     *  First the function that is registered is called, then the internal interrupt
+ 324:Generated_Source\PSoC4/UART_MASTER.c ****     *  handler performs any operation such as software buffer management functions
+ 325:Generated_Source\PSoC4/UART_MASTER.c ****     *  before the interrupt returns.  It is the user's responsibility not to break
+ 326:Generated_Source\PSoC4/UART_MASTER.c ****     *  the software buffer operations. Only one custom handler is supported, which
+ 327:Generated_Source\PSoC4/UART_MASTER.c ****     *  is the function provided by the most recent call.
+ 328:Generated_Source\PSoC4/UART_MASTER.c ****     *  At the initialization time no custom handler is registered.
+ 329:Generated_Source\PSoC4/UART_MASTER.c ****     *
+ 330:Generated_Source\PSoC4/UART_MASTER.c ****     *  \param func: Pointer to the function to register.
+ 331:Generated_Source\PSoC4/UART_MASTER.c ****     *        The value NULL indicates to remove the current custom interrupt
+ 332:Generated_Source\PSoC4/UART_MASTER.c ****     *        handler.
+ 333:Generated_Source\PSoC4/UART_MASTER.c ****     *
+ 334:Generated_Source\PSoC4/UART_MASTER.c ****     *******************************************************************************/
+ 335:Generated_Source\PSoC4/UART_MASTER.c ****     void UART_MASTER_SetCustomInterruptHandler(void (*func)(void))
+ 336:Generated_Source\PSoC4/UART_MASTER.c ****     {
+ 337:Generated_Source\PSoC4/UART_MASTER.c ****     #if !defined (CY_REMOVE_UART_MASTER_CUSTOM_INTR_HANDLER)
+ 338:Generated_Source\PSoC4/UART_MASTER.c ****         UART_MASTER_customIntrHandler = func; /* Register interrupt handler */
+ 339:Generated_Source\PSoC4/UART_MASTER.c ****     #else
+ 340:Generated_Source\PSoC4/UART_MASTER.c ****         if (NULL != func)
+ 341:Generated_Source\PSoC4/UART_MASTER.c ****         {
+ 342:Generated_Source\PSoC4/UART_MASTER.c ****             /* Suppress compiler warning */
+ 343:Generated_Source\PSoC4/UART_MASTER.c ****         }
+ 344:Generated_Source\PSoC4/UART_MASTER.c ****     #endif /* !defined (CY_REMOVE_UART_MASTER_CUSTOM_INTR_HANDLER) */
+ 345:Generated_Source\PSoC4/UART_MASTER.c ****     }
+ 346:Generated_Source\PSoC4/UART_MASTER.c **** #endif /* (UART_MASTER_SCB_IRQ_INTERNAL) */
+ 347:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 348:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 349:Generated_Source\PSoC4/UART_MASTER.c **** /*******************************************************************************
+ 350:Generated_Source\PSoC4/UART_MASTER.c **** * Function Name: UART_MASTER_ScbModeEnableIntr
+ 351:Generated_Source\PSoC4/UART_MASTER.c **** ****************************************************************************//**
+ 352:Generated_Source\PSoC4/UART_MASTER.c **** *
+ 353:Generated_Source\PSoC4/UART_MASTER.c **** *  Enables an interrupt for a specific mode.
+ 354:Generated_Source\PSoC4/UART_MASTER.c **** *
+ 355:Generated_Source\PSoC4/UART_MASTER.c **** *******************************************************************************/
+ 356:Generated_Source\PSoC4/UART_MASTER.c **** static void UART_MASTER_ScbEnableIntr(void)
+ 357:Generated_Source\PSoC4/UART_MASTER.c **** {
+  27              		.loc 1 357 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31 0000 10B5     		push	{r4, lr}
+  32              		.cfi_def_cfa_offset 8
+  33              		.cfi_offset 4, -8
+  34              		.cfi_offset 14, -4
+ 358:Generated_Source\PSoC4/UART_MASTER.c **** #if (UART_MASTER_SCB_IRQ_INTERNAL)
+ 359:Generated_Source\PSoC4/UART_MASTER.c ****     /* Enable interrupt in NVIC */
+ 360:Generated_Source\PSoC4/UART_MASTER.c ****     #if (UART_MASTER_SCB_MODE_UNCONFIG_CONST_CFG)
+ 361:Generated_Source\PSoC4/UART_MASTER.c ****         if (0u != UART_MASTER_scbEnableIntr)
+ 362:Generated_Source\PSoC4/UART_MASTER.c ****         {
+ 363:Generated_Source\PSoC4/UART_MASTER.c ****             UART_MASTER_EnableInt();
+ 364:Generated_Source\PSoC4/UART_MASTER.c ****         }
+ 365:Generated_Source\PSoC4/UART_MASTER.c **** 
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 8
+
+
+ 366:Generated_Source\PSoC4/UART_MASTER.c ****     #else
+ 367:Generated_Source\PSoC4/UART_MASTER.c ****         UART_MASTER_EnableInt();
+  35              		.loc 1 367 0
+  36 0002 0920     		movs	r0, #9
+  37 0004 FFF7FEFF 		bl	CyIntEnable
+  38              	.LVL0:
+ 368:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 369:Generated_Source\PSoC4/UART_MASTER.c ****     #endif /* (UART_MASTER_SCB_MODE_UNCONFIG_CONST_CFG) */
+ 370:Generated_Source\PSoC4/UART_MASTER.c **** #endif /* (UART_MASTER_SCB_IRQ_INTERNAL) */
+ 371:Generated_Source\PSoC4/UART_MASTER.c **** }
+  39              		.loc 1 371 0
+  40              		@ sp needed
+  41 0008 10BD     		pop	{r4, pc}
+  42              		.cfi_endproc
+  43              	.LFE9:
+  44              		.size	UART_MASTER_ScbEnableIntr, .-UART_MASTER_ScbEnableIntr
+  45 000a C046     		.section	.text.UART_MASTER_ScbModePostEnable,"ax",%progbits
+  46              		.align	2
+  47              		.code	16
+  48              		.thumb_func
+  49              		.type	UART_MASTER_ScbModePostEnable, %function
+  50              	UART_MASTER_ScbModePostEnable:
+  51              	.LFB10:
+ 372:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 373:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 374:Generated_Source\PSoC4/UART_MASTER.c **** /*******************************************************************************
+ 375:Generated_Source\PSoC4/UART_MASTER.c **** * Function Name: UART_MASTER_ScbModePostEnable
+ 376:Generated_Source\PSoC4/UART_MASTER.c **** ****************************************************************************//**
+ 377:Generated_Source\PSoC4/UART_MASTER.c **** *
+ 378:Generated_Source\PSoC4/UART_MASTER.c **** *  Calls the PostEnable function for a specific operation mode.
+ 379:Generated_Source\PSoC4/UART_MASTER.c **** *
+ 380:Generated_Source\PSoC4/UART_MASTER.c **** *******************************************************************************/
+ 381:Generated_Source\PSoC4/UART_MASTER.c **** static void UART_MASTER_ScbModePostEnable(void)
+ 382:Generated_Source\PSoC4/UART_MASTER.c **** {
+  52              		.loc 1 382 0
+  53              		.cfi_startproc
+  54              		@ args = 0, pretend = 0, frame = 0
+  55              		@ frame_needed = 0, uses_anonymous_args = 0
+  56 0000 10B5     		push	{r4, lr}
+  57              		.cfi_def_cfa_offset 8
+  58              		.cfi_offset 4, -8
+  59              		.cfi_offset 14, -4
+ 383:Generated_Source\PSoC4/UART_MASTER.c **** #if (UART_MASTER_SCB_MODE_UNCONFIG_CONST_CFG)
+ 384:Generated_Source\PSoC4/UART_MASTER.c **** #if (!UART_MASTER_CY_SCBIP_V1)
+ 385:Generated_Source\PSoC4/UART_MASTER.c ****     if (UART_MASTER_SCB_MODE_SPI_RUNTM_CFG)
+ 386:Generated_Source\PSoC4/UART_MASTER.c ****     {
+ 387:Generated_Source\PSoC4/UART_MASTER.c ****         UART_MASTER_SpiPostEnable();
+ 388:Generated_Source\PSoC4/UART_MASTER.c ****     }
+ 389:Generated_Source\PSoC4/UART_MASTER.c ****     else if (UART_MASTER_SCB_MODE_UART_RUNTM_CFG)
+ 390:Generated_Source\PSoC4/UART_MASTER.c ****     {
+ 391:Generated_Source\PSoC4/UART_MASTER.c ****         UART_MASTER_UartPostEnable();
+ 392:Generated_Source\PSoC4/UART_MASTER.c ****     }
+ 393:Generated_Source\PSoC4/UART_MASTER.c ****     else
+ 394:Generated_Source\PSoC4/UART_MASTER.c ****     {
+ 395:Generated_Source\PSoC4/UART_MASTER.c ****         /* Unknown mode: do nothing */
+ 396:Generated_Source\PSoC4/UART_MASTER.c ****     }
+ 397:Generated_Source\PSoC4/UART_MASTER.c **** #endif /* (!UART_MASTER_CY_SCBIP_V1) */
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 9
+
+
+ 398:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 399:Generated_Source\PSoC4/UART_MASTER.c **** #elif (UART_MASTER_SCB_MODE_SPI_CONST_CFG)
+ 400:Generated_Source\PSoC4/UART_MASTER.c ****     UART_MASTER_SpiPostEnable();
+ 401:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 402:Generated_Source\PSoC4/UART_MASTER.c **** #elif (UART_MASTER_SCB_MODE_UART_CONST_CFG)
+ 403:Generated_Source\PSoC4/UART_MASTER.c ****     UART_MASTER_UartPostEnable();
+  60              		.loc 1 403 0
+  61 0002 FFF7FEFF 		bl	UART_MASTER_UartPostEnable
+  62              	.LVL1:
+ 404:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 405:Generated_Source\PSoC4/UART_MASTER.c **** #else
+ 406:Generated_Source\PSoC4/UART_MASTER.c ****     /* Unknown mode: do nothing */
+ 407:Generated_Source\PSoC4/UART_MASTER.c **** #endif /* (UART_MASTER_SCB_MODE_UNCONFIG_CONST_CFG) */
+ 408:Generated_Source\PSoC4/UART_MASTER.c **** }
+  63              		.loc 1 408 0
+  64              		@ sp needed
+  65 0006 10BD     		pop	{r4, pc}
+  66              		.cfi_endproc
+  67              	.LFE10:
+  68              		.size	UART_MASTER_ScbModePostEnable, .-UART_MASTER_ScbModePostEnable
+  69              		.section	.text.UART_MASTER_ScbModeStop,"ax",%progbits
+  70              		.align	2
+  71              		.code	16
+  72              		.thumb_func
+  73              		.type	UART_MASTER_ScbModeStop, %function
+  74              	UART_MASTER_ScbModeStop:
+  75              	.LFB11:
+ 409:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 410:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 411:Generated_Source\PSoC4/UART_MASTER.c **** /*******************************************************************************
+ 412:Generated_Source\PSoC4/UART_MASTER.c **** * Function Name: UART_MASTER_ScbModeStop
+ 413:Generated_Source\PSoC4/UART_MASTER.c **** ****************************************************************************//**
+ 414:Generated_Source\PSoC4/UART_MASTER.c **** *
+ 415:Generated_Source\PSoC4/UART_MASTER.c **** *  Calls the Stop function for a specific operation mode.
+ 416:Generated_Source\PSoC4/UART_MASTER.c **** *
+ 417:Generated_Source\PSoC4/UART_MASTER.c **** *******************************************************************************/
+ 418:Generated_Source\PSoC4/UART_MASTER.c **** static void UART_MASTER_ScbModeStop(void)
+ 419:Generated_Source\PSoC4/UART_MASTER.c **** {
+  76              		.loc 1 419 0
+  77              		.cfi_startproc
+  78              		@ args = 0, pretend = 0, frame = 0
+  79              		@ frame_needed = 0, uses_anonymous_args = 0
+  80 0000 10B5     		push	{r4, lr}
+  81              		.cfi_def_cfa_offset 8
+  82              		.cfi_offset 4, -8
+  83              		.cfi_offset 14, -4
+ 420:Generated_Source\PSoC4/UART_MASTER.c **** #if (UART_MASTER_SCB_MODE_UNCONFIG_CONST_CFG)
+ 421:Generated_Source\PSoC4/UART_MASTER.c ****     if (UART_MASTER_SCB_MODE_I2C_RUNTM_CFG)
+ 422:Generated_Source\PSoC4/UART_MASTER.c ****     {
+ 423:Generated_Source\PSoC4/UART_MASTER.c ****         UART_MASTER_I2CStop();
+ 424:Generated_Source\PSoC4/UART_MASTER.c ****     }
+ 425:Generated_Source\PSoC4/UART_MASTER.c ****     else if (UART_MASTER_SCB_MODE_EZI2C_RUNTM_CFG)
+ 426:Generated_Source\PSoC4/UART_MASTER.c ****     {
+ 427:Generated_Source\PSoC4/UART_MASTER.c ****         UART_MASTER_EzI2CStop();
+ 428:Generated_Source\PSoC4/UART_MASTER.c ****     }
+ 429:Generated_Source\PSoC4/UART_MASTER.c **** #if (!UART_MASTER_CY_SCBIP_V1)
+ 430:Generated_Source\PSoC4/UART_MASTER.c ****     else if (UART_MASTER_SCB_MODE_SPI_RUNTM_CFG)
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 10
+
+
+ 431:Generated_Source\PSoC4/UART_MASTER.c ****     {
+ 432:Generated_Source\PSoC4/UART_MASTER.c ****         UART_MASTER_SpiStop();
+ 433:Generated_Source\PSoC4/UART_MASTER.c ****     }
+ 434:Generated_Source\PSoC4/UART_MASTER.c ****     else if (UART_MASTER_SCB_MODE_UART_RUNTM_CFG)
+ 435:Generated_Source\PSoC4/UART_MASTER.c ****     {
+ 436:Generated_Source\PSoC4/UART_MASTER.c ****         UART_MASTER_UartStop();
+ 437:Generated_Source\PSoC4/UART_MASTER.c ****     }
+ 438:Generated_Source\PSoC4/UART_MASTER.c **** #endif /* (!UART_MASTER_CY_SCBIP_V1) */
+ 439:Generated_Source\PSoC4/UART_MASTER.c ****     else
+ 440:Generated_Source\PSoC4/UART_MASTER.c ****     {
+ 441:Generated_Source\PSoC4/UART_MASTER.c ****         /* Unknown mode: do nothing */
+ 442:Generated_Source\PSoC4/UART_MASTER.c ****     }
+ 443:Generated_Source\PSoC4/UART_MASTER.c **** #elif (UART_MASTER_SCB_MODE_I2C_CONST_CFG)
+ 444:Generated_Source\PSoC4/UART_MASTER.c ****     UART_MASTER_I2CStop();
+ 445:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 446:Generated_Source\PSoC4/UART_MASTER.c **** #elif (UART_MASTER_SCB_MODE_EZI2C_CONST_CFG)
+ 447:Generated_Source\PSoC4/UART_MASTER.c ****     UART_MASTER_EzI2CStop();
+ 448:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 449:Generated_Source\PSoC4/UART_MASTER.c **** #elif (UART_MASTER_SCB_MODE_SPI_CONST_CFG)
+ 450:Generated_Source\PSoC4/UART_MASTER.c ****     UART_MASTER_SpiStop();
+ 451:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 452:Generated_Source\PSoC4/UART_MASTER.c **** #elif (UART_MASTER_SCB_MODE_UART_CONST_CFG)
+ 453:Generated_Source\PSoC4/UART_MASTER.c ****     UART_MASTER_UartStop();
+  84              		.loc 1 453 0
+  85 0002 FFF7FEFF 		bl	UART_MASTER_UartStop
+  86              	.LVL2:
+ 454:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 455:Generated_Source\PSoC4/UART_MASTER.c **** #else
+ 456:Generated_Source\PSoC4/UART_MASTER.c ****     /* Unknown mode: do nothing */
+ 457:Generated_Source\PSoC4/UART_MASTER.c **** #endif /* (UART_MASTER_SCB_MODE_UNCONFIG_CONST_CFG) */
+ 458:Generated_Source\PSoC4/UART_MASTER.c **** }
+  87              		.loc 1 458 0
+  88              		@ sp needed
+  89 0006 10BD     		pop	{r4, pc}
+  90              		.cfi_endproc
+  91              	.LFE11:
+  92              		.size	UART_MASTER_ScbModeStop, .-UART_MASTER_ScbModeStop
+  93              		.section	.text.UART_MASTER_Init,"ax",%progbits
+  94              		.align	2
+  95              		.global	UART_MASTER_Init
+  96              		.code	16
+  97              		.thumb_func
+  98              		.type	UART_MASTER_Init, %function
+  99              	UART_MASTER_Init:
+ 100              	.LFB2:
+ 124:Generated_Source\PSoC4/UART_MASTER.c **** #if (UART_MASTER_SCB_MODE_UNCONFIG_CONST_CFG)
+ 101              		.loc 1 124 0
+ 102              		.cfi_startproc
+ 103              		@ args = 0, pretend = 0, frame = 0
+ 104              		@ frame_needed = 0, uses_anonymous_args = 0
+ 105 0000 10B5     		push	{r4, lr}
+ 106              		.cfi_def_cfa_offset 8
+ 107              		.cfi_offset 4, -8
+ 108              		.cfi_offset 14, -4
+ 142:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 109              		.loc 1 142 0
+ 110 0002 FFF7FEFF 		bl	UART_MASTER_UartInit
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 11
+
+
+ 111              	.LVL3:
+ 148:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 112              		.loc 1 148 0
+ 113              		@ sp needed
+ 114 0006 10BD     		pop	{r4, pc}
+ 115              		.cfi_endproc
+ 116              	.LFE2:
+ 117              		.size	UART_MASTER_Init, .-UART_MASTER_Init
+ 118              		.section	.text.UART_MASTER_Enable,"ax",%progbits
+ 119              		.align	2
+ 120              		.global	UART_MASTER_Enable
+ 121              		.code	16
+ 122              		.thumb_func
+ 123              		.type	UART_MASTER_Enable, %function
+ 124              	UART_MASTER_Enable:
+ 125              	.LFB3:
+ 172:Generated_Source\PSoC4/UART_MASTER.c **** #if (UART_MASTER_SCB_MODE_UNCONFIG_CONST_CFG)
+ 126              		.loc 1 172 0
+ 127              		.cfi_startproc
+ 128              		@ args = 0, pretend = 0, frame = 0
+ 129              		@ frame_needed = 0, uses_anonymous_args = 0
+ 130 0000 10B5     		push	{r4, lr}
+ 131              		.cfi_def_cfa_offset 8
+ 132              		.cfi_offset 4, -8
+ 133              		.cfi_offset 14, -4
+ 185:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 134              		.loc 1 185 0
+ 135 0002 054A     		ldr	r2, .L6
+ 136 0004 1368     		ldr	r3, [r2]
+ 137 0006 8021     		movs	r1, #128
+ 138 0008 0906     		lsls	r1, r1, #24
+ 139 000a 0B43     		orrs	r3, r1
+ 140 000c 1360     		str	r3, [r2]
+ 187:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 141              		.loc 1 187 0
+ 142 000e FFF7FEFF 		bl	UART_MASTER_ScbEnableIntr
+ 143              	.LVL4:
+ 190:Generated_Source\PSoC4/UART_MASTER.c **** #endif /* (UART_MASTER_SCB_MODE_UNCONFIG_CONST_CFG) */
+ 144              		.loc 1 190 0
+ 145 0012 FFF7FEFF 		bl	UART_MASTER_ScbModePostEnable
+ 146              	.LVL5:
+ 192:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 147              		.loc 1 192 0
+ 148              		@ sp needed
+ 149 0016 10BD     		pop	{r4, pc}
+ 150              	.L7:
+ 151              		.align	2
+ 152              	.L6:
+ 153 0018 00002440 		.word	1076101120
+ 154              		.cfi_endproc
+ 155              	.LFE3:
+ 156              		.size	UART_MASTER_Enable, .-UART_MASTER_Enable
+ 157              		.section	.text.UART_MASTER_Start,"ax",%progbits
+ 158              		.align	2
+ 159              		.global	UART_MASTER_Start
+ 160              		.code	16
+ 161              		.thumb_func
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 12
+
+
+ 162              		.type	UART_MASTER_Start, %function
+ 163              	UART_MASTER_Start:
+ 164              	.LFB4:
+ 211:Generated_Source\PSoC4/UART_MASTER.c ****     if (0u == UART_MASTER_initVar)
+ 165              		.loc 1 211 0
+ 166              		.cfi_startproc
+ 167              		@ args = 0, pretend = 0, frame = 0
+ 168              		@ frame_needed = 0, uses_anonymous_args = 0
+ 169 0000 10B5     		push	{r4, lr}
+ 170              		.cfi_def_cfa_offset 8
+ 171              		.cfi_offset 4, -8
+ 172              		.cfi_offset 14, -4
+ 212:Generated_Source\PSoC4/UART_MASTER.c ****     {
+ 173              		.loc 1 212 0
+ 174 0002 064B     		ldr	r3, .L10
+ 175 0004 1B78     		ldrb	r3, [r3]
+ 176 0006 002B     		cmp	r3, #0
+ 177 0008 04D1     		bne	.L9
+ 214:Generated_Source\PSoC4/UART_MASTER.c ****         UART_MASTER_initVar = 1u; /* Component was initialized */
+ 178              		.loc 1 214 0
+ 179 000a FFF7FEFF 		bl	UART_MASTER_Init
+ 180              	.LVL6:
+ 215:Generated_Source\PSoC4/UART_MASTER.c ****     }
+ 181              		.loc 1 215 0
+ 182 000e 0122     		movs	r2, #1
+ 183 0010 024B     		ldr	r3, .L10
+ 184 0012 1A70     		strb	r2, [r3]
+ 185              	.L9:
+ 218:Generated_Source\PSoC4/UART_MASTER.c **** }
+ 186              		.loc 1 218 0
+ 187 0014 FFF7FEFF 		bl	UART_MASTER_Enable
+ 188              	.LVL7:
+ 219:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 189              		.loc 1 219 0
+ 190              		@ sp needed
+ 191 0018 10BD     		pop	{r4, pc}
+ 192              	.L11:
+ 193 001a C046     		.align	2
+ 194              	.L10:
+ 195 001c 00000000 		.word	.LANCHOR0
+ 196              		.cfi_endproc
+ 197              	.LFE4:
+ 198              		.size	UART_MASTER_Start, .-UART_MASTER_Start
+ 199              		.section	.text.UART_MASTER_Stop,"ax",%progbits
+ 200              		.align	2
+ 201              		.global	UART_MASTER_Stop
+ 202              		.code	16
+ 203              		.thumb_func
+ 204              		.type	UART_MASTER_Stop, %function
+ 205              	UART_MASTER_Stop:
+ 206              	.LFB5:
+ 240:Generated_Source\PSoC4/UART_MASTER.c **** #if (UART_MASTER_SCB_IRQ_INTERNAL)
+ 207              		.loc 1 240 0
+ 208              		.cfi_startproc
+ 209              		@ args = 0, pretend = 0, frame = 0
+ 210              		@ frame_needed = 0, uses_anonymous_args = 0
+ 211 0000 10B5     		push	{r4, lr}
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 13
+
+
+ 212              		.cfi_def_cfa_offset 8
+ 213              		.cfi_offset 4, -8
+ 214              		.cfi_offset 14, -4
+ 242:Generated_Source\PSoC4/UART_MASTER.c **** #endif /* (UART_MASTER_SCB_IRQ_INTERNAL) */
+ 215              		.loc 1 242 0
+ 216 0002 0920     		movs	r0, #9
+ 217 0004 FFF7FEFF 		bl	CyIntDisable
+ 218              	.LVL8:
+ 246:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 219              		.loc 1 246 0
+ 220 0008 FFF7FEFF 		bl	UART_MASTER_ScbModeStop
+ 221              	.LVL9:
+ 249:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 222              		.loc 1 249 0
+ 223 000c 054A     		ldr	r2, .L13
+ 224 000e 1368     		ldr	r3, [r2]
+ 225 0010 5B00     		lsls	r3, r3, #1
+ 226 0012 5B08     		lsrs	r3, r3, #1
+ 227 0014 1360     		str	r3, [r2]
+ 259:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 228              		.loc 1 259 0
+ 229 0016 0022     		movs	r2, #0
+ 230 0018 034B     		ldr	r3, .L13+4
+ 231 001a 1A60     		str	r2, [r3]
+ 262:Generated_Source\PSoC4/UART_MASTER.c **** #endif /* (UART_MASTER_SCB_IRQ_INTERNAL) */
+ 232              		.loc 1 262 0
+ 233 001c 0920     		movs	r0, #9
+ 234 001e FFF7FEFF 		bl	CyIntClearPending
+ 235              	.LVL10:
+ 264:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 236              		.loc 1 264 0
+ 237              		@ sp needed
+ 238 0022 10BD     		pop	{r4, pc}
+ 239              	.L14:
+ 240              		.align	2
+ 241              	.L13:
+ 242 0024 00002440 		.word	1076101120
+ 243 0028 880F2440 		.word	1076105096
+ 244              		.cfi_endproc
+ 245              	.LFE5:
+ 246              		.size	UART_MASTER_Stop, .-UART_MASTER_Stop
+ 247              		.section	.text.UART_MASTER_SetRxFifoLevel,"ax",%progbits
+ 248              		.align	2
+ 249              		.global	UART_MASTER_SetRxFifoLevel
+ 250              		.code	16
+ 251              		.thumb_func
+ 252              		.type	UART_MASTER_SetRxFifoLevel, %function
+ 253              	UART_MASTER_SetRxFifoLevel:
+ 254              	.LFB6:
+ 280:Generated_Source\PSoC4/UART_MASTER.c ****     uint32 rxFifoCtrl;
+ 255              		.loc 1 280 0
+ 256              		.cfi_startproc
+ 257              		@ args = 0, pretend = 0, frame = 0
+ 258              		@ frame_needed = 0, uses_anonymous_args = 0
+ 259              		@ link register save eliminated.
+ 260              	.LVL11:
+ 283:Generated_Source\PSoC4/UART_MASTER.c **** 
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 14
+
+
+ 261              		.loc 1 283 0
+ 262 0000 034A     		ldr	r2, .L16
+ 263 0002 1368     		ldr	r3, [r2]
+ 264              	.LVL12:
+ 285:Generated_Source\PSoC4/UART_MASTER.c ****     rxFifoCtrl |= ((uint32) (UART_MASTER_RX_FIFO_CTRL_TRIGGER_LEVEL_MASK & level));
+ 265              		.loc 1 285 0
+ 266 0004 0F21     		movs	r1, #15
+ 267 0006 8B43     		bics	r3, r1
+ 268              	.LVL13:
+ 286:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 269              		.loc 1 286 0
+ 270 0008 0840     		ands	r0, r1
+ 271              	.LVL14:
+ 272 000a 1843     		orrs	r0, r3
+ 273              	.LVL15:
+ 288:Generated_Source\PSoC4/UART_MASTER.c **** }
+ 274              		.loc 1 288 0
+ 275 000c 1060     		str	r0, [r2]
+ 289:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 276              		.loc 1 289 0
+ 277              		@ sp needed
+ 278 000e 7047     		bx	lr
+ 279              	.L17:
+ 280              		.align	2
+ 281              	.L16:
+ 282 0010 04032440 		.word	1076101892
+ 283              		.cfi_endproc
+ 284              	.LFE6:
+ 285              		.size	UART_MASTER_SetRxFifoLevel, .-UART_MASTER_SetRxFifoLevel
+ 286              		.section	.text.UART_MASTER_SetTxFifoLevel,"ax",%progbits
+ 287              		.align	2
+ 288              		.global	UART_MASTER_SetTxFifoLevel
+ 289              		.code	16
+ 290              		.thumb_func
+ 291              		.type	UART_MASTER_SetTxFifoLevel, %function
+ 292              	UART_MASTER_SetTxFifoLevel:
+ 293              	.LFB7:
+ 305:Generated_Source\PSoC4/UART_MASTER.c ****     uint32 txFifoCtrl;
+ 294              		.loc 1 305 0
+ 295              		.cfi_startproc
+ 296              		@ args = 0, pretend = 0, frame = 0
+ 297              		@ frame_needed = 0, uses_anonymous_args = 0
+ 298              		@ link register save eliminated.
+ 299              	.LVL16:
+ 308:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 300              		.loc 1 308 0
+ 301 0000 034A     		ldr	r2, .L19
+ 302 0002 1368     		ldr	r3, [r2]
+ 303              	.LVL17:
+ 310:Generated_Source\PSoC4/UART_MASTER.c ****     txFifoCtrl |= ((uint32) (UART_MASTER_TX_FIFO_CTRL_TRIGGER_LEVEL_MASK & level));
+ 304              		.loc 1 310 0
+ 305 0004 0F21     		movs	r1, #15
+ 306 0006 8B43     		bics	r3, r1
+ 307              	.LVL18:
+ 311:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 308              		.loc 1 311 0
+ 309 0008 0840     		ands	r0, r1
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 15
+
+
+ 310              	.LVL19:
+ 311 000a 1843     		orrs	r0, r3
+ 312              	.LVL20:
+ 313:Generated_Source\PSoC4/UART_MASTER.c **** }
+ 313              		.loc 1 313 0
+ 314 000c 1060     		str	r0, [r2]
+ 314:Generated_Source\PSoC4/UART_MASTER.c **** 
+ 315              		.loc 1 314 0
+ 316              		@ sp needed
+ 317 000e 7047     		bx	lr
+ 318              	.L20:
+ 319              		.align	2
+ 320              	.L19:
+ 321 0010 04022440 		.word	1076101636
+ 322              		.cfi_endproc
+ 323              	.LFE7:
+ 324              		.size	UART_MASTER_SetTxFifoLevel, .-UART_MASTER_SetTxFifoLevel
+ 325              		.section	.text.UART_MASTER_SetCustomInterruptHandler,"ax",%progbits
+ 326              		.align	2
+ 327              		.global	UART_MASTER_SetCustomInterruptHandler
+ 328              		.code	16
+ 329              		.thumb_func
+ 330              		.type	UART_MASTER_SetCustomInterruptHandler, %function
+ 331              	UART_MASTER_SetCustomInterruptHandler:
+ 332              	.LFB8:
+ 336:Generated_Source\PSoC4/UART_MASTER.c ****     #if !defined (CY_REMOVE_UART_MASTER_CUSTOM_INTR_HANDLER)
+ 333              		.loc 1 336 0
+ 334              		.cfi_startproc
+ 335              		@ args = 0, pretend = 0, frame = 0
+ 336              		@ frame_needed = 0, uses_anonymous_args = 0
+ 337              		@ link register save eliminated.
+ 338              	.LVL21:
+ 338:Generated_Source\PSoC4/UART_MASTER.c ****     #else
+ 339              		.loc 1 338 0
+ 340 0000 014B     		ldr	r3, .L22
+ 341 0002 5860     		str	r0, [r3, #4]
+ 345:Generated_Source\PSoC4/UART_MASTER.c **** #endif /* (UART_MASTER_SCB_IRQ_INTERNAL) */
+ 342              		.loc 1 345 0
+ 343              		@ sp needed
+ 344 0004 7047     		bx	lr
+ 345              	.L23:
+ 346 0006 C046     		.align	2
+ 347              	.L22:
+ 348 0008 00000000 		.word	.LANCHOR0
+ 349              		.cfi_endproc
+ 350              	.LFE8:
+ 351              		.size	UART_MASTER_SetCustomInterruptHandler, .-UART_MASTER_SetCustomInterruptHandler
+ 352              		.global	UART_MASTER_customIntrHandler
+ 353              		.global	UART_MASTER_IntrTxMask
+ 354              		.global	UART_MASTER_initVar
+ 355              		.bss
+ 356              		.align	2
+ 357              		.set	.LANCHOR0,. + 0
+ 358              		.type	UART_MASTER_initVar, %object
+ 359              		.size	UART_MASTER_initVar, 1
+ 360              	UART_MASTER_initVar:
+ 361 0000 00       		.space	1
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 16
+
+
+ 362 0001 000000   		.space	3
+ 363              		.type	UART_MASTER_customIntrHandler, %object
+ 364              		.size	UART_MASTER_customIntrHandler, 4
+ 365              	UART_MASTER_customIntrHandler:
+ 366 0004 00000000 		.space	4
+ 367              		.type	UART_MASTER_IntrTxMask, %object
+ 368              		.size	UART_MASTER_IntrTxMask, 2
+ 369              	UART_MASTER_IntrTxMask:
+ 370 0008 0000     		.space	2
+ 371              		.text
+ 372              	.Letext0:
+ 373              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 374              		.file 3 "Generated_Source\\PSoC4/CyLib.h"
+ 375              		.file 4 "Generated_Source\\PSoC4\\UART_MASTER_SPI_UART_PVT.h"
+ 376              		.section	.debug_info,"",%progbits
+ 377              	.Ldebug_info0:
+ 378 0000 E5020000 		.4byte	0x2e5
+ 379 0004 0400     		.2byte	0x4
+ 380 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 381 000a 04       		.byte	0x4
+ 382 000b 01       		.uleb128 0x1
+ 383 000c FA010000 		.4byte	.LASF41
+ 384 0010 0C       		.byte	0xc
+ 385 0011 11000000 		.4byte	.LASF42
+ 386 0015 88020000 		.4byte	.LASF43
+ 387 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 388 001d 00000000 		.4byte	0
+ 389 0021 00000000 		.4byte	.Ldebug_line0
+ 390 0025 02       		.uleb128 0x2
+ 391 0026 01       		.byte	0x1
+ 392 0027 06       		.byte	0x6
+ 393 0028 3E030000 		.4byte	.LASF0
+ 394 002c 02       		.uleb128 0x2
+ 395 002d 01       		.byte	0x1
+ 396 002e 08       		.byte	0x8
+ 397 002f BA000000 		.4byte	.LASF1
+ 398 0033 02       		.uleb128 0x2
+ 399 0034 02       		.byte	0x2
+ 400 0035 05       		.byte	0x5
+ 401 0036 E2020000 		.4byte	.LASF2
+ 402 003a 02       		.uleb128 0x2
+ 403 003b 02       		.byte	0x2
+ 404 003c 07       		.byte	0x7
+ 405 003d 7B000000 		.4byte	.LASF3
+ 406 0041 02       		.uleb128 0x2
+ 407 0042 04       		.byte	0x4
+ 408 0043 05       		.byte	0x5
+ 409 0044 0E030000 		.4byte	.LASF4
+ 410 0048 02       		.uleb128 0x2
+ 411 0049 04       		.byte	0x4
+ 412 004a 07       		.byte	0x7
+ 413 004b C8000000 		.4byte	.LASF5
+ 414 004f 02       		.uleb128 0x2
+ 415 0050 08       		.byte	0x8
+ 416 0051 05       		.byte	0x5
+ 417 0052 C2020000 		.4byte	.LASF6
+ 418 0056 02       		.uleb128 0x2
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 17
+
+
+ 419 0057 08       		.byte	0x8
+ 420 0058 07       		.byte	0x7
+ 421 0059 90010000 		.4byte	.LASF7
+ 422 005d 03       		.uleb128 0x3
+ 423 005e 04       		.byte	0x4
+ 424 005f 05       		.byte	0x5
+ 425 0060 696E7400 		.ascii	"int\000"
+ 426 0064 02       		.uleb128 0x2
+ 427 0065 04       		.byte	0x4
+ 428 0066 07       		.byte	0x7
+ 429 0067 83010000 		.4byte	.LASF8
+ 430 006b 04       		.uleb128 0x4
+ 431 006c DA000000 		.4byte	.LASF9
+ 432 0070 02       		.byte	0x2
+ 433 0071 E401     		.2byte	0x1e4
+ 434 0073 2C000000 		.4byte	0x2c
+ 435 0077 04       		.uleb128 0x4
+ 436 0078 3C010000 		.4byte	.LASF10
+ 437 007c 02       		.byte	0x2
+ 438 007d E501     		.2byte	0x1e5
+ 439 007f 3A000000 		.4byte	0x3a
+ 440 0083 04       		.uleb128 0x4
+ 441 0084 43010000 		.4byte	.LASF11
+ 442 0088 02       		.byte	0x2
+ 443 0089 E601     		.2byte	0x1e6
+ 444 008b 48000000 		.4byte	0x48
+ 445 008f 02       		.uleb128 0x2
+ 446 0090 04       		.byte	0x4
+ 447 0091 04       		.byte	0x4
+ 448 0092 9F000000 		.4byte	.LASF12
+ 449 0096 02       		.uleb128 0x2
+ 450 0097 08       		.byte	0x8
+ 451 0098 04       		.byte	0x4
+ 452 0099 24010000 		.4byte	.LASF13
+ 453 009d 02       		.uleb128 0x2
+ 454 009e 01       		.byte	0x1
+ 455 009f 08       		.byte	0x8
+ 456 00a0 D0020000 		.4byte	.LASF14
+ 457 00a4 04       		.uleb128 0x4
+ 458 00a5 00000000 		.4byte	.LASF15
+ 459 00a9 02       		.byte	0x2
+ 460 00aa 9002     		.2byte	0x290
+ 461 00ac B0000000 		.4byte	0xb0
+ 462 00b0 05       		.uleb128 0x5
+ 463 00b1 83000000 		.4byte	0x83
+ 464 00b5 06       		.uleb128 0x6
+ 465 00b6 04       		.byte	0x4
+ 466 00b7 BB000000 		.4byte	0xbb
+ 467 00bb 07       		.uleb128 0x7
+ 468 00bc 02       		.uleb128 0x2
+ 469 00bd 08       		.byte	0x8
+ 470 00be 04       		.byte	0x4
+ 471 00bf 17030000 		.4byte	.LASF16
+ 472 00c3 02       		.uleb128 0x2
+ 473 00c4 04       		.byte	0x4
+ 474 00c5 07       		.byte	0x7
+ 475 00c6 B9020000 		.4byte	.LASF17
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 18
+
+
+ 476 00ca 08       		.uleb128 0x8
+ 477 00cb 4E000000 		.4byte	.LASF18
+ 478 00cf 01       		.byte	0x1
+ 479 00d0 6401     		.2byte	0x164
+ 480 00d2 00000000 		.4byte	.LFB9
+ 481 00d6 0A000000 		.4byte	.LFE9-.LFB9
+ 482 00da 01       		.uleb128 0x1
+ 483 00db 9C       		.byte	0x9c
+ 484 00dc F0000000 		.4byte	0xf0
+ 485 00e0 09       		.uleb128 0x9
+ 486 00e1 08000000 		.4byte	.LVL0
+ 487 00e5 A6020000 		.4byte	0x2a6
+ 488 00e9 0A       		.uleb128 0xa
+ 489 00ea 01       		.uleb128 0x1
+ 490 00eb 50       		.byte	0x50
+ 491 00ec 01       		.uleb128 0x1
+ 492 00ed 39       		.byte	0x39
+ 493 00ee 00       		.byte	0
+ 494 00ef 00       		.byte	0
+ 495 00f0 08       		.uleb128 0x8
+ 496 00f1 65010000 		.4byte	.LASF19
+ 497 00f5 01       		.byte	0x1
+ 498 00f6 7D01     		.2byte	0x17d
+ 499 00f8 00000000 		.4byte	.LFB10
+ 500 00fc 08000000 		.4byte	.LFE10-.LFB10
+ 501 0100 01       		.uleb128 0x1
+ 502 0101 9C       		.byte	0x9c
+ 503 0102 10010000 		.4byte	0x110
+ 504 0106 0B       		.uleb128 0xb
+ 505 0107 06000000 		.4byte	.LVL1
+ 506 010b B1020000 		.4byte	0x2b1
+ 507 010f 00       		.byte	0
+ 508 0110 08       		.uleb128 0x8
+ 509 0111 36000000 		.4byte	.LASF20
+ 510 0115 01       		.byte	0x1
+ 511 0116 A201     		.2byte	0x1a2
+ 512 0118 00000000 		.4byte	.LFB11
+ 513 011c 08000000 		.4byte	.LFE11-.LFB11
+ 514 0120 01       		.uleb128 0x1
+ 515 0121 9C       		.byte	0x9c
+ 516 0122 30010000 		.4byte	0x130
+ 517 0126 0B       		.uleb128 0xb
+ 518 0127 06000000 		.4byte	.LVL2
+ 519 012b BC020000 		.4byte	0x2bc
+ 520 012f 00       		.byte	0
+ 521 0130 0C       		.uleb128 0xc
+ 522 0131 F2020000 		.4byte	.LASF21
+ 523 0135 01       		.byte	0x1
+ 524 0136 7B       		.byte	0x7b
+ 525 0137 00000000 		.4byte	.LFB2
+ 526 013b 08000000 		.4byte	.LFE2-.LFB2
+ 527 013f 01       		.uleb128 0x1
+ 528 0140 9C       		.byte	0x9c
+ 529 0141 4F010000 		.4byte	0x14f
+ 530 0145 0B       		.uleb128 0xb
+ 531 0146 06000000 		.4byte	.LVL3
+ 532 014a C7020000 		.4byte	0x2c7
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 19
+
+
+ 533 014e 00       		.byte	0
+ 534 014f 0C       		.uleb128 0xc
+ 535 0150 68000000 		.4byte	.LASF22
+ 536 0154 01       		.byte	0x1
+ 537 0155 AB       		.byte	0xab
+ 538 0156 00000000 		.4byte	.LFB3
+ 539 015a 1C000000 		.4byte	.LFE3-.LFB3
+ 540 015e 01       		.uleb128 0x1
+ 541 015f 9C       		.byte	0x9c
+ 542 0160 77010000 		.4byte	0x177
+ 543 0164 0B       		.uleb128 0xb
+ 544 0165 12000000 		.4byte	.LVL4
+ 545 0169 CA000000 		.4byte	0xca
+ 546 016d 0B       		.uleb128 0xb
+ 547 016e 16000000 		.4byte	.LVL5
+ 548 0172 F0000000 		.4byte	0xf0
+ 549 0176 00       		.byte	0
+ 550 0177 0C       		.uleb128 0xc
+ 551 0178 E0000000 		.4byte	.LASF23
+ 552 017c 01       		.byte	0x1
+ 553 017d D2       		.byte	0xd2
+ 554 017e 00000000 		.4byte	.LFB4
+ 555 0182 20000000 		.4byte	.LFE4-.LFB4
+ 556 0186 01       		.uleb128 0x1
+ 557 0187 9C       		.byte	0x9c
+ 558 0188 9F010000 		.4byte	0x19f
+ 559 018c 0B       		.uleb128 0xb
+ 560 018d 0E000000 		.4byte	.LVL6
+ 561 0191 30010000 		.4byte	0x130
+ 562 0195 0B       		.uleb128 0xb
+ 563 0196 18000000 		.4byte	.LVL7
+ 564 019a 4F010000 		.4byte	0x14f
+ 565 019e 00       		.byte	0
+ 566 019f 0C       		.uleb128 0xc
+ 567 01a0 8E000000 		.4byte	.LASF24
+ 568 01a4 01       		.byte	0x1
+ 569 01a5 EF       		.byte	0xef
+ 570 01a6 00000000 		.4byte	.LFB5
+ 571 01aa 2C000000 		.4byte	.LFE5-.LFB5
+ 572 01ae 01       		.uleb128 0x1
+ 573 01af 9C       		.byte	0x9c
+ 574 01b0 E0010000 		.4byte	0x1e0
+ 575 01b4 0D       		.uleb128 0xd
+ 576 01b5 08000000 		.4byte	.LVL8
+ 577 01b9 D2020000 		.4byte	0x2d2
+ 578 01bd C7010000 		.4byte	0x1c7
+ 579 01c1 0A       		.uleb128 0xa
+ 580 01c2 01       		.uleb128 0x1
+ 581 01c3 50       		.byte	0x50
+ 582 01c4 01       		.uleb128 0x1
+ 583 01c5 39       		.byte	0x39
+ 584 01c6 00       		.byte	0
+ 585 01c7 0B       		.uleb128 0xb
+ 586 01c8 0C000000 		.4byte	.LVL9
+ 587 01cc 10010000 		.4byte	0x110
+ 588 01d0 09       		.uleb128 0x9
+ 589 01d1 22000000 		.4byte	.LVL10
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 20
+
+
+ 590 01d5 DD020000 		.4byte	0x2dd
+ 591 01d9 0A       		.uleb128 0xa
+ 592 01da 01       		.uleb128 0x1
+ 593 01db 50       		.byte	0x50
+ 594 01dc 01       		.uleb128 0x1
+ 595 01dd 39       		.byte	0x39
+ 596 01de 00       		.byte	0
+ 597 01df 00       		.byte	0
+ 598 01e0 0E       		.uleb128 0xe
+ 599 01e1 23030000 		.4byte	.LASF25
+ 600 01e5 01       		.byte	0x1
+ 601 01e6 1701     		.2byte	0x117
+ 602 01e8 00000000 		.4byte	.LFB6
+ 603 01ec 14000000 		.4byte	.LFE6-.LFB6
+ 604 01f0 01       		.uleb128 0x1
+ 605 01f1 9C       		.byte	0x9c
+ 606 01f2 17020000 		.4byte	0x217
+ 607 01f6 0F       		.uleb128 0xf
+ 608 01f7 EC020000 		.4byte	.LASF27
+ 609 01fb 01       		.byte	0x1
+ 610 01fc 1701     		.2byte	0x117
+ 611 01fe 83000000 		.4byte	0x83
+ 612 0202 00000000 		.4byte	.LLST0
+ 613 0206 10       		.uleb128 0x10
+ 614 0207 03030000 		.4byte	.LASF28
+ 615 020b 01       		.byte	0x1
+ 616 020c 1901     		.2byte	0x119
+ 617 020e 83000000 		.4byte	0x83
+ 618 0212 21000000 		.4byte	.LLST1
+ 619 0216 00       		.byte	0
+ 620 0217 0E       		.uleb128 0xe
+ 621 0218 4A010000 		.4byte	.LASF26
+ 622 021c 01       		.byte	0x1
+ 623 021d 3001     		.2byte	0x130
+ 624 021f 00000000 		.4byte	.LFB7
+ 625 0223 14000000 		.4byte	.LFE7-.LFB7
+ 626 0227 01       		.uleb128 0x1
+ 627 0228 9C       		.byte	0x9c
+ 628 0229 4E020000 		.4byte	0x24e
+ 629 022d 0F       		.uleb128 0xf
+ 630 022e EC020000 		.4byte	.LASF27
+ 631 0232 01       		.byte	0x1
+ 632 0233 3001     		.2byte	0x130
+ 633 0235 83000000 		.4byte	0x83
+ 634 0239 3F000000 		.4byte	.LLST2
+ 635 023d 10       		.uleb128 0x10
+ 636 023e 06000000 		.4byte	.LASF29
+ 637 0242 01       		.byte	0x1
+ 638 0243 3201     		.2byte	0x132
+ 639 0245 83000000 		.4byte	0x83
+ 640 0249 60000000 		.4byte	.LLST3
+ 641 024d 00       		.byte	0
+ 642 024e 0E       		.uleb128 0xe
+ 643 024f B9010000 		.4byte	.LASF30
+ 644 0253 01       		.byte	0x1
+ 645 0254 4F01     		.2byte	0x14f
+ 646 0256 00000000 		.4byte	.LFB8
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 21
+
+
+ 647 025a 0C000000 		.4byte	.LFE8-.LFB8
+ 648 025e 01       		.uleb128 0x1
+ 649 025f 9C       		.byte	0x9c
+ 650 0260 73020000 		.4byte	0x273
+ 651 0264 11       		.uleb128 0x11
+ 652 0265 2B010000 		.4byte	.LASF31
+ 653 0269 01       		.byte	0x1
+ 654 026a 4F01     		.2byte	0x14f
+ 655 026c B5000000 		.4byte	0xb5
+ 656 0270 01       		.uleb128 0x1
+ 657 0271 50       		.byte	0x50
+ 658 0272 00       		.byte	0
+ 659 0273 12       		.uleb128 0x12
+ 660 0274 10010000 		.4byte	.LASF32
+ 661 0278 01       		.byte	0x1
+ 662 0279 51       		.byte	0x51
+ 663 027a 6B000000 		.4byte	0x6b
+ 664 027e 05       		.uleb128 0x5
+ 665 027f 03       		.byte	0x3
+ 666 0280 00000000 		.4byte	UART_MASTER_initVar
+ 667 0284 12       		.uleb128 0x12
+ 668 0285 F2000000 		.4byte	.LASF33
+ 669 0289 01       		.byte	0x1
+ 670 028a 61       		.byte	0x61
+ 671 028b B5000000 		.4byte	0xb5
+ 672 028f 05       		.uleb128 0x5
+ 673 0290 03       		.byte	0x3
+ 674 0291 00000000 		.4byte	UART_MASTER_customIntrHandler
+ 675 0295 12       		.uleb128 0x12
+ 676 0296 4A030000 		.4byte	.LASF34
+ 677 029a 01       		.byte	0x1
+ 678 029b 5A       		.byte	0x5a
+ 679 029c 77000000 		.4byte	0x77
+ 680 02a0 05       		.uleb128 0x5
+ 681 02a1 03       		.byte	0x3
+ 682 02a2 00000000 		.4byte	UART_MASTER_IntrTxMask
+ 683 02a6 13       		.uleb128 0x13
+ 684 02a7 30010000 		.4byte	.LASF35
+ 685 02ab 30010000 		.4byte	.LASF35
+ 686 02af 03       		.byte	0x3
+ 687 02b0 C3       		.byte	0xc3
+ 688 02b1 13       		.uleb128 0x13
+ 689 02b2 DF010000 		.4byte	.LASF36
+ 690 02b6 DF010000 		.4byte	.LASF36
+ 691 02ba 04       		.byte	0x4
+ 692 02bb 4C       		.byte	0x4c
+ 693 02bc 13       		.uleb128 0x13
+ 694 02bd A5000000 		.4byte	.LASF37
+ 695 02c1 A5000000 		.4byte	.LASF37
+ 696 02c5 04       		.byte	0x4
+ 697 02c6 4D       		.byte	0x4d
+ 698 02c7 13       		.uleb128 0x13
+ 699 02c8 61030000 		.4byte	.LASF38
+ 700 02cc 61030000 		.4byte	.LASF38
+ 701 02d0 04       		.byte	0x4
+ 702 02d1 50       		.byte	0x50
+ 703 02d2 13       		.uleb128 0x13
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 22
+
+
+ 704 02d3 D5020000 		.4byte	.LASF39
+ 705 02d7 D5020000 		.4byte	.LASF39
+ 706 02db 03       		.byte	0x3
+ 707 02dc C5       		.byte	0xc5
+ 708 02dd 13       		.uleb128 0x13
+ 709 02de A7010000 		.4byte	.LASF40
+ 710 02e2 A7010000 		.4byte	.LASF40
+ 711 02e6 03       		.byte	0x3
+ 712 02e7 C8       		.byte	0xc8
+ 713 02e8 00       		.byte	0
+ 714              		.section	.debug_abbrev,"",%progbits
+ 715              	.Ldebug_abbrev0:
+ 716 0000 01       		.uleb128 0x1
+ 717 0001 11       		.uleb128 0x11
+ 718 0002 01       		.byte	0x1
+ 719 0003 25       		.uleb128 0x25
+ 720 0004 0E       		.uleb128 0xe
+ 721 0005 13       		.uleb128 0x13
+ 722 0006 0B       		.uleb128 0xb
+ 723 0007 03       		.uleb128 0x3
+ 724 0008 0E       		.uleb128 0xe
+ 725 0009 1B       		.uleb128 0x1b
+ 726 000a 0E       		.uleb128 0xe
+ 727 000b 55       		.uleb128 0x55
+ 728 000c 17       		.uleb128 0x17
+ 729 000d 11       		.uleb128 0x11
+ 730 000e 01       		.uleb128 0x1
+ 731 000f 10       		.uleb128 0x10
+ 732 0010 17       		.uleb128 0x17
+ 733 0011 00       		.byte	0
+ 734 0012 00       		.byte	0
+ 735 0013 02       		.uleb128 0x2
+ 736 0014 24       		.uleb128 0x24
+ 737 0015 00       		.byte	0
+ 738 0016 0B       		.uleb128 0xb
+ 739 0017 0B       		.uleb128 0xb
+ 740 0018 3E       		.uleb128 0x3e
+ 741 0019 0B       		.uleb128 0xb
+ 742 001a 03       		.uleb128 0x3
+ 743 001b 0E       		.uleb128 0xe
+ 744 001c 00       		.byte	0
+ 745 001d 00       		.byte	0
+ 746 001e 03       		.uleb128 0x3
+ 747 001f 24       		.uleb128 0x24
+ 748 0020 00       		.byte	0
+ 749 0021 0B       		.uleb128 0xb
+ 750 0022 0B       		.uleb128 0xb
+ 751 0023 3E       		.uleb128 0x3e
+ 752 0024 0B       		.uleb128 0xb
+ 753 0025 03       		.uleb128 0x3
+ 754 0026 08       		.uleb128 0x8
+ 755 0027 00       		.byte	0
+ 756 0028 00       		.byte	0
+ 757 0029 04       		.uleb128 0x4
+ 758 002a 16       		.uleb128 0x16
+ 759 002b 00       		.byte	0
+ 760 002c 03       		.uleb128 0x3
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 23
+
+
+ 761 002d 0E       		.uleb128 0xe
+ 762 002e 3A       		.uleb128 0x3a
+ 763 002f 0B       		.uleb128 0xb
+ 764 0030 3B       		.uleb128 0x3b
+ 765 0031 05       		.uleb128 0x5
+ 766 0032 49       		.uleb128 0x49
+ 767 0033 13       		.uleb128 0x13
+ 768 0034 00       		.byte	0
+ 769 0035 00       		.byte	0
+ 770 0036 05       		.uleb128 0x5
+ 771 0037 35       		.uleb128 0x35
+ 772 0038 00       		.byte	0
+ 773 0039 49       		.uleb128 0x49
+ 774 003a 13       		.uleb128 0x13
+ 775 003b 00       		.byte	0
+ 776 003c 00       		.byte	0
+ 777 003d 06       		.uleb128 0x6
+ 778 003e 0F       		.uleb128 0xf
+ 779 003f 00       		.byte	0
+ 780 0040 0B       		.uleb128 0xb
+ 781 0041 0B       		.uleb128 0xb
+ 782 0042 49       		.uleb128 0x49
+ 783 0043 13       		.uleb128 0x13
+ 784 0044 00       		.byte	0
+ 785 0045 00       		.byte	0
+ 786 0046 07       		.uleb128 0x7
+ 787 0047 15       		.uleb128 0x15
+ 788 0048 00       		.byte	0
+ 789 0049 27       		.uleb128 0x27
+ 790 004a 19       		.uleb128 0x19
+ 791 004b 00       		.byte	0
+ 792 004c 00       		.byte	0
+ 793 004d 08       		.uleb128 0x8
+ 794 004e 2E       		.uleb128 0x2e
+ 795 004f 01       		.byte	0x1
+ 796 0050 03       		.uleb128 0x3
+ 797 0051 0E       		.uleb128 0xe
+ 798 0052 3A       		.uleb128 0x3a
+ 799 0053 0B       		.uleb128 0xb
+ 800 0054 3B       		.uleb128 0x3b
+ 801 0055 05       		.uleb128 0x5
+ 802 0056 27       		.uleb128 0x27
+ 803 0057 19       		.uleb128 0x19
+ 804 0058 11       		.uleb128 0x11
+ 805 0059 01       		.uleb128 0x1
+ 806 005a 12       		.uleb128 0x12
+ 807 005b 06       		.uleb128 0x6
+ 808 005c 40       		.uleb128 0x40
+ 809 005d 18       		.uleb128 0x18
+ 810 005e 9742     		.uleb128 0x2117
+ 811 0060 19       		.uleb128 0x19
+ 812 0061 01       		.uleb128 0x1
+ 813 0062 13       		.uleb128 0x13
+ 814 0063 00       		.byte	0
+ 815 0064 00       		.byte	0
+ 816 0065 09       		.uleb128 0x9
+ 817 0066 898201   		.uleb128 0x4109
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 24
+
+
+ 818 0069 01       		.byte	0x1
+ 819 006a 11       		.uleb128 0x11
+ 820 006b 01       		.uleb128 0x1
+ 821 006c 31       		.uleb128 0x31
+ 822 006d 13       		.uleb128 0x13
+ 823 006e 00       		.byte	0
+ 824 006f 00       		.byte	0
+ 825 0070 0A       		.uleb128 0xa
+ 826 0071 8A8201   		.uleb128 0x410a
+ 827 0074 00       		.byte	0
+ 828 0075 02       		.uleb128 0x2
+ 829 0076 18       		.uleb128 0x18
+ 830 0077 9142     		.uleb128 0x2111
+ 831 0079 18       		.uleb128 0x18
+ 832 007a 00       		.byte	0
+ 833 007b 00       		.byte	0
+ 834 007c 0B       		.uleb128 0xb
+ 835 007d 898201   		.uleb128 0x4109
+ 836 0080 00       		.byte	0
+ 837 0081 11       		.uleb128 0x11
+ 838 0082 01       		.uleb128 0x1
+ 839 0083 31       		.uleb128 0x31
+ 840 0084 13       		.uleb128 0x13
+ 841 0085 00       		.byte	0
+ 842 0086 00       		.byte	0
+ 843 0087 0C       		.uleb128 0xc
+ 844 0088 2E       		.uleb128 0x2e
+ 845 0089 01       		.byte	0x1
+ 846 008a 3F       		.uleb128 0x3f
+ 847 008b 19       		.uleb128 0x19
+ 848 008c 03       		.uleb128 0x3
+ 849 008d 0E       		.uleb128 0xe
+ 850 008e 3A       		.uleb128 0x3a
+ 851 008f 0B       		.uleb128 0xb
+ 852 0090 3B       		.uleb128 0x3b
+ 853 0091 0B       		.uleb128 0xb
+ 854 0092 27       		.uleb128 0x27
+ 855 0093 19       		.uleb128 0x19
+ 856 0094 11       		.uleb128 0x11
+ 857 0095 01       		.uleb128 0x1
+ 858 0096 12       		.uleb128 0x12
+ 859 0097 06       		.uleb128 0x6
+ 860 0098 40       		.uleb128 0x40
+ 861 0099 18       		.uleb128 0x18
+ 862 009a 9742     		.uleb128 0x2117
+ 863 009c 19       		.uleb128 0x19
+ 864 009d 01       		.uleb128 0x1
+ 865 009e 13       		.uleb128 0x13
+ 866 009f 00       		.byte	0
+ 867 00a0 00       		.byte	0
+ 868 00a1 0D       		.uleb128 0xd
+ 869 00a2 898201   		.uleb128 0x4109
+ 870 00a5 01       		.byte	0x1
+ 871 00a6 11       		.uleb128 0x11
+ 872 00a7 01       		.uleb128 0x1
+ 873 00a8 31       		.uleb128 0x31
+ 874 00a9 13       		.uleb128 0x13
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 25
+
+
+ 875 00aa 01       		.uleb128 0x1
+ 876 00ab 13       		.uleb128 0x13
+ 877 00ac 00       		.byte	0
+ 878 00ad 00       		.byte	0
+ 879 00ae 0E       		.uleb128 0xe
+ 880 00af 2E       		.uleb128 0x2e
+ 881 00b0 01       		.byte	0x1
+ 882 00b1 3F       		.uleb128 0x3f
+ 883 00b2 19       		.uleb128 0x19
+ 884 00b3 03       		.uleb128 0x3
+ 885 00b4 0E       		.uleb128 0xe
+ 886 00b5 3A       		.uleb128 0x3a
+ 887 00b6 0B       		.uleb128 0xb
+ 888 00b7 3B       		.uleb128 0x3b
+ 889 00b8 05       		.uleb128 0x5
+ 890 00b9 27       		.uleb128 0x27
+ 891 00ba 19       		.uleb128 0x19
+ 892 00bb 11       		.uleb128 0x11
+ 893 00bc 01       		.uleb128 0x1
+ 894 00bd 12       		.uleb128 0x12
+ 895 00be 06       		.uleb128 0x6
+ 896 00bf 40       		.uleb128 0x40
+ 897 00c0 18       		.uleb128 0x18
+ 898 00c1 9742     		.uleb128 0x2117
+ 899 00c3 19       		.uleb128 0x19
+ 900 00c4 01       		.uleb128 0x1
+ 901 00c5 13       		.uleb128 0x13
+ 902 00c6 00       		.byte	0
+ 903 00c7 00       		.byte	0
+ 904 00c8 0F       		.uleb128 0xf
+ 905 00c9 05       		.uleb128 0x5
+ 906 00ca 00       		.byte	0
+ 907 00cb 03       		.uleb128 0x3
+ 908 00cc 0E       		.uleb128 0xe
+ 909 00cd 3A       		.uleb128 0x3a
+ 910 00ce 0B       		.uleb128 0xb
+ 911 00cf 3B       		.uleb128 0x3b
+ 912 00d0 05       		.uleb128 0x5
+ 913 00d1 49       		.uleb128 0x49
+ 914 00d2 13       		.uleb128 0x13
+ 915 00d3 02       		.uleb128 0x2
+ 916 00d4 17       		.uleb128 0x17
+ 917 00d5 00       		.byte	0
+ 918 00d6 00       		.byte	0
+ 919 00d7 10       		.uleb128 0x10
+ 920 00d8 34       		.uleb128 0x34
+ 921 00d9 00       		.byte	0
+ 922 00da 03       		.uleb128 0x3
+ 923 00db 0E       		.uleb128 0xe
+ 924 00dc 3A       		.uleb128 0x3a
+ 925 00dd 0B       		.uleb128 0xb
+ 926 00de 3B       		.uleb128 0x3b
+ 927 00df 05       		.uleb128 0x5
+ 928 00e0 49       		.uleb128 0x49
+ 929 00e1 13       		.uleb128 0x13
+ 930 00e2 02       		.uleb128 0x2
+ 931 00e3 17       		.uleb128 0x17
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 26
+
+
+ 932 00e4 00       		.byte	0
+ 933 00e5 00       		.byte	0
+ 934 00e6 11       		.uleb128 0x11
+ 935 00e7 05       		.uleb128 0x5
+ 936 00e8 00       		.byte	0
+ 937 00e9 03       		.uleb128 0x3
+ 938 00ea 0E       		.uleb128 0xe
+ 939 00eb 3A       		.uleb128 0x3a
+ 940 00ec 0B       		.uleb128 0xb
+ 941 00ed 3B       		.uleb128 0x3b
+ 942 00ee 05       		.uleb128 0x5
+ 943 00ef 49       		.uleb128 0x49
+ 944 00f0 13       		.uleb128 0x13
+ 945 00f1 02       		.uleb128 0x2
+ 946 00f2 18       		.uleb128 0x18
+ 947 00f3 00       		.byte	0
+ 948 00f4 00       		.byte	0
+ 949 00f5 12       		.uleb128 0x12
+ 950 00f6 34       		.uleb128 0x34
+ 951 00f7 00       		.byte	0
+ 952 00f8 03       		.uleb128 0x3
+ 953 00f9 0E       		.uleb128 0xe
+ 954 00fa 3A       		.uleb128 0x3a
+ 955 00fb 0B       		.uleb128 0xb
+ 956 00fc 3B       		.uleb128 0x3b
+ 957 00fd 0B       		.uleb128 0xb
+ 958 00fe 49       		.uleb128 0x49
+ 959 00ff 13       		.uleb128 0x13
+ 960 0100 3F       		.uleb128 0x3f
+ 961 0101 19       		.uleb128 0x19
+ 962 0102 02       		.uleb128 0x2
+ 963 0103 18       		.uleb128 0x18
+ 964 0104 00       		.byte	0
+ 965 0105 00       		.byte	0
+ 966 0106 13       		.uleb128 0x13
+ 967 0107 2E       		.uleb128 0x2e
+ 968 0108 00       		.byte	0
+ 969 0109 3F       		.uleb128 0x3f
+ 970 010a 19       		.uleb128 0x19
+ 971 010b 3C       		.uleb128 0x3c
+ 972 010c 19       		.uleb128 0x19
+ 973 010d 6E       		.uleb128 0x6e
+ 974 010e 0E       		.uleb128 0xe
+ 975 010f 03       		.uleb128 0x3
+ 976 0110 0E       		.uleb128 0xe
+ 977 0111 3A       		.uleb128 0x3a
+ 978 0112 0B       		.uleb128 0xb
+ 979 0113 3B       		.uleb128 0x3b
+ 980 0114 0B       		.uleb128 0xb
+ 981 0115 00       		.byte	0
+ 982 0116 00       		.byte	0
+ 983 0117 00       		.byte	0
+ 984              		.section	.debug_loc,"",%progbits
+ 985              	.Ldebug_loc0:
+ 986              	.LLST0:
+ 987 0000 00000000 		.4byte	.LVL11
+ 988 0004 0A000000 		.4byte	.LVL14
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 27
+
+
+ 989 0008 0100     		.2byte	0x1
+ 990 000a 50       		.byte	0x50
+ 991 000b 0A000000 		.4byte	.LVL14
+ 992 000f 14000000 		.4byte	.LFE6
+ 993 0013 0400     		.2byte	0x4
+ 994 0015 F3       		.byte	0xf3
+ 995 0016 01       		.uleb128 0x1
+ 996 0017 50       		.byte	0x50
+ 997 0018 9F       		.byte	0x9f
+ 998 0019 00000000 		.4byte	0
+ 999 001d 00000000 		.4byte	0
+ 1000              	.LLST1:
+ 1001 0021 04000000 		.4byte	.LVL12
+ 1002 0025 0C000000 		.4byte	.LVL15
+ 1003 0029 0100     		.2byte	0x1
+ 1004 002b 53       		.byte	0x53
+ 1005 002c 0C000000 		.4byte	.LVL15
+ 1006 0030 14000000 		.4byte	.LFE6
+ 1007 0034 0100     		.2byte	0x1
+ 1008 0036 50       		.byte	0x50
+ 1009 0037 00000000 		.4byte	0
+ 1010 003b 00000000 		.4byte	0
+ 1011              	.LLST2:
+ 1012 003f 00000000 		.4byte	.LVL16
+ 1013 0043 0A000000 		.4byte	.LVL19
+ 1014 0047 0100     		.2byte	0x1
+ 1015 0049 50       		.byte	0x50
+ 1016 004a 0A000000 		.4byte	.LVL19
+ 1017 004e 14000000 		.4byte	.LFE7
+ 1018 0052 0400     		.2byte	0x4
+ 1019 0054 F3       		.byte	0xf3
+ 1020 0055 01       		.uleb128 0x1
+ 1021 0056 50       		.byte	0x50
+ 1022 0057 9F       		.byte	0x9f
+ 1023 0058 00000000 		.4byte	0
+ 1024 005c 00000000 		.4byte	0
+ 1025              	.LLST3:
+ 1026 0060 04000000 		.4byte	.LVL17
+ 1027 0064 0C000000 		.4byte	.LVL20
+ 1028 0068 0100     		.2byte	0x1
+ 1029 006a 53       		.byte	0x53
+ 1030 006b 0C000000 		.4byte	.LVL20
+ 1031 006f 14000000 		.4byte	.LFE7
+ 1032 0073 0100     		.2byte	0x1
+ 1033 0075 50       		.byte	0x50
+ 1034 0076 00000000 		.4byte	0
+ 1035 007a 00000000 		.4byte	0
+ 1036              		.section	.debug_aranges,"",%progbits
+ 1037 0000 64000000 		.4byte	0x64
+ 1038 0004 0200     		.2byte	0x2
+ 1039 0006 00000000 		.4byte	.Ldebug_info0
+ 1040 000a 04       		.byte	0x4
+ 1041 000b 00       		.byte	0
+ 1042 000c 0000     		.2byte	0
+ 1043 000e 0000     		.2byte	0
+ 1044 0010 00000000 		.4byte	.LFB9
+ 1045 0014 0A000000 		.4byte	.LFE9-.LFB9
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 28
+
+
+ 1046 0018 00000000 		.4byte	.LFB10
+ 1047 001c 08000000 		.4byte	.LFE10-.LFB10
+ 1048 0020 00000000 		.4byte	.LFB11
+ 1049 0024 08000000 		.4byte	.LFE11-.LFB11
+ 1050 0028 00000000 		.4byte	.LFB2
+ 1051 002c 08000000 		.4byte	.LFE2-.LFB2
+ 1052 0030 00000000 		.4byte	.LFB3
+ 1053 0034 1C000000 		.4byte	.LFE3-.LFB3
+ 1054 0038 00000000 		.4byte	.LFB4
+ 1055 003c 20000000 		.4byte	.LFE4-.LFB4
+ 1056 0040 00000000 		.4byte	.LFB5
+ 1057 0044 2C000000 		.4byte	.LFE5-.LFB5
+ 1058 0048 00000000 		.4byte	.LFB6
+ 1059 004c 14000000 		.4byte	.LFE6-.LFB6
+ 1060 0050 00000000 		.4byte	.LFB7
+ 1061 0054 14000000 		.4byte	.LFE7-.LFB7
+ 1062 0058 00000000 		.4byte	.LFB8
+ 1063 005c 0C000000 		.4byte	.LFE8-.LFB8
+ 1064 0060 00000000 		.4byte	0
+ 1065 0064 00000000 		.4byte	0
+ 1066              		.section	.debug_ranges,"",%progbits
+ 1067              	.Ldebug_ranges0:
+ 1068 0000 00000000 		.4byte	.LFB9
+ 1069 0004 0A000000 		.4byte	.LFE9
+ 1070 0008 00000000 		.4byte	.LFB10
+ 1071 000c 08000000 		.4byte	.LFE10
+ 1072 0010 00000000 		.4byte	.LFB11
+ 1073 0014 08000000 		.4byte	.LFE11
+ 1074 0018 00000000 		.4byte	.LFB2
+ 1075 001c 08000000 		.4byte	.LFE2
+ 1076 0020 00000000 		.4byte	.LFB3
+ 1077 0024 1C000000 		.4byte	.LFE3
+ 1078 0028 00000000 		.4byte	.LFB4
+ 1079 002c 20000000 		.4byte	.LFE4
+ 1080 0030 00000000 		.4byte	.LFB5
+ 1081 0034 2C000000 		.4byte	.LFE5
+ 1082 0038 00000000 		.4byte	.LFB6
+ 1083 003c 14000000 		.4byte	.LFE6
+ 1084 0040 00000000 		.4byte	.LFB7
+ 1085 0044 14000000 		.4byte	.LFE7
+ 1086 0048 00000000 		.4byte	.LFB8
+ 1087 004c 0C000000 		.4byte	.LFE8
+ 1088 0050 00000000 		.4byte	0
+ 1089 0054 00000000 		.4byte	0
+ 1090              		.section	.debug_line,"",%progbits
+ 1091              	.Ldebug_line0:
+ 1092 0000 46010000 		.section	.debug_str,"MS",%progbits,1
+ 1092      02007100 
+ 1092      00000201 
+ 1092      FB0E0D00 
+ 1092      01010101 
+ 1093              	.LASF15:
+ 1094 0000 72656733 		.ascii	"reg32\000"
+ 1094      3200
+ 1095              	.LASF29:
+ 1096 0006 74784669 		.ascii	"txFifoCtrl\000"
+ 1096      666F4374 
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 29
+
+
+ 1096      726C00
+ 1097              	.LASF42:
+ 1098 0011 47656E65 		.ascii	"Generated_Source\\PSoC4\\UART_MASTER.c\000"
+ 1098      72617465 
+ 1098      645F536F 
+ 1098      75726365 
+ 1098      5C50536F 
+ 1099              	.LASF20:
+ 1100 0036 55415254 		.ascii	"UART_MASTER_ScbModeStop\000"
+ 1100      5F4D4153 
+ 1100      5445525F 
+ 1100      5363624D 
+ 1100      6F646553 
+ 1101              	.LASF18:
+ 1102 004e 55415254 		.ascii	"UART_MASTER_ScbEnableIntr\000"
+ 1102      5F4D4153 
+ 1102      5445525F 
+ 1102      53636245 
+ 1102      6E61626C 
+ 1103              	.LASF22:
+ 1104 0068 55415254 		.ascii	"UART_MASTER_Enable\000"
+ 1104      5F4D4153 
+ 1104      5445525F 
+ 1104      456E6162 
+ 1104      6C6500
+ 1105              	.LASF3:
+ 1106 007b 73686F72 		.ascii	"short unsigned int\000"
+ 1106      7420756E 
+ 1106      7369676E 
+ 1106      65642069 
+ 1106      6E7400
+ 1107              	.LASF24:
+ 1108 008e 55415254 		.ascii	"UART_MASTER_Stop\000"
+ 1108      5F4D4153 
+ 1108      5445525F 
+ 1108      53746F70 
+ 1108      00
+ 1109              	.LASF12:
+ 1110 009f 666C6F61 		.ascii	"float\000"
+ 1110      7400
+ 1111              	.LASF37:
+ 1112 00a5 55415254 		.ascii	"UART_MASTER_UartStop\000"
+ 1112      5F4D4153 
+ 1112      5445525F 
+ 1112      55617274 
+ 1112      53746F70 
+ 1113              	.LASF1:
+ 1114 00ba 756E7369 		.ascii	"unsigned char\000"
+ 1114      676E6564 
+ 1114      20636861 
+ 1114      7200
+ 1115              	.LASF5:
+ 1116 00c8 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1116      20756E73 
+ 1116      69676E65 
+ 1116      6420696E 
+ 1116      7400
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 30
+
+
+ 1117              	.LASF9:
+ 1118 00da 75696E74 		.ascii	"uint8\000"
+ 1118      3800
+ 1119              	.LASF23:
+ 1120 00e0 55415254 		.ascii	"UART_MASTER_Start\000"
+ 1120      5F4D4153 
+ 1120      5445525F 
+ 1120      53746172 
+ 1120      7400
+ 1121              	.LASF33:
+ 1122 00f2 55415254 		.ascii	"UART_MASTER_customIntrHandler\000"
+ 1122      5F4D4153 
+ 1122      5445525F 
+ 1122      63757374 
+ 1122      6F6D496E 
+ 1123              	.LASF32:
+ 1124 0110 55415254 		.ascii	"UART_MASTER_initVar\000"
+ 1124      5F4D4153 
+ 1124      5445525F 
+ 1124      696E6974 
+ 1124      56617200 
+ 1125              	.LASF13:
+ 1126 0124 646F7562 		.ascii	"double\000"
+ 1126      6C6500
+ 1127              	.LASF31:
+ 1128 012b 66756E63 		.ascii	"func\000"
+ 1128      00
+ 1129              	.LASF35:
+ 1130 0130 4379496E 		.ascii	"CyIntEnable\000"
+ 1130      74456E61 
+ 1130      626C6500 
+ 1131              	.LASF10:
+ 1132 013c 75696E74 		.ascii	"uint16\000"
+ 1132      313600
+ 1133              	.LASF11:
+ 1134 0143 75696E74 		.ascii	"uint32\000"
+ 1134      333200
+ 1135              	.LASF26:
+ 1136 014a 55415254 		.ascii	"UART_MASTER_SetTxFifoLevel\000"
+ 1136      5F4D4153 
+ 1136      5445525F 
+ 1136      53657454 
+ 1136      78466966 
+ 1137              	.LASF19:
+ 1138 0165 55415254 		.ascii	"UART_MASTER_ScbModePostEnable\000"
+ 1138      5F4D4153 
+ 1138      5445525F 
+ 1138      5363624D 
+ 1138      6F646550 
+ 1139              	.LASF8:
+ 1140 0183 756E7369 		.ascii	"unsigned int\000"
+ 1140      676E6564 
+ 1140      20696E74 
+ 1140      00
+ 1141              	.LASF7:
+ 1142 0190 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1142      206C6F6E 
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 31
+
+
+ 1142      6720756E 
+ 1142      7369676E 
+ 1142      65642069 
+ 1143              	.LASF40:
+ 1144 01a7 4379496E 		.ascii	"CyIntClearPending\000"
+ 1144      74436C65 
+ 1144      61725065 
+ 1144      6E64696E 
+ 1144      6700
+ 1145              	.LASF30:
+ 1146 01b9 55415254 		.ascii	"UART_MASTER_SetCustomInterruptHandler\000"
+ 1146      5F4D4153 
+ 1146      5445525F 
+ 1146      53657443 
+ 1146      7573746F 
+ 1147              	.LASF36:
+ 1148 01df 55415254 		.ascii	"UART_MASTER_UartPostEnable\000"
+ 1148      5F4D4153 
+ 1148      5445525F 
+ 1148      55617274 
+ 1148      506F7374 
+ 1149              	.LASF41:
+ 1150 01fa 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1150      43313120 
+ 1150      352E342E 
+ 1150      31203230 
+ 1150      31363036 
+ 1151 022d 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 1151      20726576 
+ 1151      6973696F 
+ 1151      6E203233 
+ 1151      37373135 
+ 1152 0260 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1152      66756E63 
+ 1152      74696F6E 
+ 1152      2D736563 
+ 1152      74696F6E 
+ 1153              	.LASF43:
+ 1154 0288 443A5C55 		.ascii	"D:\\Users\\jagumiel\\Desktop\\Lin test_Copy_02.cyds"
+ 1154      73657273 
+ 1154      5C6A6167 
+ 1154      756D6965 
+ 1154      6C5C4465 
+ 1155 02b7 6E00     		.ascii	"n\000"
+ 1156              	.LASF17:
+ 1157 02b9 73697A65 		.ascii	"sizetype\000"
+ 1157      74797065 
+ 1157      00
+ 1158              	.LASF6:
+ 1159 02c2 6C6F6E67 		.ascii	"long long int\000"
+ 1159      206C6F6E 
+ 1159      6720696E 
+ 1159      7400
+ 1160              	.LASF14:
+ 1161 02d0 63686172 		.ascii	"char\000"
+ 1161      00
+ 1162              	.LASF39:
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccCM7CZt.s 			page 32
+
+
+ 1163 02d5 4379496E 		.ascii	"CyIntDisable\000"
+ 1163      74446973 
+ 1163      61626C65 
+ 1163      00
+ 1164              	.LASF2:
+ 1165 02e2 73686F72 		.ascii	"short int\000"
+ 1165      7420696E 
+ 1165      7400
+ 1166              	.LASF27:
+ 1167 02ec 6C657665 		.ascii	"level\000"
+ 1167      6C00
+ 1168              	.LASF21:
+ 1169 02f2 55415254 		.ascii	"UART_MASTER_Init\000"
+ 1169      5F4D4153 
+ 1169      5445525F 
+ 1169      496E6974 
+ 1169      00
+ 1170              	.LASF28:
+ 1171 0303 72784669 		.ascii	"rxFifoCtrl\000"
+ 1171      666F4374 
+ 1171      726C00
+ 1172              	.LASF4:
+ 1173 030e 6C6F6E67 		.ascii	"long int\000"
+ 1173      20696E74 
+ 1173      00
+ 1174              	.LASF16:
+ 1175 0317 6C6F6E67 		.ascii	"long double\000"
+ 1175      20646F75 
+ 1175      626C6500 
+ 1176              	.LASF25:
+ 1177 0323 55415254 		.ascii	"UART_MASTER_SetRxFifoLevel\000"
+ 1177      5F4D4153 
+ 1177      5445525F 
+ 1177      53657452 
+ 1177      78466966 
+ 1178              	.LASF0:
+ 1179 033e 7369676E 		.ascii	"signed char\000"
+ 1179      65642063 
+ 1179      68617200 
+ 1180              	.LASF34:
+ 1181 034a 55415254 		.ascii	"UART_MASTER_IntrTxMask\000"
+ 1181      5F4D4153 
+ 1181      5445525F 
+ 1181      496E7472 
+ 1181      54784D61 
+ 1182              	.LASF38:
+ 1183 0361 55415254 		.ascii	"UART_MASTER_UartInit\000"
+ 1183      5F4D4153 
+ 1183      5445525F 
+ 1183      55617274 
+ 1183      496E6974 
+ 1184              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

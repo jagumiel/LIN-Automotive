@@ -1,0 +1,2634 @@
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"LINS_SCB_UART.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.LINS_SCB_UartInit,"ax",%progbits
+  20              		.align	2
+  21              		.global	LINS_SCB_UartInit
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	LINS_SCB_UartInit, %function
+  25              	LINS_SCB_UartInit:
+  26              	.LFB0:
+  27              		.file 1 "Generated_Source\\PSoC4\\LINS_SCB_UART.c"
+   1:Generated_Source\PSoC4/LINS_SCB_UART.c **** /***************************************************************************//**
+   2:Generated_Source\PSoC4/LINS_SCB_UART.c **** * \file LINS_SCB_UART.c
+   3:Generated_Source\PSoC4/LINS_SCB_UART.c **** * \version 4.0
+   4:Generated_Source\PSoC4/LINS_SCB_UART.c **** *
+   5:Generated_Source\PSoC4/LINS_SCB_UART.c **** * \brief
+   6:Generated_Source\PSoC4/LINS_SCB_UART.c **** *  This file provides the source code to the API for the SCB Component in
+   7:Generated_Source\PSoC4/LINS_SCB_UART.c **** *  UART mode.
+   8:Generated_Source\PSoC4/LINS_SCB_UART.c **** *
+   9:Generated_Source\PSoC4/LINS_SCB_UART.c **** * Note:
+  10:Generated_Source\PSoC4/LINS_SCB_UART.c **** *
+  11:Generated_Source\PSoC4/LINS_SCB_UART.c **** *******************************************************************************
+  12:Generated_Source\PSoC4/LINS_SCB_UART.c **** * \copyright
+  13:Generated_Source\PSoC4/LINS_SCB_UART.c **** * Copyright 2013-2017, Cypress Semiconductor Corporation.  All rights reserved.
+  14:Generated_Source\PSoC4/LINS_SCB_UART.c **** * You may use this file only in accordance with the license, terms, conditions,
+  15:Generated_Source\PSoC4/LINS_SCB_UART.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  16:Generated_Source\PSoC4/LINS_SCB_UART.c **** * the software package with which this file was provided.
+  17:Generated_Source\PSoC4/LINS_SCB_UART.c **** *******************************************************************************/
+  18:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+  19:Generated_Source\PSoC4/LINS_SCB_UART.c **** #include "LINS_SCB_PVT.h"
+  20:Generated_Source\PSoC4/LINS_SCB_UART.c **** #include "LINS_SCB_SPI_UART_PVT.h"
+  21:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+  22:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+  23:Generated_Source\PSoC4/LINS_SCB_UART.c **** #if (LINS_SCB_UART_WAKE_ENABLE_CONST && LINS_SCB_UART_RX_WAKEUP_IRQ)
+  24:Generated_Source\PSoC4/LINS_SCB_UART.c ****     /**
+  25:Generated_Source\PSoC4/LINS_SCB_UART.c ****     * \addtogroup group_globals
+  26:Generated_Source\PSoC4/LINS_SCB_UART.c ****     * \{
+  27:Generated_Source\PSoC4/LINS_SCB_UART.c ****     */
+  28:Generated_Source\PSoC4/LINS_SCB_UART.c ****     /** This global variable determines whether to enable Skip Start
+  29:Generated_Source\PSoC4/LINS_SCB_UART.c ****     * functionality when LINS_SCB_Sleep() function is called:
+  30:Generated_Source\PSoC4/LINS_SCB_UART.c ****     * 0 – disable, other values – enable. Default value is 1.
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 2
+
+
+  31:Generated_Source\PSoC4/LINS_SCB_UART.c ****     * It is only available when Enable wakeup from Deep Sleep Mode is enabled.
+  32:Generated_Source\PSoC4/LINS_SCB_UART.c ****     */
+  33:Generated_Source\PSoC4/LINS_SCB_UART.c ****     uint8 LINS_SCB_skipStart = 1u;
+  34:Generated_Source\PSoC4/LINS_SCB_UART.c ****     /** \} globals */
+  35:Generated_Source\PSoC4/LINS_SCB_UART.c **** #endif /* (LINS_SCB_UART_WAKE_ENABLE_CONST && LINS_SCB_UART_RX_WAKEUP_IRQ) */
+  36:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+  37:Generated_Source\PSoC4/LINS_SCB_UART.c **** #if(LINS_SCB_SCB_MODE_UNCONFIG_CONST_CFG)
+  38:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+  39:Generated_Source\PSoC4/LINS_SCB_UART.c ****     /***************************************
+  40:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  Configuration Structure Initialization
+  41:Generated_Source\PSoC4/LINS_SCB_UART.c ****     ***************************************/
+  42:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+  43:Generated_Source\PSoC4/LINS_SCB_UART.c ****     const LINS_SCB_UART_INIT_STRUCT LINS_SCB_configUart =
+  44:Generated_Source\PSoC4/LINS_SCB_UART.c ****     {
+  45:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_UART_SUB_MODE,
+  46:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_UART_DIRECTION,
+  47:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_UART_DATA_BITS_NUM,
+  48:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_UART_PARITY_TYPE,
+  49:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_UART_STOP_BITS_NUM,
+  50:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_UART_OVS_FACTOR,
+  51:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_UART_IRDA_LOW_POWER,
+  52:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_UART_MEDIAN_FILTER_ENABLE,
+  53:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_UART_RETRY_ON_NACK,
+  54:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_UART_IRDA_POLARITY,
+  55:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_UART_DROP_ON_PARITY_ERR,
+  56:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_UART_DROP_ON_FRAME_ERR,
+  57:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_UART_WAKE_ENABLE,
+  58:Generated_Source\PSoC4/LINS_SCB_UART.c ****         0u,
+  59:Generated_Source\PSoC4/LINS_SCB_UART.c ****         NULL,
+  60:Generated_Source\PSoC4/LINS_SCB_UART.c ****         0u,
+  61:Generated_Source\PSoC4/LINS_SCB_UART.c ****         NULL,
+  62:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_UART_MP_MODE_ENABLE,
+  63:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_UART_MP_ACCEPT_ADDRESS,
+  64:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_UART_MP_RX_ADDRESS,
+  65:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_UART_MP_RX_ADDRESS_MASK,
+  66:Generated_Source\PSoC4/LINS_SCB_UART.c ****         (uint32) LINS_SCB_SCB_IRQ_INTERNAL,
+  67:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_UART_INTR_RX_MASK,
+  68:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_UART_RX_TRIGGER_LEVEL,
+  69:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_UART_INTR_TX_MASK,
+  70:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_UART_TX_TRIGGER_LEVEL,
+  71:Generated_Source\PSoC4/LINS_SCB_UART.c ****         (uint8) LINS_SCB_UART_BYTE_MODE_ENABLE,
+  72:Generated_Source\PSoC4/LINS_SCB_UART.c ****         (uint8) LINS_SCB_UART_CTS_ENABLE,
+  73:Generated_Source\PSoC4/LINS_SCB_UART.c ****         (uint8) LINS_SCB_UART_CTS_POLARITY,
+  74:Generated_Source\PSoC4/LINS_SCB_UART.c ****         (uint8) LINS_SCB_UART_RTS_POLARITY,
+  75:Generated_Source\PSoC4/LINS_SCB_UART.c ****         (uint8) LINS_SCB_UART_RTS_FIFO_LEVEL,
+  76:Generated_Source\PSoC4/LINS_SCB_UART.c ****         (uint8) LINS_SCB_UART_RX_BREAK_WIDTH
+  77:Generated_Source\PSoC4/LINS_SCB_UART.c ****     };
+  78:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+  79:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+  80:Generated_Source\PSoC4/LINS_SCB_UART.c ****     /*******************************************************************************
+  81:Generated_Source\PSoC4/LINS_SCB_UART.c ****     * Function Name: LINS_SCB_UartInit
+  82:Generated_Source\PSoC4/LINS_SCB_UART.c ****     ****************************************************************************//**
+  83:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *
+  84:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  Configures the LINS_SCB for UART operation.
+  85:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *
+  86:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  This function is intended specifically to be used when the LINS_SCB
+  87:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  configuration is set to “Unconfigured LINS_SCB” in the customizer.
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 3
+
+
+  88:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  After initializing the LINS_SCB in UART mode using this function,
+  89:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  the component can be enabled using the LINS_SCB_Start() or
+  90:Generated_Source\PSoC4/LINS_SCB_UART.c ****     * LINS_SCB_Enable() function.
+  91:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  This function uses a pointer to a structure that provides the configuration
+  92:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  settings. This structure contains the same information that would otherwise
+  93:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  be provided by the customizer settings.
+  94:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *
+  95:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  \param config: pointer to a structure that contains the following list of
+  96:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *   fields. These fields match the selections available in the customizer.
+  97:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *   Refer to the customizer for further description of the settings.
+  98:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *
+  99:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *******************************************************************************/
+ 100:Generated_Source\PSoC4/LINS_SCB_UART.c ****     void LINS_SCB_UartInit(const LINS_SCB_UART_INIT_STRUCT *config)
+ 101:Generated_Source\PSoC4/LINS_SCB_UART.c ****     {
+ 102:Generated_Source\PSoC4/LINS_SCB_UART.c ****         uint32 pinsConfig;
+ 103:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 104:Generated_Source\PSoC4/LINS_SCB_UART.c ****         if (NULL == config)
+ 105:Generated_Source\PSoC4/LINS_SCB_UART.c ****         {
+ 106:Generated_Source\PSoC4/LINS_SCB_UART.c ****             CYASSERT(0u != 0u); /* Halt execution due to bad function parameter */
+ 107:Generated_Source\PSoC4/LINS_SCB_UART.c ****         }
+ 108:Generated_Source\PSoC4/LINS_SCB_UART.c ****         else
+ 109:Generated_Source\PSoC4/LINS_SCB_UART.c ****         {
+ 110:Generated_Source\PSoC4/LINS_SCB_UART.c ****             /* Get direction to configure UART pins: TX, RX or TX+RX */
+ 111:Generated_Source\PSoC4/LINS_SCB_UART.c ****             pinsConfig  = config->direction;
+ 112:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 113:Generated_Source\PSoC4/LINS_SCB_UART.c ****         #if !(LINS_SCB_CY_SCBIP_V0 || LINS_SCB_CY_SCBIP_V1)
+ 114:Generated_Source\PSoC4/LINS_SCB_UART.c ****             /* Add RTS and CTS pins to configure */
+ 115:Generated_Source\PSoC4/LINS_SCB_UART.c ****             pinsConfig |= (0u != config->rtsRxFifoLevel) ? (LINS_SCB_UART_RTS_PIN_ENABLE) : (0u);
+ 116:Generated_Source\PSoC4/LINS_SCB_UART.c ****             pinsConfig |= (0u != config->enableCts)      ? (LINS_SCB_UART_CTS_PIN_ENABLE) : (0u);
+ 117:Generated_Source\PSoC4/LINS_SCB_UART.c ****         #endif /* !(LINS_SCB_CY_SCBIP_V0 || LINS_SCB_CY_SCBIP_V1) */
+ 118:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 119:Generated_Source\PSoC4/LINS_SCB_UART.c ****             /* Configure pins */
+ 120:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_SetPins(LINS_SCB_SCB_MODE_UART, config->mode, pinsConfig);
+ 121:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 122:Generated_Source\PSoC4/LINS_SCB_UART.c ****             /* Store internal configuration */
+ 123:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_scbMode       = (uint8) LINS_SCB_SCB_MODE_UART;
+ 124:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_scbEnableWake = (uint8) config->enableWake;
+ 125:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_scbEnableIntr = (uint8) config->enableInterrupt;
+ 126:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 127:Generated_Source\PSoC4/LINS_SCB_UART.c ****             /* Set RX direction internal variables */
+ 128:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_rxBuffer      =         config->rxBuffer;
+ 129:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_rxDataBits    = (uint8) config->dataBits;
+ 130:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_rxBufferSize  =         config->rxBufferSize;
+ 131:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 132:Generated_Source\PSoC4/LINS_SCB_UART.c ****             /* Set TX direction internal variables */
+ 133:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_txBuffer      =         config->txBuffer;
+ 134:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_txDataBits    = (uint8) config->dataBits;
+ 135:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_txBufferSize  =         config->txBufferSize;
+ 136:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 137:Generated_Source\PSoC4/LINS_SCB_UART.c ****             /* Configure UART interface */
+ 138:Generated_Source\PSoC4/LINS_SCB_UART.c ****             if(LINS_SCB_UART_MODE_IRDA == config->mode)
+ 139:Generated_Source\PSoC4/LINS_SCB_UART.c ****             {
+ 140:Generated_Source\PSoC4/LINS_SCB_UART.c ****                 /* OVS settings: IrDA */
+ 141:Generated_Source\PSoC4/LINS_SCB_UART.c ****                 LINS_SCB_CTRL_REG  = ((0u != config->enableIrdaLowPower) ?
+ 142:Generated_Source\PSoC4/LINS_SCB_UART.c ****                                                 (LINS_SCB_UART_GET_CTRL_OVS_IRDA_LP(config->oversam
+ 143:Generated_Source\PSoC4/LINS_SCB_UART.c ****                                                 (LINS_SCB_CTRL_OVS_IRDA_OVS16));
+ 144:Generated_Source\PSoC4/LINS_SCB_UART.c ****             }
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 4
+
+
+ 145:Generated_Source\PSoC4/LINS_SCB_UART.c ****             else
+ 146:Generated_Source\PSoC4/LINS_SCB_UART.c ****             {
+ 147:Generated_Source\PSoC4/LINS_SCB_UART.c ****                 /* OVS settings: UART and SmartCard */
+ 148:Generated_Source\PSoC4/LINS_SCB_UART.c ****                 LINS_SCB_CTRL_REG  = LINS_SCB_GET_CTRL_OVS(config->oversample);
+ 149:Generated_Source\PSoC4/LINS_SCB_UART.c ****             }
+ 150:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 151:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_CTRL_REG     |= LINS_SCB_GET_CTRL_BYTE_MODE  (config->enableByteMode)      |
+ 152:Generated_Source\PSoC4/LINS_SCB_UART.c ****                                              LINS_SCB_GET_CTRL_ADDR_ACCEPT(config->multiprocAcceptA
+ 153:Generated_Source\PSoC4/LINS_SCB_UART.c ****                                              LINS_SCB_CTRL_UART;
+ 154:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 155:Generated_Source\PSoC4/LINS_SCB_UART.c ****             /* Configure sub-mode: UART, SmartCard or IrDA */
+ 156:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_UART_CTRL_REG = LINS_SCB_GET_UART_CTRL_MODE(config->mode);
+ 157:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 158:Generated_Source\PSoC4/LINS_SCB_UART.c ****             /* Configure RX direction */
+ 159:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_UART_RX_CTRL_REG = LINS_SCB_GET_UART_RX_CTRL_MODE(config->stopBits)           
+ 160:Generated_Source\PSoC4/LINS_SCB_UART.c ****                                         LINS_SCB_GET_UART_RX_CTRL_POLARITY(config->enableInvertedRx
+ 161:Generated_Source\PSoC4/LINS_SCB_UART.c ****                                         LINS_SCB_GET_UART_RX_CTRL_MP_MODE(config->enableMultiproc) 
+ 162:Generated_Source\PSoC4/LINS_SCB_UART.c ****                                         LINS_SCB_GET_UART_RX_CTRL_DROP_ON_PARITY_ERR(config->dropOn
+ 163:Generated_Source\PSoC4/LINS_SCB_UART.c ****                                         LINS_SCB_GET_UART_RX_CTRL_DROP_ON_FRAME_ERR(config->dropOnF
+ 164:Generated_Source\PSoC4/LINS_SCB_UART.c ****                                         LINS_SCB_GET_UART_RX_CTRL_BREAK_WIDTH(config->breakWidth);
+ 165:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 166:Generated_Source\PSoC4/LINS_SCB_UART.c ****             if(LINS_SCB_UART_PARITY_NONE != config->parity)
+ 167:Generated_Source\PSoC4/LINS_SCB_UART.c ****             {
+ 168:Generated_Source\PSoC4/LINS_SCB_UART.c ****                LINS_SCB_UART_RX_CTRL_REG |= LINS_SCB_GET_UART_RX_CTRL_PARITY(config->parity) |
+ 169:Generated_Source\PSoC4/LINS_SCB_UART.c ****                                                     LINS_SCB_UART_RX_CTRL_PARITY_ENABLED;
+ 170:Generated_Source\PSoC4/LINS_SCB_UART.c ****             }
+ 171:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 172:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_RX_CTRL_REG      = LINS_SCB_GET_RX_CTRL_DATA_WIDTH(config->dataBits)       |
+ 173:Generated_Source\PSoC4/LINS_SCB_UART.c ****                                                 LINS_SCB_GET_RX_CTRL_MEDIAN(config->enableMedianFil
+ 174:Generated_Source\PSoC4/LINS_SCB_UART.c ****                                                 LINS_SCB_GET_UART_RX_CTRL_ENABLED(config->direction
+ 175:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 176:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_RX_FIFO_CTRL_REG = LINS_SCB_GET_RX_FIFO_CTRL_TRIGGER_LEVEL(config->rxTriggerLe
+ 177:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 178:Generated_Source\PSoC4/LINS_SCB_UART.c ****             /* Configure MP address */
+ 179:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_RX_MATCH_REG     = LINS_SCB_GET_RX_MATCH_ADDR(config->multiprocAddr) |
+ 180:Generated_Source\PSoC4/LINS_SCB_UART.c ****                                                 LINS_SCB_GET_RX_MATCH_MASK(config->multiprocAddrMas
+ 181:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 182:Generated_Source\PSoC4/LINS_SCB_UART.c ****             /* Configure RX direction */
+ 183:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_UART_TX_CTRL_REG = LINS_SCB_GET_UART_TX_CTRL_MODE(config->stopBits) |
+ 184:Generated_Source\PSoC4/LINS_SCB_UART.c ****                                                 LINS_SCB_GET_UART_TX_CTRL_RETRY_NACK(config->enable
+ 185:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 186:Generated_Source\PSoC4/LINS_SCB_UART.c ****             if(LINS_SCB_UART_PARITY_NONE != config->parity)
+ 187:Generated_Source\PSoC4/LINS_SCB_UART.c ****             {
+ 188:Generated_Source\PSoC4/LINS_SCB_UART.c ****                LINS_SCB_UART_TX_CTRL_REG |= LINS_SCB_GET_UART_TX_CTRL_PARITY(config->parity) |
+ 189:Generated_Source\PSoC4/LINS_SCB_UART.c ****                                                     LINS_SCB_UART_TX_CTRL_PARITY_ENABLED;
+ 190:Generated_Source\PSoC4/LINS_SCB_UART.c ****             }
+ 191:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 192:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_TX_CTRL_REG      = LINS_SCB_GET_TX_CTRL_DATA_WIDTH(config->dataBits)    |
+ 193:Generated_Source\PSoC4/LINS_SCB_UART.c ****                                                 LINS_SCB_GET_UART_TX_CTRL_ENABLED(config->direction
+ 194:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 195:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_TX_FIFO_CTRL_REG = LINS_SCB_GET_TX_FIFO_CTRL_TRIGGER_LEVEL(config->txTriggerLe
+ 196:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 197:Generated_Source\PSoC4/LINS_SCB_UART.c ****         #if !(LINS_SCB_CY_SCBIP_V0 || LINS_SCB_CY_SCBIP_V1)
+ 198:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_UART_FLOW_CTRL_REG = LINS_SCB_GET_UART_FLOW_CTRL_CTS_ENABLE(config->enableCts)
+ 199:Generated_Source\PSoC4/LINS_SCB_UART.c ****                                             LINS_SCB_GET_UART_FLOW_CTRL_CTS_POLARITY (config->ctsPo
+ 200:Generated_Source\PSoC4/LINS_SCB_UART.c ****                                             LINS_SCB_GET_UART_FLOW_CTRL_RTS_POLARITY (config->rtsPo
+ 201:Generated_Source\PSoC4/LINS_SCB_UART.c ****                                             LINS_SCB_GET_UART_FLOW_CTRL_TRIGGER_LEVEL(config->rtsRx
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 5
+
+
+ 202:Generated_Source\PSoC4/LINS_SCB_UART.c ****         #endif /* !(LINS_SCB_CY_SCBIP_V0 || LINS_SCB_CY_SCBIP_V1) */
+ 203:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 204:Generated_Source\PSoC4/LINS_SCB_UART.c ****             /* Configure interrupt with UART handler but do not enable it */
+ 205:Generated_Source\PSoC4/LINS_SCB_UART.c ****             CyIntDisable    (LINS_SCB_ISR_NUMBER);
+ 206:Generated_Source\PSoC4/LINS_SCB_UART.c ****             CyIntSetPriority(LINS_SCB_ISR_NUMBER, LINS_SCB_ISR_PRIORITY);
+ 207:Generated_Source\PSoC4/LINS_SCB_UART.c ****             (void) CyIntSetVector(LINS_SCB_ISR_NUMBER, &LINS_SCB_SPI_UART_ISR);
+ 208:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 209:Generated_Source\PSoC4/LINS_SCB_UART.c ****             /* Configure WAKE interrupt */
+ 210:Generated_Source\PSoC4/LINS_SCB_UART.c ****         #if(LINS_SCB_UART_RX_WAKEUP_IRQ)
+ 211:Generated_Source\PSoC4/LINS_SCB_UART.c ****             CyIntDisable    (LINS_SCB_RX_WAKE_ISR_NUMBER);
+ 212:Generated_Source\PSoC4/LINS_SCB_UART.c ****             CyIntSetPriority(LINS_SCB_RX_WAKE_ISR_NUMBER, LINS_SCB_RX_WAKE_ISR_PRIORITY);
+ 213:Generated_Source\PSoC4/LINS_SCB_UART.c ****             (void) CyIntSetVector(LINS_SCB_RX_WAKE_ISR_NUMBER, &LINS_SCB_UART_WAKEUP_ISR);
+ 214:Generated_Source\PSoC4/LINS_SCB_UART.c ****         #endif /* (LINS_SCB_UART_RX_WAKEUP_IRQ) */
+ 215:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 216:Generated_Source\PSoC4/LINS_SCB_UART.c ****             /* Configure interrupt sources */
+ 217:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_INTR_I2C_EC_MASK_REG = LINS_SCB_NO_INTR_SOURCES;
+ 218:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_INTR_SPI_EC_MASK_REG = LINS_SCB_NO_INTR_SOURCES;
+ 219:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_INTR_SLAVE_MASK_REG  = LINS_SCB_NO_INTR_SOURCES;
+ 220:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_INTR_MASTER_MASK_REG = LINS_SCB_NO_INTR_SOURCES;
+ 221:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_INTR_RX_MASK_REG     = config->rxInterruptMask;
+ 222:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_INTR_TX_MASK_REG     = config->txInterruptMask;
+ 223:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 224:Generated_Source\PSoC4/LINS_SCB_UART.c ****             /* Configure TX interrupt sources to restore. */
+ 225:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_IntrTxMask = LO16(LINS_SCB_INTR_TX_MASK_REG);
+ 226:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 227:Generated_Source\PSoC4/LINS_SCB_UART.c ****             /* Clear RX buffer indexes */
+ 228:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_rxBufferHead     = 0u;
+ 229:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_rxBufferTail     = 0u;
+ 230:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_rxBufferOverflow = 0u;
+ 231:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 232:Generated_Source\PSoC4/LINS_SCB_UART.c ****             /* Clear TX buffer indexes */
+ 233:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_txBufferHead = 0u;
+ 234:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_txBufferTail = 0u;
+ 235:Generated_Source\PSoC4/LINS_SCB_UART.c ****         }
+ 236:Generated_Source\PSoC4/LINS_SCB_UART.c ****     }
+ 237:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 238:Generated_Source\PSoC4/LINS_SCB_UART.c **** #else
+ 239:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 240:Generated_Source\PSoC4/LINS_SCB_UART.c ****     /*******************************************************************************
+ 241:Generated_Source\PSoC4/LINS_SCB_UART.c ****     * Function Name: LINS_SCB_UartInit
+ 242:Generated_Source\PSoC4/LINS_SCB_UART.c ****     ****************************************************************************//**
+ 243:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *
+ 244:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  Configures the SCB for the UART operation.
+ 245:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *
+ 246:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *******************************************************************************/
+ 247:Generated_Source\PSoC4/LINS_SCB_UART.c ****     void LINS_SCB_UartInit(void)
+ 248:Generated_Source\PSoC4/LINS_SCB_UART.c ****     {
+  28              		.loc 1 248 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+ 249:Generated_Source\PSoC4/LINS_SCB_UART.c ****         /* Configure UART interface */
+ 250:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_CTRL_REG = LINS_SCB_UART_DEFAULT_CTRL;
+  33              		.loc 1 250 0
+  34 0000 134A     		ldr	r2, .L2
+  35 0002 144B     		ldr	r3, .L2+4
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 6
+
+
+  36 0004 1A60     		str	r2, [r3]
+ 251:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 252:Generated_Source\PSoC4/LINS_SCB_UART.c ****         /* Configure sub-mode: UART, SmartCard or IrDA */
+ 253:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_UART_CTRL_REG = LINS_SCB_UART_DEFAULT_UART_CTRL;
+  37              		.loc 1 253 0
+  38 0006 0023     		movs	r3, #0
+  39 0008 134A     		ldr	r2, .L2+8
+  40 000a 1360     		str	r3, [r2]
+ 254:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 255:Generated_Source\PSoC4/LINS_SCB_UART.c ****         /* Configure RX direction */
+ 256:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_UART_RX_CTRL_REG = LINS_SCB_UART_DEFAULT_UART_RX_CTRL;
+  41              		.loc 1 256 0
+  42 000c 1349     		ldr	r1, .L2+12
+  43 000e 144A     		ldr	r2, .L2+16
+  44 0010 1160     		str	r1, [r2]
+ 257:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_RX_CTRL_REG      = LINS_SCB_UART_DEFAULT_RX_CTRL;
+  45              		.loc 1 257 0
+  46 0012 144A     		ldr	r2, .L2+20
+  47 0014 1449     		ldr	r1, .L2+24
+  48 0016 0A60     		str	r2, [r1]
+ 258:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_RX_FIFO_CTRL_REG = LINS_SCB_UART_DEFAULT_RX_FIFO_CTRL;
+  49              		.loc 1 258 0
+  50 0018 0720     		movs	r0, #7
+  51 001a 1449     		ldr	r1, .L2+28
+  52 001c 0860     		str	r0, [r1]
+ 259:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_RX_MATCH_REG     = LINS_SCB_UART_DEFAULT_RX_MATCH_REG;
+  53              		.loc 1 259 0
+  54 001e 1449     		ldr	r1, .L2+32
+  55 0020 0B60     		str	r3, [r1]
+ 260:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 261:Generated_Source\PSoC4/LINS_SCB_UART.c ****         /* Configure TX direction */
+ 262:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_UART_TX_CTRL_REG = LINS_SCB_UART_DEFAULT_UART_TX_CTRL;
+  56              		.loc 1 262 0
+  57 0022 0538     		subs	r0, r0, #5
+  58 0024 1349     		ldr	r1, .L2+36
+  59 0026 0860     		str	r0, [r1]
+ 263:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_TX_CTRL_REG      = LINS_SCB_UART_DEFAULT_TX_CTRL;
+  60              		.loc 1 263 0
+  61 0028 1349     		ldr	r1, .L2+40
+  62 002a 0A60     		str	r2, [r1]
+ 264:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_TX_FIFO_CTRL_REG = LINS_SCB_UART_DEFAULT_TX_FIFO_CTRL;
+  63              		.loc 1 264 0
+  64 002c 134A     		ldr	r2, .L2+44
+  65 002e 1360     		str	r3, [r2]
+ 265:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 266:Generated_Source\PSoC4/LINS_SCB_UART.c ****     #if !(LINS_SCB_CY_SCBIP_V0 || LINS_SCB_CY_SCBIP_V1)
+ 267:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_UART_FLOW_CTRL_REG = LINS_SCB_UART_DEFAULT_FLOW_CTRL;
+ 268:Generated_Source\PSoC4/LINS_SCB_UART.c ****     #endif /* !(LINS_SCB_CY_SCBIP_V0 || LINS_SCB_CY_SCBIP_V1) */
+ 269:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 270:Generated_Source\PSoC4/LINS_SCB_UART.c ****         /* Configure interrupt with UART handler but do not enable it */
+ 271:Generated_Source\PSoC4/LINS_SCB_UART.c ****     #if(LINS_SCB_SCB_IRQ_INTERNAL)
+ 272:Generated_Source\PSoC4/LINS_SCB_UART.c ****         CyIntDisable    (LINS_SCB_ISR_NUMBER);
+ 273:Generated_Source\PSoC4/LINS_SCB_UART.c ****         CyIntSetPriority(LINS_SCB_ISR_NUMBER, LINS_SCB_ISR_PRIORITY);
+ 274:Generated_Source\PSoC4/LINS_SCB_UART.c ****         (void) CyIntSetVector(LINS_SCB_ISR_NUMBER, &LINS_SCB_SPI_UART_ISR);
+ 275:Generated_Source\PSoC4/LINS_SCB_UART.c ****     #endif /* (LINS_SCB_SCB_IRQ_INTERNAL) */
+ 276:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 277:Generated_Source\PSoC4/LINS_SCB_UART.c ****         /* Configure WAKE interrupt */
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 7
+
+
+ 278:Generated_Source\PSoC4/LINS_SCB_UART.c ****     #if(LINS_SCB_UART_RX_WAKEUP_IRQ)
+ 279:Generated_Source\PSoC4/LINS_SCB_UART.c ****         CyIntDisable    (LINS_SCB_RX_WAKE_ISR_NUMBER);
+ 280:Generated_Source\PSoC4/LINS_SCB_UART.c ****         CyIntSetPriority(LINS_SCB_RX_WAKE_ISR_NUMBER, LINS_SCB_RX_WAKE_ISR_PRIORITY);
+ 281:Generated_Source\PSoC4/LINS_SCB_UART.c ****         (void) CyIntSetVector(LINS_SCB_RX_WAKE_ISR_NUMBER, &LINS_SCB_UART_WAKEUP_ISR);
+ 282:Generated_Source\PSoC4/LINS_SCB_UART.c ****     #endif /* (LINS_SCB_UART_RX_WAKEUP_IRQ) */
+ 283:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 284:Generated_Source\PSoC4/LINS_SCB_UART.c ****         /* Configure interrupt sources */
+ 285:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_INTR_I2C_EC_MASK_REG = LINS_SCB_UART_DEFAULT_INTR_I2C_EC_MASK;
+  66              		.loc 1 285 0
+  67 0030 134A     		ldr	r2, .L2+48
+  68 0032 1360     		str	r3, [r2]
+ 286:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_INTR_SPI_EC_MASK_REG = LINS_SCB_UART_DEFAULT_INTR_SPI_EC_MASK;
+  69              		.loc 1 286 0
+  70 0034 134A     		ldr	r2, .L2+52
+  71 0036 1360     		str	r3, [r2]
+ 287:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_INTR_SLAVE_MASK_REG  = LINS_SCB_UART_DEFAULT_INTR_SLAVE_MASK;
+  72              		.loc 1 287 0
+  73 0038 134A     		ldr	r2, .L2+56
+  74 003a 1360     		str	r3, [r2]
+ 288:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_INTR_MASTER_MASK_REG = LINS_SCB_UART_DEFAULT_INTR_MASTER_MASK;
+  75              		.loc 1 288 0
+  76 003c 134A     		ldr	r2, .L2+60
+  77 003e 1360     		str	r3, [r2]
+ 289:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_INTR_RX_MASK_REG     = LINS_SCB_UART_DEFAULT_INTR_RX_MASK;
+  78              		.loc 1 289 0
+  79 0040 134A     		ldr	r2, .L2+64
+  80 0042 1360     		str	r3, [r2]
+ 290:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_INTR_TX_MASK_REG     = LINS_SCB_UART_DEFAULT_INTR_TX_MASK;
+  81              		.loc 1 290 0
+  82 0044 134A     		ldr	r2, .L2+68
+  83 0046 1360     		str	r3, [r2]
+ 291:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 292:Generated_Source\PSoC4/LINS_SCB_UART.c ****         /* Configure TX interrupt sources to restore. */
+ 293:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_IntrTxMask = LO16(LINS_SCB_INTR_TX_MASK_REG);
+  84              		.loc 1 293 0
+  85 0048 1268     		ldr	r2, [r2]
+  86 004a 134B     		ldr	r3, .L2+72
+  87 004c 1A80     		strh	r2, [r3]
+ 294:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 295:Generated_Source\PSoC4/LINS_SCB_UART.c ****     #if(LINS_SCB_INTERNAL_RX_SW_BUFFER_CONST)
+ 296:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_rxBufferHead     = 0u;
+ 297:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_rxBufferTail     = 0u;
+ 298:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_rxBufferOverflow = 0u;
+ 299:Generated_Source\PSoC4/LINS_SCB_UART.c ****     #endif /* (LINS_SCB_INTERNAL_RX_SW_BUFFER_CONST) */
+ 300:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 301:Generated_Source\PSoC4/LINS_SCB_UART.c ****     #if(LINS_SCB_INTERNAL_TX_SW_BUFFER_CONST)
+ 302:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_txBufferHead = 0u;
+ 303:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_txBufferTail = 0u;
+ 304:Generated_Source\PSoC4/LINS_SCB_UART.c ****     #endif /* (LINS_SCB_INTERNAL_TX_SW_BUFFER_CONST) */
+ 305:Generated_Source\PSoC4/LINS_SCB_UART.c ****     }
+  88              		.loc 1 305 0
+  89              		@ sp needed
+  90 004e 7047     		bx	lr
+  91              	.L3:
+  92              		.align	2
+  93              	.L2:
+  94 0050 0F000002 		.word	33554447
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 8
+
+
+  95 0054 00000740 		.word	1074200576
+  96 0058 40000740 		.word	1074200640
+  97 005c 02000A00 		.word	655362
+  98 0060 48000740 		.word	1074200648
+  99 0064 07000080 		.word	-2147483641
+ 100 0068 00030740 		.word	1074201344
+ 101 006c 04030740 		.word	1074201348
+ 102 0070 10030740 		.word	1074201360
+ 103 0074 44000740 		.word	1074200644
+ 104 0078 00020740 		.word	1074201088
+ 105 007c 04020740 		.word	1074201092
+ 106 0080 880E0740 		.word	1074204296
+ 107 0084 C80E0740 		.word	1074204360
+ 108 0088 480F0740 		.word	1074204488
+ 109 008c 080F0740 		.word	1074204424
+ 110 0090 C80F0740 		.word	1074204616
+ 111 0094 880F0740 		.word	1074204552
+ 112 0098 00000000 		.word	LINS_SCB_IntrTxMask
+ 113              		.cfi_endproc
+ 114              	.LFE0:
+ 115              		.size	LINS_SCB_UartInit, .-LINS_SCB_UartInit
+ 116              		.section	.text.LINS_SCB_UartPostEnable,"ax",%progbits
+ 117              		.align	2
+ 118              		.global	LINS_SCB_UartPostEnable
+ 119              		.code	16
+ 120              		.thumb_func
+ 121              		.type	LINS_SCB_UartPostEnable, %function
+ 122              	LINS_SCB_UartPostEnable:
+ 123              	.LFB1:
+ 306:Generated_Source\PSoC4/LINS_SCB_UART.c **** #endif /* (LINS_SCB_SCB_MODE_UNCONFIG_CONST_CFG) */
+ 307:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 308:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 309:Generated_Source\PSoC4/LINS_SCB_UART.c **** /*******************************************************************************
+ 310:Generated_Source\PSoC4/LINS_SCB_UART.c **** * Function Name: LINS_SCB_UartPostEnable
+ 311:Generated_Source\PSoC4/LINS_SCB_UART.c **** ****************************************************************************//**
+ 312:Generated_Source\PSoC4/LINS_SCB_UART.c **** *
+ 313:Generated_Source\PSoC4/LINS_SCB_UART.c **** *  Restores HSIOM settings for the UART output pins (TX and/or RTS) to be
+ 314:Generated_Source\PSoC4/LINS_SCB_UART.c **** *  controlled by the SCB UART.
+ 315:Generated_Source\PSoC4/LINS_SCB_UART.c **** *
+ 316:Generated_Source\PSoC4/LINS_SCB_UART.c **** *******************************************************************************/
+ 317:Generated_Source\PSoC4/LINS_SCB_UART.c **** void LINS_SCB_UartPostEnable(void)
+ 318:Generated_Source\PSoC4/LINS_SCB_UART.c **** {
+ 124              		.loc 1 318 0
+ 125              		.cfi_startproc
+ 126              		@ args = 0, pretend = 0, frame = 0
+ 127              		@ frame_needed = 0, uses_anonymous_args = 0
+ 128              		@ link register save eliminated.
+ 319:Generated_Source\PSoC4/LINS_SCB_UART.c **** #if (LINS_SCB_SCB_MODE_UNCONFIG_CONST_CFG)
+ 320:Generated_Source\PSoC4/LINS_SCB_UART.c ****     #if (LINS_SCB_TX_SDA_MISO_PIN)
+ 321:Generated_Source\PSoC4/LINS_SCB_UART.c ****         if (LINS_SCB_CHECK_TX_SDA_MISO_PIN_USED)
+ 322:Generated_Source\PSoC4/LINS_SCB_UART.c ****         {
+ 323:Generated_Source\PSoC4/LINS_SCB_UART.c ****             /* Set SCB UART to drive the output pin */
+ 324:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_SET_HSIOM_SEL(LINS_SCB_TX_SDA_MISO_HSIOM_REG, LINS_SCB_TX_SDA_MISO_HSIOM_MASK,
+ 325:Generated_Source\PSoC4/LINS_SCB_UART.c ****                                            LINS_SCB_TX_SDA_MISO_HSIOM_POS, LINS_SCB_TX_SDA_MISO_HSI
+ 326:Generated_Source\PSoC4/LINS_SCB_UART.c ****         }
+ 327:Generated_Source\PSoC4/LINS_SCB_UART.c ****     #endif /* (LINS_SCB_TX_SDA_MISO_PIN_PIN) */
+ 328:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 9
+
+
+ 329:Generated_Source\PSoC4/LINS_SCB_UART.c ****     #if !(LINS_SCB_CY_SCBIP_V0 || LINS_SCB_CY_SCBIP_V1)
+ 330:Generated_Source\PSoC4/LINS_SCB_UART.c ****         #if (LINS_SCB_SS0_PIN)
+ 331:Generated_Source\PSoC4/LINS_SCB_UART.c ****             if (LINS_SCB_CHECK_SS0_PIN_USED)
+ 332:Generated_Source\PSoC4/LINS_SCB_UART.c ****             {
+ 333:Generated_Source\PSoC4/LINS_SCB_UART.c ****                 /* Set SCB UART to drive the output pin */
+ 334:Generated_Source\PSoC4/LINS_SCB_UART.c ****                 LINS_SCB_SET_HSIOM_SEL(LINS_SCB_SS0_HSIOM_REG, LINS_SCB_SS0_HSIOM_MASK,
+ 335:Generated_Source\PSoC4/LINS_SCB_UART.c ****                                                LINS_SCB_SS0_HSIOM_POS, LINS_SCB_SS0_HSIOM_SEL_UART)
+ 336:Generated_Source\PSoC4/LINS_SCB_UART.c ****             }
+ 337:Generated_Source\PSoC4/LINS_SCB_UART.c ****         #endif /* (LINS_SCB_SS0_PIN) */
+ 338:Generated_Source\PSoC4/LINS_SCB_UART.c ****     #endif /* !(LINS_SCB_CY_SCBIP_V0 || LINS_SCB_CY_SCBIP_V1) */
+ 339:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 340:Generated_Source\PSoC4/LINS_SCB_UART.c **** #else
+ 341:Generated_Source\PSoC4/LINS_SCB_UART.c ****     #if (LINS_SCB_UART_TX_PIN)
+ 342:Generated_Source\PSoC4/LINS_SCB_UART.c ****          /* Set SCB UART to drive the output pin */
+ 343:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_SET_HSIOM_SEL(LINS_SCB_TX_HSIOM_REG, LINS_SCB_TX_HSIOM_MASK,
+ 129              		.loc 1 343 0
+ 130 0000 064A     		ldr	r2, .L5
+ 131 0002 1168     		ldr	r1, [r2]
+ 132 0004 064B     		ldr	r3, .L5+4
+ 133 0006 0B40     		ands	r3, r1
+ 134 0008 9021     		movs	r1, #144
+ 135 000a 0904     		lsls	r1, r1, #16
+ 136 000c 0B43     		orrs	r3, r1
+ 137 000e 1360     		str	r3, [r2]
+ 344:Generated_Source\PSoC4/LINS_SCB_UART.c ****                                        LINS_SCB_TX_HSIOM_POS, LINS_SCB_TX_HSIOM_SEL_UART);
+ 345:Generated_Source\PSoC4/LINS_SCB_UART.c ****     #endif /* (LINS_SCB_UART_TX_PIN) */
+ 346:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 347:Generated_Source\PSoC4/LINS_SCB_UART.c ****     #if (LINS_SCB_UART_RTS_PIN)
+ 348:Generated_Source\PSoC4/LINS_SCB_UART.c ****         /* Set SCB UART to drive the output pin */
+ 349:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_SET_HSIOM_SEL(LINS_SCB_RTS_HSIOM_REG, LINS_SCB_RTS_HSIOM_MASK,
+ 350:Generated_Source\PSoC4/LINS_SCB_UART.c ****                                        LINS_SCB_RTS_HSIOM_POS, LINS_SCB_RTS_HSIOM_SEL_UART);
+ 351:Generated_Source\PSoC4/LINS_SCB_UART.c ****     #endif /* (LINS_SCB_UART_RTS_PIN) */
+ 352:Generated_Source\PSoC4/LINS_SCB_UART.c **** #endif /* (LINS_SCB_SCB_MODE_UNCONFIG_CONST_CFG) */
+ 353:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 354:Generated_Source\PSoC4/LINS_SCB_UART.c ****     /* Restore TX interrupt sources. */
+ 355:Generated_Source\PSoC4/LINS_SCB_UART.c ****     LINS_SCB_SetTxInterruptMode(LINS_SCB_IntrTxMask);
+ 138              		.loc 1 355 0
+ 139 0010 044B     		ldr	r3, .L5+8
+ 140 0012 1A88     		ldrh	r2, [r3]
+ 141 0014 044B     		ldr	r3, .L5+12
+ 142 0016 1A60     		str	r2, [r3]
+ 356:Generated_Source\PSoC4/LINS_SCB_UART.c **** }
+ 143              		.loc 1 356 0
+ 144              		@ sp needed
+ 145 0018 7047     		bx	lr
+ 146              	.L6:
+ 147 001a C046     		.align	2
+ 148              	.L5:
+ 149 001c 00000140 		.word	1073807360
+ 150 0020 FFFF0FFF 		.word	-15728641
+ 151 0024 00000000 		.word	LINS_SCB_IntrTxMask
+ 152 0028 880F0740 		.word	1074204552
+ 153              		.cfi_endproc
+ 154              	.LFE1:
+ 155              		.size	LINS_SCB_UartPostEnable, .-LINS_SCB_UartPostEnable
+ 156              		.section	.text.LINS_SCB_UartStop,"ax",%progbits
+ 157              		.align	2
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 10
+
+
+ 158              		.global	LINS_SCB_UartStop
+ 159              		.code	16
+ 160              		.thumb_func
+ 161              		.type	LINS_SCB_UartStop, %function
+ 162              	LINS_SCB_UartStop:
+ 163              	.LFB2:
+ 357:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 358:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 359:Generated_Source\PSoC4/LINS_SCB_UART.c **** /*******************************************************************************
+ 360:Generated_Source\PSoC4/LINS_SCB_UART.c **** * Function Name: LINS_SCB_UartStop
+ 361:Generated_Source\PSoC4/LINS_SCB_UART.c **** ****************************************************************************//**
+ 362:Generated_Source\PSoC4/LINS_SCB_UART.c **** *
+ 363:Generated_Source\PSoC4/LINS_SCB_UART.c **** *  Changes the HSIOM settings for the UART output pins (TX and/or RTS) to keep
+ 364:Generated_Source\PSoC4/LINS_SCB_UART.c **** *  them inactive after the block is disabled. The output pins are controlled by
+ 365:Generated_Source\PSoC4/LINS_SCB_UART.c **** *  the GPIO data register. Also, the function disables the skip start feature
+ 366:Generated_Source\PSoC4/LINS_SCB_UART.c **** *  to not cause it to trigger after the component is enabled.
+ 367:Generated_Source\PSoC4/LINS_SCB_UART.c **** *
+ 368:Generated_Source\PSoC4/LINS_SCB_UART.c **** *******************************************************************************/
+ 369:Generated_Source\PSoC4/LINS_SCB_UART.c **** void LINS_SCB_UartStop(void)
+ 370:Generated_Source\PSoC4/LINS_SCB_UART.c **** {
+ 164              		.loc 1 370 0
+ 165              		.cfi_startproc
+ 166              		@ args = 0, pretend = 0, frame = 0
+ 167              		@ frame_needed = 0, uses_anonymous_args = 0
+ 168              		@ link register save eliminated.
+ 371:Generated_Source\PSoC4/LINS_SCB_UART.c **** #if(LINS_SCB_SCB_MODE_UNCONFIG_CONST_CFG)
+ 372:Generated_Source\PSoC4/LINS_SCB_UART.c ****     #if (LINS_SCB_TX_SDA_MISO_PIN)
+ 373:Generated_Source\PSoC4/LINS_SCB_UART.c ****         if (LINS_SCB_CHECK_TX_SDA_MISO_PIN_USED)
+ 374:Generated_Source\PSoC4/LINS_SCB_UART.c ****         {
+ 375:Generated_Source\PSoC4/LINS_SCB_UART.c ****             /* Set GPIO to drive output pin */
+ 376:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_SET_HSIOM_SEL(LINS_SCB_TX_SDA_MISO_HSIOM_REG, LINS_SCB_TX_SDA_MISO_HSIOM_MASK,
+ 377:Generated_Source\PSoC4/LINS_SCB_UART.c ****                                            LINS_SCB_TX_SDA_MISO_HSIOM_POS, LINS_SCB_TX_SDA_MISO_HSI
+ 378:Generated_Source\PSoC4/LINS_SCB_UART.c ****         }
+ 379:Generated_Source\PSoC4/LINS_SCB_UART.c ****     #endif /* (LINS_SCB_TX_SDA_MISO_PIN_PIN) */
+ 380:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 381:Generated_Source\PSoC4/LINS_SCB_UART.c ****     #if !(LINS_SCB_CY_SCBIP_V0 || LINS_SCB_CY_SCBIP_V1)
+ 382:Generated_Source\PSoC4/LINS_SCB_UART.c ****         #if (LINS_SCB_SS0_PIN)
+ 383:Generated_Source\PSoC4/LINS_SCB_UART.c ****             if (LINS_SCB_CHECK_SS0_PIN_USED)
+ 384:Generated_Source\PSoC4/LINS_SCB_UART.c ****             {
+ 385:Generated_Source\PSoC4/LINS_SCB_UART.c ****                 /* Set output pin state after block is disabled */
+ 386:Generated_Source\PSoC4/LINS_SCB_UART.c ****                 LINS_SCB_spi_ss0_Write(LINS_SCB_GET_UART_RTS_INACTIVE);
+ 387:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 388:Generated_Source\PSoC4/LINS_SCB_UART.c ****                 /* Set GPIO to drive output pin */
+ 389:Generated_Source\PSoC4/LINS_SCB_UART.c ****                 LINS_SCB_SET_HSIOM_SEL(LINS_SCB_SS0_HSIOM_REG, LINS_SCB_SS0_HSIOM_MASK,
+ 390:Generated_Source\PSoC4/LINS_SCB_UART.c ****                                                LINS_SCB_SS0_HSIOM_POS, LINS_SCB_SS0_HSIOM_SEL_GPIO)
+ 391:Generated_Source\PSoC4/LINS_SCB_UART.c ****             }
+ 392:Generated_Source\PSoC4/LINS_SCB_UART.c ****         #endif /* (LINS_SCB_SS0_PIN) */
+ 393:Generated_Source\PSoC4/LINS_SCB_UART.c ****     #endif /* !(LINS_SCB_CY_SCBIP_V0 || LINS_SCB_CY_SCBIP_V1) */
+ 394:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 395:Generated_Source\PSoC4/LINS_SCB_UART.c **** #else
+ 396:Generated_Source\PSoC4/LINS_SCB_UART.c ****     #if (LINS_SCB_UART_TX_PIN)
+ 397:Generated_Source\PSoC4/LINS_SCB_UART.c ****         /* Set GPIO to drive output pin */
+ 398:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_SET_HSIOM_SEL(LINS_SCB_TX_HSIOM_REG, LINS_SCB_TX_HSIOM_MASK,
+ 169              		.loc 1 398 0
+ 170 0000 064A     		ldr	r2, .L8
+ 171 0002 1168     		ldr	r1, [r2]
+ 172 0004 064B     		ldr	r3, .L8+4
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 11
+
+
+ 173 0006 0B40     		ands	r3, r1
+ 174 0008 1360     		str	r3, [r2]
+ 399:Generated_Source\PSoC4/LINS_SCB_UART.c ****                                        LINS_SCB_TX_HSIOM_POS, LINS_SCB_TX_HSIOM_SEL_GPIO);
+ 400:Generated_Source\PSoC4/LINS_SCB_UART.c ****     #endif /* (LINS_SCB_UART_TX_PIN) */
+ 401:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 402:Generated_Source\PSoC4/LINS_SCB_UART.c ****     #if (LINS_SCB_UART_RTS_PIN)
+ 403:Generated_Source\PSoC4/LINS_SCB_UART.c ****         /* Set output pin state after block is disabled */
+ 404:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_rts_Write(LINS_SCB_GET_UART_RTS_INACTIVE);
+ 405:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 406:Generated_Source\PSoC4/LINS_SCB_UART.c ****         /* Set GPIO to drive output pin */
+ 407:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_SET_HSIOM_SEL(LINS_SCB_RTS_HSIOM_REG, LINS_SCB_RTS_HSIOM_MASK,
+ 408:Generated_Source\PSoC4/LINS_SCB_UART.c ****                                        LINS_SCB_RTS_HSIOM_POS, LINS_SCB_RTS_HSIOM_SEL_GPIO);
+ 409:Generated_Source\PSoC4/LINS_SCB_UART.c ****     #endif /* (LINS_SCB_UART_RTS_PIN) */
+ 410:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 411:Generated_Source\PSoC4/LINS_SCB_UART.c **** #endif /* (LINS_SCB_SCB_MODE_UNCONFIG_CONST_CFG) */
+ 412:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 413:Generated_Source\PSoC4/LINS_SCB_UART.c **** #if (LINS_SCB_UART_WAKE_ENABLE_CONST)
+ 414:Generated_Source\PSoC4/LINS_SCB_UART.c ****     /* Disable skip start feature used for wakeup */
+ 415:Generated_Source\PSoC4/LINS_SCB_UART.c ****     LINS_SCB_UART_RX_CTRL_REG &= (uint32) ~LINS_SCB_UART_RX_CTRL_SKIP_START;
+ 416:Generated_Source\PSoC4/LINS_SCB_UART.c **** #endif /* (LINS_SCB_UART_WAKE_ENABLE_CONST) */
+ 417:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 418:Generated_Source\PSoC4/LINS_SCB_UART.c ****     /* Store TX interrupt sources (exclude level triggered). */
+ 419:Generated_Source\PSoC4/LINS_SCB_UART.c ****     LINS_SCB_IntrTxMask = LO16(LINS_SCB_GetTxInterruptMode() & LINS_SCB_INTR_UART_TX_RESTORE);
+ 175              		.loc 1 419 0
+ 176 000a 064B     		ldr	r3, .L8+8
+ 177 000c 1A68     		ldr	r2, [r3]
+ 178 000e E423     		movs	r3, #228
+ 179 0010 DB00     		lsls	r3, r3, #3
+ 180 0012 1340     		ands	r3, r2
+ 181 0014 044A     		ldr	r2, .L8+12
+ 182 0016 1380     		strh	r3, [r2]
+ 420:Generated_Source\PSoC4/LINS_SCB_UART.c **** }
+ 183              		.loc 1 420 0
+ 184              		@ sp needed
+ 185 0018 7047     		bx	lr
+ 186              	.L9:
+ 187 001a C046     		.align	2
+ 188              	.L8:
+ 189 001c 00000140 		.word	1073807360
+ 190 0020 FFFF0FFF 		.word	-15728641
+ 191 0024 880F0740 		.word	1074204552
+ 192 0028 00000000 		.word	LINS_SCB_IntrTxMask
+ 193              		.cfi_endproc
+ 194              	.LFE2:
+ 195              		.size	LINS_SCB_UartStop, .-LINS_SCB_UartStop
+ 196              		.section	.text.LINS_SCB_UartSetRxAddress,"ax",%progbits
+ 197              		.align	2
+ 198              		.global	LINS_SCB_UartSetRxAddress
+ 199              		.code	16
+ 200              		.thumb_func
+ 201              		.type	LINS_SCB_UartSetRxAddress, %function
+ 202              	LINS_SCB_UartSetRxAddress:
+ 203              	.LFB3:
+ 421:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 422:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 423:Generated_Source\PSoC4/LINS_SCB_UART.c **** /*******************************************************************************
+ 424:Generated_Source\PSoC4/LINS_SCB_UART.c **** * Function Name: LINS_SCB_UartSetRxAddress
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 12
+
+
+ 425:Generated_Source\PSoC4/LINS_SCB_UART.c **** ****************************************************************************//**
+ 426:Generated_Source\PSoC4/LINS_SCB_UART.c **** *
+ 427:Generated_Source\PSoC4/LINS_SCB_UART.c **** *  Sets the hardware detectable receiver address for the UART in the
+ 428:Generated_Source\PSoC4/LINS_SCB_UART.c **** *  Multiprocessor mode.
+ 429:Generated_Source\PSoC4/LINS_SCB_UART.c **** *
+ 430:Generated_Source\PSoC4/LINS_SCB_UART.c **** *  \param address: Address for hardware address detection.
+ 431:Generated_Source\PSoC4/LINS_SCB_UART.c **** *
+ 432:Generated_Source\PSoC4/LINS_SCB_UART.c **** *******************************************************************************/
+ 433:Generated_Source\PSoC4/LINS_SCB_UART.c **** void LINS_SCB_UartSetRxAddress(uint32 address)
+ 434:Generated_Source\PSoC4/LINS_SCB_UART.c **** {
+ 204              		.loc 1 434 0
+ 205              		.cfi_startproc
+ 206              		@ args = 0, pretend = 0, frame = 0
+ 207              		@ frame_needed = 0, uses_anonymous_args = 0
+ 208              		@ link register save eliminated.
+ 209              	.LVL0:
+ 435:Generated_Source\PSoC4/LINS_SCB_UART.c ****      uint32 matchReg;
+ 436:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 437:Generated_Source\PSoC4/LINS_SCB_UART.c ****     matchReg = LINS_SCB_RX_MATCH_REG;
+ 210              		.loc 1 437 0
+ 211 0000 034A     		ldr	r2, .L11
+ 212 0002 1368     		ldr	r3, [r2]
+ 213              	.LVL1:
+ 438:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 439:Generated_Source\PSoC4/LINS_SCB_UART.c ****     matchReg &= ((uint32) ~LINS_SCB_RX_MATCH_ADDR_MASK); /* Clear address bits */
+ 214              		.loc 1 439 0
+ 215 0004 FF21     		movs	r1, #255
+ 216 0006 8B43     		bics	r3, r1
+ 217              	.LVL2:
+ 440:Generated_Source\PSoC4/LINS_SCB_UART.c ****     matchReg |= ((uint32)  (address & LINS_SCB_RX_MATCH_ADDR_MASK)); /* Set address  */
+ 218              		.loc 1 440 0
+ 219 0008 0840     		ands	r0, r1
+ 220              	.LVL3:
+ 221 000a 1843     		orrs	r0, r3
+ 222              	.LVL4:
+ 441:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 442:Generated_Source\PSoC4/LINS_SCB_UART.c ****     LINS_SCB_RX_MATCH_REG = matchReg;
+ 223              		.loc 1 442 0
+ 224 000c 1060     		str	r0, [r2]
+ 443:Generated_Source\PSoC4/LINS_SCB_UART.c **** }
+ 225              		.loc 1 443 0
+ 226              		@ sp needed
+ 227 000e 7047     		bx	lr
+ 228              	.L12:
+ 229              		.align	2
+ 230              	.L11:
+ 231 0010 10030740 		.word	1074201360
+ 232              		.cfi_endproc
+ 233              	.LFE3:
+ 234              		.size	LINS_SCB_UartSetRxAddress, .-LINS_SCB_UartSetRxAddress
+ 235              		.section	.text.LINS_SCB_UartSetRxAddressMask,"ax",%progbits
+ 236              		.align	2
+ 237              		.global	LINS_SCB_UartSetRxAddressMask
+ 238              		.code	16
+ 239              		.thumb_func
+ 240              		.type	LINS_SCB_UartSetRxAddressMask, %function
+ 241              	LINS_SCB_UartSetRxAddressMask:
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 13
+
+
+ 242              	.LFB4:
+ 444:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 445:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 446:Generated_Source\PSoC4/LINS_SCB_UART.c **** /*******************************************************************************
+ 447:Generated_Source\PSoC4/LINS_SCB_UART.c **** * Function Name: LINS_SCB_UartSetRxAddressMask
+ 448:Generated_Source\PSoC4/LINS_SCB_UART.c **** ****************************************************************************//**
+ 449:Generated_Source\PSoC4/LINS_SCB_UART.c **** *
+ 450:Generated_Source\PSoC4/LINS_SCB_UART.c **** *  Sets the hardware address mask for the UART in the Multiprocessor mode.
+ 451:Generated_Source\PSoC4/LINS_SCB_UART.c **** *
+ 452:Generated_Source\PSoC4/LINS_SCB_UART.c **** *  \param addressMask: Address mask.
+ 453:Generated_Source\PSoC4/LINS_SCB_UART.c **** *   - Bit value 0 – excludes bit from address comparison.
+ 454:Generated_Source\PSoC4/LINS_SCB_UART.c **** *   - Bit value 1 – the bit needs to match with the corresponding bit
+ 455:Generated_Source\PSoC4/LINS_SCB_UART.c **** *     of the address.
+ 456:Generated_Source\PSoC4/LINS_SCB_UART.c **** *
+ 457:Generated_Source\PSoC4/LINS_SCB_UART.c **** *******************************************************************************/
+ 458:Generated_Source\PSoC4/LINS_SCB_UART.c **** void LINS_SCB_UartSetRxAddressMask(uint32 addressMask)
+ 459:Generated_Source\PSoC4/LINS_SCB_UART.c **** {
+ 243              		.loc 1 459 0
+ 244              		.cfi_startproc
+ 245              		@ args = 0, pretend = 0, frame = 0
+ 246              		@ frame_needed = 0, uses_anonymous_args = 0
+ 247              		@ link register save eliminated.
+ 248              	.LVL5:
+ 460:Generated_Source\PSoC4/LINS_SCB_UART.c ****     uint32 matchReg;
+ 461:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 462:Generated_Source\PSoC4/LINS_SCB_UART.c ****     matchReg = LINS_SCB_RX_MATCH_REG;
+ 249              		.loc 1 462 0
+ 250 0000 034A     		ldr	r2, .L14
+ 251 0002 1168     		ldr	r1, [r2]
+ 252              	.LVL6:
+ 463:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 464:Generated_Source\PSoC4/LINS_SCB_UART.c ****     matchReg &= ((uint32) ~LINS_SCB_RX_MATCH_MASK_MASK); /* Clear address mask bits */
+ 253              		.loc 1 464 0
+ 254 0004 034B     		ldr	r3, .L14+4
+ 255 0006 0B40     		ands	r3, r1
+ 256              	.LVL7:
+ 465:Generated_Source\PSoC4/LINS_SCB_UART.c ****     matchReg |= ((uint32) (addressMask << LINS_SCB_RX_MATCH_MASK_POS));
+ 257              		.loc 1 465 0
+ 258 0008 0004     		lsls	r0, r0, #16
+ 259              	.LVL8:
+ 260 000a 1843     		orrs	r0, r3
+ 261              	.LVL9:
+ 466:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 467:Generated_Source\PSoC4/LINS_SCB_UART.c ****     LINS_SCB_RX_MATCH_REG = matchReg;
+ 262              		.loc 1 467 0
+ 263 000c 1060     		str	r0, [r2]
+ 468:Generated_Source\PSoC4/LINS_SCB_UART.c **** }
+ 264              		.loc 1 468 0
+ 265              		@ sp needed
+ 266 000e 7047     		bx	lr
+ 267              	.L15:
+ 268              		.align	2
+ 269              	.L14:
+ 270 0010 10030740 		.word	1074201360
+ 271 0014 FFFF00FF 		.word	-16711681
+ 272              		.cfi_endproc
+ 273              	.LFE4:
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 14
+
+
+ 274              		.size	LINS_SCB_UartSetRxAddressMask, .-LINS_SCB_UartSetRxAddressMask
+ 275              		.section	.text.LINS_SCB_UartGetChar,"ax",%progbits
+ 276              		.align	2
+ 277              		.global	LINS_SCB_UartGetChar
+ 278              		.code	16
+ 279              		.thumb_func
+ 280              		.type	LINS_SCB_UartGetChar, %function
+ 281              	LINS_SCB_UartGetChar:
+ 282              	.LFB5:
+ 469:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 470:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 471:Generated_Source\PSoC4/LINS_SCB_UART.c **** #if(LINS_SCB_UART_RX_DIRECTION)
+ 472:Generated_Source\PSoC4/LINS_SCB_UART.c ****     /*******************************************************************************
+ 473:Generated_Source\PSoC4/LINS_SCB_UART.c ****     * Function Name: LINS_SCB_UartGetChar
+ 474:Generated_Source\PSoC4/LINS_SCB_UART.c ****     ****************************************************************************//**
+ 475:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *
+ 476:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  Retrieves next data element from receive buffer.
+ 477:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  This function is designed for ASCII characters and returns a char where
+ 478:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  1 to 255 are valid characters and 0 indicates an error occurred or no data
+ 479:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  is present.
+ 480:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  - RX software buffer is disabled: Returns data element retrieved from RX
+ 481:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *    FIFO.
+ 482:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  - RX software buffer is enabled: Returns data element from the software
+ 483:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *    receive buffer.
+ 484:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *
+ 485:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  \return
+ 486:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *   Next data element from the receive buffer. ASCII character values from
+ 487:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *   1 to 255 are valid. A returned zero signifies an error condition or no
+ 488:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *   data available.
+ 489:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *
+ 490:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  \sideeffect
+ 491:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *   The errors bits may not correspond with reading characters due to
+ 492:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *   RX FIFO and software buffer usage.
+ 493:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *   RX software buffer is enabled: The internal software buffer overflow
+ 494:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *   is not treated as an error condition.
+ 495:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *   Check LINS_SCB_rxBufferOverflow to capture that error condition.
+ 496:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *
+ 497:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *******************************************************************************/
+ 498:Generated_Source\PSoC4/LINS_SCB_UART.c ****     uint32 LINS_SCB_UartGetChar(void)
+ 499:Generated_Source\PSoC4/LINS_SCB_UART.c ****     {
+ 283              		.loc 1 499 0
+ 284              		.cfi_startproc
+ 285              		@ args = 0, pretend = 0, frame = 0
+ 286              		@ frame_needed = 0, uses_anonymous_args = 0
+ 287 0000 10B5     		push	{r4, lr}
+ 288              		.cfi_def_cfa_offset 8
+ 289              		.cfi_offset 4, -8
+ 290              		.cfi_offset 14, -4
+ 291              	.LVL10:
+ 500:Generated_Source\PSoC4/LINS_SCB_UART.c ****         uint32 rxData = 0u;
+ 501:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 502:Generated_Source\PSoC4/LINS_SCB_UART.c ****         /* Reads data only if there is data to read */
+ 503:Generated_Source\PSoC4/LINS_SCB_UART.c ****         if (0u != LINS_SCB_SpiUartGetRxBufferSize())
+ 292              		.loc 1 503 0
+ 293 0002 FFF7FEFF 		bl	LINS_SCB_SpiUartGetRxBufferSize
+ 294              	.LVL11:
+ 295 0006 0028     		cmp	r0, #0
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 15
+
+
+ 296 0008 02D0     		beq	.L19
+ 504:Generated_Source\PSoC4/LINS_SCB_UART.c ****         {
+ 505:Generated_Source\PSoC4/LINS_SCB_UART.c ****             rxData = LINS_SCB_SpiUartReadRxData();
+ 297              		.loc 1 505 0
+ 298 000a FFF7FEFF 		bl	LINS_SCB_SpiUartReadRxData
+ 299              	.LVL12:
+ 300 000e 00E0     		b	.L17
+ 301              	.LVL13:
+ 302              	.L19:
+ 500:Generated_Source\PSoC4/LINS_SCB_UART.c ****         uint32 rxData = 0u;
+ 303              		.loc 1 500 0
+ 304 0010 0020     		movs	r0, #0
+ 305              	.LVL14:
+ 306              	.L17:
+ 506:Generated_Source\PSoC4/LINS_SCB_UART.c ****         }
+ 507:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 508:Generated_Source\PSoC4/LINS_SCB_UART.c ****         if (LINS_SCB_CHECK_INTR_RX(LINS_SCB_INTR_RX_ERR))
+ 307              		.loc 1 508 0
+ 308 0012 054B     		ldr	r3, .L20
+ 309 0014 1A68     		ldr	r2, [r3]
+ 310 0016 D823     		movs	r3, #216
+ 311 0018 9B00     		lsls	r3, r3, #2
+ 312 001a 1A42     		tst	r2, r3
+ 313 001c 03D0     		beq	.L18
+ 314              	.LVL15:
+ 509:Generated_Source\PSoC4/LINS_SCB_UART.c ****         {
+ 510:Generated_Source\PSoC4/LINS_SCB_UART.c ****             rxData = 0u; /* Error occurred: returns zero */
+ 511:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_ClearRxInterruptSource(LINS_SCB_INTR_RX_ERR);
+ 315              		.loc 1 511 0
+ 316 001e 1A00     		movs	r2, r3
+ 317 0020 014B     		ldr	r3, .L20
+ 318 0022 1A60     		str	r2, [r3]
+ 510:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_ClearRxInterruptSource(LINS_SCB_INTR_RX_ERR);
+ 319              		.loc 1 510 0
+ 320 0024 0020     		movs	r0, #0
+ 321              	.LVL16:
+ 322              	.L18:
+ 512:Generated_Source\PSoC4/LINS_SCB_UART.c ****         }
+ 513:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 514:Generated_Source\PSoC4/LINS_SCB_UART.c ****         return (rxData);
+ 515:Generated_Source\PSoC4/LINS_SCB_UART.c ****     }
+ 323              		.loc 1 515 0
+ 324              		@ sp needed
+ 325 0026 10BD     		pop	{r4, pc}
+ 326              	.L21:
+ 327              		.align	2
+ 328              	.L20:
+ 329 0028 C00F0740 		.word	1074204608
+ 330              		.cfi_endproc
+ 331              	.LFE5:
+ 332              		.size	LINS_SCB_UartGetChar, .-LINS_SCB_UartGetChar
+ 333              		.section	.text.LINS_SCB_UartGetByte,"ax",%progbits
+ 334              		.align	2
+ 335              		.global	LINS_SCB_UartGetByte
+ 336              		.code	16
+ 337              		.thumb_func
+ 338              		.type	LINS_SCB_UartGetByte, %function
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 16
+
+
+ 339              	LINS_SCB_UartGetByte:
+ 340              	.LFB6:
+ 516:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 517:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 518:Generated_Source\PSoC4/LINS_SCB_UART.c ****     /*******************************************************************************
+ 519:Generated_Source\PSoC4/LINS_SCB_UART.c ****     * Function Name: LINS_SCB_UartGetByte
+ 520:Generated_Source\PSoC4/LINS_SCB_UART.c ****     ****************************************************************************//**
+ 521:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *
+ 522:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  Retrieves the next data element from the receive buffer, returns the
+ 523:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  received byte and error condition.
+ 524:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *   - The RX software buffer is disabled: returns the data element retrieved
+ 525:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *     from the RX FIFO. Undefined data will be returned if the RX FIFO is
+ 526:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *     empty.
+ 527:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *   - The RX software buffer is enabled: returns data element from the
+ 528:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *     software receive buffer.
+ 529:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *
+ 530:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  \return
+ 531:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *   Bits 7-0 contain the next data element from the receive buffer and
+ 532:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *   other bits contain the error condition.
+ 533:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *   - LINS_SCB_UART_RX_OVERFLOW - Attempt to write to a full
+ 534:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *     receiver FIFO.
+ 535:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *   - LINS_SCB_UART_RX_UNDERFLOW    Attempt to read from an empty
+ 536:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *     receiver FIFO.
+ 537:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *   - LINS_SCB_UART_RX_FRAME_ERROR - UART framing error detected.
+ 538:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *   - LINS_SCB_UART_RX_PARITY_ERROR - UART parity error detected.
+ 539:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *
+ 540:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  \sideeffect
+ 541:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *   The errors bits may not correspond with reading characters due to
+ 542:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *   RX FIFO and software buffer usage.
+ 543:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *   RX software buffer is enabled: The internal software buffer overflow
+ 544:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *   is not treated as an error condition.
+ 545:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *   Check LINS_SCB_rxBufferOverflow to capture that error condition.
+ 546:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *
+ 547:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *******************************************************************************/
+ 548:Generated_Source\PSoC4/LINS_SCB_UART.c ****     uint32 LINS_SCB_UartGetByte(void)
+ 549:Generated_Source\PSoC4/LINS_SCB_UART.c ****     {
+ 341              		.loc 1 549 0
+ 342              		.cfi_startproc
+ 343              		@ args = 0, pretend = 0, frame = 0
+ 344              		@ frame_needed = 0, uses_anonymous_args = 0
+ 345 0000 10B5     		push	{r4, lr}
+ 346              		.cfi_def_cfa_offset 8
+ 347              		.cfi_offset 4, -8
+ 348              		.cfi_offset 14, -4
+ 550:Generated_Source\PSoC4/LINS_SCB_UART.c ****         uint32 rxData;
+ 551:Generated_Source\PSoC4/LINS_SCB_UART.c ****         uint32 tmpStatus;
+ 552:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 553:Generated_Source\PSoC4/LINS_SCB_UART.c ****         #if (LINS_SCB_CHECK_RX_SW_BUFFER)
+ 554:Generated_Source\PSoC4/LINS_SCB_UART.c ****         {
+ 555:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_DisableInt();
+ 556:Generated_Source\PSoC4/LINS_SCB_UART.c ****         }
+ 557:Generated_Source\PSoC4/LINS_SCB_UART.c ****         #endif
+ 558:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 559:Generated_Source\PSoC4/LINS_SCB_UART.c ****         if (0u != LINS_SCB_SpiUartGetRxBufferSize())
+ 349              		.loc 1 559 0
+ 350 0002 FFF7FEFF 		bl	LINS_SCB_SpiUartGetRxBufferSize
+ 351              	.LVL17:
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 17
+
+
+ 352 0006 0028     		cmp	r0, #0
+ 353 0008 02D0     		beq	.L23
+ 560:Generated_Source\PSoC4/LINS_SCB_UART.c ****         {
+ 561:Generated_Source\PSoC4/LINS_SCB_UART.c ****             /* Enables interrupt to receive more bytes: at least one byte is in
+ 562:Generated_Source\PSoC4/LINS_SCB_UART.c ****             * buffer.
+ 563:Generated_Source\PSoC4/LINS_SCB_UART.c ****             */
+ 564:Generated_Source\PSoC4/LINS_SCB_UART.c ****             #if (LINS_SCB_CHECK_RX_SW_BUFFER)
+ 565:Generated_Source\PSoC4/LINS_SCB_UART.c ****             {
+ 566:Generated_Source\PSoC4/LINS_SCB_UART.c ****                 LINS_SCB_EnableInt();
+ 567:Generated_Source\PSoC4/LINS_SCB_UART.c ****             }
+ 568:Generated_Source\PSoC4/LINS_SCB_UART.c ****             #endif
+ 569:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 570:Generated_Source\PSoC4/LINS_SCB_UART.c ****             /* Get received byte */
+ 571:Generated_Source\PSoC4/LINS_SCB_UART.c ****             rxData = LINS_SCB_SpiUartReadRxData();
+ 354              		.loc 1 571 0
+ 355 000a FFF7FEFF 		bl	LINS_SCB_SpiUartReadRxData
+ 356              	.LVL18:
+ 357 000e 01E0     		b	.L24
+ 358              	.LVL19:
+ 359              	.L23:
+ 572:Generated_Source\PSoC4/LINS_SCB_UART.c ****         }
+ 573:Generated_Source\PSoC4/LINS_SCB_UART.c ****         else
+ 574:Generated_Source\PSoC4/LINS_SCB_UART.c ****         {
+ 575:Generated_Source\PSoC4/LINS_SCB_UART.c ****             /* Reads a byte directly from RX FIFO: underflow is raised in the
+ 576:Generated_Source\PSoC4/LINS_SCB_UART.c ****             * case of empty. Otherwise the first received byte will be read.
+ 577:Generated_Source\PSoC4/LINS_SCB_UART.c ****             */
+ 578:Generated_Source\PSoC4/LINS_SCB_UART.c ****             rxData = LINS_SCB_RX_FIFO_RD_REG;
+ 360              		.loc 1 578 0
+ 361 0010 064B     		ldr	r3, .L25
+ 362 0012 1868     		ldr	r0, [r3]
+ 363              	.LVL20:
+ 364              	.L24:
+ 579:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 580:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 581:Generated_Source\PSoC4/LINS_SCB_UART.c ****             /* Enables interrupt to receive more bytes. */
+ 582:Generated_Source\PSoC4/LINS_SCB_UART.c ****             #if (LINS_SCB_CHECK_RX_SW_BUFFER)
+ 583:Generated_Source\PSoC4/LINS_SCB_UART.c ****             {
+ 584:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 585:Generated_Source\PSoC4/LINS_SCB_UART.c ****                 /* The byte has been read from RX FIFO. Clear RX interrupt to
+ 586:Generated_Source\PSoC4/LINS_SCB_UART.c ****                 * not involve interrupt handler when RX FIFO is empty.
+ 587:Generated_Source\PSoC4/LINS_SCB_UART.c ****                 */
+ 588:Generated_Source\PSoC4/LINS_SCB_UART.c ****                 LINS_SCB_ClearRxInterruptSource(LINS_SCB_INTR_RX_NOT_EMPTY);
+ 589:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 590:Generated_Source\PSoC4/LINS_SCB_UART.c ****                 LINS_SCB_EnableInt();
+ 591:Generated_Source\PSoC4/LINS_SCB_UART.c ****             }
+ 592:Generated_Source\PSoC4/LINS_SCB_UART.c ****             #endif
+ 593:Generated_Source\PSoC4/LINS_SCB_UART.c ****         }
+ 594:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 595:Generated_Source\PSoC4/LINS_SCB_UART.c ****         /* Get and clear RX error mask */
+ 596:Generated_Source\PSoC4/LINS_SCB_UART.c ****         tmpStatus = (LINS_SCB_GetRxInterruptSource() & LINS_SCB_INTR_RX_ERR);
+ 365              		.loc 1 596 0
+ 366 0014 064A     		ldr	r2, .L25+4
+ 367 0016 1368     		ldr	r3, [r2]
+ 368              	.LVL21:
+ 597:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_ClearRxInterruptSource(LINS_SCB_INTR_RX_ERR);
+ 369              		.loc 1 597 0
+ 370 0018 D821     		movs	r1, #216
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 18
+
+
+ 371 001a 8900     		lsls	r1, r1, #2
+ 372 001c 1160     		str	r1, [r2]
+ 598:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 599:Generated_Source\PSoC4/LINS_SCB_UART.c ****         /* Puts together data and error status:
+ 600:Generated_Source\PSoC4/LINS_SCB_UART.c ****         * MP mode and accept address: 9th bit is set to notify mark.
+ 601:Generated_Source\PSoC4/LINS_SCB_UART.c ****         */
+ 602:Generated_Source\PSoC4/LINS_SCB_UART.c ****         rxData |= ((uint32) (tmpStatus << 8u));
+ 373              		.loc 1 602 0
+ 374 001e 1B02     		lsls	r3, r3, #8
+ 375              	.LVL22:
+ 376 0020 D822     		movs	r2, #216
+ 377 0022 9202     		lsls	r2, r2, #10
+ 378 0024 1340     		ands	r3, r2
+ 379 0026 1843     		orrs	r0, r3
+ 380              	.LVL23:
+ 603:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 604:Generated_Source\PSoC4/LINS_SCB_UART.c ****         return (rxData);
+ 605:Generated_Source\PSoC4/LINS_SCB_UART.c ****     }
+ 381              		.loc 1 605 0
+ 382              		@ sp needed
+ 383 0028 10BD     		pop	{r4, pc}
+ 384              	.L26:
+ 385 002a C046     		.align	2
+ 386              	.L25:
+ 387 002c 40030740 		.word	1074201408
+ 388 0030 C00F0740 		.word	1074204608
+ 389              		.cfi_endproc
+ 390              	.LFE6:
+ 391              		.size	LINS_SCB_UartGetByte, .-LINS_SCB_UartGetByte
+ 392              		.section	.text.LINS_SCB_UartPutString,"ax",%progbits
+ 393              		.align	2
+ 394              		.global	LINS_SCB_UartPutString
+ 395              		.code	16
+ 396              		.thumb_func
+ 397              		.type	LINS_SCB_UartPutString, %function
+ 398              	LINS_SCB_UartPutString:
+ 399              	.LFB7:
+ 606:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 607:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 608:Generated_Source\PSoC4/LINS_SCB_UART.c ****     #if !(LINS_SCB_CY_SCBIP_V0 || LINS_SCB_CY_SCBIP_V1)
+ 609:Generated_Source\PSoC4/LINS_SCB_UART.c ****         /*******************************************************************************
+ 610:Generated_Source\PSoC4/LINS_SCB_UART.c ****         * Function Name: LINS_SCB_UartSetRtsPolarity
+ 611:Generated_Source\PSoC4/LINS_SCB_UART.c ****         ****************************************************************************//**
+ 612:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *
+ 613:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *  Sets active polarity of RTS output signal.
+ 614:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *  Only available for PSoC 4100 BLE / PSoC 4200 BLE / PSoC 4100M / PSoC 4200M /
+ 615:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *  PSoC 4200L / PSoC 4000S / PSoC 4100S / PSoC Analog Coprocessor devices.
+ 616:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *
+ 617:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *  \param polarity: Active polarity of RTS output signal.
+ 618:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *   - LINS_SCB_UART_RTS_ACTIVE_LOW  - RTS signal is active low.
+ 619:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *   - LINS_SCB_UART_RTS_ACTIVE_HIGH - RTS signal is active high.
+ 620:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *
+ 621:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *******************************************************************************/
+ 622:Generated_Source\PSoC4/LINS_SCB_UART.c ****         void LINS_SCB_UartSetRtsPolarity(uint32 polarity)
+ 623:Generated_Source\PSoC4/LINS_SCB_UART.c ****         {
+ 624:Generated_Source\PSoC4/LINS_SCB_UART.c ****             if(0u != polarity)
+ 625:Generated_Source\PSoC4/LINS_SCB_UART.c ****             {
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 19
+
+
+ 626:Generated_Source\PSoC4/LINS_SCB_UART.c ****                 LINS_SCB_UART_FLOW_CTRL_REG |= (uint32)  LINS_SCB_UART_FLOW_CTRL_RTS_POLARITY;
+ 627:Generated_Source\PSoC4/LINS_SCB_UART.c ****             }
+ 628:Generated_Source\PSoC4/LINS_SCB_UART.c ****             else
+ 629:Generated_Source\PSoC4/LINS_SCB_UART.c ****             {
+ 630:Generated_Source\PSoC4/LINS_SCB_UART.c ****                 LINS_SCB_UART_FLOW_CTRL_REG &= (uint32) ~LINS_SCB_UART_FLOW_CTRL_RTS_POLARITY;
+ 631:Generated_Source\PSoC4/LINS_SCB_UART.c ****             }
+ 632:Generated_Source\PSoC4/LINS_SCB_UART.c ****         }
+ 633:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 634:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 635:Generated_Source\PSoC4/LINS_SCB_UART.c ****         /*******************************************************************************
+ 636:Generated_Source\PSoC4/LINS_SCB_UART.c ****         * Function Name: LINS_SCB_UartSetRtsFifoLevel
+ 637:Generated_Source\PSoC4/LINS_SCB_UART.c ****         ****************************************************************************//**
+ 638:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *
+ 639:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *  Sets level in the RX FIFO for RTS signal activation.
+ 640:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *  While the RX FIFO has fewer entries than the RX FIFO level the RTS signal
+ 641:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *  remains active, otherwise the RTS signal becomes inactive.
+ 642:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *  Only available for PSoC 4100 BLE / PSoC 4200 BLE / PSoC 4100M / PSoC 4200M /
+ 643:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *  PSoC 4200L / PSoC 4000S / PSoC 4100S / PSoC Analog Coprocessor devices.
+ 644:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *
+ 645:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *  \param level: Level in the RX FIFO for RTS signal activation.
+ 646:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *   The range of valid level values is between 0 and RX FIFO depth - 1.
+ 647:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *   Setting level value to 0 disables RTS signal activation.
+ 648:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *
+ 649:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *******************************************************************************/
+ 650:Generated_Source\PSoC4/LINS_SCB_UART.c ****         void LINS_SCB_UartSetRtsFifoLevel(uint32 level)
+ 651:Generated_Source\PSoC4/LINS_SCB_UART.c ****         {
+ 652:Generated_Source\PSoC4/LINS_SCB_UART.c ****             uint32 uartFlowCtrl;
+ 653:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 654:Generated_Source\PSoC4/LINS_SCB_UART.c ****             uartFlowCtrl = LINS_SCB_UART_FLOW_CTRL_REG;
+ 655:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 656:Generated_Source\PSoC4/LINS_SCB_UART.c ****             uartFlowCtrl &= ((uint32) ~LINS_SCB_UART_FLOW_CTRL_TRIGGER_LEVEL_MASK); /* Clear level 
+ 657:Generated_Source\PSoC4/LINS_SCB_UART.c ****             uartFlowCtrl |= ((uint32) (LINS_SCB_UART_FLOW_CTRL_TRIGGER_LEVEL_MASK & level));
+ 658:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 659:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_UART_FLOW_CTRL_REG = uartFlowCtrl;
+ 660:Generated_Source\PSoC4/LINS_SCB_UART.c ****         }
+ 661:Generated_Source\PSoC4/LINS_SCB_UART.c ****     #endif /* !(LINS_SCB_CY_SCBIP_V0 || LINS_SCB_CY_SCBIP_V1) */
+ 662:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 663:Generated_Source\PSoC4/LINS_SCB_UART.c **** #endif /* (LINS_SCB_UART_RX_DIRECTION) */
+ 664:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 665:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 666:Generated_Source\PSoC4/LINS_SCB_UART.c **** #if(LINS_SCB_UART_TX_DIRECTION)
+ 667:Generated_Source\PSoC4/LINS_SCB_UART.c ****     /*******************************************************************************
+ 668:Generated_Source\PSoC4/LINS_SCB_UART.c ****     * Function Name: LINS_SCB_UartPutString
+ 669:Generated_Source\PSoC4/LINS_SCB_UART.c ****     ****************************************************************************//**
+ 670:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *
+ 671:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  Places a NULL terminated string in the transmit buffer to be sent at the
+ 672:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  next available bus time.
+ 673:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  This function is blocking and waits until there is a space available to put
+ 674:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  requested data in transmit buffer.
+ 675:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *
+ 676:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  \param string: pointer to the null terminated string array to be placed in the
+ 677:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *   transmit buffer.
+ 678:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *
+ 679:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *******************************************************************************/
+ 680:Generated_Source\PSoC4/LINS_SCB_UART.c ****     void LINS_SCB_UartPutString(const char8 string[])
+ 681:Generated_Source\PSoC4/LINS_SCB_UART.c ****     {
+ 400              		.loc 1 681 0
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 20
+
+
+ 401              		.cfi_startproc
+ 402              		@ args = 0, pretend = 0, frame = 0
+ 403              		@ frame_needed = 0, uses_anonymous_args = 0
+ 404              	.LVL24:
+ 405 0000 70B5     		push	{r4, r5, r6, lr}
+ 406              		.cfi_def_cfa_offset 16
+ 407              		.cfi_offset 4, -16
+ 408              		.cfi_offset 5, -12
+ 409              		.cfi_offset 6, -8
+ 410              		.cfi_offset 14, -4
+ 411 0002 0500     		movs	r5, r0
+ 412              	.LVL25:
+ 682:Generated_Source\PSoC4/LINS_SCB_UART.c ****         uint32 bufIndex;
+ 683:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 684:Generated_Source\PSoC4/LINS_SCB_UART.c ****         bufIndex = 0u;
+ 413              		.loc 1 684 0
+ 414 0004 0024     		movs	r4, #0
+ 685:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 686:Generated_Source\PSoC4/LINS_SCB_UART.c ****         /* Blocks the control flow until all data has been sent */
+ 687:Generated_Source\PSoC4/LINS_SCB_UART.c ****         while(string[bufIndex] != ((char8) 0))
+ 415              		.loc 1 687 0
+ 416 0006 02E0     		b	.L28
+ 417              	.LVL26:
+ 418              	.L29:
+ 688:Generated_Source\PSoC4/LINS_SCB_UART.c ****         {
+ 689:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_UartPutChar((uint32) string[bufIndex]);
+ 419              		.loc 1 689 0
+ 420 0008 FFF7FEFF 		bl	LINS_SCB_SpiUartWriteTxData
+ 421              	.LVL27:
+ 690:Generated_Source\PSoC4/LINS_SCB_UART.c ****             bufIndex++;
+ 422              		.loc 1 690 0
+ 423 000c 0134     		adds	r4, r4, #1
+ 424              	.LVL28:
+ 425              	.L28:
+ 687:Generated_Source\PSoC4/LINS_SCB_UART.c ****         {
+ 426              		.loc 1 687 0
+ 427 000e 285D     		ldrb	r0, [r5, r4]
+ 428 0010 0028     		cmp	r0, #0
+ 429 0012 F9D1     		bne	.L29
+ 691:Generated_Source\PSoC4/LINS_SCB_UART.c ****         }
+ 692:Generated_Source\PSoC4/LINS_SCB_UART.c ****     }
+ 430              		.loc 1 692 0
+ 431              		@ sp needed
+ 432              	.LVL29:
+ 433              	.LVL30:
+ 434 0014 70BD     		pop	{r4, r5, r6, pc}
+ 435              		.cfi_endproc
+ 436              	.LFE7:
+ 437              		.size	LINS_SCB_UartPutString, .-LINS_SCB_UartPutString
+ 438 0016 C046     		.section	.text.LINS_SCB_UartPutCRLF,"ax",%progbits
+ 439              		.align	2
+ 440              		.global	LINS_SCB_UartPutCRLF
+ 441              		.code	16
+ 442              		.thumb_func
+ 443              		.type	LINS_SCB_UartPutCRLF, %function
+ 444              	LINS_SCB_UartPutCRLF:
+ 445              	.LFB8:
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 21
+
+
+ 693:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 694:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 695:Generated_Source\PSoC4/LINS_SCB_UART.c ****     /*******************************************************************************
+ 696:Generated_Source\PSoC4/LINS_SCB_UART.c ****     * Function Name: LINS_SCB_UartPutCRLF
+ 697:Generated_Source\PSoC4/LINS_SCB_UART.c ****     ****************************************************************************//**
+ 698:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *
+ 699:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  Places byte of data followed by a carriage return (0x0D) and line feed
+ 700:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  (0x0A) in the transmit buffer.
+ 701:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  This function is blocking and waits until there is a space available to put
+ 702:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  all requested data in transmit buffer.
+ 703:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *
+ 704:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *  \param txDataByte: the data to be transmitted.
+ 705:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *
+ 706:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *******************************************************************************/
+ 707:Generated_Source\PSoC4/LINS_SCB_UART.c ****     void LINS_SCB_UartPutCRLF(uint32 txDataByte)
+ 708:Generated_Source\PSoC4/LINS_SCB_UART.c ****     {
+ 446              		.loc 1 708 0
+ 447              		.cfi_startproc
+ 448              		@ args = 0, pretend = 0, frame = 0
+ 449              		@ frame_needed = 0, uses_anonymous_args = 0
+ 450              	.LVL31:
+ 451 0000 10B5     		push	{r4, lr}
+ 452              		.cfi_def_cfa_offset 8
+ 453              		.cfi_offset 4, -8
+ 454              		.cfi_offset 14, -4
+ 709:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_UartPutChar(txDataByte);  /* Blocks control flow until all data has been sent */
+ 455              		.loc 1 709 0
+ 456 0002 FFF7FEFF 		bl	LINS_SCB_SpiUartWriteTxData
+ 457              	.LVL32:
+ 710:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_UartPutChar(0x0Du);       /* Blocks control flow until all data has been sent */
+ 458              		.loc 1 710 0
+ 459 0006 0D20     		movs	r0, #13
+ 460 0008 FFF7FEFF 		bl	LINS_SCB_SpiUartWriteTxData
+ 461              	.LVL33:
+ 711:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_UartPutChar(0x0Au);       /* Blocks control flow until all data has been sent */
+ 462              		.loc 1 711 0
+ 463 000c 0A20     		movs	r0, #10
+ 464 000e FFF7FEFF 		bl	LINS_SCB_SpiUartWriteTxData
+ 465              	.LVL34:
+ 712:Generated_Source\PSoC4/LINS_SCB_UART.c ****     }
+ 466              		.loc 1 712 0
+ 467              		@ sp needed
+ 468 0012 10BD     		pop	{r4, pc}
+ 469              		.cfi_endproc
+ 470              	.LFE8:
+ 471              		.size	LINS_SCB_UartPutCRLF, .-LINS_SCB_UartPutCRLF
+ 472              		.section	.text.LINS_SCB_UartSendBreakBlocking,"ax",%progbits
+ 473              		.align	2
+ 474              		.global	LINS_SCB_UartSendBreakBlocking
+ 475              		.code	16
+ 476              		.thumb_func
+ 477              		.type	LINS_SCB_UartSendBreakBlocking, %function
+ 478              	LINS_SCB_UartSendBreakBlocking:
+ 479              	.LFB9:
+ 713:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 714:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 715:Generated_Source\PSoC4/LINS_SCB_UART.c ****     #if !(LINS_SCB_CY_SCBIP_V0 || LINS_SCB_CY_SCBIP_V1)
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 22
+
+
+ 716:Generated_Source\PSoC4/LINS_SCB_UART.c ****         /*******************************************************************************
+ 717:Generated_Source\PSoC4/LINS_SCB_UART.c ****         * Function Name: LINS_SCBSCB_UartEnableCts
+ 718:Generated_Source\PSoC4/LINS_SCB_UART.c ****         ****************************************************************************//**
+ 719:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *
+ 720:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *  Enables usage of CTS input signal by the UART transmitter.
+ 721:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *  Only available for PSoC 4100 BLE / PSoC 4200 BLE / PSoC 4100M / PSoC 4200M /
+ 722:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *  PSoC 4200L / PSoC 4000S / PSoC 4100S / PSoC Analog Coprocessor devices.
+ 723:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *
+ 724:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *******************************************************************************/
+ 725:Generated_Source\PSoC4/LINS_SCB_UART.c ****         void LINS_SCB_UartEnableCts(void)
+ 726:Generated_Source\PSoC4/LINS_SCB_UART.c ****         {
+ 727:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_UART_FLOW_CTRL_REG |= (uint32)  LINS_SCB_UART_FLOW_CTRL_CTS_ENABLE;
+ 728:Generated_Source\PSoC4/LINS_SCB_UART.c ****         }
+ 729:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 730:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 731:Generated_Source\PSoC4/LINS_SCB_UART.c ****         /*******************************************************************************
+ 732:Generated_Source\PSoC4/LINS_SCB_UART.c ****         * Function Name: LINS_SCB_UartDisableCts
+ 733:Generated_Source\PSoC4/LINS_SCB_UART.c ****         ****************************************************************************//**
+ 734:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *
+ 735:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *  Disables usage of CTS input signal by the UART transmitter.
+ 736:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *  Only available for PSoC 4100 BLE / PSoC 4200 BLE / PSoC 4100M / PSoC 4200M /
+ 737:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *  PSoC 4200L / PSoC 4000S / PSoC 4100S / PSoC Analog Coprocessor devices.
+ 738:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *
+ 739:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *******************************************************************************/
+ 740:Generated_Source\PSoC4/LINS_SCB_UART.c ****         void LINS_SCB_UartDisableCts(void)
+ 741:Generated_Source\PSoC4/LINS_SCB_UART.c ****         {
+ 742:Generated_Source\PSoC4/LINS_SCB_UART.c ****             LINS_SCB_UART_FLOW_CTRL_REG &= (uint32) ~LINS_SCB_UART_FLOW_CTRL_CTS_ENABLE;
+ 743:Generated_Source\PSoC4/LINS_SCB_UART.c ****         }
+ 744:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 745:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 746:Generated_Source\PSoC4/LINS_SCB_UART.c ****         /*******************************************************************************
+ 747:Generated_Source\PSoC4/LINS_SCB_UART.c ****         * Function Name: LINS_SCB_UartSetCtsPolarity
+ 748:Generated_Source\PSoC4/LINS_SCB_UART.c ****         ****************************************************************************//**
+ 749:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *
+ 750:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *  Sets active polarity of CTS input signal.
+ 751:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *  Only available for PSoC 4100 BLE / PSoC 4200 BLE / PSoC 4100M / PSoC 4200M /
+ 752:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *  PSoC 4200L / PSoC 4000S / PSoC 4100S / PSoC Analog Coprocessor devices.
+ 753:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *
+ 754:Generated_Source\PSoC4/LINS_SCB_UART.c ****         * \param
+ 755:Generated_Source\PSoC4/LINS_SCB_UART.c ****         * polarity: Active polarity of CTS output signal.
+ 756:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *   - LINS_SCB_UART_CTS_ACTIVE_LOW  - CTS signal is active low.
+ 757:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *   - LINS_SCB_UART_CTS_ACTIVE_HIGH - CTS signal is active high.
+ 758:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *
+ 759:Generated_Source\PSoC4/LINS_SCB_UART.c ****         *******************************************************************************/
+ 760:Generated_Source\PSoC4/LINS_SCB_UART.c ****         void LINS_SCB_UartSetCtsPolarity(uint32 polarity)
+ 761:Generated_Source\PSoC4/LINS_SCB_UART.c ****         {
+ 762:Generated_Source\PSoC4/LINS_SCB_UART.c ****             if (0u != polarity)
+ 763:Generated_Source\PSoC4/LINS_SCB_UART.c ****             {
+ 764:Generated_Source\PSoC4/LINS_SCB_UART.c ****                 LINS_SCB_UART_FLOW_CTRL_REG |= (uint32)  LINS_SCB_UART_FLOW_CTRL_CTS_POLARITY;
+ 765:Generated_Source\PSoC4/LINS_SCB_UART.c ****             }
+ 766:Generated_Source\PSoC4/LINS_SCB_UART.c ****             else
+ 767:Generated_Source\PSoC4/LINS_SCB_UART.c ****             {
+ 768:Generated_Source\PSoC4/LINS_SCB_UART.c ****                 LINS_SCB_UART_FLOW_CTRL_REG &= (uint32) ~LINS_SCB_UART_FLOW_CTRL_CTS_POLARITY;
+ 769:Generated_Source\PSoC4/LINS_SCB_UART.c ****             }
+ 770:Generated_Source\PSoC4/LINS_SCB_UART.c ****         }
+ 771:Generated_Source\PSoC4/LINS_SCB_UART.c ****     #endif /* !(LINS_SCB_CY_SCBIP_V0 || LINS_SCB_CY_SCBIP_V1) */
+ 772:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 23
+
+
+ 773:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 774:Generated_Source\PSoC4/LINS_SCB_UART.c ****     /*******************************************************************************
+ 775:Generated_Source\PSoC4/LINS_SCB_UART.c ****     * Function Name: LINS_SCB_UartSendBreakBlocking
+ 776:Generated_Source\PSoC4/LINS_SCB_UART.c ****     ****************************************************************************//**
+ 777:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *
+ 778:Generated_Source\PSoC4/LINS_SCB_UART.c ****     * Sends a break condition (logic low) of specified width on UART TX line.
+ 779:Generated_Source\PSoC4/LINS_SCB_UART.c ****     * Blocks until break is completed. Only call this function when UART TX FIFO
+ 780:Generated_Source\PSoC4/LINS_SCB_UART.c ****     * and shifter are empty.
+ 781:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *
+ 782:Generated_Source\PSoC4/LINS_SCB_UART.c ****     * \param breakWidth
+ 783:Generated_Source\PSoC4/LINS_SCB_UART.c ****     * Width of break condition. Valid range is 4 to 16 bits.
+ 784:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *
+ 785:Generated_Source\PSoC4/LINS_SCB_UART.c ****     * \note
+ 786:Generated_Source\PSoC4/LINS_SCB_UART.c ****     * Before sending break all UART TX interrupt sources are disabled. The state
+ 787:Generated_Source\PSoC4/LINS_SCB_UART.c ****     * of UART TX interrupt sources is restored before function returns.
+ 788:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *
+ 789:Generated_Source\PSoC4/LINS_SCB_UART.c ****     * \sideeffect
+ 790:Generated_Source\PSoC4/LINS_SCB_UART.c ****     * If this function is called while there is data in the TX FIFO or shifter that
+ 791:Generated_Source\PSoC4/LINS_SCB_UART.c ****     * data will be shifted out in packets the size of breakWidth.
+ 792:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *
+ 793:Generated_Source\PSoC4/LINS_SCB_UART.c ****     *******************************************************************************/
+ 794:Generated_Source\PSoC4/LINS_SCB_UART.c ****     void LINS_SCB_UartSendBreakBlocking(uint32 breakWidth)
+ 795:Generated_Source\PSoC4/LINS_SCB_UART.c ****     {
+ 480              		.loc 1 795 0
+ 481              		.cfi_startproc
+ 482              		@ args = 0, pretend = 0, frame = 0
+ 483              		@ frame_needed = 0, uses_anonymous_args = 0
+ 484              	.LVL35:
+ 485 0000 70B5     		push	{r4, r5, r6, lr}
+ 486              		.cfi_def_cfa_offset 16
+ 487              		.cfi_offset 4, -16
+ 488              		.cfi_offset 5, -12
+ 489              		.cfi_offset 6, -8
+ 490              		.cfi_offset 14, -4
+ 491 0002 0300     		movs	r3, r0
+ 796:Generated_Source\PSoC4/LINS_SCB_UART.c ****         uint32 txCtrlReg;
+ 797:Generated_Source\PSoC4/LINS_SCB_UART.c ****         uint32 txIntrReg;
+ 798:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 799:Generated_Source\PSoC4/LINS_SCB_UART.c ****         /* Disable all UART TX interrupt source and clear UART TX Done history */
+ 800:Generated_Source\PSoC4/LINS_SCB_UART.c ****         txIntrReg = LINS_SCB_GetTxInterruptMode();
+ 492              		.loc 1 800 0
+ 493 0004 0F4A     		ldr	r2, .L33
+ 494 0006 1568     		ldr	r5, [r2]
+ 495              	.LVL36:
+ 801:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_SetTxInterruptMode(0u);
+ 496              		.loc 1 801 0
+ 497 0008 0024     		movs	r4, #0
+ 498 000a 1460     		str	r4, [r2]
+ 802:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_ClearTxInterruptSource(LINS_SCB_INTR_TX_UART_DONE);
+ 499              		.loc 1 802 0
+ 500 000c 8021     		movs	r1, #128
+ 501 000e 8900     		lsls	r1, r1, #2
+ 502 0010 0D4A     		ldr	r2, .L33+4
+ 503 0012 1160     		str	r1, [r2]
+ 803:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 804:Generated_Source\PSoC4/LINS_SCB_UART.c ****         /* Store TX CTRL configuration */
+ 805:Generated_Source\PSoC4/LINS_SCB_UART.c ****         txCtrlReg = LINS_SCB_TX_CTRL_REG;
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 24
+
+
+ 504              		.loc 1 805 0
+ 505 0014 0D4A     		ldr	r2, .L33+8
+ 506 0016 1668     		ldr	r6, [r2]
+ 507              	.LVL37:
+ 806:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 807:Generated_Source\PSoC4/LINS_SCB_UART.c ****         /* Set break width */
+ 808:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_TX_CTRL_REG = (LINS_SCB_TX_CTRL_REG & (uint32) ~LINS_SCB_TX_CTRL_DATA_WIDTH_MASK) 
+ 508              		.loc 1 808 0
+ 509 0018 1168     		ldr	r1, [r2]
+ 510 001a 0F20     		movs	r0, #15
+ 511              	.LVL38:
+ 512 001c 8143     		bics	r1, r0
+ 809:Generated_Source\PSoC4/LINS_SCB_UART.c ****                                         LINS_SCB_GET_TX_CTRL_DATA_WIDTH(breakWidth);
+ 513              		.loc 1 809 0
+ 514 001e 013B     		subs	r3, r3, #1
+ 515              	.LVL39:
+ 516 0020 1840     		ands	r0, r3
+ 808:Generated_Source\PSoC4/LINS_SCB_UART.c ****                                         LINS_SCB_GET_TX_CTRL_DATA_WIDTH(breakWidth);
+ 517              		.loc 1 808 0
+ 518 0022 0843     		orrs	r0, r1
+ 519 0024 1060     		str	r0, [r2]
+ 810:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 811:Generated_Source\PSoC4/LINS_SCB_UART.c ****         /* Generate break */
+ 812:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_TX_FIFO_WR_REG = 0u;
+ 520              		.loc 1 812 0
+ 521 0026 0A4B     		ldr	r3, .L33+12
+ 522              	.LVL40:
+ 523 0028 1C60     		str	r4, [r3]
+ 524              	.L32:
+ 813:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 814:Generated_Source\PSoC4/LINS_SCB_UART.c ****         /* Wait for break completion */
+ 815:Generated_Source\PSoC4/LINS_SCB_UART.c ****         while (0u == (LINS_SCB_GetTxInterruptSource() & LINS_SCB_INTR_TX_UART_DONE))
+ 525              		.loc 1 815 0 discriminator 1
+ 526 002a 074B     		ldr	r3, .L33+4
+ 527 002c 1B68     		ldr	r3, [r3]
+ 528 002e 9B05     		lsls	r3, r3, #22
+ 529 0030 FBD5     		bpl	.L32
+ 816:Generated_Source\PSoC4/LINS_SCB_UART.c ****         {
+ 817:Generated_Source\PSoC4/LINS_SCB_UART.c ****         }
+ 818:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 819:Generated_Source\PSoC4/LINS_SCB_UART.c ****         /* Clear all UART TX interrupt sources to  */
+ 820:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_ClearTxInterruptSource(LINS_SCB_INTR_TX_ALL);
+ 530              		.loc 1 820 0
+ 531 0032 084A     		ldr	r2, .L33+16
+ 532 0034 044B     		ldr	r3, .L33+4
+ 533 0036 1A60     		str	r2, [r3]
+ 821:Generated_Source\PSoC4/LINS_SCB_UART.c **** 
+ 822:Generated_Source\PSoC4/LINS_SCB_UART.c ****         /* Restore TX interrupt sources and data width */
+ 823:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_TX_CTRL_REG = txCtrlReg;
+ 534              		.loc 1 823 0
+ 535 0038 044B     		ldr	r3, .L33+8
+ 536 003a 1E60     		str	r6, [r3]
+ 824:Generated_Source\PSoC4/LINS_SCB_UART.c ****         LINS_SCB_SetTxInterruptMode(txIntrReg);
+ 537              		.loc 1 824 0
+ 538 003c 014B     		ldr	r3, .L33
+ 539 003e 1D60     		str	r5, [r3]
+ 825:Generated_Source\PSoC4/LINS_SCB_UART.c ****     }
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 25
+
+
+ 540              		.loc 1 825 0
+ 541              		@ sp needed
+ 542              	.LVL41:
+ 543              	.LVL42:
+ 544 0040 70BD     		pop	{r4, r5, r6, pc}
+ 545              	.L34:
+ 546 0042 C046     		.align	2
+ 547              	.L33:
+ 548 0044 880F0740 		.word	1074204552
+ 549 0048 800F0740 		.word	1074204544
+ 550 004c 00020740 		.word	1074201088
+ 551 0050 40020740 		.word	1074201152
+ 552 0054 F3070000 		.word	2035
+ 553              		.cfi_endproc
+ 554              	.LFE9:
+ 555              		.size	LINS_SCB_UartSendBreakBlocking, .-LINS_SCB_UartSendBreakBlocking
+ 556              		.text
+ 557              	.Letext0:
+ 558              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 559              		.file 3 "Generated_Source\\PSoC4\\LINS_SCB_SPI_UART.h"
+ 560              		.file 4 "Generated_Source\\PSoC4\\LINS_SCB_PVT.h"
+ 561              		.section	.debug_info,"",%progbits
+ 562              	.Ldebug_info0:
+ 563 0000 0C030000 		.4byte	0x30c
+ 564 0004 0400     		.2byte	0x4
+ 565 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 566 000a 04       		.byte	0x4
+ 567 000b 01       		.uleb128 0x1
+ 568 000c 3D020000 		.4byte	.LASF42
+ 569 0010 0C       		.byte	0xc
+ 570 0011 3E010000 		.4byte	.LASF43
+ 571 0015 2C000000 		.4byte	.LASF44
+ 572 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 573 001d 00000000 		.4byte	0
+ 574 0021 00000000 		.4byte	.Ldebug_line0
+ 575 0025 02       		.uleb128 0x2
+ 576 0026 01       		.byte	0x1
+ 577 0027 06       		.byte	0x6
+ 578 0028 63030000 		.4byte	.LASF0
+ 579 002c 02       		.uleb128 0x2
+ 580 002d 01       		.byte	0x1
+ 581 002e 08       		.byte	0x8
+ 582 002f 12010000 		.4byte	.LASF1
+ 583 0033 02       		.uleb128 0x2
+ 584 0034 02       		.byte	0x2
+ 585 0035 05       		.byte	0x5
+ 586 0036 DB010000 		.4byte	.LASF2
+ 587 003a 02       		.uleb128 0x2
+ 588 003b 02       		.byte	0x2
+ 589 003c 07       		.byte	0x7
+ 590 003d 7D010000 		.4byte	.LASF3
+ 591 0041 02       		.uleb128 0x2
+ 592 0042 04       		.byte	0x4
+ 593 0043 05       		.byte	0x5
+ 594 0044 3B030000 		.4byte	.LASF4
+ 595 0048 02       		.uleb128 0x2
+ 596 0049 04       		.byte	0x4
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 26
+
+
+ 597 004a 07       		.byte	0x7
+ 598 004b 6B010000 		.4byte	.LASF5
+ 599 004f 02       		.uleb128 0x2
+ 600 0050 08       		.byte	0x8
+ 601 0051 05       		.byte	0x5
+ 602 0052 00000000 		.4byte	.LASF6
+ 603 0056 02       		.uleb128 0x2
+ 604 0057 08       		.byte	0x8
+ 605 0058 07       		.byte	0x7
+ 606 0059 1D020000 		.4byte	.LASF7
+ 607 005d 03       		.uleb128 0x3
+ 608 005e 04       		.byte	0x4
+ 609 005f 05       		.byte	0x5
+ 610 0060 696E7400 		.ascii	"int\000"
+ 611 0064 02       		.uleb128 0x2
+ 612 0065 04       		.byte	0x4
+ 613 0066 07       		.byte	0x7
+ 614 0067 F3010000 		.4byte	.LASF8
+ 615 006b 04       		.uleb128 0x4
+ 616 006c E5010000 		.4byte	.LASF9
+ 617 0070 02       		.byte	0x2
+ 618 0071 E501     		.2byte	0x1e5
+ 619 0073 3A000000 		.4byte	0x3a
+ 620 0077 04       		.uleb128 0x4
+ 621 0078 EC010000 		.4byte	.LASF10
+ 622 007c 02       		.byte	0x2
+ 623 007d E601     		.2byte	0x1e6
+ 624 007f 48000000 		.4byte	0x48
+ 625 0083 02       		.uleb128 0x2
+ 626 0084 04       		.byte	0x4
+ 627 0085 04       		.byte	0x4
+ 628 0086 C7000000 		.4byte	.LASF11
+ 629 008a 02       		.uleb128 0x2
+ 630 008b 08       		.byte	0x8
+ 631 008c 04       		.byte	0x4
+ 632 008d B5010000 		.4byte	.LASF12
+ 633 0091 04       		.uleb128 0x4
+ 634 0092 65010000 		.4byte	.LASF13
+ 635 0096 02       		.byte	0x2
+ 636 0097 F501     		.2byte	0x1f5
+ 637 0099 9D000000 		.4byte	0x9d
+ 638 009d 02       		.uleb128 0x2
+ 639 009e 01       		.byte	0x1
+ 640 009f 08       		.byte	0x8
+ 641 00a0 0B030000 		.4byte	.LASF14
+ 642 00a4 04       		.uleb128 0x4
+ 643 00a5 0E000000 		.4byte	.LASF15
+ 644 00a9 02       		.byte	0x2
+ 645 00aa 9002     		.2byte	0x290
+ 646 00ac B0000000 		.4byte	0xb0
+ 647 00b0 05       		.uleb128 0x5
+ 648 00b1 77000000 		.4byte	0x77
+ 649 00b5 02       		.uleb128 0x2
+ 650 00b6 08       		.byte	0x8
+ 651 00b7 04       		.byte	0x4
+ 652 00b8 57030000 		.4byte	.LASF16
+ 653 00bc 02       		.uleb128 0x2
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 27
+
+
+ 654 00bd 04       		.byte	0x4
+ 655 00be 07       		.byte	0x7
+ 656 00bf CB020000 		.4byte	.LASF17
+ 657 00c3 06       		.uleb128 0x6
+ 658 00c4 90010000 		.4byte	.LASF18
+ 659 00c8 01       		.byte	0x1
+ 660 00c9 F7       		.byte	0xf7
+ 661 00ca 00000000 		.4byte	.LFB0
+ 662 00ce 9C000000 		.4byte	.LFE0-.LFB0
+ 663 00d2 01       		.uleb128 0x1
+ 664 00d3 9C       		.byte	0x9c
+ 665 00d4 07       		.uleb128 0x7
+ 666 00d5 14000000 		.4byte	.LASF19
+ 667 00d9 01       		.byte	0x1
+ 668 00da 3D01     		.2byte	0x13d
+ 669 00dc 00000000 		.4byte	.LFB1
+ 670 00e0 2C000000 		.4byte	.LFE1-.LFB1
+ 671 00e4 01       		.uleb128 0x1
+ 672 00e5 9C       		.byte	0x9c
+ 673 00e6 07       		.uleb128 0x7
+ 674 00e7 F9020000 		.4byte	.LASF20
+ 675 00eb 01       		.byte	0x1
+ 676 00ec 7101     		.2byte	0x171
+ 677 00ee 00000000 		.4byte	.LFB2
+ 678 00f2 2C000000 		.4byte	.LFE2-.LFB2
+ 679 00f6 01       		.uleb128 0x1
+ 680 00f7 9C       		.byte	0x9c
+ 681 00f8 08       		.uleb128 0x8
+ 682 00f9 DF020000 		.4byte	.LASF21
+ 683 00fd 01       		.byte	0x1
+ 684 00fe B101     		.2byte	0x1b1
+ 685 0100 00000000 		.4byte	.LFB3
+ 686 0104 14000000 		.4byte	.LFE3-.LFB3
+ 687 0108 01       		.uleb128 0x1
+ 688 0109 9C       		.byte	0x9c
+ 689 010a 2F010000 		.4byte	0x12f
+ 690 010e 09       		.uleb128 0x9
+ 691 010f 15020000 		.4byte	.LASF23
+ 692 0113 01       		.byte	0x1
+ 693 0114 B101     		.2byte	0x1b1
+ 694 0116 77000000 		.4byte	0x77
+ 695 011a 00000000 		.4byte	.LLST0
+ 696 011e 0A       		.uleb128 0xa
+ 697 011f 4E030000 		.4byte	.LASF25
+ 698 0123 01       		.byte	0x1
+ 699 0124 B301     		.2byte	0x1b3
+ 700 0126 77000000 		.4byte	0x77
+ 701 012a 21000000 		.4byte	.LLST1
+ 702 012e 00       		.byte	0
+ 703 012f 08       		.uleb128 0x8
+ 704 0130 20010000 		.4byte	.LASF22
+ 705 0134 01       		.byte	0x1
+ 706 0135 CA01     		.2byte	0x1ca
+ 707 0137 00000000 		.4byte	.LFB4
+ 708 013b 18000000 		.4byte	.LFE4-.LFB4
+ 709 013f 01       		.uleb128 0x1
+ 710 0140 9C       		.byte	0x9c
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 28
+
+
+ 711 0141 66010000 		.4byte	0x166
+ 712 0145 09       		.uleb128 0x9
+ 713 0146 A9010000 		.4byte	.LASF24
+ 714 014a 01       		.byte	0x1
+ 715 014b CA01     		.2byte	0x1ca
+ 716 014d 77000000 		.4byte	0x77
+ 717 0151 3F000000 		.4byte	.LLST2
+ 718 0155 0A       		.uleb128 0xa
+ 719 0156 4E030000 		.4byte	.LASF25
+ 720 015a 01       		.byte	0x1
+ 721 015b CC01     		.2byte	0x1cc
+ 722 015d 77000000 		.4byte	0x77
+ 723 0161 60000000 		.4byte	.LLST3
+ 724 0165 00       		.byte	0
+ 725 0166 0B       		.uleb128 0xb
+ 726 0167 00020000 		.4byte	.LASF27
+ 727 016b 01       		.byte	0x1
+ 728 016c F201     		.2byte	0x1f2
+ 729 016e 77000000 		.4byte	0x77
+ 730 0172 00000000 		.4byte	.LFB5
+ 731 0176 2C000000 		.4byte	.LFE5-.LFB5
+ 732 017a 01       		.uleb128 0x1
+ 733 017b 9C       		.byte	0x9c
+ 734 017c A3010000 		.4byte	0x1a3
+ 735 0180 0A       		.uleb128 0xa
+ 736 0181 A2010000 		.4byte	.LASF26
+ 737 0185 01       		.byte	0x1
+ 738 0186 F401     		.2byte	0x1f4
+ 739 0188 77000000 		.4byte	0x77
+ 740 018c 89000000 		.4byte	.LLST4
+ 741 0190 0C       		.uleb128 0xc
+ 742 0191 06000000 		.4byte	.LVL11
+ 743 0195 EB020000 		.4byte	0x2eb
+ 744 0199 0C       		.uleb128 0xc
+ 745 019a 0E000000 		.4byte	.LVL12
+ 746 019e F7020000 		.4byte	0x2f7
+ 747 01a2 00       		.byte	0
+ 748 01a3 0B       		.uleb128 0xb
+ 749 01a4 84030000 		.4byte	.LASF28
+ 750 01a8 01       		.byte	0x1
+ 751 01a9 2402     		.2byte	0x224
+ 752 01ab 77000000 		.4byte	0x77
+ 753 01af 00000000 		.4byte	.LFB6
+ 754 01b3 34000000 		.4byte	.LFE6-.LFB6
+ 755 01b7 01       		.uleb128 0x1
+ 756 01b8 9C       		.byte	0x9c
+ 757 01b9 F0010000 		.4byte	0x1f0
+ 758 01bd 0A       		.uleb128 0xa
+ 759 01be A2010000 		.4byte	.LASF26
+ 760 01c2 01       		.byte	0x1
+ 761 01c3 2602     		.2byte	0x226
+ 762 01c5 77000000 		.4byte	0x77
+ 763 01c9 D6000000 		.4byte	.LLST5
+ 764 01cd 0A       		.uleb128 0xa
+ 765 01ce 44030000 		.4byte	.LASF29
+ 766 01d2 01       		.byte	0x1
+ 767 01d3 2702     		.2byte	0x227
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 29
+
+
+ 768 01d5 77000000 		.4byte	0x77
+ 769 01d9 F4000000 		.4byte	.LLST6
+ 770 01dd 0C       		.uleb128 0xc
+ 771 01de 06000000 		.4byte	.LVL17
+ 772 01e2 EB020000 		.4byte	0x2eb
+ 773 01e6 0C       		.uleb128 0xc
+ 774 01e7 0E000000 		.4byte	.LVL18
+ 775 01eb F7020000 		.4byte	0x2f7
+ 776 01ef 00       		.byte	0
+ 777 01f0 08       		.uleb128 0x8
+ 778 01f1 10030000 		.4byte	.LASF30
+ 779 01f5 01       		.byte	0x1
+ 780 01f6 A802     		.2byte	0x2a8
+ 781 01f8 00000000 		.4byte	.LFB7
+ 782 01fc 16000000 		.4byte	.LFE7-.LFB7
+ 783 0200 01       		.uleb128 0x1
+ 784 0201 9C       		.byte	0x9c
+ 785 0202 30020000 		.4byte	0x230
+ 786 0206 09       		.uleb128 0x9
+ 787 0207 8F000000 		.4byte	.LASF31
+ 788 020b 01       		.byte	0x1
+ 789 020c A802     		.2byte	0x2a8
+ 790 020e 30020000 		.4byte	0x230
+ 791 0212 0D010000 		.4byte	.LLST7
+ 792 0216 0A       		.uleb128 0xa
+ 793 0217 34020000 		.4byte	.LASF32
+ 794 021b 01       		.byte	0x1
+ 795 021c AA02     		.2byte	0x2aa
+ 796 021e 77000000 		.4byte	0x77
+ 797 0222 39010000 		.4byte	.LLST8
+ 798 0226 0C       		.uleb128 0xc
+ 799 0227 0C000000 		.4byte	.LVL27
+ 800 022b 03030000 		.4byte	0x303
+ 801 022f 00       		.byte	0
+ 802 0230 0D       		.uleb128 0xd
+ 803 0231 04       		.byte	0x4
+ 804 0232 36020000 		.4byte	0x236
+ 805 0236 0E       		.uleb128 0xe
+ 806 0237 91000000 		.4byte	0x91
+ 807 023b 08       		.uleb128 0x8
+ 808 023c 96000000 		.4byte	.LASF33
+ 809 0240 01       		.byte	0x1
+ 810 0241 C302     		.2byte	0x2c3
+ 811 0243 00000000 		.4byte	.LFB8
+ 812 0247 14000000 		.4byte	.LFE8-.LFB8
+ 813 024b 01       		.uleb128 0x1
+ 814 024c 9C       		.byte	0x9c
+ 815 024d 99020000 		.4byte	0x299
+ 816 0251 09       		.uleb128 0x9
+ 817 0252 D4020000 		.4byte	.LASF34
+ 818 0256 01       		.byte	0x1
+ 819 0257 C302     		.2byte	0x2c3
+ 820 0259 77000000 		.4byte	0x77
+ 821 025d 58010000 		.4byte	.LLST9
+ 822 0261 0F       		.uleb128 0xf
+ 823 0262 06000000 		.4byte	.LVL32
+ 824 0266 03030000 		.4byte	0x303
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 30
+
+
+ 825 026a 76020000 		.4byte	0x276
+ 826 026e 10       		.uleb128 0x10
+ 827 026f 01       		.uleb128 0x1
+ 828 0270 50       		.byte	0x50
+ 829 0271 03       		.uleb128 0x3
+ 830 0272 F3       		.byte	0xf3
+ 831 0273 01       		.uleb128 0x1
+ 832 0274 50       		.byte	0x50
+ 833 0275 00       		.byte	0
+ 834 0276 0F       		.uleb128 0xf
+ 835 0277 0C000000 		.4byte	.LVL33
+ 836 027b 03030000 		.4byte	0x303
+ 837 027f 89020000 		.4byte	0x289
+ 838 0283 10       		.uleb128 0x10
+ 839 0284 01       		.uleb128 0x1
+ 840 0285 50       		.byte	0x50
+ 841 0286 01       		.uleb128 0x1
+ 842 0287 3D       		.byte	0x3d
+ 843 0288 00       		.byte	0
+ 844 0289 11       		.uleb128 0x11
+ 845 028a 12000000 		.4byte	.LVL34
+ 846 028e 03030000 		.4byte	0x303
+ 847 0292 10       		.uleb128 0x10
+ 848 0293 01       		.uleb128 0x1
+ 849 0294 50       		.byte	0x50
+ 850 0295 01       		.uleb128 0x1
+ 851 0296 3A       		.byte	0x3a
+ 852 0297 00       		.byte	0
+ 853 0298 00       		.byte	0
+ 854 0299 08       		.uleb128 0x8
+ 855 029a BC010000 		.4byte	.LASF35
+ 856 029e 01       		.byte	0x1
+ 857 029f 1A03     		.2byte	0x31a
+ 858 02a1 00000000 		.4byte	.LFB9
+ 859 02a5 58000000 		.4byte	.LFE9-.LFB9
+ 860 02a9 01       		.uleb128 0x1
+ 861 02aa 9C       		.byte	0x9c
+ 862 02ab E0020000 		.4byte	0x2e0
+ 863 02af 09       		.uleb128 0x9
+ 864 02b0 79030000 		.4byte	.LASF36
+ 865 02b4 01       		.byte	0x1
+ 866 02b5 1A03     		.2byte	0x31a
+ 867 02b7 77000000 		.4byte	0x77
+ 868 02bb 79010000 		.4byte	.LLST10
+ 869 02bf 0A       		.uleb128 0xa
+ 870 02c0 6F030000 		.4byte	.LASF37
+ 871 02c4 01       		.byte	0x1
+ 872 02c5 1C03     		.2byte	0x31c
+ 873 02c7 77000000 		.4byte	0x77
+ 874 02cb B2010000 		.4byte	.LLST11
+ 875 02cf 0A       		.uleb128 0xa
+ 876 02d0 CD000000 		.4byte	.LASF38
+ 877 02d4 01       		.byte	0x1
+ 878 02d5 1D03     		.2byte	0x31d
+ 879 02d7 77000000 		.4byte	0x77
+ 880 02db C5010000 		.4byte	.LLST12
+ 881 02df 00       		.byte	0
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 31
+
+
+ 882 02e0 12       		.uleb128 0x12
+ 883 02e1 27030000 		.4byte	.LASF45
+ 884 02e5 04       		.byte	0x4
+ 885 02e6 5B       		.byte	0x5b
+ 886 02e7 6B000000 		.4byte	0x6b
+ 887 02eb 13       		.uleb128 0x13
+ 888 02ec D7000000 		.4byte	.LASF39
+ 889 02f0 D7000000 		.4byte	.LASF39
+ 890 02f4 03       		.byte	0x3
+ 891 02f5 3E03     		.2byte	0x33e
+ 892 02f7 13       		.uleb128 0x13
+ 893 02f8 F7000000 		.4byte	.LASF40
+ 894 02fc F7000000 		.4byte	.LASF40
+ 895 0300 03       		.byte	0x3
+ 896 0301 3D03     		.2byte	0x33d
+ 897 0303 13       		.uleb128 0x13
+ 898 0304 AB000000 		.4byte	.LASF41
+ 899 0308 AB000000 		.4byte	.LASF41
+ 900 030c 03       		.byte	0x3
+ 901 030d 4403     		.2byte	0x344
+ 902 030f 00       		.byte	0
+ 903              		.section	.debug_abbrev,"",%progbits
+ 904              	.Ldebug_abbrev0:
+ 905 0000 01       		.uleb128 0x1
+ 906 0001 11       		.uleb128 0x11
+ 907 0002 01       		.byte	0x1
+ 908 0003 25       		.uleb128 0x25
+ 909 0004 0E       		.uleb128 0xe
+ 910 0005 13       		.uleb128 0x13
+ 911 0006 0B       		.uleb128 0xb
+ 912 0007 03       		.uleb128 0x3
+ 913 0008 0E       		.uleb128 0xe
+ 914 0009 1B       		.uleb128 0x1b
+ 915 000a 0E       		.uleb128 0xe
+ 916 000b 55       		.uleb128 0x55
+ 917 000c 17       		.uleb128 0x17
+ 918 000d 11       		.uleb128 0x11
+ 919 000e 01       		.uleb128 0x1
+ 920 000f 10       		.uleb128 0x10
+ 921 0010 17       		.uleb128 0x17
+ 922 0011 00       		.byte	0
+ 923 0012 00       		.byte	0
+ 924 0013 02       		.uleb128 0x2
+ 925 0014 24       		.uleb128 0x24
+ 926 0015 00       		.byte	0
+ 927 0016 0B       		.uleb128 0xb
+ 928 0017 0B       		.uleb128 0xb
+ 929 0018 3E       		.uleb128 0x3e
+ 930 0019 0B       		.uleb128 0xb
+ 931 001a 03       		.uleb128 0x3
+ 932 001b 0E       		.uleb128 0xe
+ 933 001c 00       		.byte	0
+ 934 001d 00       		.byte	0
+ 935 001e 03       		.uleb128 0x3
+ 936 001f 24       		.uleb128 0x24
+ 937 0020 00       		.byte	0
+ 938 0021 0B       		.uleb128 0xb
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 32
+
+
+ 939 0022 0B       		.uleb128 0xb
+ 940 0023 3E       		.uleb128 0x3e
+ 941 0024 0B       		.uleb128 0xb
+ 942 0025 03       		.uleb128 0x3
+ 943 0026 08       		.uleb128 0x8
+ 944 0027 00       		.byte	0
+ 945 0028 00       		.byte	0
+ 946 0029 04       		.uleb128 0x4
+ 947 002a 16       		.uleb128 0x16
+ 948 002b 00       		.byte	0
+ 949 002c 03       		.uleb128 0x3
+ 950 002d 0E       		.uleb128 0xe
+ 951 002e 3A       		.uleb128 0x3a
+ 952 002f 0B       		.uleb128 0xb
+ 953 0030 3B       		.uleb128 0x3b
+ 954 0031 05       		.uleb128 0x5
+ 955 0032 49       		.uleb128 0x49
+ 956 0033 13       		.uleb128 0x13
+ 957 0034 00       		.byte	0
+ 958 0035 00       		.byte	0
+ 959 0036 05       		.uleb128 0x5
+ 960 0037 35       		.uleb128 0x35
+ 961 0038 00       		.byte	0
+ 962 0039 49       		.uleb128 0x49
+ 963 003a 13       		.uleb128 0x13
+ 964 003b 00       		.byte	0
+ 965 003c 00       		.byte	0
+ 966 003d 06       		.uleb128 0x6
+ 967 003e 2E       		.uleb128 0x2e
+ 968 003f 00       		.byte	0
+ 969 0040 3F       		.uleb128 0x3f
+ 970 0041 19       		.uleb128 0x19
+ 971 0042 03       		.uleb128 0x3
+ 972 0043 0E       		.uleb128 0xe
+ 973 0044 3A       		.uleb128 0x3a
+ 974 0045 0B       		.uleb128 0xb
+ 975 0046 3B       		.uleb128 0x3b
+ 976 0047 0B       		.uleb128 0xb
+ 977 0048 27       		.uleb128 0x27
+ 978 0049 19       		.uleb128 0x19
+ 979 004a 11       		.uleb128 0x11
+ 980 004b 01       		.uleb128 0x1
+ 981 004c 12       		.uleb128 0x12
+ 982 004d 06       		.uleb128 0x6
+ 983 004e 40       		.uleb128 0x40
+ 984 004f 18       		.uleb128 0x18
+ 985 0050 9742     		.uleb128 0x2117
+ 986 0052 19       		.uleb128 0x19
+ 987 0053 00       		.byte	0
+ 988 0054 00       		.byte	0
+ 989 0055 07       		.uleb128 0x7
+ 990 0056 2E       		.uleb128 0x2e
+ 991 0057 00       		.byte	0
+ 992 0058 3F       		.uleb128 0x3f
+ 993 0059 19       		.uleb128 0x19
+ 994 005a 03       		.uleb128 0x3
+ 995 005b 0E       		.uleb128 0xe
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 33
+
+
+ 996 005c 3A       		.uleb128 0x3a
+ 997 005d 0B       		.uleb128 0xb
+ 998 005e 3B       		.uleb128 0x3b
+ 999 005f 05       		.uleb128 0x5
+ 1000 0060 27       		.uleb128 0x27
+ 1001 0061 19       		.uleb128 0x19
+ 1002 0062 11       		.uleb128 0x11
+ 1003 0063 01       		.uleb128 0x1
+ 1004 0064 12       		.uleb128 0x12
+ 1005 0065 06       		.uleb128 0x6
+ 1006 0066 40       		.uleb128 0x40
+ 1007 0067 18       		.uleb128 0x18
+ 1008 0068 9742     		.uleb128 0x2117
+ 1009 006a 19       		.uleb128 0x19
+ 1010 006b 00       		.byte	0
+ 1011 006c 00       		.byte	0
+ 1012 006d 08       		.uleb128 0x8
+ 1013 006e 2E       		.uleb128 0x2e
+ 1014 006f 01       		.byte	0x1
+ 1015 0070 3F       		.uleb128 0x3f
+ 1016 0071 19       		.uleb128 0x19
+ 1017 0072 03       		.uleb128 0x3
+ 1018 0073 0E       		.uleb128 0xe
+ 1019 0074 3A       		.uleb128 0x3a
+ 1020 0075 0B       		.uleb128 0xb
+ 1021 0076 3B       		.uleb128 0x3b
+ 1022 0077 05       		.uleb128 0x5
+ 1023 0078 27       		.uleb128 0x27
+ 1024 0079 19       		.uleb128 0x19
+ 1025 007a 11       		.uleb128 0x11
+ 1026 007b 01       		.uleb128 0x1
+ 1027 007c 12       		.uleb128 0x12
+ 1028 007d 06       		.uleb128 0x6
+ 1029 007e 40       		.uleb128 0x40
+ 1030 007f 18       		.uleb128 0x18
+ 1031 0080 9742     		.uleb128 0x2117
+ 1032 0082 19       		.uleb128 0x19
+ 1033 0083 01       		.uleb128 0x1
+ 1034 0084 13       		.uleb128 0x13
+ 1035 0085 00       		.byte	0
+ 1036 0086 00       		.byte	0
+ 1037 0087 09       		.uleb128 0x9
+ 1038 0088 05       		.uleb128 0x5
+ 1039 0089 00       		.byte	0
+ 1040 008a 03       		.uleb128 0x3
+ 1041 008b 0E       		.uleb128 0xe
+ 1042 008c 3A       		.uleb128 0x3a
+ 1043 008d 0B       		.uleb128 0xb
+ 1044 008e 3B       		.uleb128 0x3b
+ 1045 008f 05       		.uleb128 0x5
+ 1046 0090 49       		.uleb128 0x49
+ 1047 0091 13       		.uleb128 0x13
+ 1048 0092 02       		.uleb128 0x2
+ 1049 0093 17       		.uleb128 0x17
+ 1050 0094 00       		.byte	0
+ 1051 0095 00       		.byte	0
+ 1052 0096 0A       		.uleb128 0xa
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 34
+
+
+ 1053 0097 34       		.uleb128 0x34
+ 1054 0098 00       		.byte	0
+ 1055 0099 03       		.uleb128 0x3
+ 1056 009a 0E       		.uleb128 0xe
+ 1057 009b 3A       		.uleb128 0x3a
+ 1058 009c 0B       		.uleb128 0xb
+ 1059 009d 3B       		.uleb128 0x3b
+ 1060 009e 05       		.uleb128 0x5
+ 1061 009f 49       		.uleb128 0x49
+ 1062 00a0 13       		.uleb128 0x13
+ 1063 00a1 02       		.uleb128 0x2
+ 1064 00a2 17       		.uleb128 0x17
+ 1065 00a3 00       		.byte	0
+ 1066 00a4 00       		.byte	0
+ 1067 00a5 0B       		.uleb128 0xb
+ 1068 00a6 2E       		.uleb128 0x2e
+ 1069 00a7 01       		.byte	0x1
+ 1070 00a8 3F       		.uleb128 0x3f
+ 1071 00a9 19       		.uleb128 0x19
+ 1072 00aa 03       		.uleb128 0x3
+ 1073 00ab 0E       		.uleb128 0xe
+ 1074 00ac 3A       		.uleb128 0x3a
+ 1075 00ad 0B       		.uleb128 0xb
+ 1076 00ae 3B       		.uleb128 0x3b
+ 1077 00af 05       		.uleb128 0x5
+ 1078 00b0 27       		.uleb128 0x27
+ 1079 00b1 19       		.uleb128 0x19
+ 1080 00b2 49       		.uleb128 0x49
+ 1081 00b3 13       		.uleb128 0x13
+ 1082 00b4 11       		.uleb128 0x11
+ 1083 00b5 01       		.uleb128 0x1
+ 1084 00b6 12       		.uleb128 0x12
+ 1085 00b7 06       		.uleb128 0x6
+ 1086 00b8 40       		.uleb128 0x40
+ 1087 00b9 18       		.uleb128 0x18
+ 1088 00ba 9742     		.uleb128 0x2117
+ 1089 00bc 19       		.uleb128 0x19
+ 1090 00bd 01       		.uleb128 0x1
+ 1091 00be 13       		.uleb128 0x13
+ 1092 00bf 00       		.byte	0
+ 1093 00c0 00       		.byte	0
+ 1094 00c1 0C       		.uleb128 0xc
+ 1095 00c2 898201   		.uleb128 0x4109
+ 1096 00c5 00       		.byte	0
+ 1097 00c6 11       		.uleb128 0x11
+ 1098 00c7 01       		.uleb128 0x1
+ 1099 00c8 31       		.uleb128 0x31
+ 1100 00c9 13       		.uleb128 0x13
+ 1101 00ca 00       		.byte	0
+ 1102 00cb 00       		.byte	0
+ 1103 00cc 0D       		.uleb128 0xd
+ 1104 00cd 0F       		.uleb128 0xf
+ 1105 00ce 00       		.byte	0
+ 1106 00cf 0B       		.uleb128 0xb
+ 1107 00d0 0B       		.uleb128 0xb
+ 1108 00d1 49       		.uleb128 0x49
+ 1109 00d2 13       		.uleb128 0x13
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 35
+
+
+ 1110 00d3 00       		.byte	0
+ 1111 00d4 00       		.byte	0
+ 1112 00d5 0E       		.uleb128 0xe
+ 1113 00d6 26       		.uleb128 0x26
+ 1114 00d7 00       		.byte	0
+ 1115 00d8 49       		.uleb128 0x49
+ 1116 00d9 13       		.uleb128 0x13
+ 1117 00da 00       		.byte	0
+ 1118 00db 00       		.byte	0
+ 1119 00dc 0F       		.uleb128 0xf
+ 1120 00dd 898201   		.uleb128 0x4109
+ 1121 00e0 01       		.byte	0x1
+ 1122 00e1 11       		.uleb128 0x11
+ 1123 00e2 01       		.uleb128 0x1
+ 1124 00e3 31       		.uleb128 0x31
+ 1125 00e4 13       		.uleb128 0x13
+ 1126 00e5 01       		.uleb128 0x1
+ 1127 00e6 13       		.uleb128 0x13
+ 1128 00e7 00       		.byte	0
+ 1129 00e8 00       		.byte	0
+ 1130 00e9 10       		.uleb128 0x10
+ 1131 00ea 8A8201   		.uleb128 0x410a
+ 1132 00ed 00       		.byte	0
+ 1133 00ee 02       		.uleb128 0x2
+ 1134 00ef 18       		.uleb128 0x18
+ 1135 00f0 9142     		.uleb128 0x2111
+ 1136 00f2 18       		.uleb128 0x18
+ 1137 00f3 00       		.byte	0
+ 1138 00f4 00       		.byte	0
+ 1139 00f5 11       		.uleb128 0x11
+ 1140 00f6 898201   		.uleb128 0x4109
+ 1141 00f9 01       		.byte	0x1
+ 1142 00fa 11       		.uleb128 0x11
+ 1143 00fb 01       		.uleb128 0x1
+ 1144 00fc 31       		.uleb128 0x31
+ 1145 00fd 13       		.uleb128 0x13
+ 1146 00fe 00       		.byte	0
+ 1147 00ff 00       		.byte	0
+ 1148 0100 12       		.uleb128 0x12
+ 1149 0101 34       		.uleb128 0x34
+ 1150 0102 00       		.byte	0
+ 1151 0103 03       		.uleb128 0x3
+ 1152 0104 0E       		.uleb128 0xe
+ 1153 0105 3A       		.uleb128 0x3a
+ 1154 0106 0B       		.uleb128 0xb
+ 1155 0107 3B       		.uleb128 0x3b
+ 1156 0108 0B       		.uleb128 0xb
+ 1157 0109 49       		.uleb128 0x49
+ 1158 010a 13       		.uleb128 0x13
+ 1159 010b 3F       		.uleb128 0x3f
+ 1160 010c 19       		.uleb128 0x19
+ 1161 010d 3C       		.uleb128 0x3c
+ 1162 010e 19       		.uleb128 0x19
+ 1163 010f 00       		.byte	0
+ 1164 0110 00       		.byte	0
+ 1165 0111 13       		.uleb128 0x13
+ 1166 0112 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 36
+
+
+ 1167 0113 00       		.byte	0
+ 1168 0114 3F       		.uleb128 0x3f
+ 1169 0115 19       		.uleb128 0x19
+ 1170 0116 3C       		.uleb128 0x3c
+ 1171 0117 19       		.uleb128 0x19
+ 1172 0118 6E       		.uleb128 0x6e
+ 1173 0119 0E       		.uleb128 0xe
+ 1174 011a 03       		.uleb128 0x3
+ 1175 011b 0E       		.uleb128 0xe
+ 1176 011c 3A       		.uleb128 0x3a
+ 1177 011d 0B       		.uleb128 0xb
+ 1178 011e 3B       		.uleb128 0x3b
+ 1179 011f 05       		.uleb128 0x5
+ 1180 0120 00       		.byte	0
+ 1181 0121 00       		.byte	0
+ 1182 0122 00       		.byte	0
+ 1183              		.section	.debug_loc,"",%progbits
+ 1184              	.Ldebug_loc0:
+ 1185              	.LLST0:
+ 1186 0000 00000000 		.4byte	.LVL0
+ 1187 0004 0A000000 		.4byte	.LVL3
+ 1188 0008 0100     		.2byte	0x1
+ 1189 000a 50       		.byte	0x50
+ 1190 000b 0A000000 		.4byte	.LVL3
+ 1191 000f 14000000 		.4byte	.LFE3
+ 1192 0013 0400     		.2byte	0x4
+ 1193 0015 F3       		.byte	0xf3
+ 1194 0016 01       		.uleb128 0x1
+ 1195 0017 50       		.byte	0x50
+ 1196 0018 9F       		.byte	0x9f
+ 1197 0019 00000000 		.4byte	0
+ 1198 001d 00000000 		.4byte	0
+ 1199              	.LLST1:
+ 1200 0021 04000000 		.4byte	.LVL1
+ 1201 0025 0C000000 		.4byte	.LVL4
+ 1202 0029 0100     		.2byte	0x1
+ 1203 002b 53       		.byte	0x53
+ 1204 002c 0C000000 		.4byte	.LVL4
+ 1205 0030 14000000 		.4byte	.LFE3
+ 1206 0034 0100     		.2byte	0x1
+ 1207 0036 50       		.byte	0x50
+ 1208 0037 00000000 		.4byte	0
+ 1209 003b 00000000 		.4byte	0
+ 1210              	.LLST2:
+ 1211 003f 00000000 		.4byte	.LVL5
+ 1212 0043 0A000000 		.4byte	.LVL8
+ 1213 0047 0100     		.2byte	0x1
+ 1214 0049 50       		.byte	0x50
+ 1215 004a 0A000000 		.4byte	.LVL8
+ 1216 004e 18000000 		.4byte	.LFE4
+ 1217 0052 0400     		.2byte	0x4
+ 1218 0054 F3       		.byte	0xf3
+ 1219 0055 01       		.uleb128 0x1
+ 1220 0056 50       		.byte	0x50
+ 1221 0057 9F       		.byte	0x9f
+ 1222 0058 00000000 		.4byte	0
+ 1223 005c 00000000 		.4byte	0
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 37
+
+
+ 1224              	.LLST3:
+ 1225 0060 04000000 		.4byte	.LVL6
+ 1226 0064 08000000 		.4byte	.LVL7
+ 1227 0068 0100     		.2byte	0x1
+ 1228 006a 51       		.byte	0x51
+ 1229 006b 08000000 		.4byte	.LVL7
+ 1230 006f 0C000000 		.4byte	.LVL9
+ 1231 0073 0100     		.2byte	0x1
+ 1232 0075 53       		.byte	0x53
+ 1233 0076 0C000000 		.4byte	.LVL9
+ 1234 007a 18000000 		.4byte	.LFE4
+ 1235 007e 0100     		.2byte	0x1
+ 1236 0080 50       		.byte	0x50
+ 1237 0081 00000000 		.4byte	0
+ 1238 0085 00000000 		.4byte	0
+ 1239              	.LLST4:
+ 1240 0089 02000000 		.4byte	.LVL10
+ 1241 008d 0E000000 		.4byte	.LVL12
+ 1242 0091 0200     		.2byte	0x2
+ 1243 0093 30       		.byte	0x30
+ 1244 0094 9F       		.byte	0x9f
+ 1245 0095 0E000000 		.4byte	.LVL12
+ 1246 0099 10000000 		.4byte	.LVL13
+ 1247 009d 0100     		.2byte	0x1
+ 1248 009f 50       		.byte	0x50
+ 1249 00a0 10000000 		.4byte	.LVL13
+ 1250 00a4 12000000 		.4byte	.LVL14
+ 1251 00a8 0200     		.2byte	0x2
+ 1252 00aa 30       		.byte	0x30
+ 1253 00ab 9F       		.byte	0x9f
+ 1254 00ac 12000000 		.4byte	.LVL14
+ 1255 00b0 1E000000 		.4byte	.LVL15
+ 1256 00b4 0100     		.2byte	0x1
+ 1257 00b6 50       		.byte	0x50
+ 1258 00b7 1E000000 		.4byte	.LVL15
+ 1259 00bb 26000000 		.4byte	.LVL16
+ 1260 00bf 0200     		.2byte	0x2
+ 1261 00c1 30       		.byte	0x30
+ 1262 00c2 9F       		.byte	0x9f
+ 1263 00c3 26000000 		.4byte	.LVL16
+ 1264 00c7 2C000000 		.4byte	.LFE5
+ 1265 00cb 0100     		.2byte	0x1
+ 1266 00cd 50       		.byte	0x50
+ 1267 00ce 00000000 		.4byte	0
+ 1268 00d2 00000000 		.4byte	0
+ 1269              	.LLST5:
+ 1270 00d6 0E000000 		.4byte	.LVL18
+ 1271 00da 10000000 		.4byte	.LVL19
+ 1272 00de 0100     		.2byte	0x1
+ 1273 00e0 50       		.byte	0x50
+ 1274 00e1 14000000 		.4byte	.LVL20
+ 1275 00e5 34000000 		.4byte	.LFE6
+ 1276 00e9 0100     		.2byte	0x1
+ 1277 00eb 50       		.byte	0x50
+ 1278 00ec 00000000 		.4byte	0
+ 1279 00f0 00000000 		.4byte	0
+ 1280              	.LLST6:
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 38
+
+
+ 1281 00f4 18000000 		.4byte	.LVL21
+ 1282 00f8 20000000 		.4byte	.LVL22
+ 1283 00fc 0700     		.2byte	0x7
+ 1284 00fe 73       		.byte	0x73
+ 1285 00ff 00       		.sleb128 0
+ 1286 0100 0A       		.byte	0xa
+ 1287 0101 6003     		.2byte	0x360
+ 1288 0103 1A       		.byte	0x1a
+ 1289 0104 9F       		.byte	0x9f
+ 1290 0105 00000000 		.4byte	0
+ 1291 0109 00000000 		.4byte	0
+ 1292              	.LLST7:
+ 1293 010d 00000000 		.4byte	.LVL24
+ 1294 0111 08000000 		.4byte	.LVL26
+ 1295 0115 0100     		.2byte	0x1
+ 1296 0117 50       		.byte	0x50
+ 1297 0118 08000000 		.4byte	.LVL26
+ 1298 011c 14000000 		.4byte	.LVL30
+ 1299 0120 0100     		.2byte	0x1
+ 1300 0122 55       		.byte	0x55
+ 1301 0123 14000000 		.4byte	.LVL30
+ 1302 0127 16000000 		.4byte	.LFE7
+ 1303 012b 0400     		.2byte	0x4
+ 1304 012d F3       		.byte	0xf3
+ 1305 012e 01       		.uleb128 0x1
+ 1306 012f 50       		.byte	0x50
+ 1307 0130 9F       		.byte	0x9f
+ 1308 0131 00000000 		.4byte	0
+ 1309 0135 00000000 		.4byte	0
+ 1310              	.LLST8:
+ 1311 0139 04000000 		.4byte	.LVL25
+ 1312 013d 08000000 		.4byte	.LVL26
+ 1313 0141 0200     		.2byte	0x2
+ 1314 0143 30       		.byte	0x30
+ 1315 0144 9F       		.byte	0x9f
+ 1316 0145 08000000 		.4byte	.LVL26
+ 1317 0149 14000000 		.4byte	.LVL29
+ 1318 014d 0100     		.2byte	0x1
+ 1319 014f 54       		.byte	0x54
+ 1320 0150 00000000 		.4byte	0
+ 1321 0154 00000000 		.4byte	0
+ 1322              	.LLST9:
+ 1323 0158 00000000 		.4byte	.LVL31
+ 1324 015c 05000000 		.4byte	.LVL32-1
+ 1325 0160 0100     		.2byte	0x1
+ 1326 0162 50       		.byte	0x50
+ 1327 0163 05000000 		.4byte	.LVL32-1
+ 1328 0167 14000000 		.4byte	.LFE8
+ 1329 016b 0400     		.2byte	0x4
+ 1330 016d F3       		.byte	0xf3
+ 1331 016e 01       		.uleb128 0x1
+ 1332 016f 50       		.byte	0x50
+ 1333 0170 9F       		.byte	0x9f
+ 1334 0171 00000000 		.4byte	0
+ 1335 0175 00000000 		.4byte	0
+ 1336              	.LLST10:
+ 1337 0179 00000000 		.4byte	.LVL35
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 39
+
+
+ 1338 017d 1C000000 		.4byte	.LVL38
+ 1339 0181 0100     		.2byte	0x1
+ 1340 0183 50       		.byte	0x50
+ 1341 0184 1C000000 		.4byte	.LVL38
+ 1342 0188 20000000 		.4byte	.LVL39
+ 1343 018c 0100     		.2byte	0x1
+ 1344 018e 53       		.byte	0x53
+ 1345 018f 20000000 		.4byte	.LVL39
+ 1346 0193 28000000 		.4byte	.LVL40
+ 1347 0197 0300     		.2byte	0x3
+ 1348 0199 73       		.byte	0x73
+ 1349 019a 01       		.sleb128 1
+ 1350 019b 9F       		.byte	0x9f
+ 1351 019c 28000000 		.4byte	.LVL40
+ 1352 01a0 58000000 		.4byte	.LFE9
+ 1353 01a4 0400     		.2byte	0x4
+ 1354 01a6 F3       		.byte	0xf3
+ 1355 01a7 01       		.uleb128 0x1
+ 1356 01a8 50       		.byte	0x50
+ 1357 01a9 9F       		.byte	0x9f
+ 1358 01aa 00000000 		.4byte	0
+ 1359 01ae 00000000 		.4byte	0
+ 1360              	.LLST11:
+ 1361 01b2 18000000 		.4byte	.LVL37
+ 1362 01b6 40000000 		.4byte	.LVL42
+ 1363 01ba 0100     		.2byte	0x1
+ 1364 01bc 56       		.byte	0x56
+ 1365 01bd 00000000 		.4byte	0
+ 1366 01c1 00000000 		.4byte	0
+ 1367              	.LLST12:
+ 1368 01c5 08000000 		.4byte	.LVL36
+ 1369 01c9 40000000 		.4byte	.LVL41
+ 1370 01cd 0100     		.2byte	0x1
+ 1371 01cf 55       		.byte	0x55
+ 1372 01d0 40000000 		.4byte	.LVL41
+ 1373 01d4 58000000 		.4byte	.LFE9
+ 1374 01d8 0200     		.2byte	0x2
+ 1375 01da 73       		.byte	0x73
+ 1376 01db 00       		.sleb128 0
+ 1377 01dc 00000000 		.4byte	0
+ 1378 01e0 00000000 		.4byte	0
+ 1379              		.section	.debug_aranges,"",%progbits
+ 1380 0000 64000000 		.4byte	0x64
+ 1381 0004 0200     		.2byte	0x2
+ 1382 0006 00000000 		.4byte	.Ldebug_info0
+ 1383 000a 04       		.byte	0x4
+ 1384 000b 00       		.byte	0
+ 1385 000c 0000     		.2byte	0
+ 1386 000e 0000     		.2byte	0
+ 1387 0010 00000000 		.4byte	.LFB0
+ 1388 0014 9C000000 		.4byte	.LFE0-.LFB0
+ 1389 0018 00000000 		.4byte	.LFB1
+ 1390 001c 2C000000 		.4byte	.LFE1-.LFB1
+ 1391 0020 00000000 		.4byte	.LFB2
+ 1392 0024 2C000000 		.4byte	.LFE2-.LFB2
+ 1393 0028 00000000 		.4byte	.LFB3
+ 1394 002c 14000000 		.4byte	.LFE3-.LFB3
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 40
+
+
+ 1395 0030 00000000 		.4byte	.LFB4
+ 1396 0034 18000000 		.4byte	.LFE4-.LFB4
+ 1397 0038 00000000 		.4byte	.LFB5
+ 1398 003c 2C000000 		.4byte	.LFE5-.LFB5
+ 1399 0040 00000000 		.4byte	.LFB6
+ 1400 0044 34000000 		.4byte	.LFE6-.LFB6
+ 1401 0048 00000000 		.4byte	.LFB7
+ 1402 004c 16000000 		.4byte	.LFE7-.LFB7
+ 1403 0050 00000000 		.4byte	.LFB8
+ 1404 0054 14000000 		.4byte	.LFE8-.LFB8
+ 1405 0058 00000000 		.4byte	.LFB9
+ 1406 005c 58000000 		.4byte	.LFE9-.LFB9
+ 1407 0060 00000000 		.4byte	0
+ 1408 0064 00000000 		.4byte	0
+ 1409              		.section	.debug_ranges,"",%progbits
+ 1410              	.Ldebug_ranges0:
+ 1411 0000 00000000 		.4byte	.LFB0
+ 1412 0004 9C000000 		.4byte	.LFE0
+ 1413 0008 00000000 		.4byte	.LFB1
+ 1414 000c 2C000000 		.4byte	.LFE1
+ 1415 0010 00000000 		.4byte	.LFB2
+ 1416 0014 2C000000 		.4byte	.LFE2
+ 1417 0018 00000000 		.4byte	.LFB3
+ 1418 001c 14000000 		.4byte	.LFE3
+ 1419 0020 00000000 		.4byte	.LFB4
+ 1420 0024 18000000 		.4byte	.LFE4
+ 1421 0028 00000000 		.4byte	.LFB5
+ 1422 002c 2C000000 		.4byte	.LFE5
+ 1423 0030 00000000 		.4byte	.LFB6
+ 1424 0034 34000000 		.4byte	.LFE6
+ 1425 0038 00000000 		.4byte	.LFB7
+ 1426 003c 16000000 		.4byte	.LFE7
+ 1427 0040 00000000 		.4byte	.LFB8
+ 1428 0044 14000000 		.4byte	.LFE8
+ 1429 0048 00000000 		.4byte	.LFB9
+ 1430 004c 58000000 		.4byte	.LFE9
+ 1431 0050 00000000 		.4byte	0
+ 1432 0054 00000000 		.4byte	0
+ 1433              		.section	.debug_line,"",%progbits
+ 1434              	.Ldebug_line0:
+ 1435 0000 75010000 		.section	.debug_str,"MS",%progbits,1
+ 1435      02007300 
+ 1435      00000201 
+ 1435      FB0E0D00 
+ 1435      01010101 
+ 1436              	.LASF6:
+ 1437 0000 6C6F6E67 		.ascii	"long long int\000"
+ 1437      206C6F6E 
+ 1437      6720696E 
+ 1437      7400
+ 1438              	.LASF15:
+ 1439 000e 72656733 		.ascii	"reg32\000"
+ 1439      3200
+ 1440              	.LASF19:
+ 1441 0014 4C494E53 		.ascii	"LINS_SCB_UartPostEnable\000"
+ 1441      5F534342 
+ 1441      5F556172 
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 41
+
+
+ 1441      74506F73 
+ 1441      74456E61 
+ 1442              	.LASF44:
+ 1443 002c 443A5C55 		.ascii	"D:\\Users\\jagumiel\\Documents\\PSoC Creator\\prueb"
+ 1443      73657273 
+ 1443      5C6A6167 
+ 1443      756D6965 
+ 1443      6C5C446F 
+ 1444 005a 61345C4C 		.ascii	"a4\\LIN_Slave_CY8CKIT-042\\LIN_Slave_CY8CKIT-042.cy"
+ 1444      494E5F53 
+ 1444      6C617665 
+ 1444      5F435938 
+ 1444      434B4954 
+ 1445 008b 64736E00 		.ascii	"dsn\000"
+ 1446              	.LASF31:
+ 1447 008f 73747269 		.ascii	"string\000"
+ 1447      6E6700
+ 1448              	.LASF33:
+ 1449 0096 4C494E53 		.ascii	"LINS_SCB_UartPutCRLF\000"
+ 1449      5F534342 
+ 1449      5F556172 
+ 1449      74507574 
+ 1449      43524C46 
+ 1450              	.LASF41:
+ 1451 00ab 4C494E53 		.ascii	"LINS_SCB_SpiUartWriteTxData\000"
+ 1451      5F534342 
+ 1451      5F537069 
+ 1451      55617274 
+ 1451      57726974 
+ 1452              	.LASF11:
+ 1453 00c7 666C6F61 		.ascii	"float\000"
+ 1453      7400
+ 1454              	.LASF38:
+ 1455 00cd 7478496E 		.ascii	"txIntrReg\000"
+ 1455      74725265 
+ 1455      6700
+ 1456              	.LASF39:
+ 1457 00d7 4C494E53 		.ascii	"LINS_SCB_SpiUartGetRxBufferSize\000"
+ 1457      5F534342 
+ 1457      5F537069 
+ 1457      55617274 
+ 1457      47657452 
+ 1458              	.LASF40:
+ 1459 00f7 4C494E53 		.ascii	"LINS_SCB_SpiUartReadRxData\000"
+ 1459      5F534342 
+ 1459      5F537069 
+ 1459      55617274 
+ 1459      52656164 
+ 1460              	.LASF1:
+ 1461 0112 756E7369 		.ascii	"unsigned char\000"
+ 1461      676E6564 
+ 1461      20636861 
+ 1461      7200
+ 1462              	.LASF22:
+ 1463 0120 4C494E53 		.ascii	"LINS_SCB_UartSetRxAddressMask\000"
+ 1463      5F534342 
+ 1463      5F556172 
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 42
+
+
+ 1463      74536574 
+ 1463      52784164 
+ 1464              	.LASF43:
+ 1465 013e 47656E65 		.ascii	"Generated_Source\\PSoC4\\LINS_SCB_UART.c\000"
+ 1465      72617465 
+ 1465      645F536F 
+ 1465      75726365 
+ 1465      5C50536F 
+ 1466              	.LASF13:
+ 1467 0165 63686172 		.ascii	"char8\000"
+ 1467      3800
+ 1468              	.LASF5:
+ 1469 016b 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1469      20756E73 
+ 1469      69676E65 
+ 1469      6420696E 
+ 1469      7400
+ 1470              	.LASF3:
+ 1471 017d 73686F72 		.ascii	"short unsigned int\000"
+ 1471      7420756E 
+ 1471      7369676E 
+ 1471      65642069 
+ 1471      6E7400
+ 1472              	.LASF18:
+ 1473 0190 4C494E53 		.ascii	"LINS_SCB_UartInit\000"
+ 1473      5F534342 
+ 1473      5F556172 
+ 1473      74496E69 
+ 1473      7400
+ 1474              	.LASF26:
+ 1475 01a2 72784461 		.ascii	"rxData\000"
+ 1475      746100
+ 1476              	.LASF24:
+ 1477 01a9 61646472 		.ascii	"addressMask\000"
+ 1477      6573734D 
+ 1477      61736B00 
+ 1478              	.LASF12:
+ 1479 01b5 646F7562 		.ascii	"double\000"
+ 1479      6C6500
+ 1480              	.LASF35:
+ 1481 01bc 4C494E53 		.ascii	"LINS_SCB_UartSendBreakBlocking\000"
+ 1481      5F534342 
+ 1481      5F556172 
+ 1481      7453656E 
+ 1481      64427265 
+ 1482              	.LASF2:
+ 1483 01db 73686F72 		.ascii	"short int\000"
+ 1483      7420696E 
+ 1483      7400
+ 1484              	.LASF9:
+ 1485 01e5 75696E74 		.ascii	"uint16\000"
+ 1485      313600
+ 1486              	.LASF10:
+ 1487 01ec 75696E74 		.ascii	"uint32\000"
+ 1487      333200
+ 1488              	.LASF8:
+ 1489 01f3 756E7369 		.ascii	"unsigned int\000"
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 43
+
+
+ 1489      676E6564 
+ 1489      20696E74 
+ 1489      00
+ 1490              	.LASF27:
+ 1491 0200 4C494E53 		.ascii	"LINS_SCB_UartGetChar\000"
+ 1491      5F534342 
+ 1491      5F556172 
+ 1491      74476574 
+ 1491      43686172 
+ 1492              	.LASF23:
+ 1493 0215 61646472 		.ascii	"address\000"
+ 1493      65737300 
+ 1494              	.LASF7:
+ 1495 021d 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1495      206C6F6E 
+ 1495      6720756E 
+ 1495      7369676E 
+ 1495      65642069 
+ 1496              	.LASF32:
+ 1497 0234 62756649 		.ascii	"bufIndex\000"
+ 1497      6E646578 
+ 1497      00
+ 1498              	.LASF42:
+ 1499 023d 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1499      43313120 
+ 1499      352E342E 
+ 1499      31203230 
+ 1499      31363036 
+ 1500 0270 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 1500      20726576 
+ 1500      6973696F 
+ 1500      6E203233 
+ 1500      37373135 
+ 1501 02a3 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1501      66756E63 
+ 1501      74696F6E 
+ 1501      2D736563 
+ 1501      74696F6E 
+ 1502              	.LASF17:
+ 1503 02cb 73697A65 		.ascii	"sizetype\000"
+ 1503      74797065 
+ 1503      00
+ 1504              	.LASF34:
+ 1505 02d4 74784461 		.ascii	"txDataByte\000"
+ 1505      74614279 
+ 1505      746500
+ 1506              	.LASF21:
+ 1507 02df 4C494E53 		.ascii	"LINS_SCB_UartSetRxAddress\000"
+ 1507      5F534342 
+ 1507      5F556172 
+ 1507      74536574 
+ 1507      52784164 
+ 1508              	.LASF20:
+ 1509 02f9 4C494E53 		.ascii	"LINS_SCB_UartStop\000"
+ 1509      5F534342 
+ 1509      5F556172 
+ 1509      7453746F 
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWsAWOQ.s 			page 44
+
+
+ 1509      7000
+ 1510              	.LASF14:
+ 1511 030b 63686172 		.ascii	"char\000"
+ 1511      00
+ 1512              	.LASF30:
+ 1513 0310 4C494E53 		.ascii	"LINS_SCB_UartPutString\000"
+ 1513      5F534342 
+ 1513      5F556172 
+ 1513      74507574 
+ 1513      53747269 
+ 1514              	.LASF45:
+ 1515 0327 4C494E53 		.ascii	"LINS_SCB_IntrTxMask\000"
+ 1515      5F534342 
+ 1515      5F496E74 
+ 1515      7254784D 
+ 1515      61736B00 
+ 1516              	.LASF4:
+ 1517 033b 6C6F6E67 		.ascii	"long int\000"
+ 1517      20696E74 
+ 1517      00
+ 1518              	.LASF29:
+ 1519 0344 746D7053 		.ascii	"tmpStatus\000"
+ 1519      74617475 
+ 1519      7300
+ 1520              	.LASF25:
+ 1521 034e 6D617463 		.ascii	"matchReg\000"
+ 1521      68526567 
+ 1521      00
+ 1522              	.LASF16:
+ 1523 0357 6C6F6E67 		.ascii	"long double\000"
+ 1523      20646F75 
+ 1523      626C6500 
+ 1524              	.LASF0:
+ 1525 0363 7369676E 		.ascii	"signed char\000"
+ 1525      65642063 
+ 1525      68617200 
+ 1526              	.LASF37:
+ 1527 036f 74784374 		.ascii	"txCtrlReg\000"
+ 1527      726C5265 
+ 1527      6700
+ 1528              	.LASF36:
+ 1529 0379 62726561 		.ascii	"breakWidth\000"
+ 1529      6B576964 
+ 1529      746800
+ 1530              	.LASF28:
+ 1531 0384 4C494E53 		.ascii	"LINS_SCB_UartGetByte\000"
+ 1531      5F534342 
+ 1531      5F556172 
+ 1531      74476574 
+ 1531      42797465 
+ 1532              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

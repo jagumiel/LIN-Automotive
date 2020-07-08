@@ -1,0 +1,7 @@
+Last Modified Date & Time: 06/16/2020 12:45:15
+
+Lin test_Copy_02: Lin test_Copy_02.cydwr
+	cy_boot [v5.60] to [v5.80]
+	LIN_Dynamic [v4.0] to [v5.0]
+
+

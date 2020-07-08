@@ -1,0 +1,6 @@
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|0887ad75-4970-4683-99fe-3162b57a8d0e
+D:\Users\jagumiel\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|d4c79adb-94b8-4766-b378-73bcaecdfd22
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|3f09d57c-e69c-4512-8dee-2267e9840abe
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|4e0c0472-0c48-4ab7-b1a7-b5b08b9308bf
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|5a2a0c0a-a1a2-4f50-bb78-9bcf7922d275
+C:\Users\jagumiel\OneDrive - TEKNIKER\Codigo\Cypress\1-Pruebas\1-LIN-Master-Slave\Master-UART\LIN-Master-UART.cydsn\LIN-Master-UART.cyprj|0140e79b-a740-41d6-b886-16fb96fa7cc9
