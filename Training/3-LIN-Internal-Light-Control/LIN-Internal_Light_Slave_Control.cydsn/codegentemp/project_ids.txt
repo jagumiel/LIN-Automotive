@@ -1,0 +1,7 @@
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|ac58d74e-87c7-4204-9911-9c13ed3793c6
+D:\Users\jagumiel\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|1a570ff2-f995-494b-b528-60ea658b2e13
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|24996347-641a-432e-9732-4f043bf75130
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|86401ac4-0403-4838-8152-a2ecd1381f2c
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|ac35daa0-e6d0-46d2-a010-3e3c796f1dc3
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|c9461e72-8a82-41f2-843c-72ee3c47b873
+D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\3-LIN-Internal-Light-Control\LIN-Internal_Light_Control.cydsn\LIN-Internal_Light_Control.cyprj|1725b9f9-8b77-42d7-853d-5c04dd515c4c
