@@ -42,14 +42,14 @@ void sendFrame(void){
     UART_MASTER_UartPutChar(packet[7]);
     UART_MASTER_UartPutChar(checksum);                              // Checksum. En LIN 2.2 se obtiene a partir del PID y del CMD enviado.*/
     
-    Sensor_data[0] = UART_MASTER_UartGetChar();                         // 1. Byte
-    Sensor_data[1] = UART_MASTER_UartGetChar();                         // 2. Byte
-    Sensor_data[2] = UART_MASTER_UartGetChar();                         // 3. Byte
-    Sensor_data[3] = UART_MASTER_UartGetChar();                         // 4. Byte
-    Sensor_data[4] = UART_MASTER_UartGetChar();                         // 5. Byte
-    Sensor_data[5] = UART_MASTER_UartGetChar();                         // 6. Byte
-    Sensor_data[6] = UART_MASTER_UartGetChar();                         // 7. Byte
-    Sensor_data[7] = UART_MASTER_UartGetChar();                         // 8. Byte
+    Sensor_data[0] = UART_MASTER_UartGetChar();                     // 1. Byte
+    Sensor_data[1] = UART_MASTER_UartGetChar();                     // 2. Byte
+    Sensor_data[2] = UART_MASTER_UartGetChar();                     // 3. Byte
+    Sensor_data[3] = UART_MASTER_UartGetChar();                     // 4. Byte
+    Sensor_data[4] = UART_MASTER_UartGetChar();                     // 5. Byte
+    Sensor_data[5] = UART_MASTER_UartGetChar();                     // 6. Byte
+    Sensor_data[6] = UART_MASTER_UartGetChar();                     // 7. Byte
+    Sensor_data[7] = UART_MASTER_UartGetChar();                     // 8. Byte
     
     LedRed_Write(1);
     CyDelay(500);
@@ -66,9 +66,6 @@ void leftDoorEvent(){
         /* Left Door closed*/
         packet[0]=0x00;
     }
-    pid=LIN_PID_Calculator(id);
-    checksum=LIN_Checksum_Calculation(pid, packet);
-    sendFrame();
 }
 
 void rightDoorEvent(){
@@ -79,19 +76,22 @@ void rightDoorEvent(){
         /* Right Door Closed*/
         packet[0]=0x10;
     }
-    pid=LIN_PID_Calculator(id);
-    checksum=LIN_Checksum_Calculation(pid, packet);
-    sendFrame();
 }
 
 
 CY_ISR(Button_Left_ISR_Handler){
     leftDoorEvent();
+    pid=LIN_PID_Calculator(id);
+    checksum=LIN_Checksum_Calculation(pid, packet);
+    sendFrame();
     Button_Left_ClearInterrupt();
 }
 
 CY_ISR(Button_Right_ISR_Handler){
     rightDoorEvent();
+    pid=LIN_PID_Calculator(id);
+    checksum=LIN_Checksum_Calculation(pid, packet);
+    sendFrame();
     Button_Right_ClearInterrupt();
 }
 
@@ -107,6 +107,10 @@ int main(void){
     Button_Left_ISR_StartEx(Button_Left_ISR_Handler);
     Button_Right_ISR_StartEx(Button_Right_ISR_Handler);
 
+    /* Turn off the led */
+    LedRed_Write(0);
+    
+    
     for(;;){
         /* No Code */
     }

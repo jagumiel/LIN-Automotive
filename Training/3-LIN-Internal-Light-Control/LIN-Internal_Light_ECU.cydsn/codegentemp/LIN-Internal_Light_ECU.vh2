@@ -2,7 +2,7 @@
 --	Conversion of LIN-Internal_Light_ECU.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Tue Jul 21 13:50:19 2020
+--	Wed Jul 22 08:10:13 2020
 --
 
 USE cypress.cypress.all;
@@ -91,7 +91,7 @@ one <=  ('1') ;
 		id=>"43ec2fa1-bf22-4b71-9477-b6ca7b97f0b0/2dc2d7a8-ce2b-43c7-af4a-821c8cd73ccf",
 		source_clock_id=>"",
 		divisor=>0,
-		period=>"8680555555.55556",
+		period=>"4340277777.77778",
 		is_direct=>'0',
 		is_digital=>'0')
 	PORT MAP(clock_out=>\UART_MASTER:Net_847\,

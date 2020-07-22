@@ -1,4 +1,4 @@
---------------- Build Started: 07/21/2020 13:52:03 Project: LIN-Internal_Light_ECU, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+--------------- Build Started: 07/22/2020 08:25:32 Project: LIN-Internal_Light_ECU, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
 The code generation step is up to date.
 arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/main.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c main.c -o .\CortexM0\ARM_GCC_541\Debug\main.o
 In file included from main.c:22:0:
@@ -13,6 +13,6 @@ No ELF section .cychecksum found, creating one
 Application checksum calculated and stored in ELF section .cychecksum
 Checksum calculated and stored in ELF section .cymeta
 cyelftool.exe -S "D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\3-LIN-Internal-Light-Control\LIN-Internal_Light_ECU.cydsn\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.elf"
-Flash used: 3616 of 32768 bytes (11,0 %).
+Flash used: 3632 of 32768 bytes (11,1 %).
 SRAM used: 2640 of 4096 bytes (64,5 %). Stack: 2048 bytes. Heap: 128 bytes.
---------------- Build Succeeded: 07/21/2020 13:52:06 ---------------
+--------------- Build Succeeded: 07/22/2020 08:25:35 ---------------

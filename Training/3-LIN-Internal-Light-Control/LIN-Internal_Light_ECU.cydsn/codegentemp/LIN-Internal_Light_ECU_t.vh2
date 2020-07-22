@@ -1,5 +1,5 @@
 -- Project:   D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\3-LIN-Internal-Light-Control\LIN-Internal_Light_ECU.cydsn\LIN-Internal_Light_ECU.cyprj
--- Generated: 07/21/2020 13:50:21
+-- Generated: 07/22/2020 08:10:17
 -- PSoC Creator  4.2
 
 ENTITY \LIN-Internal_Light_ECU\ IS

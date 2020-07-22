@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 1
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWJQhh8.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 1
   29:Generated_Source\PSoC4/cyfitter_cfg.c **** #if defined(__GNUC__) || defined(__ARMCC_VERSION)
   30:Generated_Source\PSoC4/cyfitter_cfg.c ****     #define CYPACKED 
   31:Generated_Source\PSoC4/cyfitter_cfg.c ****     #define CYPACKED_ATTR __attribute__ ((packed))
-ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 2
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWJQhh8.s 			page 2
 
 
   32:Generated_Source\PSoC4/cyfitter_cfg.c ****     #define CYALIGNED __attribute__ ((aligned))
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 1
   35              		.cfi_offset 14, -4
   36 0002 0A00     		movs	r2, r1
   78:Generated_Source\PSoC4/cyfitter_cfg.c **** 	(void)memset(s, 0, n);
-ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 3
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWJQhh8.s 			page 3
 
 
   37              		.loc 1 78 0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 1
  115:Generated_Source\PSoC4/cyfitter_cfg.c **** *
  116:Generated_Source\PSoC4/cyfitter_cfg.c **** * Parameters:
  117:Generated_Source\PSoC4/cyfitter_cfg.c **** *   void
-ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 4
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWJQhh8.s 			page 4
 
 
  118:Generated_Source\PSoC4/cyfitter_cfg.c **** *
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 1
   55              		.loc 1 171 0
   56              		.cfi_startproc
   57              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 5
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWJQhh8.s 			page 5
 
 
   58              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -293,12 +293,12 @@ ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 1
   90 0028 2560     		str	r5, [r4]
  189:Generated_Source\PSoC4/cyfitter_cfg.c **** 
  190:Generated_Source\PSoC4/cyfitter_cfg.c **** 	/* CYDEV_CLK_DIVIDER_A00 Starting address: CYDEV_CLK_DIVIDER_A00 */
- 191:Generated_Source\PSoC4/cyfitter_cfg.c **** 	CY_SET_REG32((void *)(CYREG_CLK_DIVIDER_A00), 0x800001A0u);
+ 191:Generated_Source\PSoC4/cyfitter_cfg.c **** 	CY_SET_REG32((void *)(CYREG_CLK_DIVIDER_A00), 0x800000CFu);
   91              		.loc 1 191 0
   92 002a 0C4A     		ldr	r2, .L3+20
   93 002c 0C4B     		ldr	r3, .L3+24
   94 002e 1A60     		str	r2, [r3]
-ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 6
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWJQhh8.s 			page 6
 
 
  192:Generated_Source\PSoC4/cyfitter_cfg.c **** 
@@ -330,7 +330,7 @@ ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 1
  116 0050 04010B40 		.word	1074462980
  117 0054 0C020240 		.word	1073873420
  118 0058 08010B40 		.word	1074462984
- 119 005c A0010080 		.word	-2147483232
+ 119 005c CF000080 		.word	-2147483441
  120 0060 00000240 		.word	1073872896
  121 0064 00000000 		.word	CySysWdtIsr
  122 0068 0C020B40 		.word	1074463244
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 1
  208:Generated_Source\PSoC4/cyfitter_cfg.c **** *  configuration options from the project.
  209:Generated_Source\PSoC4/cyfitter_cfg.c **** *
  210:Generated_Source\PSoC4/cyfitter_cfg.c **** * Parameters:
-ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 7
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWJQhh8.s 			page 7
 
 
  211:Generated_Source\PSoC4/cyfitter_cfg.c **** *  void
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 1
  248:Generated_Source\PSoC4/cyfitter_cfg.c **** 
  249:Generated_Source\PSoC4/cyfitter_cfg.c **** 		CYPACKED typedef struct {
  250:Generated_Source\PSoC4/cyfitter_cfg.c **** 			void CYFAR *address;
-ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 8
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWJQhh8.s 			page 8
 
 
  251:Generated_Source\PSoC4/cyfitter_cfg.c **** 			uint16 size;
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 1
  182 0098 9923     		movs	r3, #153
  183 009a 1B04     		lsls	r3, r3, #16
  184 009c 174A     		ldr	r2, .L8+4
-ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 9
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWJQhh8.s 			page 9
 
 
  185 009e 1360     		str	r3, [r2]
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 1
  219 00d0 1A60     		str	r2, [r3]
  291:Generated_Source\PSoC4/cyfitter_cfg.c **** 	CY_SET_REG32((void *)(CYREG_PRT0_PC2), 0x00000020u);
  220              		.loc 1 291 0
-ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 10
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWJQhh8.s 			page 10
 
 
  221 00d2 1432     		adds	r2, r2, #20
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 1
  258 0114 00000440 		.word	1074003968
  259 0118 10100300 		.word	200720
  260 011c 08000440 		.word	1074003976
-ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 11
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWJQhh8.s 			page 11
 
 
  261 0120 0C000440 		.word	1074003980
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 1
  315 0040 05       		.byte	0x5
  316 0041 8F010000 		.4byte	.LASF1
  317 0045 04       		.uleb128 0x4
-ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 12
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWJQhh8.s 			page 12
 
 
  318 0046 08       		.byte	0x8
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 1
  372 00ab E601     		.2byte	0x1e6
  373 00ad 6F000000 		.4byte	0x6f
  374 00b1 04       		.uleb128 0x4
-ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 13
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWJQhh8.s 			page 13
 
 
  375 00b2 04       		.byte	0x4
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 1
  429 0122 51       		.byte	0x51
  430 0123 01       		.uleb128 0x1
  431 0124 30       		.byte	0x30
-ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 14
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWJQhh8.s 			page 14
 
 
  432 0125 0B       		.uleb128 0xb
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 1
  486 0185 D0000000 		.4byte	.LFE5-.LFB5
  487 0189 01       		.uleb128 0x1
  488 018a 9C       		.byte	0x9c
-ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 15
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWJQhh8.s 			page 15
 
 
  489 018b 4E020000 		.4byte	0x24e
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 1
  543 0202 74000000 		.4byte	.LBB3
  544 0206 1C000000 		.4byte	.LBE3-.LBB3
  545 020a 15       		.uleb128 0x15
-ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 16
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWJQhh8.s 			page 16
 
 
  546 020b 6D7300   		.ascii	"ms\000"
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 1
  600 0272 98000000 		.4byte	.LASF28
  601 0276 04       		.byte	0x4
  602 0277 C3       		.byte	0xc3
-ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 17
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWJQhh8.s 			page 17
 
 
  603 0278 00       		.byte	0
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 1
  657 0033 0E       		.uleb128 0xe
  658 0034 00       		.byte	0
  659 0035 00       		.byte	0
-ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 18
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWJQhh8.s 			page 18
 
 
  660 0036 05       		.uleb128 0x5
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 1
  714 006d 08       		.uleb128 0x8
  715 006e 3A       		.uleb128 0x3a
  716 006f 0B       		.uleb128 0xb
-ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 19
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWJQhh8.s 			page 19
 
 
  717 0070 3B       		.uleb128 0x3b
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 1
  771 00ad 40       		.uleb128 0x40
  772 00ae 18       		.uleb128 0x18
  773 00af 9742     		.uleb128 0x2117
-ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 20
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWJQhh8.s 			page 20
 
 
  774 00b1 19       		.uleb128 0x19
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 1
  828 00e7 21       		.uleb128 0x21
  829 00e8 00       		.byte	0
  830 00e9 49       		.uleb128 0x49
-ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 21
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWJQhh8.s 			page 21
 
 
  831 00ea 13       		.uleb128 0x13
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 1
  885 0120 0B       		.uleb128 0xb
  886 0121 0B       		.uleb128 0xb
  887 0122 49       		.uleb128 0x49
-ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 22
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWJQhh8.s 			page 22
 
 
  888 0123 13       		.uleb128 0x13
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 1
  942 0016 01       		.uleb128 0x1
  943 0017 50       		.byte	0x50
  944 0018 9F       		.byte	0x9f
-ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 23
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWJQhh8.s 			page 23
 
 
  945 0019 00000000 		.4byte	0
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 1
  999 0099 1E       		.byte	0x1e
  1000 009a 03       		.byte	0x3
  1001 009b 00000000 		.4byte	cfg_memset_list.4847
-ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 24
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWJQhh8.s 			page 24
 
 
  1002 009f 22       		.byte	0x22
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 1
  1044 002c 436C6F63 		.ascii	"ClockSetup\000"
  1044      6B536574 
  1044      757000
-ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 25
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWJQhh8.s 			page 25
 
 
  1045              	.LASF6:
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 1
  1073              	.LASF32:
  1074 00bf 63796669 		.ascii	"cyfitter_cfg\000"
  1074      74746572 
-ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 26
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWJQhh8.s 			page 26
 
 
  1074      5F636667 
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 1
  1095              	.LASF7:
  1096 01c1 6C6F6E67 		.ascii	"long int\000"
  1096      20696E74 
-ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\cc8oI26a.s 			page 27
+ARM GAS  C:\Users\jagumiel\AppData\Local\Temp\ccWJQhh8.s 			page 27
 
 
  1096      00

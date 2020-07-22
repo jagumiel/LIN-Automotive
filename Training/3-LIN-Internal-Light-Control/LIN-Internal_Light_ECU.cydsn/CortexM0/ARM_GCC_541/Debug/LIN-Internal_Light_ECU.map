@@ -431,7 +431,7 @@ END GROUP
                 0x00000001                cy_project_type_bootloader = (appl_start == 0x0)?0x1:0x0
                 0x00000000                cy_project_type_app_for_stack_and_copier = (CY_APP_FOR_STACK_AND_COPIER == 0x1)?0x1:0x0
 
-.text           0x00000000      0xd18
+.text           0x00000000      0xd28
  CREATE_OBJECT_SYMBOLS
                 0x00000000                PROVIDE (__cy_interrupt_vector, RomVectors)
  *(.romvectors)
@@ -463,247 +463,246 @@ END GROUP
                 0x00000228       0xbc .\CortexM0\ARM_GCC_541\Debug\main.o
                 0x00000228                sendFrame
  .text.leftDoorEvent
-                0x000002e4       0x3c .\CortexM0\ARM_GCC_541\Debug\main.o
+                0x000002e4       0x20 .\CortexM0\ARM_GCC_541\Debug\main.o
                 0x000002e4                leftDoorEvent
  .text.Button_Left_ISR_Handler
-                0x00000320        0xc .\CortexM0\ARM_GCC_541\Debug\main.o
-                0x00000320                Button_Left_ISR_Handler
+                0x00000304       0x30 .\CortexM0\ARM_GCC_541\Debug\main.o
+                0x00000304                Button_Left_ISR_Handler
  .text.rightDoorEvent
-                0x0000032c       0x3c .\CortexM0\ARM_GCC_541\Debug\main.o
-                0x0000032c                rightDoorEvent
+                0x00000334       0x20 .\CortexM0\ARM_GCC_541\Debug\main.o
+                0x00000334                rightDoorEvent
  .text.Button_Right_ISR_Handler
-                0x00000368        0xc .\CortexM0\ARM_GCC_541\Debug\main.o
-                0x00000368                Button_Right_ISR_Handler
- .text.main     0x00000374       0x20 .\CortexM0\ARM_GCC_541\Debug\main.o
-                0x00000374                main
+                0x00000354       0x30 .\CortexM0\ARM_GCC_541\Debug\main.o
+                0x00000354                Button_Right_ISR_Handler
+ .text.main     0x00000384       0x24 .\CortexM0\ARM_GCC_541\Debug\main.o
+                0x00000384                main
  .text.CYMEMZERO
-                0x00000394        0xc .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x000003a8        0xc .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.IntDefaultHandler
-                0x000003a0       0x10 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
-                0x000003a0                IntDefaultHandler
- .text.Start_c  0x000003b0       0x48 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
-                0x000003b0                Start_c
+                0x000003b4       0x10 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+                0x000003b4                IntDefaultHandler
+ .text.Start_c  0x000003c4       0x48 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+                0x000003c4                Start_c
  .text.initialize_psoc
-                0x000003f8       0x40 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
-                0x000003f8                initialize_psoc
+                0x0000040c       0x40 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+                0x0000040c                initialize_psoc
  .text.CyIntEnable
-                0x00000438       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLib.o)
-                0x00000438                CyIntEnable
- .text.CyIntDisable
                 0x0000044c       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLib.o)
-                0x0000044c                CyIntDisable
- .text.CyHalt   0x00000460        0x4 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLib.o)
-                0x00000460                CyHalt
+                0x0000044c                CyIntEnable
+ .text.CyIntDisable
+                0x00000460       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLib.o)
+                0x00000460                CyIntDisable
+ .text.CyHalt   0x00000474        0x4 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLib.o)
+                0x00000474                CyHalt
  .text.CyIntSetVector
-                0x00000464       0x24 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLib.o)
-                0x00000464                CyIntSetVector
+                0x00000478       0x24 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLib.o)
+                0x00000478                CyIntSetVector
  .text.CyIntSetPriority
-                0x00000488       0x4c .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLib.o)
-                0x00000488                CyIntSetPriority
- .text.CyDelay  0x000004d4       0x30 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLib.o)
-                0x000004d4                CyDelay
+                0x0000049c       0x4c .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLib.o)
+                0x0000049c                CyIntSetPriority
+ .text.CyDelay  0x000004e8       0x30 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLib.o)
+                0x000004e8                CyDelay
  .text.CyDelayUs
-                0x00000504       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLib.o)
-                0x00000504                CyDelayUs
+                0x00000518       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLib.o)
+                0x00000518                CyDelayUs
  .text.CySysClkWriteImoFreq
-                0x00000518      0x164 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLib.o)
-                0x00000518                CySysClkWriteImoFreq
+                0x0000052c      0x164 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLib.o)
+                0x0000052c                CySysClkWriteImoFreq
  .text.CySysWdtLocked
-                0x0000067c       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLFClk.o)
+                0x00000690       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLFClk.o)
  .text.CySysWdtLock
-                0x00000690       0x1c .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLFClk.o)
-                0x00000690                CySysWdtLock
+                0x000006a4       0x1c .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLFClk.o)
+                0x000006a4                CySysWdtLock
  .text.CySysWdtUnlock
-                0x000006ac       0x30 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLFClk.o)
-                0x000006ac                CySysWdtUnlock
+                0x000006c0       0x30 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLFClk.o)
+                0x000006c0                CySysWdtUnlock
  .text.CySysWdtClearInterrupt
-                0x000006dc       0x4c .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLFClk.o)
-                0x000006dc                CySysWdtClearInterrupt
+                0x000006f0       0x4c .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLFClk.o)
+                0x000006f0                CySysWdtClearInterrupt
  .text.CySysWdtIsr
-                0x00000728       0xa4 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLFClk.o)
-                0x00000728                CySysWdtIsr
+                0x0000073c       0xa4 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLFClk.o)
+                0x0000073c                CySysWdtIsr
  .text.UART_MASTER_ScbEnableIntr
-                0x000007cc        0xc .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER.o)
+                0x000007e0        0xc .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER.o)
  .text.UART_MASTER_ScbModePostEnable
-                0x000007d8        0x8 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER.o)
+                0x000007ec        0x8 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER.o)
  .text.UART_MASTER_Init
-                0x000007e0        0x8 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER.o)
-                0x000007e0                UART_MASTER_Init
+                0x000007f4        0x8 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER.o)
+                0x000007f4                UART_MASTER_Init
  .text.UART_MASTER_Enable
-                0x000007e8       0x1c .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER.o)
-                0x000007e8                UART_MASTER_Enable
+                0x000007fc       0x1c .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER.o)
+                0x000007fc                UART_MASTER_Enable
  .text.UART_MASTER_Start
-                0x00000804       0x20 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER.o)
-                0x00000804                UART_MASTER_Start
+                0x00000818       0x20 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER.o)
+                0x00000818                UART_MASTER_Start
  .text.UART_MASTER_SpiUartReadRxData
-                0x00000824       0x34 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER_SPI_UART.o)
-                0x00000824                UART_MASTER_SpiUartReadRxData
+                0x00000838       0x34 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER_SPI_UART.o)
+                0x00000838                UART_MASTER_SpiUartReadRxData
  .text.UART_MASTER_SpiUartGetRxBufferSize
-                0x00000858       0x28 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER_SPI_UART.o)
-                0x00000858                UART_MASTER_SpiUartGetRxBufferSize
+                0x0000086c       0x28 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER_SPI_UART.o)
+                0x0000086c                UART_MASTER_SpiUartGetRxBufferSize
  .text.UART_MASTER_SpiUartWriteTxData
-                0x00000880       0x70 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER_SPI_UART.o)
-                0x00000880                UART_MASTER_SpiUartWriteTxData
+                0x00000894       0x70 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER_SPI_UART.o)
+                0x00000894                UART_MASTER_SpiUartWriteTxData
  .text.UART_MASTER_UartInit
-                0x000008f0       0xe4 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER_UART.o)
-                0x000008f0                UART_MASTER_UartInit
+                0x00000904       0xe4 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER_UART.o)
+                0x00000904                UART_MASTER_UartInit
  .text.UART_MASTER_UartPostEnable
-                0x000009d4       0x2c .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER_UART.o)
-                0x000009d4                UART_MASTER_UartPostEnable
+                0x000009e8       0x2c .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER_UART.o)
+                0x000009e8                UART_MASTER_UartPostEnable
  .text.UART_MASTER_UartGetChar
-                0x00000a00       0x2c .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER_UART.o)
-                0x00000a00                UART_MASTER_UartGetChar
+                0x00000a14       0x2c .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER_UART.o)
+                0x00000a14                UART_MASTER_UartGetChar
  .text.UART_MASTER_UartSendBreakBlocking
-                0x00000a2c       0x58 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER_UART.o)
-                0x00000a2c                UART_MASTER_UartSendBreakBlocking
+                0x00000a40       0x58 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER_UART.o)
+                0x00000a40                UART_MASTER_UartSendBreakBlocking
  .text.Button_Left_Read
-                0x00000a84       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Left.o)
-                0x00000a84                Button_Left_Read
+                0x00000a98       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Left.o)
+                0x00000a98                Button_Left_Read
  .text.Button_Left_ClearInterrupt
-                0x00000a94       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Left.o)
-                0x00000a94                Button_Left_ClearInterrupt
+                0x00000aa8       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Left.o)
+                0x00000aa8                Button_Left_ClearInterrupt
  .text.Button_Right_Read
-                0x00000aa4       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Right.o)
-                0x00000aa4                Button_Right_Read
+                0x00000ab8       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Right.o)
+                0x00000ab8                Button_Right_Read
  .text.Button_Right_ClearInterrupt
-                0x00000ab4       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Right.o)
-                0x00000ab4                Button_Right_ClearInterrupt
+                0x00000ac8       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Right.o)
+                0x00000ac8                Button_Right_ClearInterrupt
  .text.Button_Left_ISR_SetVector
-                0x00000ac8        0xc .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Left_ISR.o)
-                0x00000ac8                Button_Left_ISR_SetVector
+                0x00000adc        0xc .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Left_ISR.o)
+                0x00000adc                Button_Left_ISR_SetVector
  .text.Button_Left_ISR_SetPriority
-                0x00000ad4       0x24 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Left_ISR.o)
-                0x00000ad4                Button_Left_ISR_SetPriority
+                0x00000ae8       0x24 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Left_ISR.o)
+                0x00000ae8                Button_Left_ISR_SetPriority
  .text.Button_Left_ISR_Enable
-                0x00000af8        0xc .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Left_ISR.o)
-                0x00000af8                Button_Left_ISR_Enable
+                0x00000b0c        0xc .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Left_ISR.o)
+                0x00000b0c                Button_Left_ISR_Enable
  .text.Button_Left_ISR_Disable
-                0x00000b04        0xc .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Left_ISR.o)
-                0x00000b04                Button_Left_ISR_Disable
+                0x00000b18        0xc .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Left_ISR.o)
+                0x00000b18                Button_Left_ISR_Disable
  .text.Button_Left_ISR_StartEx
-                0x00000b10       0x1c .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Left_ISR.o)
-                0x00000b10                Button_Left_ISR_StartEx
+                0x00000b24       0x1c .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Left_ISR.o)
+                0x00000b24                Button_Left_ISR_StartEx
  .text.Button_Right_ISR_SetVector
-                0x00000b2c        0xc .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Right_ISR.o)
-                0x00000b2c                Button_Right_ISR_SetVector
+                0x00000b40        0xc .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Right_ISR.o)
+                0x00000b40                Button_Right_ISR_SetVector
  .text.Button_Right_ISR_SetPriority
-                0x00000b38       0x20 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Right_ISR.o)
-                0x00000b38                Button_Right_ISR_SetPriority
+                0x00000b4c       0x20 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Right_ISR.o)
+                0x00000b4c                Button_Right_ISR_SetPriority
  .text.Button_Right_ISR_Enable
-                0x00000b58        0xc .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Right_ISR.o)
-                0x00000b58                Button_Right_ISR_Enable
+                0x00000b6c        0xc .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Right_ISR.o)
+                0x00000b6c                Button_Right_ISR_Enable
  .text.Button_Right_ISR_Disable
-                0x00000b64        0xc .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Right_ISR.o)
-                0x00000b64                Button_Right_ISR_Disable
+                0x00000b78        0xc .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Right_ISR.o)
+                0x00000b78                Button_Right_ISR_Disable
  .text.Button_Right_ISR_StartEx
-                0x00000b70       0x1c .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Right_ISR.o)
-                0x00000b70                Button_Right_ISR_StartEx
+                0x00000b84       0x1c .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Right_ISR.o)
+                0x00000b84                Button_Right_ISR_StartEx
  .text.LedRed_Write
-                0x00000b8c       0x18 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(LedRed.o)
-                0x00000b8c                LedRed_Write
- *fill*         0x00000ba4        0x4 
- .text          0x00000ba8       0x24 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyBootAsmGnu.o)
-                0x00000ba8                CyDelayCycles
-                0x00000bbc                CyEnterCriticalSection
-                0x00000bc4                CyExitCriticalSection
+                0x00000ba0       0x18 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(LedRed.o)
+                0x00000ba0                LedRed_Write
+ .text          0x00000bb8       0x24 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyBootAsmGnu.o)
+                0x00000bb8                CyDelayCycles
+                0x00000bcc                CyEnterCriticalSection
+                0x00000bd4                CyExitCriticalSection
  .text.UART_MASTER_SPI_UART_ISR
-                0x00000bcc       0xe4 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER_SPI_UART_INT.o)
-                0x00000bcc                UART_MASTER_SPI_UART_ISR
- .text.__errno  0x00000cb0        0xc c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
-                0x00000cb0                __errno
+                0x00000bdc       0xe4 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER_SPI_UART_INT.o)
+                0x00000bdc                UART_MASTER_SPI_UART_ISR
+ .text.__errno  0x00000cc0        0xc c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+                0x00000cc0                __errno
  .text.__libc_init_array
-                0x00000cbc       0x4c c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
-                0x00000cbc                __libc_init_array
- .text.memset   0x00000d08       0x10 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
-                0x00000d08                memset
+                0x00000ccc       0x4c c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+                0x00000ccc                __libc_init_array
+ .text.memset   0x00000d18       0x10 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+                0x00000d18                memset
  *(.plt)
  *(.gnu.warning)
  *(.glue_7t)
- .glue_7t       0x00000d18        0x0 linker stubs
+ .glue_7t       0x00000d28        0x0 linker stubs
  *(.glue_7)
- .glue_7        0x00000d18        0x0 linker stubs
+ .glue_7        0x00000d28        0x0 linker stubs
  *(.vfp11_veneer)
- .vfp11_veneer  0x00000d18        0x0 linker stubs
+ .vfp11_veneer  0x00000d28        0x0 linker stubs
  *(.bootloader)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
  *(.gcc_except_table)
 
-.v4_bx          0x00000d18        0x0
- .v4_bx         0x00000d18        0x0 linker stubs
+.v4_bx          0x00000d28        0x0
+ .v4_bx         0x00000d28        0x0 linker stubs
 
-.iplt           0x00000d18        0x0
- .iplt          0x00000d18        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+.iplt           0x00000d28        0x0
+ .iplt          0x00000d28        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
 
-.eh_frame       0x00000d18        0x4
+.eh_frame       0x00000d28        0x4
  *(.eh_frame)
- .eh_frame      0x00000d18        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
- .eh_frame      0x00000d18        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
+ .eh_frame      0x00000d28        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .eh_frame      0x00000d28        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
                 [!provide]                PROVIDE (__exidx_start, .)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00000d1c                __exidx_end = .
+                0x00000d2c                __exidx_end = .
 
-.rodata         0x00000d1c       0x74
+.rodata         0x00000d2c       0x74
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x00000d1c        0xc .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
- .rodata        0x00000d28       0x2e .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLib.o)
-                0x00000d28                cyImoFreqMhz2Reg
+ .rodata        0x00000d2c        0xc .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .rodata        0x00000d38       0x2e .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLib.o)
+                0x00000d38                cyImoFreqMhz2Reg
  .rodata.str1.1
-                0x00000d56        0x2 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
-                0x00000d58                . = ALIGN (0x4)
+                0x00000d66        0x2 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+                0x00000d68                . = ALIGN (0x4)
  *(.init)
- .init          0x00000d58        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
-                0x00000d58                _init
- .init          0x00000d5c        0x8 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
-                0x00000d64                . = ALIGN (0x4)
-                0x00000d64                __preinit_array_start = .
+ .init          0x00000d68        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+                0x00000d68                _init
+ .init          0x00000d6c        0x8 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+                0x00000d74                . = ALIGN (0x4)
+                0x00000d74                __preinit_array_start = .
  *(.preinit_array)
-                0x00000d64                __preinit_array_end = .
-                0x00000d64                . = ALIGN (0x4)
-                0x00000d64                __init_array_start = .
+                0x00000d74                __preinit_array_end = .
+                0x00000d74                . = ALIGN (0x4)
+                0x00000d74                __init_array_start = .
  *(SORT(.init_array.*))
  *(.init_array)
- .init_array    0x00000d64        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
- .init_array    0x00000d68        0x4 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
-                0x00000d6c                __init_array_end = .
-                0x00000d6c                . = ALIGN (0x4)
- *(.fini)
- .fini          0x00000d6c        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
-                0x00000d6c                _fini
- .fini          0x00000d70        0x8 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
-                0x00000d78                . = ALIGN (0x4)
-                0x00000d78                __fini_array_start = .
- *(.fini_array)
- .fini_array    0x00000d78        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
- *(SORT(.fini_array.*))
-                0x00000d7c                __fini_array_end = .
+ .init_array    0x00000d74        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .init_array    0x00000d78        0x4 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+                0x00000d7c                __init_array_end = .
                 0x00000d7c                . = ALIGN (0x4)
+ *(.fini)
+ .fini          0x00000d7c        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+                0x00000d7c                _fini
+ .fini          0x00000d80        0x8 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+                0x00000d88                . = ALIGN (0x4)
+                0x00000d88                __fini_array_start = .
+ *(.fini_array)
+ .fini_array    0x00000d88        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ *(SORT(.fini_array.*))
+                0x00000d8c                __fini_array_end = .
+                0x00000d8c                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *crtend.o(.ctors)
-                0x00000d7c                . = ALIGN (0x4)
+                0x00000d8c                . = ALIGN (0x4)
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *crtend.o(.dtors)
-                0x00000d7c                . = ALIGN (0x4)
-                0x00000d7c                __cy_regions = .
-                0x00000d7c        0x4 LONG 0xd90 __cy_region_init_ram
-                0x00000d80        0x4 LONG 0x200000c0 __cy_region_start_data
-                0x00000d84        0x4 LONG 0x90 __cy_region_init_size_ram
-                0x00000d88        0x4 LONG 0x80 __cy_region_zero_size_ram
-                0x00000d8c                __cy_regions_end = .
-                0x00000d90                . = ALIGN (0x8)
- *fill*         0x00000d8c        0x4 
-                0x00000d90                _etext = .
+                0x00000d8c                . = ALIGN (0x4)
+                0x00000d8c                __cy_regions = .
+                0x00000d8c        0x4 LONG 0xda0 __cy_region_init_ram
+                0x00000d90        0x4 LONG 0x200000c0 __cy_region_start_data
+                0x00000d94        0x4 LONG 0x90 __cy_region_init_size_ram
+                0x00000d98        0x4 LONG 0x80 __cy_region_zero_size_ram
+                0x00000d9c                __cy_regions_end = .
+                0x00000da0                . = ALIGN (0x8)
+ *fill*         0x00000d9c        0x4 
+                0x00000da0                _etext = .
 
 .cy_checksum_exclude
-                0x00000d90        0x0
+                0x00000da0        0x0
  *(.cy_checksum_exclude)
 
 .ramvectors     0x20000000       0xc0
@@ -715,7 +714,7 @@ END GROUP
 .noinit
  *(.noinit)
 
-.data           0x200000c0       0x90 load address 0x00000d90
+.data           0x200000c0       0x90 load address 0x00000da0
                 0x200000c0                __cy_region_start_data = .
  *(.jcr)
  .jcr           0x200000c0        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
@@ -745,10 +744,10 @@ END GROUP
  *(.ram)
                 0x20000150                _edata = .
 
-.igot.plt       0x20000150        0x0 load address 0x00000e20
+.igot.plt       0x20000150        0x0 load address 0x00000e30
  .igot.plt      0x20000150        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
 
-.bss            0x20000150       0x80 load address 0x00000e20
+.bss            0x20000150       0x80 load address 0x00000e30
                 0x20000150                PROVIDE (__bss_start__, .)
  *(.shbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
@@ -781,11 +780,11 @@ END GROUP
                 0x200001d0                __end = .
                 0x200001d0                PROVIDE (end, .)
                 0x200001d0                PROVIDE (__bss_end__, .)
-                0x00000d90                __cy_region_init_ram = LOADADDR (.data)
+                0x00000da0                __cy_region_init_ram = LOADADDR (.data)
                 0x00000090                __cy_region_init_size_ram = (_edata - ADDR (.data))
                 0x00000080                __cy_region_zero_size_ram = (_end - _edata)
 
-.heap           0x200001d0       0x80 load address 0x00000e20
+.heap           0x200001d0       0x80 load address 0x00000e30
                 0x200001d0                . = _end
                 0x20000250                . = (. + 0x80)
  *fill*         0x200001d0       0x80 
@@ -825,8 +824,8 @@ END GROUP
                 0x90600000        0x1 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
                 0x90600000                cy_meta_chipprotect
 
-.rel.dyn        0x00000e20        0x0 load address 0x90600004
- .rel.iplt      0x00000e20        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+.rel.dyn        0x00000e30        0x0 load address 0x90600004
+ .rel.iplt      0x00000e30        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
 
 .stab
  *(.stab)
@@ -884,24 +883,24 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x3bd1
+.debug_info     0x00000000     0x3be4
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000      0x54a .\CortexM0\ARM_GCC_541\Debug\main.o
- .debug_info    0x0000054a      0x279 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_info    0x000007c3       0xf8 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
- .debug_info    0x000008bb      0x3a2 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
- .debug_info    0x00000c5d      0xaec .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLib.o)
- .debug_info    0x00001749      0xcfe .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLFClk.o)
- .debug_info    0x00002447      0x2fb .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER.o)
- .debug_info    0x00002742      0x372 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER_SPI_UART.o)
- .debug_info    0x00002ab4      0x3f8 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER_UART.o)
- .debug_info    0x00002eac      0x19b .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Left.o)
- .debug_info    0x00003047      0x19d .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Right.o)
- .debug_info    0x000031e4      0x305 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Left_ISR.o)
- .debug_info    0x000034e9      0x305 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Right_ISR.o)
- .debug_info    0x000037ee      0x19d .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(LedRed.o)
- .debug_info    0x0000398b       0xc0 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyBootAsmGnu.o)
- .debug_info    0x00003a4b      0x186 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER_SPI_UART_INT.o)
+ .debug_info    0x00000000      0x55d .\CortexM0\ARM_GCC_541\Debug\main.o
+ .debug_info    0x0000055d      0x279 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_info    0x000007d6       0xf8 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+ .debug_info    0x000008ce      0x3a2 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_info    0x00000c70      0xaec .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLib.o)
+ .debug_info    0x0000175c      0xcfe .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLFClk.o)
+ .debug_info    0x0000245a      0x2fb .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER.o)
+ .debug_info    0x00002755      0x372 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER_SPI_UART.o)
+ .debug_info    0x00002ac7      0x3f8 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER_UART.o)
+ .debug_info    0x00002ebf      0x19b .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Left.o)
+ .debug_info    0x0000305a      0x19d .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Right.o)
+ .debug_info    0x000031f7      0x305 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Left_ISR.o)
+ .debug_info    0x000034fc      0x305 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Right_ISR.o)
+ .debug_info    0x00003801      0x19d .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(LedRed.o)
+ .debug_info    0x0000399e       0xc0 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyBootAsmGnu.o)
+ .debug_info    0x00003a5e      0x186 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER_SPI_UART_INT.o)
 
 .debug_abbrev   0x00000000     0x1323
  *(.debug_abbrev)
@@ -922,24 +921,24 @@ END GROUP
  .debug_abbrev  0x00001275       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyBootAsmGnu.o)
  .debug_abbrev  0x00001289       0x9a .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER_SPI_UART_INT.o)
 
-.debug_line     0x00000000     0x1ae3
+.debug_line     0x00000000     0x1ae4
  *(.debug_line)
- .debug_line    0x00000000      0x2db .\CortexM0\ARM_GCC_541\Debug\main.o
- .debug_line    0x000002db      0x136 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_line    0x00000411      0x141 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
- .debug_line    0x00000552      0x235 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
- .debug_line    0x00000787      0x460 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLib.o)
- .debug_line    0x00000be7      0x466 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLFClk.o)
- .debug_line    0x0000104d      0x169 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER.o)
- .debug_line    0x000011b6      0x159 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER_SPI_UART.o)
- .debug_line    0x0000130f      0x1b1 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER_UART.o)
- .debug_line    0x000014c0       0xc2 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Left.o)
- .debug_line    0x00001582       0xc4 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Right.o)
- .debug_line    0x00001646      0x15b .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Left_ISR.o)
- .debug_line    0x000017a1      0x158 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Right_ISR.o)
- .debug_line    0x000018f9       0xbe .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(LedRed.o)
- .debug_line    0x000019b7       0x69 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyBootAsmGnu.o)
- .debug_line    0x00001a20       0xc3 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER_SPI_UART_INT.o)
+ .debug_line    0x00000000      0x2dc .\CortexM0\ARM_GCC_541\Debug\main.o
+ .debug_line    0x000002dc      0x136 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_line    0x00000412      0x141 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+ .debug_line    0x00000553      0x235 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_line    0x00000788      0x460 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLib.o)
+ .debug_line    0x00000be8      0x466 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyLFClk.o)
+ .debug_line    0x0000104e      0x169 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER.o)
+ .debug_line    0x000011b7      0x159 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER_SPI_UART.o)
+ .debug_line    0x00001310      0x1b1 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER_UART.o)
+ .debug_line    0x000014c1       0xc2 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Left.o)
+ .debug_line    0x00001583       0xc4 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Right.o)
+ .debug_line    0x00001647      0x15b .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Left_ISR.o)
+ .debug_line    0x000017a2      0x158 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(Button_Right_ISR.o)
+ .debug_line    0x000018fa       0xbe .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(LedRed.o)
+ .debug_line    0x000019b8       0x69 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(CyBootAsmGnu.o)
+ .debug_line    0x00001a21       0xc3 .\CortexM0\ARM_GCC_541\Debug\LIN-Internal_Light_ECU.a(UART_MASTER_SPI_UART_INT.o)
 
 .debug_frame    0x00000000     0x10ec
  *(.debug_frame)
