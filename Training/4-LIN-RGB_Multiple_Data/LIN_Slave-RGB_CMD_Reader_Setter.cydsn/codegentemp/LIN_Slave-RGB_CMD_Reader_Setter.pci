@@ -1,0 +1,13 @@
+# LIN_Slave-RGB_CMD_Reader_Setter
+# 2020-07-27 09:22:06Z
+
+# IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 2
+# IO_3@[IOP=(3)][IoId=(3)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 3
+set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
+set_io "\LINS:SCB:tx(0)\" iocell 0 5
+set_io "\LINS:SCB:rx(0)\" iocell 0 4
+set_io "LedGreen(0)" iocell 0 2
+set_io "LedRed(0)" iocell 1 6
+set_io "LedBlue(0)" iocell 0 3

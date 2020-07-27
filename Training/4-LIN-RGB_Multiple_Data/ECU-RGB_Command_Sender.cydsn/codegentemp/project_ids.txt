@@ -1,0 +1,7 @@
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|ff96babb-2375-468d-a8e9-25880ad4316b
+D:\Users\jagumiel\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|ef6264b2-bff9-4385-96b0-523c1b29624c
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|1dc07ed6-02b5-4132-a972-65e882c501c7
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|87e0472d-3eb0-4c7c-8d27-fbda5a9eb015
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|02ef0d3b-6880-4f6a-80f2-2c91a23346a8
+D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\LIN_Slave-RGB_CMD_Reader_Setter.cydsn\LIN_Slave-RGB_CMD_Reader_Setter.cyprj|6d4e376f-a719-40d9-aadf-1f22b3b0fc7a
+D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\ECU-RGB_Command_Sender.cyprj|21722326-1e69-4b23-b0d6-7df590d64520

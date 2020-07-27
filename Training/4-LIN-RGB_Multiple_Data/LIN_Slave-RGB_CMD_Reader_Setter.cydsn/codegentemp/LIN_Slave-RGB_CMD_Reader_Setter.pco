@@ -1,0 +1,40 @@
+# LIN_Slave-RGB_CMD_Reader_Setter
+# 2020-07-27 09:22:07Z
+
+# IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 2
+# IO_3@[IOP=(3)][IoId=(3)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 3
+set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
+set_location "ClockBlock" m0s8clockblockcell -1 -1 0
+set_io "\LINS:SCB:tx(0)\" iocell 0 5
+set_io "\LINS:SCB:rx(0)\" iocell 0 4
+set_io "LedGreen(0)" iocell 0 2
+set_io "LedRed(0)" iocell 1 6
+set_io "LedBlue(0)" iocell 0 3
+set_location "\PWM_R:PWMUDB:status_2\" 1 0 1 0
+set_location "\PWM_B:PWMUDB:status_2\" 1 1 1 0
+set_location "\PWM_G:PWMUDB:status_2\" 0 1 1 0
+set_location "\LINS:ISR\" interrupt -1 -1 11
+set_location "\LINS:SCB:SCB\" m0s8scbcell -1 -1 1
+set_location "\PWM_R:PWMUDB:genblk1:ctrlreg\" 1 0 6
+set_location "\PWM_R:PWMUDB:genblk8:stsreg\" 1 0 4
+set_location "\PWM_R:PWMUDB:sP8:pwmdp:u0\" 1 0 2
+set_location "\PWM_B:PWMUDB:genblk1:ctrlreg\" 1 1 6
+set_location "\PWM_B:PWMUDB:genblk8:stsreg\" 1 1 4
+set_location "\PWM_B:PWMUDB:sP8:pwmdp:u0\" 1 1 2
+set_location "\PWM_G:PWMUDB:genblk1:ctrlreg\" 0 1 6
+set_location "\PWM_G:PWMUDB:genblk8:stsreg\" 0 1 4
+set_location "\PWM_G:PWMUDB:sP8:pwmdp:u0\" 0 1 2
+set_location "\PWM_R:PWMUDB:runmode_enable\" 1 0 0 3
+set_location "\PWM_R:PWMUDB:prevCompare1\" 1 0 0 1
+set_location "\PWM_R:PWMUDB:status_0\" 1 0 0 0
+set_location "Net_48" 1 0 0 2
+set_location "\PWM_B:PWMUDB:runmode_enable\" 1 1 0 3
+set_location "\PWM_B:PWMUDB:prevCompare1\" 1 1 0 1
+set_location "\PWM_B:PWMUDB:status_0\" 1 1 0 0
+set_location "Net_544" 1 1 0 2
+set_location "\PWM_G:PWMUDB:runmode_enable\" 0 1 0 3
+set_location "\PWM_G:PWMUDB:prevCompare1\" 0 1 0 1
+set_location "\PWM_G:PWMUDB:status_0\" 0 1 0 0
+set_location "Net_455" 0 1 0 2

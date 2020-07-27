@@ -1,0 +1,13 @@
+# ECU-RGB_Command_Sender
+# 2020-07-27 09:09:31Z
+
+# IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 2
+# IO_3@[IOP=(3)][IoId=(3)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 3
+set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
+set_io "\UART_MASTER:tx(0)\" iocell 0 5
+set_io "\UART_MASTER:rx(0)\" iocell 0 4
+set_io "LedRed(0)" iocell 1 6
+set_io "\UART_PC:tx(0)\" iocell 4 1
+set_io "\UART_PC:rx(0)\" iocell 4 0
