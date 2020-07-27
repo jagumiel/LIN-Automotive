@@ -26,7 +26,7 @@
 volatile unsigned char Sensor_data[8];
 const uint8_t sync = 0x55;
 uint8_t id = 0x10;
-uint8_t packet[PACKET_SIZE] = {0x89, 0x00, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF};
+uint8_t packet[PACKET_SIZE] = {0x00, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
 uint8_t pid = 0x00;
 uint8_t checksum = 0x00;
 
@@ -38,22 +38,22 @@ void getResults(char ledValue[]){
         singleValAux[j]=ledValue[i];
         i++;
     }
+    packet[0] = atoi(singleValAux);
+    for(int j=0; j<3; j++){
+        singleValAux[j]=ledValue[i];
+        i++;
+    }
     packet[1] = atoi(singleValAux);
     for(int j=0; j<3; j++){
         singleValAux[j]=ledValue[i];
         i++;
     }
     packet[2] = atoi(singleValAux);
-    for(int j=0; j<3; j++){
-        singleValAux[j]=ledValue[i];
-        i++;
-    }
-    packet[3] = atoi(singleValAux);
     
     /*Numbers must be comprehended between 0-255. If they are greater than 255 are setted to the max value.*/
-    if (packet[1] > 255) packet[0] = 255;
-    if (packet[2] > 255) packet[1] = 255;
-    if (packet[3] > 255) packet[2] = 255;
+    if (packet[0] > 255) packet[0] = 255;
+    if (packet[1] > 255) packet[1] = 255;
+    if (packet[2] > 255) packet[2] = 255;
 }
 
 void sendFrame(void){

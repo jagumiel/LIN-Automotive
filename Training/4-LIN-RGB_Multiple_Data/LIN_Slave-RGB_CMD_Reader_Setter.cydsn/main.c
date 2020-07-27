@@ -49,7 +49,6 @@
 int main(void)
 {        
     /* Local Variables */
-    uint8   dataArray = 0u ;
     uint8   dataReceived = 0u;
     uint8_t red, green, blue = 0;
     
@@ -69,6 +68,9 @@ int main(void)
     PWM_R_Start();
     PWM_G_Start();
     PWM_B_Start();
+    PWM_R_WriteCompare(0);
+    PWM_G_WriteCompare(0);
+    PWM_B_WriteCompare(0);
     
 	while(1){
     	/**********************************************************
@@ -80,7 +82,7 @@ int main(void)
     		    					
     		/* Copy the value in Insig scalar into OutSig scalar using an
              * intermediate variable (dataReceived) */
-            dataReceived = l_u8_rd_InSig();
+            dataReceived = l_u8_rd_RedValue();
     		l_u8_wr(OutSig_SIGNAL_HANDLE, dataReceived);
     		red     = l_u8_rd_RedValue();
             green   = l_u8_rd_GreenValue();
@@ -89,13 +91,12 @@ int main(void)
             
             PWM_R_WriteCompare(red);
             PWM_G_WriteCompare(green);
-            PWM_B_WriteCompare(blue);
-            
-            dataArray=red;
-            
+            PWM_B_WriteCompare(blue);            
                 
-        	/* Copy the status of the LED (dataArray) to OutArraySig */
-            l_u8_wr_OutArraySig(dataArray);                
+        	/* Copy the status of the LED to Output Signals */
+            l_u8_wr_OutRedValue(red); 
+            l_u8_wr_OutGreenValue(green);
+            l_u8_wr_OutBlueValue(blue);
         }
         
     	/***************************************************************

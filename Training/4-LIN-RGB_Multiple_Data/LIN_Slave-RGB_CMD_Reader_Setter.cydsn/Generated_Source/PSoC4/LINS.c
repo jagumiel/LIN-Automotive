@@ -203,8 +203,8 @@ static LINS_SLAVE_CONFIG const CYCODE LINS_LinSlaveConfig = {
 
 
 /* Frames declaration with initial signals values */
-static volatile l_u8  LINS_Buffer_InFrame[8u] = {0x80u, 0x00u, 0x00u, 0x00u, 0x00u, 0xFFu, 0xFFu, 0xFFu};
-static volatile l_u8  LINS_Buffer_OutFrame[8u] = {0x00u, 0x00u, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu};
+static volatile l_u8  LINS_Buffer_InFrame[8u] = {0x00u, 0x00u, 0x00u, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu};
+static volatile l_u8  LINS_Buffer_OutFrame[8u] = {0x00u, 0x00u, 0x00u, 0x00u, 0xFFu, 0xFFu, 0xFFu, 0xFFu};
 
 
 #if (LINS_SAE_J2602_ENABLED)
@@ -378,10 +378,6 @@ l_u8 l_u8_rd_LINS(l_signal_handle sss)
 
     switch(sss)
     {
-        case InSig_SIGNAL_HANDLE:
-            returnValue = l_u8_rd_InSig();
-        break;
-
         case RedValue_SIGNAL_HANDLE:
             returnValue = l_u8_rd_RedValue();
         break;
@@ -394,10 +390,6 @@ l_u8 l_u8_rd_LINS(l_signal_handle sss)
             returnValue = l_u8_rd_BlueValue();
         break;
 
-        case InArraySig_SIGNAL_HANDLE:
-            returnValue = l_u8_rd_InArraySig();
-        break;
-
         default:
             returnValue = (l_u8) 0xFFu;
         break;
@@ -405,25 +397,6 @@ l_u8 l_u8_rd_LINS(l_signal_handle sss)
 
     return (returnValue);
 }
-
-/*******************************************************************************
-* Function Name: l_u8_rd_InSig
-********************************************************************************
-*
-* Summary:
-*  Reads and returns the current value of the signal for signals of the size
-*  2 - 8 bits.
-*
-* Return:
-*  Returns current value of signal.
-*
-*******************************************************************************/
-l_u8 l_u8_rd_InSig(void) 
-{
-    return(LINS_Buffer_InFrame[LINS_InSig_InFrame_SIG_BYTE_OFFSET] &
-                LINS_InSig_InFrame_SIG_MASK_0);
-}
-
 
 /*******************************************************************************
 * Function Name: l_u8_rd_RedValue
@@ -479,25 +452,6 @@ l_u8 l_u8_rd_BlueValue(void)
 {
     /* Get one complete byte signal from frame */
     return(LINS_Buffer_InFrame[LINS_BlueValue_InFrame_SIG_BYTE_OFFSET]);
-}
-
-
-/*******************************************************************************
-* Function Name: l_u8_rd_InArraySig
-********************************************************************************
-*
-* Summary:
-*  Reads and returns the current value of the signal for signals of the size
-*  2 - 8 bits.
-*
-* Return:
-*  Returns current value of signal.
-*
-*******************************************************************************/
-l_u8 l_u8_rd_InArraySig(void) 
-{
-    /* Get one complete byte signal from frame */
-    return(LINS_Buffer_InFrame[LINS_InArraySig_InFrame_SIG_BYTE_OFFSET]);
 }
 
 
@@ -603,8 +557,16 @@ void l_u8_wr_LINS(l_signal_handle sss, l_u8 v)
             l_u8_wr_OutSig(v);
         break;
 
-        case OutArraySig_SIGNAL_HANDLE:
-            l_u8_wr_OutArraySig(v);
+        case OutRedValue_SIGNAL_HANDLE:
+            l_u8_wr_OutRedValue(v);
+        break;
+
+        case OutGreenValue_SIGNAL_HANDLE:
+            l_u8_wr_OutGreenValue(v);
+        break;
+
+        case OutBlueValue_SIGNAL_HANDLE:
+            l_u8_wr_OutBlueValue(v);
         break;
 
         default:
@@ -646,7 +608,7 @@ void l_u8_wr_OutSig(l_u8 v)
 
 
 /*******************************************************************************
-* Function Name: l_u8_wr_OutArraySig
+* Function Name: l_u8_wr_OutRedValue
 ********************************************************************************
 *
 * Summary:
@@ -659,9 +621,49 @@ void l_u8_wr_OutSig(l_u8 v)
 *  No
 *
 *******************************************************************************/
-void l_u8_wr_OutArraySig(l_u8 v)
+void l_u8_wr_OutRedValue(l_u8 v)
 {
-    LINS_Buffer_OutFrame[LINS_OutArraySig_OutFrame_SIG_BYTE_OFFSET] = v;
+    LINS_Buffer_OutFrame[LINS_OutRedValue_OutFrame_SIG_BYTE_OFFSET] = v;
+}
+
+
+/*******************************************************************************
+* Function Name: l_u8_wr_OutGreenValue
+********************************************************************************
+*
+* Summary:
+*  Sets the current value of the signal for signals of the size 2 - 8 bits to v.
+*
+* Parameters:
+*  v   - value of the signal to be set.
+*
+* Reentrant:
+*  No
+*
+*******************************************************************************/
+void l_u8_wr_OutGreenValue(l_u8 v)
+{
+    LINS_Buffer_OutFrame[LINS_OutGreenValue_OutFrame_SIG_BYTE_OFFSET] = v;
+}
+
+
+/*******************************************************************************
+* Function Name: l_u8_wr_OutBlueValue
+********************************************************************************
+*
+* Summary:
+*  Sets the current value of the signal for signals of the size 2 - 8 bits to v.
+*
+* Parameters:
+*  v   - value of the signal to be set.
+*
+* Reentrant:
+*  No
+*
+*******************************************************************************/
+void l_u8_wr_OutBlueValue(l_u8 v)
+{
+    LINS_Buffer_OutFrame[LINS_OutBlueValue_OutFrame_SIG_BYTE_OFFSET] = v;
 }
 
 
@@ -705,10 +707,6 @@ l_bool l_flg_tst_LINS(l_flag_handle fff)
             returnValue = l_flg_tst_SRF();
         break;
 
-        case InSig_FLAG_HANDLE:
-            returnValue = l_flg_tst_InSig();
-        break;
-
         case RedValue_FLAG_HANDLE:
             returnValue = l_flg_tst_RedValue();
         break;
@@ -721,16 +719,20 @@ l_bool l_flg_tst_LINS(l_flag_handle fff)
             returnValue = l_flg_tst_BlueValue();
         break;
 
-        case InArraySig_FLAG_HANDLE:
-            returnValue = l_flg_tst_InArraySig();
-        break;
-
         case OutSig_FLAG_HANDLE:
             returnValue = l_flg_tst_OutSig();
         break;
 
-        case OutArraySig_FLAG_HANDLE:
-            returnValue = l_flg_tst_OutArraySig();
+        case OutRedValue_FLAG_HANDLE:
+            returnValue = l_flg_tst_OutRedValue();
+        break;
+
+        case OutGreenValue_FLAG_HANDLE:
+            returnValue = l_flg_tst_OutGreenValue();
+        break;
+
+        case OutBlueValue_FLAG_HANDLE:
+            returnValue = l_flg_tst_OutBlueValue();
         break;
 
         case InFrame_FLAG_HANDLE:
@@ -813,35 +815,6 @@ l_bool l_flg_tst_SRF(void)
     return (result);
 }
 
-
-
-/*******************************************************************************
-* Function Name: l_flg_tst_InSig
-********************************************************************************
-*
-* Summary:
-*  Returns a C boolean indicating the current state of the flag specified by
-*  the name fff, i.e. returns zero if the flag is cleared, non-zero otherwise.
-*
-* Return:
-*  Returns a C boolean indicating the current state of the flag specified by
-*  the name fff:
-*  False - if the flag is cleared;
-*  True - if the flag is not cleared.
-*
-*******************************************************************************/
-l_bool l_flg_tst_InSig(void)
-{
-    l_bool result = LINS_FALSE;
-
-    if (0u != (LINS_statusFlagArray[LINS_InSig_FRAME_FLAG_BYTE_OFFSET_0] &
-    LINS_InSig_FRAME_FLAG_MASK_0))
-    {
-        result = LINS_TRUE;
-    }
-
-    return (result);
-}
 
 
 /*******************************************************************************
@@ -932,35 +905,6 @@ l_bool l_flg_tst_BlueValue(void)
 
 
 /*******************************************************************************
-* Function Name: l_flg_tst_InArraySig
-********************************************************************************
-*
-* Summary:
-*  Returns a C boolean indicating the current state of the flag specified by
-*  the name fff, i.e. returns zero if the flag is cleared, non-zero otherwise.
-*
-* Return:
-*  Returns a C boolean indicating the current state of the flag specified by
-*  the name fff:
-*  False - if the flag is cleared;
-*  True - if the flag is not cleared.
-*
-*******************************************************************************/
-l_bool l_flg_tst_InArraySig(void)
-{
-    l_bool result = LINS_FALSE;
-
-    if (0u != (LINS_statusFlagArray[LINS_InArraySig_FRAME_FLAG_BYTE_OFFSET_0] &
-    LINS_InArraySig_FRAME_FLAG_MASK_0))
-    {
-        result = LINS_TRUE;
-    }
-
-    return (result);
-}
-
-
-/*******************************************************************************
 * Function Name: l_flg_tst_OutSig
 ********************************************************************************
 *
@@ -990,7 +934,7 @@ l_bool l_flg_tst_OutSig(void)
 
 
 /*******************************************************************************
-* Function Name: l_flg_tst_OutArraySig
+* Function Name: l_flg_tst_OutRedValue
 ********************************************************************************
 *
 * Summary:
@@ -1004,12 +948,70 @@ l_bool l_flg_tst_OutSig(void)
 *  True - if the flag is not cleared.
 *
 *******************************************************************************/
-l_bool l_flg_tst_OutArraySig(void)
+l_bool l_flg_tst_OutRedValue(void)
 {
     l_bool result = LINS_FALSE;
 
-    if (0u != (LINS_statusFlagArray[LINS_OutArraySig_FRAME_FLAG_BYTE_OFFSET_0] &
-    LINS_OutArraySig_FRAME_FLAG_MASK_0))
+    if (0u != (LINS_statusFlagArray[LINS_OutRedValue_FRAME_FLAG_BYTE_OFFSET_0] &
+    LINS_OutRedValue_FRAME_FLAG_MASK_0))
+    {
+        result = LINS_TRUE;
+    }
+
+    return (result);
+}
+
+
+/*******************************************************************************
+* Function Name: l_flg_tst_OutGreenValue
+********************************************************************************
+*
+* Summary:
+*  Returns a C boolean indicating the current state of the flag specified by
+*  the name fff, i.e. returns zero if the flag is cleared, non-zero otherwise.
+*
+* Return:
+*  Returns a C boolean indicating the current state of the flag specified by
+*  the name fff:
+*  False - if the flag is cleared;
+*  True - if the flag is not cleared.
+*
+*******************************************************************************/
+l_bool l_flg_tst_OutGreenValue(void)
+{
+    l_bool result = LINS_FALSE;
+
+    if (0u != (LINS_statusFlagArray[LINS_OutGreenValue_FRAME_FLAG_BYTE_OFFSET_0] &
+    LINS_OutGreenValue_FRAME_FLAG_MASK_0))
+    {
+        result = LINS_TRUE;
+    }
+
+    return (result);
+}
+
+
+/*******************************************************************************
+* Function Name: l_flg_tst_OutBlueValue
+********************************************************************************
+*
+* Summary:
+*  Returns a C boolean indicating the current state of the flag specified by
+*  the name fff, i.e. returns zero if the flag is cleared, non-zero otherwise.
+*
+* Return:
+*  Returns a C boolean indicating the current state of the flag specified by
+*  the name fff:
+*  False - if the flag is cleared;
+*  True - if the flag is not cleared.
+*
+*******************************************************************************/
+l_bool l_flg_tst_OutBlueValue(void)
+{
+    l_bool result = LINS_FALSE;
+
+    if (0u != (LINS_statusFlagArray[LINS_OutBlueValue_FRAME_FLAG_BYTE_OFFSET_0] &
+    LINS_OutBlueValue_FRAME_FLAG_MASK_0))
     {
         result = LINS_TRUE;
     }
@@ -1105,10 +1107,6 @@ void l_flg_clr_LINS(l_flag_handle fff)
         case SRF_FLAG_HANDLE:
             l_flg_clr_SRF();        break;
 
-        case InSig_FLAG_HANDLE:
-            l_flg_clr_InSig();
-        break;
-
         case RedValue_FLAG_HANDLE:
             l_flg_clr_RedValue();
         break;
@@ -1121,16 +1119,20 @@ void l_flg_clr_LINS(l_flag_handle fff)
             l_flg_clr_BlueValue();
         break;
 
-        case InArraySig_FLAG_HANDLE:
-            l_flg_clr_InArraySig();
-        break;
-
         case OutSig_FLAG_HANDLE:
             l_flg_clr_OutSig();
         break;
 
-        case OutArraySig_FLAG_HANDLE:
-            l_flg_clr_OutArraySig();
+        case OutRedValue_FLAG_HANDLE:
+            l_flg_clr_OutRedValue();
+        break;
+
+        case OutGreenValue_FLAG_HANDLE:
+            l_flg_clr_OutGreenValue();
+        break;
+
+        case OutBlueValue_FLAG_HANDLE:
+            l_flg_clr_OutBlueValue();
         break;
 
         case InFrame_FLAG_HANDLE:
@@ -1182,24 +1184,6 @@ void l_flg_clr_SRF(void)
     ((l_u8) ~LINS_SRF_FRAME_FLAG_MASK_0);
 }
 
-
-
-/*******************************************************************************
-* Function Name: l_flg_clr_InSig
-********************************************************************************
-*
-* Summary:
-*  Sets the current value of the flag specified by the name fff to zero.
-*
-* Reentrant:
-*  No
-*
-*******************************************************************************/
-void l_flg_clr_InSig(void)
-{
-    LINS_statusFlagArray[LINS_InSig_FRAME_FLAG_BYTE_OFFSET_0] &=
-       ((l_u8) ~LINS_InSig_FRAME_FLAG_MASK_0);
-}
 
 
 /*******************************************************************************
@@ -1257,24 +1241,6 @@ void l_flg_clr_BlueValue(void)
 
 
 /*******************************************************************************
-* Function Name: l_flg_clr_InArraySig
-********************************************************************************
-*
-* Summary:
-*  Sets the current value of the flag specified by the name fff to zero.
-*
-* Reentrant:
-*  No
-*
-*******************************************************************************/
-void l_flg_clr_InArraySig(void)
-{
-    LINS_statusFlagArray[LINS_InArraySig_FRAME_FLAG_BYTE_OFFSET_0] &=
-       ((l_u8) ~LINS_InArraySig_FRAME_FLAG_MASK_0);
-}
-
-
-/*******************************************************************************
 * Function Name: l_flg_clr_OutSig
 ********************************************************************************
 *
@@ -1293,7 +1259,7 @@ void l_flg_clr_OutSig(void)
 
 
 /*******************************************************************************
-* Function Name: l_flg_clr_OutArraySig
+* Function Name: l_flg_clr_OutRedValue
 ********************************************************************************
 *
 * Summary:
@@ -1303,10 +1269,46 @@ void l_flg_clr_OutSig(void)
 *  No
 *
 *******************************************************************************/
-void l_flg_clr_OutArraySig(void)
+void l_flg_clr_OutRedValue(void)
 {
-    LINS_statusFlagArray[LINS_OutArraySig_FRAME_FLAG_BYTE_OFFSET_0] &=
-       ((l_u8) ~LINS_OutArraySig_FRAME_FLAG_MASK_0);
+    LINS_statusFlagArray[LINS_OutRedValue_FRAME_FLAG_BYTE_OFFSET_0] &=
+       ((l_u8) ~LINS_OutRedValue_FRAME_FLAG_MASK_0);
+}
+
+
+/*******************************************************************************
+* Function Name: l_flg_clr_OutGreenValue
+********************************************************************************
+*
+* Summary:
+*  Sets the current value of the flag specified by the name fff to zero.
+*
+* Reentrant:
+*  No
+*
+*******************************************************************************/
+void l_flg_clr_OutGreenValue(void)
+{
+    LINS_statusFlagArray[LINS_OutGreenValue_FRAME_FLAG_BYTE_OFFSET_0] &=
+       ((l_u8) ~LINS_OutGreenValue_FRAME_FLAG_MASK_0);
+}
+
+
+/*******************************************************************************
+* Function Name: l_flg_clr_OutBlueValue
+********************************************************************************
+*
+* Summary:
+*  Sets the current value of the flag specified by the name fff to zero.
+*
+* Reentrant:
+*  No
+*
+*******************************************************************************/
+void l_flg_clr_OutBlueValue(void)
+{
+    LINS_statusFlagArray[LINS_OutBlueValue_FRAME_FLAG_BYTE_OFFSET_0] &=
+       ((l_u8) ~LINS_OutBlueValue_FRAME_FLAG_MASK_0);
 }
 
 

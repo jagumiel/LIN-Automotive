@@ -225,17 +225,17 @@ void   LINS_Stop(void);
 #endif  /* LINS_SAE_J2602_ENABLED */
 
 /* Core API: Signal Interaction  Functions */
-l_u8 l_u8_rd_InSig(void);
 l_u8 l_u8_rd_RedValue(void);
 l_u8 l_u8_rd_GreenValue(void);
 l_u8 l_u8_rd_BlueValue(void);
-l_u8 l_u8_rd_InArraySig(void);
 l_u8 l_u8_rd_LINS(l_signal_handle sss);
 
 void l_bool_wr_Response_Error(l_bool v);
 void l_bool_wr_LINS(l_signal_handle sss, l_bool v);
 void l_u8_wr_OutSig(l_u8 v);
-void l_u8_wr_OutArraySig(l_u8 v);
+void l_u8_wr_OutRedValue(l_u8 v);
+void l_u8_wr_OutGreenValue(l_u8 v);
+void l_u8_wr_OutBlueValue(l_u8 v);
 void l_u8_wr_LINS(l_signal_handle sss, l_u8 v);
 
 /* Signals API for current instance definition */
@@ -261,26 +261,26 @@ void l_u8_wr_LINS(l_signal_handle sss, l_u8 v);
 /* Core API Functions: Notification */
 l_bool l_flg_tst_MRF(void);
 l_bool l_flg_tst_SRF(void);
-l_bool l_flg_tst_InSig(void);
 l_bool l_flg_tst_RedValue(void);
 l_bool l_flg_tst_GreenValue(void);
 l_bool l_flg_tst_BlueValue(void);
-l_bool l_flg_tst_InArraySig(void);
 l_bool l_flg_tst_OutSig(void);
-l_bool l_flg_tst_OutArraySig(void);
+l_bool l_flg_tst_OutRedValue(void);
+l_bool l_flg_tst_OutGreenValue(void);
+l_bool l_flg_tst_OutBlueValue(void);
 l_bool l_flg_tst_InFrame(void);
 l_bool l_flg_tst_OutFrame(void);
 l_bool l_flg_tst_LINS(l_flag_handle fff);
 
 void l_flg_clr_MRF(void);
 void l_flg_clr_SRF(void);
-void   l_flg_clr_InSig(void);
 void   l_flg_clr_RedValue(void);
 void   l_flg_clr_GreenValue(void);
 void   l_flg_clr_BlueValue(void);
-void   l_flg_clr_InArraySig(void);
 void   l_flg_clr_OutSig(void);
-void   l_flg_clr_OutArraySig(void);
+void   l_flg_clr_OutRedValue(void);
+void   l_flg_clr_OutGreenValue(void);
+void   l_flg_clr_OutBlueValue(void);
 void   l_flg_clr_InFrame(void);
 void   l_flg_clr_OutFrame(void);
 void l_flg_clr_LINS(l_flag_handle fff);
@@ -330,21 +330,14 @@ CY_ISR_PROTO(LINS_UART_ISR);
 /******************************************************************************
 *   API Constants
 ******************************************************************************/
-/* Constants for l_u8_rd_InSig */
-#define LINS_InSig_InFrame_SIG_BYTE_OFFSET    (0x00u)
-#define LINS_InSig_InFrame_SIG_MASK_0         (0x7Fu)
-
 /* Constants for l_u8_rd_RedValue */
-#define LINS_RedValue_InFrame_SIG_BYTE_OFFSET    (0x01u)
+#define LINS_RedValue_InFrame_SIG_BYTE_OFFSET    (0x00u)
 
 /* Constants for l_u8_rd_GreenValue */
-#define LINS_GreenValue_InFrame_SIG_BYTE_OFFSET    (0x02u)
+#define LINS_GreenValue_InFrame_SIG_BYTE_OFFSET    (0x01u)
 
 /* Constants for l_u8_rd_BlueValue */
-#define LINS_BlueValue_InFrame_SIG_BYTE_OFFSET    (0x03u)
-
-/* Constants for l_u8_rd_InArraySig */
-#define LINS_InArraySig_InFrame_SIG_BYTE_OFFSET    (0x04u)
+#define LINS_BlueValue_InFrame_SIG_BYTE_OFFSET    (0x02u)
 
 /* Constants for l_u8_wr_OutSig() */
 #define LINS_OutSig_OutFrame_SIG_BYTE_OFFSET    (0x00u)
@@ -355,8 +348,14 @@ CY_ISR_PROTO(LINS_UART_ISR);
 #define LINS_Response_Error_OutFrame_SIG_BIT_OFFSET     (0x07u)
 #define LINS_Response_Error_OutFrame_SIG_MASK_0         (0x80u)
 
-/* Constants for l_u8_wr_OutArraySig() */
-#define LINS_OutArraySig_OutFrame_SIG_BYTE_OFFSET    (0x01u)
+/* Constants for l_u8_wr_OutRedValue() */
+#define LINS_OutRedValue_OutFrame_SIG_BYTE_OFFSET    (0x01u)
+
+/* Constants for l_u8_wr_OutGreenValue() */
+#define LINS_OutGreenValue_OutFrame_SIG_BYTE_OFFSET    (0x02u)
+
+/* Constants for l_u8_wr_OutBlueValue() */
+#define LINS_OutBlueValue_OutFrame_SIG_BYTE_OFFSET    (0x03u)
 
 
 /* l_flg_tst_MRF() and l_flg_clr_MRF() */
@@ -368,33 +367,33 @@ CY_ISR_PROTO(LINS_UART_ISR);
 #define LINS_SRF_FRAME_FLAG_MASK_0                  (0x02u)
 
 
-/* l_flg_tst_InSig() and l_flg_clr_InSig() */
-#define LINS_InSig_FRAME_FLAG_BYTE_OFFSET_0    (0x00u)
-#define LINS_InSig_FRAME_FLAG_MASK_0           (0x04u)
-
 /* l_flg_tst_RedValue() and l_flg_clr_RedValue() */
 #define LINS_RedValue_FRAME_FLAG_BYTE_OFFSET_0    (0x00u)
-#define LINS_RedValue_FRAME_FLAG_MASK_0           (0x08u)
+#define LINS_RedValue_FRAME_FLAG_MASK_0           (0x04u)
 
 /* l_flg_tst_GreenValue() and l_flg_clr_GreenValue() */
 #define LINS_GreenValue_FRAME_FLAG_BYTE_OFFSET_0    (0x00u)
-#define LINS_GreenValue_FRAME_FLAG_MASK_0           (0x10u)
+#define LINS_GreenValue_FRAME_FLAG_MASK_0           (0x08u)
 
 /* l_flg_tst_BlueValue() and l_flg_clr_BlueValue() */
 #define LINS_BlueValue_FRAME_FLAG_BYTE_OFFSET_0    (0x00u)
-#define LINS_BlueValue_FRAME_FLAG_MASK_0           (0x20u)
-
-/* l_flg_tst_InArraySig() and l_flg_clr_InArraySig() */
-#define LINS_InArraySig_FRAME_FLAG_BYTE_OFFSET_0    (0x00u)
-#define LINS_InArraySig_FRAME_FLAG_MASK_0           (0x40u)
+#define LINS_BlueValue_FRAME_FLAG_MASK_0           (0x10u)
 
 /* l_flg_tst_OutSig() and l_flg_clr_OutSig() */
 #define LINS_OutSig_FRAME_FLAG_BYTE_OFFSET_0    (0x00u)
-#define LINS_OutSig_FRAME_FLAG_MASK_0           (0x80u)
+#define LINS_OutSig_FRAME_FLAG_MASK_0           (0x20u)
 
-/* l_flg_tst_OutArraySig() and l_flg_clr_OutArraySig() */
-#define LINS_OutArraySig_FRAME_FLAG_BYTE_OFFSET_0    (0x01u)
-#define LINS_OutArraySig_FRAME_FLAG_MASK_0           (0x01u)
+/* l_flg_tst_OutRedValue() and l_flg_clr_OutRedValue() */
+#define LINS_OutRedValue_FRAME_FLAG_BYTE_OFFSET_0    (0x00u)
+#define LINS_OutRedValue_FRAME_FLAG_MASK_0           (0x40u)
+
+/* l_flg_tst_OutGreenValue() and l_flg_clr_OutGreenValue() */
+#define LINS_OutGreenValue_FRAME_FLAG_BYTE_OFFSET_0    (0x00u)
+#define LINS_OutGreenValue_FRAME_FLAG_MASK_0           (0x80u)
+
+/* l_flg_tst_OutBlueValue() and l_flg_clr_OutBlueValue() */
+#define LINS_OutBlueValue_FRAME_FLAG_BYTE_OFFSET_0    (0x01u)
+#define LINS_OutBlueValue_FRAME_FLAG_MASK_0           (0x01u)
 
 /* l_flg_tst_InFrame() and l_flg_clr_InFrame() */
 #define LINS_InFrame_FRAME_FLAG_BYTE_OFFSET_0    (0x01u)
@@ -406,37 +405,37 @@ CY_ISR_PROTO(LINS_UART_ISR);
 
 
 
-#define InSig_SIGNAL_HANDLE        (0x00u)
-#define RedValue_SIGNAL_HANDLE        (0x01u)
-#define GreenValue_SIGNAL_HANDLE        (0x02u)
-#define BlueValue_SIGNAL_HANDLE        (0x03u)
-#define InArraySig_SIGNAL_HANDLE        (0x04u)
-#define OutSig_SIGNAL_HANDLE        (0x05u)
-#define Response_Error_SIGNAL_HANDLE        (0x06u)
-#define OutArraySig_SIGNAL_HANDLE        (0x07u)
+#define RedValue_SIGNAL_HANDLE        (0x00u)
+#define GreenValue_SIGNAL_HANDLE        (0x01u)
+#define BlueValue_SIGNAL_HANDLE        (0x02u)
+#define OutSig_SIGNAL_HANDLE        (0x03u)
+#define Response_Error_SIGNAL_HANDLE        (0x04u)
+#define OutRedValue_SIGNAL_HANDLE        (0x05u)
+#define OutGreenValue_SIGNAL_HANDLE        (0x06u)
+#define OutBlueValue_SIGNAL_HANDLE        (0x07u)
 #define MRF_SIGNAL_HANDLE        (0x08u)
 #define SRF_SIGNAL_HANDLE        (0x09u)
 
 
 #define MRF_FLAG_HANDLE        (0x00u)
 #define SRF_FLAG_HANDLE        (0x01u)
-#define InSig_FLAG_HANDLE        (0x02u)
-#define RedValue_FLAG_HANDLE        (0x03u)
-#define GreenValue_FLAG_HANDLE        (0x04u)
-#define BlueValue_FLAG_HANDLE        (0x05u)
-#define InArraySig_FLAG_HANDLE        (0x06u)
-#define OutSig_FLAG_HANDLE        (0x07u)
-#define OutArraySig_FLAG_HANDLE        (0x08u)
+#define RedValue_FLAG_HANDLE        (0x02u)
+#define GreenValue_FLAG_HANDLE        (0x03u)
+#define BlueValue_FLAG_HANDLE        (0x04u)
+#define OutSig_FLAG_HANDLE        (0x05u)
+#define OutRedValue_FLAG_HANDLE        (0x06u)
+#define OutGreenValue_FLAG_HANDLE        (0x07u)
+#define OutBlueValue_FLAG_HANDLE        (0x08u)
 #define InFrame_FLAG_HANDLE        (0x09u)
 #define OutFrame_FLAG_HANDLE        (0x0Au)
 
 
 #define LINS_ISR_AUX_SET_FLAGS_InFrame_FLAG_BYTE_OFFSET_0        (0x00u)
-#define LINS_ISR_AUX_SET_FLAGS_InFrame_FLAG_MASK_0        (0x7Cu)
+#define LINS_ISR_AUX_SET_FLAGS_InFrame_FLAG_MASK_0        (0x1Cu)
 #define LINS_ISR_AUX_SET_FLAGS_InFrame_FLAG_BYTE_OFFSET_1        (0x01u)
 #define LINS_ISR_AUX_SET_FLAGS_InFrame_FLAG_MASK_1        (0x02u)
 #define LINS_ISR_AUX_SET_FLAGS_OutFrame_FLAG_BYTE_OFFSET_0        (0x00u)
-#define LINS_ISR_AUX_SET_FLAGS_OutFrame_FLAG_MASK_0        (0x80u)
+#define LINS_ISR_AUX_SET_FLAGS_OutFrame_FLAG_MASK_0        (0xE0u)
 #define LINS_ISR_AUX_SET_FLAGS_OutFrame_FLAG_BYTE_OFFSET_1        (0x01u)
 #define LINS_ISR_AUX_SET_FLAGS_OutFrame_FLAG_MASK_1        (0x05u)
 

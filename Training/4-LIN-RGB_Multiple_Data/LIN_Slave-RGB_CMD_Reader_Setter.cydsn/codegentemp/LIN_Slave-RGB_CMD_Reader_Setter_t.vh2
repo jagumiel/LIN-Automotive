@@ -1,5 +1,5 @@
 -- Project:   D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\LIN_Slave-RGB_CMD_Reader_Setter.cydsn\LIN_Slave-RGB_CMD_Reader_Setter.cyprj
--- Generated: 07/27/2020 11:22:08
+-- Generated: 07/27/2020 13:20:49
 -- PSoC Creator  4.2
 
 ENTITY \LIN_Slave-RGB_CMD_Reader_Setter\ IS
