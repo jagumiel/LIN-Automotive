@@ -1,13 +1,13 @@
-Loading plugins phase: Elapsed time ==> 0s.191ms
+Loading plugins phase: Elapsed time ==> 0s.176ms
 <CYPRESSTAG name="CyDsfit arguments...">
 cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\LIN_Slave-RGB_CMD_Reader_Setter.cydsn\LIN_Slave-RGB_CMD_Reader_Setter.cyprj -d CY8C4245AXI-483 -s D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\LIN_Slave-RGB_CMD_Reader_Setter.cydsn\Generated_Source\PSoC4 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
 </CYPRESSTAG>
 <CYPRESSTAG name="Design elaboration results...">
 </CYPRESSTAG>
-Elaboration phase: Elapsed time ==> 1s.364ms
+Elaboration phase: Elapsed time ==> 1s.356ms
 <CYPRESSTAG name="HDL generation results...">
 </CYPRESSTAG>
-HDL generation phase: Elapsed time ==> 0s.052ms
+HDL generation phase: Elapsed time ==> 0s.101ms
 <CYPRESSTAG name="Synthesis results...">
 
      | | | | | | |
@@ -41,7 +41,7 @@ Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Users\jagum
 ======================================================================
 
 vlogfe V6.3 IR 41:  Verilog parser
-Mon Jul 27 13:20:45 2020
+Tue Jul 28 10:22:42 2020
 
 
 ======================================================================
@@ -51,7 +51,7 @@ Options  :    -yv2 -q10 LIN_Slave-RGB_CMD_Reader_Setter.v
 ======================================================================
 
 vpp V6.3 IR 41:  Verilog Pre-Processor
-Mon Jul 27 13:20:45 2020
+Tue Jul 28 10:22:42 2020
 
 Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'
 Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v'
@@ -90,7 +90,7 @@ Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Users\jagum
 ======================================================================
 
 tovif V6.3 IR 41:  High-level synthesis
-Mon Jul 27 13:20:45 2020
+Tue Jul 28 10:22:43 2020
 
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\std.vhd'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cypress.vhd'.
@@ -123,7 +123,7 @@ Options  :    -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Users\jagum
 ======================================================================
 
 topld V6.3 IR 41:  Synthesis and optimization
-Mon Jul 27 13:20:46 2020
+Tue Jul 28 10:22:43 2020
 
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\std.vhd'.
 Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cypress.vhd'.
@@ -1448,14 +1448,14 @@ CYPRESS_DIR    : C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\wa
 Warp Program   : C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\bin\warp.exe
 Warp Arguments : -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya "-.fftprj=D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\LIN_Slave-RGB_CMD_Reader_Setter.cydsn\LIN_Slave-RGB_CMD_Reader_Setter.cyprj" -dcpsoc3 LIN_Slave-RGB_CMD_Reader_Setter.v -verilog
 </CYPRESSTAG>
-Warp synthesis phase: Elapsed time ==> 2s.090ms
+Warp synthesis phase: Elapsed time ==> 2s.030ms
 <CYPRESSTAG name="Fitter results...">
 <CYPRESSTAG name="Fitter startup details...">
-cyp3fit: V4.2.0.641, Family: PSoC3, Started at: Monday, 27 July 2020 13:20:46
+cyp3fit: V4.2.0.641, Family: PSoC3, Started at: Tuesday, 28 July 2020 10:22:44
 Options: -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE -ya -.fftprj=D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\LIN_Slave-RGB_CMD_Reader_Setter.cydsn\LIN_Slave-RGB_CMD_Reader_Setter.cyprj -d CY8C4245AXI-483 LIN_Slave-RGB_CMD_Reader_Setter.v -verilog
 </CYPRESSTAG>
 <CYPRESSTAG name="Design parsing">
-Design parsing phase: Elapsed time ==> 0s.016ms
+Design parsing phase: Elapsed time ==> 0s.013ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Tech Mapping">
 <CYPRESSTAG name="Initial Mapping" icon="FILE_RPT_TECHM">
@@ -2202,8 +2202,8 @@ DAC                           :      :      :      :
   7-bit IDAC                  :    0 :    1 :    1 :  0.00 %
   8-bit IDAC                  :    0 :    1 :    1 :  0.00 %
 </CYPRESSTAG>
-Technology Mapping: Elapsed time ==> 0s.175ms
-Tech Mapping phase: Elapsed time ==> 0s.194ms
+Technology Mapping: Elapsed time ==> 0s.173ms
+Tech Mapping phase: Elapsed time ==> 0s.197ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Placement">
 <CYPRESSTAG name="FFB & IO Pre Placement">
@@ -2222,15 +2222,15 @@ ClockGenBlock                       : CLK_GEN_[FFB(CLK_GEN,0)]
 </CYPRESSTAG>
 </CYPRESSTAG>
 <CYPRESSTAG name="Real Analog Placement">
-Elapsed time ==> 0.1133776s
+Elapsed time ==> 0.1670448s
 </CYPRESSTAG>
-Analog Placement phase: Elapsed time ==> 0s.249ms
+Analog Placement phase: Elapsed time ==> 0s.331ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Routing">
 <CYPRESSTAG name="Analog Routing">
-Route success=True, Iterations=1 Elapsed=0.0006511 secs
+Route success=True, Iterations=1 Elapsed=0.0006574 secs
 </CYPRESSTAG>
-Analog Routing phase: Elapsed time ==> 0s.000ms
+Analog Routing phase: Elapsed time ==> 0s.001ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Code Generation">
 ============ Analog Final Answer Routes ============
@@ -2241,11 +2241,11 @@ Map of item to net {
 }
 Mux Info {
 }
-Analog Code Generation phase: Elapsed time ==> 0s.026ms
+Analog Code Generation phase: Elapsed time ==> 0s.018ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Placement">
 <CYPRESSTAG name="Detailed placement messages">
-I2076: Total run-time: 0.4 sec.
+I2076: Total run-time: 0.3 sec.
 
 </CYPRESSTAG>
 <CYPRESSTAG name="PLD Packing">
@@ -2269,14 +2269,14 @@ PLD Packing Summary
 <CYPRESSTAG name="Packed PLD Contents">
 Packed PLD Contents not displayed at this verbose level.</CYPRESSTAG>
 </CYPRESSTAG>
-PLD Packing: Elapsed time ==> 0s.001ms
+PLD Packing: Elapsed time ==> 0s.002ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Partitioning">
 <CYPRESSTAG name="Initial Partitioning Summary">
 Initial Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
 <CYPRESSTAG name="Final Partitioning Summary">
 Final Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
-Partitioning: Elapsed time ==> 0s.009ms
+Partitioning: Elapsed time ==> 0s.038ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Final Placement Summary">
 
@@ -3067,32 +3067,32 @@ Port | Pin | Fixed |      Type |       Drive Mode |             Name | Connectio
 </CYPRESSTAG>
 </CYPRESSTAG>
 Digital component placer commit/Report: Elapsed time ==> 0s.014ms
-Digital Placement phase: Elapsed time ==> 0s.806ms
+Digital Placement phase: Elapsed time ==> 2s.153ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Routing">
 "C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\bin/sjrouter.exe" --xml-path "C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\dev\psoc4/psoc4a/route_arch-rrg.cydata" --vh2-path "LIN_Slave-RGB_CMD_Reader_Setter_r.vh2" --pcf-path "LIN_Slave-RGB_CMD_Reader_Setter.pco" --des-name "LIN_Slave-RGB_CMD_Reader_Setter" --dsf-path "LIN_Slave-RGB_CMD_Reader_Setter.dsf" --sdc-path "LIN_Slave-RGB_CMD_Reader_Setter.sdc" --lib-path "LIN_Slave-RGB_CMD_Reader_Setter_r.lib"
 Routing successful.
-Digital Routing phase: Elapsed time ==> 0s.722ms
+Digital Routing phase: Elapsed time ==> 1s.091ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream Generation">
-Bitstream Generation phase: Elapsed time ==> 0s.175ms
+Bitstream Generation phase: Elapsed time ==> 0s.250ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream Verification">
-Bitstream Verification phase: Elapsed time ==> 0s.021ms
+Bitstream Verification phase: Elapsed time ==> 0s.028ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Static timing analysis">
 Timing report is in LIN_Slave-RGB_CMD_Reader_Setter_timing.html.
-Static timing analysis phase: Elapsed time ==> 0s.423ms
+Static timing analysis phase: Elapsed time ==> 1s.101ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Data reporting">
 Data reporting phase: Elapsed time ==> 0s.000ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Database update...">
-Design database save phase: Elapsed time ==> 0s.175ms
+Design database save phase: Elapsed time ==> 0s.156ms
 </CYPRESSTAG>
-cydsfit: Elapsed time ==> 2s.865ms
+cydsfit: Elapsed time ==> 5s.393ms
 </CYPRESSTAG>
-Fitter phase: Elapsed time ==> 2s.866ms
-API generation phase: Elapsed time ==> 2s.002ms
-Dependency generation phase: Elapsed time ==> 0s.021ms
+Fitter phase: Elapsed time ==> 5s.417ms
+API generation phase: Elapsed time ==> 3s.085ms
+Dependency generation phase: Elapsed time ==> 0s.084ms
 Cleanup phase: Elapsed time ==> 0s.003ms

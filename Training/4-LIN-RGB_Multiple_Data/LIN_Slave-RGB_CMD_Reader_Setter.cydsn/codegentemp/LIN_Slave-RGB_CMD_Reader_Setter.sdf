@@ -1,6 +1,6 @@
 (DELAYFILE
  (SDFVERSION "IEEE 1497 4.0")
- (DATE "2020-07-27T11:20:49Z")
+ (DATE "2020-07-28T08:22:48Z")
  (DESIGN "LIN_Slave-RGB_CMD_Reader_Setter")
  (VENDOR "Cypress Semiconductor")
  (PROGRAM "PSoC Creator")

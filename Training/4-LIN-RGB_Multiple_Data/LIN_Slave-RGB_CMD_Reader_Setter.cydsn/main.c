@@ -5,23 +5,14 @@
 *
 * Description:
 * ============
-* This is a demo or simulation of a car's internal illumination. When the door
-* is opened, the lights turns on, and when the doors are closed, the lights 
-* turns off. All this whith a dimmer effect.
-*
-* Command 0x00 --> Turn Off Left Light
-* Command 0x01 --> Turn On Left Light
-* Command 0x10 --> Turn Off Right Light
-* Command 0x11 --> Turn On Right Light
+* This is a demo with the porpouse of receiving frames to set a RGB LED. 
+* There are 2 different input frames with multiple signals.
 * 
 * The LIN Master can read the status of the Lights by sending the Frame ID 0x11
 *
 * The master receives the following status from LIN Slave based on the lights 
 * status as follows:
-* Left  Light OFF   --> 0xA0
-* Left  Light ON    --> 0xA1
-* Right Light OFF   --> 0xB0
-* Right Light ON    --> 0xB1
+*
 *
 *******************************************************************************/
 
@@ -33,7 +24,7 @@
 *
 * Summary:
 *  Initialize LIN slave. If the LIN slave receives an unconditional frame from  
-*  master with Frame ID 0x10, then the first byte of data (command to control  
+*  master with Frame ID 0x01 or 0x10, then the first byte of data (command to control  
 *  the lights) is written to the other unconditional frame (OutFrame). Based on 
 *  the received command slave will control the lights status.
 *
@@ -50,6 +41,7 @@ int main(void)
 {        
     /* Local Variables */
     uint8   dataReceived = 0u;
+    uint8   colorValue = 0u;
     uint8_t red, green, blue = 0;
     
 	/* Enable Global Interrupts */
@@ -73,9 +65,9 @@ int main(void)
     PWM_B_WriteCompare(0);
     
 	while(1){
-    	/**********************************************************
-    	* Check if "InFrame" frame is received from LIN Master
-    	**********************************************************/
+    	/*******************************************************
+    	* Check if "InFrame" frame is received from LIN Master *
+    	*******************************************************/
     	if (1u == l_flg_tst_InFrame()){           
     		/* Clear signal flag */
             l_flg_clr_InFrame();
@@ -97,6 +89,33 @@ int main(void)
             l_u8_wr_OutRedValue(red); 
             l_u8_wr_OutGreenValue(green);
             l_u8_wr_OutBlueValue(blue);
+        }
+        
+        /************************************************************
+    	* Check if "InSingleData" frame is received from LIN Master *
+    	*************************************************************/
+        if (1u == l_flg_tst_InSingleData()){           
+    		/* Clear signal flag */
+            l_flg_clr_InSingleData();
+    		    					
+    		/* Copy the value in Insig scalar into OutSig scalar using an
+             * intermediate variable (dataReceived) */
+            dataReceived = l_u8_rd_Color();
+    		l_u8_wr(OutSig_SIGNAL_HANDLE, dataReceived);
+            colorValue=l_u8_rd_ColorValue();
+            if(dataReceived==0x00){
+                red = colorValue;
+                PWM_R_WriteCompare(red);
+                l_u8_wr_OutRedValue(red); 
+            }else if(dataReceived==0x01){
+                green = colorValue;
+                PWM_G_WriteCompare(green);
+                l_u8_wr_OutGreenValue(green);
+            }else if(dataReceived==0x10){
+                blue = colorValue;
+                PWM_B_WriteCompare(blue);
+                l_u8_wr_OutBlueValue(blue);
+            }
         }
         
     	/***************************************************************

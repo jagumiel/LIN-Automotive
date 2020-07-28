@@ -2,7 +2,7 @@
 --	Conversion of LIN_Slave-RGB_CMD_Reader_Setter.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Mon Jul 27 13:20:46 2020
+--	Tue Jul 28 10:22:44 2020
 --
 
 USE cypress.cypress.all;

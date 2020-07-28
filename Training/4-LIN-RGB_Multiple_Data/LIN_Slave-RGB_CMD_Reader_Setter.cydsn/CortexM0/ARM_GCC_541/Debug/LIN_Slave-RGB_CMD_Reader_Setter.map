@@ -75,8 +75,6 @@ Discarded input sections
  .text._exit    0x00000000        0xc .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
  .text._sbrk    0x00000000       0x30 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
  .text          0x00000000        0x0 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
- .text.l_u8_rd_LINS
-                0x00000000       0x28 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
  .text.l_bool_wr_Response_Error
                 0x00000000       0x30 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
  .text.l_bool_wr_LINS
@@ -467,7 +465,7 @@ END GROUP
                 0x00000001                cy_project_type_bootloader = (appl_start == 0x0)?0x1:0x0
                 0x00000000                cy_project_type_app_for_stack_and_copier = (CY_APP_FOR_STACK_AND_COPIER == 0x1)?0x1:0x0
 
-.text           0x00000000     0x25c4
+.text           0x00000000     0x270c
  CREATE_OBJECT_SYMBOLS
                 0x00000000                PROVIDE (__cy_interrupt_vector, RomVectors)
  *(.romvectors)
@@ -486,487 +484,513 @@ END GROUP
                 0x000001a4                . = MAX (., 0x100)
  *(.text .text.* .gnu.linkonce.t.*)
  .text          0x000001a4       0x60 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
- .text.main     0x00000204       0x88 .\CortexM0\ARM_GCC_541\Debug\main.o
+ .text.main     0x00000204       0xd8 .\CortexM0\ARM_GCC_541\Debug\main.o
                 0x00000204                main
  .text.cfg_write_bytes32
-                0x0000028c       0x34 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x000002dc       0x34 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.CYMEMZERO
-                0x000002c0        0xc .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000310        0xc .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.IntDefaultHandler
-                0x000002cc       0x10 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
-                0x000002cc                IntDefaultHandler
- .text.Start_c  0x000002dc       0x48 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
-                0x000002dc                Start_c
+                0x0000031c       0x10 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+                0x0000031c                IntDefaultHandler
+ .text.Start_c  0x0000032c       0x48 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+                0x0000032c                Start_c
  .text.initialize_psoc
-                0x00000324       0x40 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
-                0x00000324                initialize_psoc
+                0x00000374       0x40 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+                0x00000374                initialize_psoc
  .text.LINS_FindPidIndex
-                0x00000364       0x20 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x000003b4       0x20 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
  .text.LINS_SetAssociatedFlags
-                0x00000384       0x38 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x000003d4       0x50 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
  .text.LINS_GetEtFlagValue
-                0x000003bc        0x4 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x00000424        0x4 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
  .text.LINS_LinProductId
-                0x000003c0       0x50 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x00000428       0x50 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
  .text.LINS_TransmitTLFrame
-                0x00000410       0x38 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x00000478       0x38 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
  .text.LINS_ClrRxBuffer
-                0x00000448       0x6c .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x000004b0       0x6c .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
  .text.LINS_ClrTxBuffer
-                0x000004b4       0x64 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x0000051c       0x64 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
  .text.LINS_EndFrame
-                0x00000518       0xac .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x00000580       0xac .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
  .text.l_u8_rd_RedValue
-                0x000005c4        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x000005c4                l_u8_rd_RedValue
+                0x0000062c        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x0000062c                l_u8_rd_RedValue
  .text.l_u8_rd_GreenValue
-                0x000005d0        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x000005d0                l_u8_rd_GreenValue
+                0x00000638        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x00000638                l_u8_rd_GreenValue
  .text.l_u8_rd_BlueValue
-                0x000005dc        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x000005dc                l_u8_rd_BlueValue
+                0x00000644        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x00000644                l_u8_rd_BlueValue
+ .text.l_u8_rd_Color
+                0x00000650        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x00000650                l_u8_rd_Color
+ .text.l_u8_rd_ColorValue
+                0x0000065c        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x0000065c                l_u8_rd_ColorValue
+ .text.l_u8_rd_LINS
+                0x00000668       0x34 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x00000668                l_u8_rd_LINS
  .text.l_u8_wr_OutSig
-                0x000005e8       0x24 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x000005e8                l_u8_wr_OutSig
+                0x0000069c       0x24 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x0000069c                l_u8_wr_OutSig
  .text.l_u8_wr_OutRedValue
-                0x0000060c        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x0000060c                l_u8_wr_OutRedValue
+                0x000006c0        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x000006c0                l_u8_wr_OutRedValue
  .text.l_u8_wr_OutGreenValue
-                0x00000618        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x00000618                l_u8_wr_OutGreenValue
+                0x000006cc        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x000006cc                l_u8_wr_OutGreenValue
  .text.l_u8_wr_OutBlueValue
-                0x00000624        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x00000624                l_u8_wr_OutBlueValue
+                0x000006d8        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x000006d8                l_u8_wr_OutBlueValue
  .text.l_u8_wr_LINS
-                0x00000630       0x38 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x00000630                l_u8_wr_LINS
+                0x000006e4       0x38 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x000006e4                l_u8_wr_LINS
  .text.l_flg_tst_MRF
-                0x00000668       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x00000668                l_flg_tst_MRF
+                0x0000071c       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x0000071c                l_flg_tst_MRF
  .text.l_flg_tst_SRF
-                0x0000067c       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x0000067c                l_flg_tst_SRF
+                0x00000730       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x00000730                l_flg_tst_SRF
  .text.l_flg_tst_RedValue
-                0x00000690       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x00000690                l_flg_tst_RedValue
+                0x00000744       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x00000744                l_flg_tst_RedValue
  .text.l_flg_tst_GreenValue
-                0x000006a4       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x000006a4                l_flg_tst_GreenValue
+                0x00000758       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x00000758                l_flg_tst_GreenValue
  .text.l_flg_tst_BlueValue
-                0x000006b8       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x000006b8                l_flg_tst_BlueValue
+                0x0000076c       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x0000076c                l_flg_tst_BlueValue
+ .text.l_flg_tst_Color
+                0x00000780       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x00000780                l_flg_tst_Color
+ .text.l_flg_tst_ColorValue
+                0x00000794       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x00000794                l_flg_tst_ColorValue
  .text.l_flg_tst_OutSig
-                0x000006cc       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x000006cc                l_flg_tst_OutSig
+                0x000007a8       0x18 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x000007a8                l_flg_tst_OutSig
  .text.l_flg_tst_OutRedValue
-                0x000006e0       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x000006e0                l_flg_tst_OutRedValue
+                0x000007c0       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x000007c0                l_flg_tst_OutRedValue
  .text.l_flg_tst_OutGreenValue
-                0x000006f4       0x18 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x000006f4                l_flg_tst_OutGreenValue
+                0x000007d4       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x000007d4                l_flg_tst_OutGreenValue
  .text.l_flg_tst_OutBlueValue
-                0x0000070c       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x0000070c                l_flg_tst_OutBlueValue
+                0x000007e8       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x000007e8                l_flg_tst_OutBlueValue
  .text.l_flg_tst_InFrame
-                0x00000720       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x00000720                l_flg_tst_InFrame
+                0x000007fc       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x000007fc                l_flg_tst_InFrame
+ .text.l_flg_tst_InSingleData
+                0x00000810       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x00000810                l_flg_tst_InSingleData
  .text.l_flg_tst_OutFrame
-                0x00000734       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x00000734                l_flg_tst_OutFrame
+                0x00000824       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x00000824                l_flg_tst_OutFrame
  .text.l_flg_tst_LINS
-                0x00000748       0x58 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x00000748                l_flg_tst_LINS
+                0x00000838       0x6c .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x00000838                l_flg_tst_LINS
  .text.l_flg_clr_MRF
-                0x000007a0       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x000007a0                l_flg_clr_MRF
+                0x000008a4       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x000008a4                l_flg_clr_MRF
  .text.l_flg_clr_SRF
-                0x000007b0       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x000007b0                l_flg_clr_SRF
+                0x000008b4       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x000008b4                l_flg_clr_SRF
  .text.l_flg_clr_RedValue
-                0x000007c0       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x000007c0                l_flg_clr_RedValue
+                0x000008c4       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x000008c4                l_flg_clr_RedValue
  .text.l_flg_clr_GreenValue
-                0x000007d0       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x000007d0                l_flg_clr_GreenValue
+                0x000008d4       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x000008d4                l_flg_clr_GreenValue
  .text.l_flg_clr_BlueValue
-                0x000007e0       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x000007e0                l_flg_clr_BlueValue
+                0x000008e4       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x000008e4                l_flg_clr_BlueValue
+ .text.l_flg_clr_Color
+                0x000008f4       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x000008f4                l_flg_clr_Color
+ .text.l_flg_clr_ColorValue
+                0x00000904       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x00000904                l_flg_clr_ColorValue
  .text.l_flg_clr_OutSig
-                0x000007f0       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x000007f0                l_flg_clr_OutSig
+                0x00000914       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x00000914                l_flg_clr_OutSig
  .text.l_flg_clr_OutRedValue
-                0x00000800       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x00000800                l_flg_clr_OutRedValue
+                0x00000924       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x00000924                l_flg_clr_OutRedValue
  .text.l_flg_clr_OutGreenValue
-                0x00000810       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x00000810                l_flg_clr_OutGreenValue
+                0x00000934       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x00000934                l_flg_clr_OutGreenValue
  .text.l_flg_clr_OutBlueValue
-                0x00000820       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x00000820                l_flg_clr_OutBlueValue
+                0x00000944       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x00000944                l_flg_clr_OutBlueValue
  .text.l_flg_clr_InFrame
-                0x00000830       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x00000830                l_flg_clr_InFrame
+                0x00000954       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x00000954                l_flg_clr_InFrame
+ .text.l_flg_clr_InSingleData
+                0x00000964       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x00000964                l_flg_clr_InSingleData
  .text.l_flg_clr_OutFrame
-                0x00000840       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x00000840                l_flg_clr_OutFrame
+                0x00000974       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x00000974                l_flg_clr_OutFrame
  .text.l_flg_clr_LINS
-                0x00000850       0x54 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x00000850                l_flg_clr_LINS
+                0x00000984       0x68 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x00000984                l_flg_clr_LINS
  .text.ld_read_by_id_callout_LINS
-                0x000008a4        0x4 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x000008a4                ld_read_by_id_callout_LINS
+                0x000009ec        0x4 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x000009ec                ld_read_by_id_callout_LINS
  .text.LINS_ProcessMrf
-                0x000008a8      0x45c .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x000009f0      0x45c .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
  .text.LINS_CheckNodeState
-                0x00000d04      0x170 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x00000e4c      0x170 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
  .text.l_ifc_rx_LINS
-                0x00000e74      0x974 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x00000e74                l_ifc_rx_LINS
+                0x00000fbc      0x974 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x00000fbc                l_ifc_rx_LINS
  .text.l_ifc_aux_LINS
-                0x000017e8       0x78 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x000017e8                l_ifc_aux_LINS
+                0x00001930       0x78 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x00001930                l_ifc_aux_LINS
  .text.LINS_TimerEnableInt
-                0x00001860       0x68 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x00001860                LINS_TimerEnableInt
+                0x000019a8       0x68 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x000019a8                LINS_TimerEnableInt
  .text.l_ifc_init_LINS
-                0x000018c8       0xb0 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x000018c8                l_ifc_init_LINS
+                0x00001a10       0xb0 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x00001a10                l_ifc_init_LINS
  .text.l_ifc_ioctl_LINS
-                0x00001978      0x124 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x00001978                l_ifc_ioctl_LINS
+                0x00001ac0      0x124 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x00001ac0                l_ifc_ioctl_LINS
  .text.LINS_UART_ISR
-                0x00001a9c        0x8 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_INT.o)
-                0x00001a9c                LINS_UART_ISR
+                0x00001be4        0x8 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_INT.o)
+                0x00001be4                LINS_UART_ISR
  .text.LINS_ISR_SetVector
-                0x00001aa4        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_ISR.o)
-                0x00001aa4                LINS_ISR_SetVector
+                0x00001bec        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_ISR.o)
+                0x00001bec                LINS_ISR_SetVector
  .text.LINS_ISR_SetPriority
-                0x00001ab0       0x20 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_ISR.o)
-                0x00001ab0                LINS_ISR_SetPriority
+                0x00001bf8       0x20 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_ISR.o)
+                0x00001bf8                LINS_ISR_SetPriority
  .text.LINS_ISR_Enable
-                0x00001ad0       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_ISR.o)
-                0x00001ad0                LINS_ISR_Enable
+                0x00001c18       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_ISR.o)
+                0x00001c18                LINS_ISR_Enable
  .text.LINS_ISR_Disable
-                0x00001ae0       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_ISR.o)
-                0x00001ae0                LINS_ISR_Disable
+                0x00001c28       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_ISR.o)
+                0x00001c28                LINS_ISR_Disable
  .text.LINS_ISR_StartEx
-                0x00001af0       0x1c .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_ISR.o)
-                0x00001af0                LINS_ISR_StartEx
+                0x00001c38       0x1c .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_ISR.o)
+                0x00001c38                LINS_ISR_StartEx
  .text.LINS_ISR_ClearPending
-                0x00001b0c       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_ISR.o)
-                0x00001b0c                LINS_ISR_ClearPending
+                0x00001c54       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_ISR.o)
+                0x00001c54                LINS_ISR_ClearPending
  .text.LINS_IntClk_Start
-                0x00001b1c       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_IntClk.o)
-                0x00001b1c                LINS_IntClk_Start
+                0x00001c64       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_IntClk.o)
+                0x00001c64                LINS_IntClk_Start
  .text.LINS_IntClk_Stop
-                0x00001b30       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_IntClk.o)
-                0x00001b30                LINS_IntClk_Stop
+                0x00001c78       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_IntClk.o)
+                0x00001c78                LINS_IntClk_Stop
  .text.LINS_IntClk_SetFractionalDividerRegister
-                0x00001b40       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_IntClk.o)
-                0x00001b40                LINS_IntClk_SetFractionalDividerRegister
+                0x00001c88       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_IntClk.o)
+                0x00001c88                LINS_IntClk_SetFractionalDividerRegister
  .text.LINS_IntClk_GetDividerRegister
-                0x00001b54        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_IntClk.o)
-                0x00001b54                LINS_IntClk_GetDividerRegister
+                0x00001c9c        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_IntClk.o)
+                0x00001c9c                LINS_IntClk_GetDividerRegister
  .text.LINS_SCB_ScbModePostEnable
-                0x00001b60        0x8 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB.o)
+                0x00001ca8        0x8 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB.o)
  .text.LINS_SCB_ScbModeStop
-                0x00001b68        0x8 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB.o)
+                0x00001cb0        0x8 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB.o)
  .text.LINS_SCB_Init
-                0x00001b70        0x8 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB.o)
-                0x00001b70                LINS_SCB_Init
+                0x00001cb8        0x8 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB.o)
+                0x00001cb8                LINS_SCB_Init
  .text.LINS_SCB_Enable
-                0x00001b78       0x18 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB.o)
-                0x00001b78                LINS_SCB_Enable
+                0x00001cc0       0x18 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB.o)
+                0x00001cc0                LINS_SCB_Enable
  .text.LINS_SCB_Stop
-                0x00001b90       0x20 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB.o)
-                0x00001b90                LINS_SCB_Stop
+                0x00001cd8       0x20 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB.o)
+                0x00001cd8                LINS_SCB_Stop
  .text.LINS_SCB_SpiUartReadRxData
-                0x00001bb0        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_SPI_UART.o)
-                0x00001bb0                LINS_SCB_SpiUartReadRxData
+                0x00001cf8        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_SPI_UART.o)
+                0x00001cf8                LINS_SCB_SpiUartReadRxData
  .text.LINS_SCB_SpiUartClearRxBuffer
-                0x00001bbc       0x20 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_SPI_UART.o)
-                0x00001bbc                LINS_SCB_SpiUartClearRxBuffer
+                0x00001d04       0x20 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_SPI_UART.o)
+                0x00001d04                LINS_SCB_SpiUartClearRxBuffer
  .text.LINS_SCB_SpiUartWriteTxData
-                0x00001bdc       0x1c .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_SPI_UART.o)
-                0x00001bdc                LINS_SCB_SpiUartWriteTxData
+                0x00001d24       0x1c .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_SPI_UART.o)
+                0x00001d24                LINS_SCB_SpiUartWriteTxData
  .text.LINS_SCB_SpiUartClearTxBuffer
-                0x00001bf8       0x20 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_SPI_UART.o)
-                0x00001bf8                LINS_SCB_SpiUartClearTxBuffer
+                0x00001d40       0x20 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_SPI_UART.o)
+                0x00001d40                LINS_SCB_SpiUartClearTxBuffer
  .text.LINS_SCB_UartInit
-                0x00001c18       0x9c .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_UART.o)
-                0x00001c18                LINS_SCB_UartInit
+                0x00001d60       0x9c .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_UART.o)
+                0x00001d60                LINS_SCB_UartInit
  .text.LINS_SCB_UartPostEnable
-                0x00001cb4       0x2c .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_UART.o)
-                0x00001cb4                LINS_SCB_UartPostEnable
+                0x00001dfc       0x2c .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_UART.o)
+                0x00001dfc                LINS_SCB_UartPostEnable
  .text.LINS_SCB_UartStop
-                0x00001ce0       0x2c .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_UART.o)
-                0x00001ce0                LINS_SCB_UartStop
- .text.l_u8_wr  0x00001d0c        0x8 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LIN_Dynamic.o)
-                0x00001d0c                l_u8_wr
+                0x00001e28       0x2c .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_UART.o)
+                0x00001e28                LINS_SCB_UartStop
+ .text.l_u8_wr  0x00001e54        0x8 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LIN_Dynamic.o)
+                0x00001e54                l_u8_wr
  .text.l_sys_init
-                0x00001d14       0x28 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LIN_Dynamic.o)
-                0x00001d14                l_sys_init
+                0x00001e5c       0x28 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LIN_Dynamic.o)
+                0x00001e5c                l_sys_init
  .text.l_ifc_init
-                0x00001d3c       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LIN_Dynamic.o)
-                0x00001d3c                l_ifc_init
+                0x00001e84       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LIN_Dynamic.o)
+                0x00001e84                l_ifc_init
  .text.CyIntEnable
-                0x00001d4c       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
-                0x00001d4c                CyIntEnable
- .text.CyHalt   0x00001d60        0x4 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
-                0x00001d60                CyHalt
+                0x00001e94       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
+                0x00001e94                CyIntEnable
+ .text.CyHalt   0x00001ea8        0x4 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
+                0x00001ea8                CyHalt
  .text.CyIntSetSysVector
-                0x00001d64       0x20 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
-                0x00001d64                CyIntSetSysVector
+                0x00001eac       0x20 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
+                0x00001eac                CyIntSetSysVector
  .text.CyIntSetVector
-                0x00001d84       0x24 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
-                0x00001d84                CyIntSetVector
+                0x00001ecc       0x24 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
+                0x00001ecc                CyIntSetVector
  .text.CyDelayUs
-                0x00001da8       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
-                0x00001da8                CyDelayUs
+                0x00001ef0       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
+                0x00001ef0                CyDelayUs
  .text.CySysClkWriteImoFreq
-                0x00001dbc      0x164 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
-                0x00001dbc                CySysClkWriteImoFreq
+                0x00001f04      0x164 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
+                0x00001f04                CySysClkWriteImoFreq
  .text.CySysTickEnableInterrupt
-                0x00001f20       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
-                0x00001f20                CySysTickEnableInterrupt
+                0x00002068       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
+                0x00002068                CySysTickEnableInterrupt
  .text.CySysTickEnable
-                0x00001f30       0x18 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
-                0x00001f30                CySysTickEnable
+                0x00002078       0x18 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
+                0x00002078                CySysTickEnable
  .text.CySysTickSetReload
-                0x00001f48       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
-                0x00001f48                CySysTickSetReload
+                0x00002090       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
+                0x00002090                CySysTickSetReload
  .text.CySysTickGetCountFlag
-                0x00001f58       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
-                0x00001f58                CySysTickGetCountFlag
+                0x000020a0       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
+                0x000020a0                CySysTickGetCountFlag
  .text.CySysTickServiceCallbacks
-                0x00001f68       0x28 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
+                0x000020b0       0x28 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
  .text.CySysTickClear
-                0x00001f90        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
-                0x00001f90                CySysTickClear
+                0x000020d8        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
+                0x000020d8                CySysTickClear
  .text.CySysTickInit
-                0x00001f9c       0x40 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
-                0x00001f9c                CySysTickInit
+                0x000020e4       0x40 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
+                0x000020e4                CySysTickInit
  .text.CySysTickStart
-                0x00001fdc       0x20 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
-                0x00001fdc                CySysTickStart
+                0x00002124       0x20 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
+                0x00002124                CySysTickStart
  .text.CySysTickSetCallback
-                0x00001ffc       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
-                0x00001ffc                CySysTickSetCallback
+                0x00002144       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
+                0x00002144                CySysTickSetCallback
  .text.CySysTickGetCallback
-                0x0000200c        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
-                0x0000200c                CySysTickGetCallback
+                0x00002154        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
+                0x00002154                CySysTickGetCallback
  .text.CySysWdtLocked
-                0x00002018       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLFClk.o)
+                0x00002160       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLFClk.o)
  .text.CySysWdtLock
-                0x0000202c       0x1c .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLFClk.o)
-                0x0000202c                CySysWdtLock
+                0x00002174       0x1c .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLFClk.o)
+                0x00002174                CySysWdtLock
  .text.CySysWdtUnlock
-                0x00002048       0x30 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLFClk.o)
-                0x00002048                CySysWdtUnlock
+                0x00002190       0x30 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLFClk.o)
+                0x00002190                CySysWdtUnlock
  .text.CySysWdtClearInterrupt
-                0x00002078       0x4c .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLFClk.o)
-                0x00002078                CySysWdtClearInterrupt
+                0x000021c0       0x4c .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLFClk.o)
+                0x000021c0                CySysWdtClearInterrupt
  .text.CySysWdtIsr
-                0x000020c4       0xa4 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLFClk.o)
-                0x000020c4                CySysWdtIsr
+                0x0000220c       0xa4 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLFClk.o)
+                0x0000220c                CySysWdtIsr
  .text.PWM_R_Enable
-                0x00002168       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
-                0x00002168                PWM_R_Enable
+                0x000022b0       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
+                0x000022b0                PWM_R_Enable
  .text.PWM_R_WriteCounter
-                0x0000217c        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
-                0x0000217c                PWM_R_WriteCounter
+                0x000022c4        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
+                0x000022c4                PWM_R_WriteCounter
  .text.PWM_R_WritePeriod
-                0x00002188        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
-                0x00002188                PWM_R_WritePeriod
+                0x000022d0        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
+                0x000022d0                PWM_R_WritePeriod
  .text.PWM_R_WriteCompare
-                0x00002194        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
-                0x00002194                PWM_R_WriteCompare
+                0x000022dc        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
+                0x000022dc                PWM_R_WriteCompare
  .text.PWM_R_SetInterruptMode
-                0x000021a0        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
-                0x000021a0                PWM_R_SetInterruptMode
+                0x000022e8        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
+                0x000022e8                PWM_R_SetInterruptMode
  .text.PWM_R_ReadStatusRegister
-                0x000021ac        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
-                0x000021ac                PWM_R_ReadStatusRegister
+                0x000022f4        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
+                0x000022f4                PWM_R_ReadStatusRegister
  .text.PWM_R_ReadCapture
-                0x000021b8        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
-                0x000021b8                PWM_R_ReadCapture
+                0x00002300        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
+                0x00002300                PWM_R_ReadCapture
  .text.PWM_R_ClearFIFO
-                0x000021c4       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
-                0x000021c4                PWM_R_ClearFIFO
+                0x0000230c       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
+                0x0000230c                PWM_R_ClearFIFO
  .text.PWM_R_Init
-                0x000021d8       0x58 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
-                0x000021d8                PWM_R_Init
+                0x00002320       0x58 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
+                0x00002320                PWM_R_Init
  .text.PWM_R_Start
-                0x00002230       0x20 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
-                0x00002230                PWM_R_Start
+                0x00002378       0x20 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
+                0x00002378                PWM_R_Start
  .text.PWM_B_Enable
-                0x00002250       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
-                0x00002250                PWM_B_Enable
+                0x00002398       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
+                0x00002398                PWM_B_Enable
  .text.PWM_B_WriteCounter
-                0x00002264        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
-                0x00002264                PWM_B_WriteCounter
+                0x000023ac        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
+                0x000023ac                PWM_B_WriteCounter
  .text.PWM_B_WritePeriod
-                0x00002270        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
-                0x00002270                PWM_B_WritePeriod
+                0x000023b8        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
+                0x000023b8                PWM_B_WritePeriod
  .text.PWM_B_WriteCompare
-                0x0000227c        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
-                0x0000227c                PWM_B_WriteCompare
+                0x000023c4        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
+                0x000023c4                PWM_B_WriteCompare
  .text.PWM_B_SetInterruptMode
-                0x00002288        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
-                0x00002288                PWM_B_SetInterruptMode
+                0x000023d0        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
+                0x000023d0                PWM_B_SetInterruptMode
  .text.PWM_B_ReadStatusRegister
-                0x00002294        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
-                0x00002294                PWM_B_ReadStatusRegister
+                0x000023dc        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
+                0x000023dc                PWM_B_ReadStatusRegister
  .text.PWM_B_ReadCapture
-                0x000022a0        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
-                0x000022a0                PWM_B_ReadCapture
+                0x000023e8        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
+                0x000023e8                PWM_B_ReadCapture
  .text.PWM_B_ClearFIFO
-                0x000022ac       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
-                0x000022ac                PWM_B_ClearFIFO
+                0x000023f4       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
+                0x000023f4                PWM_B_ClearFIFO
  .text.PWM_B_Init
-                0x000022c0       0x58 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
-                0x000022c0                PWM_B_Init
+                0x00002408       0x58 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
+                0x00002408                PWM_B_Init
  .text.PWM_B_Start
-                0x00002318       0x20 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
-                0x00002318                PWM_B_Start
+                0x00002460       0x20 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
+                0x00002460                PWM_B_Start
  .text.PWM_G_Enable
-                0x00002338       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
-                0x00002338                PWM_G_Enable
+                0x00002480       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
+                0x00002480                PWM_G_Enable
  .text.PWM_G_WriteCounter
-                0x0000234c        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
-                0x0000234c                PWM_G_WriteCounter
+                0x00002494        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
+                0x00002494                PWM_G_WriteCounter
  .text.PWM_G_WritePeriod
-                0x00002358        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
-                0x00002358                PWM_G_WritePeriod
+                0x000024a0        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
+                0x000024a0                PWM_G_WritePeriod
  .text.PWM_G_WriteCompare
-                0x00002364        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
-                0x00002364                PWM_G_WriteCompare
+                0x000024ac        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
+                0x000024ac                PWM_G_WriteCompare
  .text.PWM_G_SetInterruptMode
-                0x00002370        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
-                0x00002370                PWM_G_SetInterruptMode
+                0x000024b8        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
+                0x000024b8                PWM_G_SetInterruptMode
  .text.PWM_G_ReadStatusRegister
-                0x0000237c        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
-                0x0000237c                PWM_G_ReadStatusRegister
+                0x000024c4        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
+                0x000024c4                PWM_G_ReadStatusRegister
  .text.PWM_G_ReadCapture
-                0x00002388        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
-                0x00002388                PWM_G_ReadCapture
+                0x000024d0        0xc .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
+                0x000024d0                PWM_G_ReadCapture
  .text.PWM_G_ClearFIFO
-                0x00002394       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
-                0x00002394                PWM_G_ClearFIFO
+                0x000024dc       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
+                0x000024dc                PWM_G_ClearFIFO
  .text.PWM_G_Init
-                0x000023a8       0x58 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
-                0x000023a8                PWM_G_Init
+                0x000024f0       0x58 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
+                0x000024f0                PWM_G_Init
  .text.PWM_G_Start
-                0x00002400       0x20 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
-                0x00002400                PWM_G_Start
- .text          0x00002420       0x24 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyBootAsmGnu.o)
-                0x00002420                CyDelayCycles
-                0x00002434                CyEnterCriticalSection
-                0x0000243c                CyExitCriticalSection
- .text          0x00002444      0x114 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
-                0x00002444                __aeabi_uidiv
-                0x00002444                __udivsi3
-                0x00002550                __aeabi_uidivmod
- .text          0x00002558        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
-                0x00002558                __aeabi_idiv0
-                0x00002558                __aeabi_ldiv0
- .text.__errno  0x0000255c        0xc c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
-                0x0000255c                __errno
+                0x00002548       0x20 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
+                0x00002548                PWM_G_Start
+ .text          0x00002568       0x24 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyBootAsmGnu.o)
+                0x00002568                CyDelayCycles
+                0x0000257c                CyEnterCriticalSection
+                0x00002584                CyExitCriticalSection
+ .text          0x0000258c      0x114 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+                0x0000258c                __aeabi_uidiv
+                0x0000258c                __udivsi3
+                0x00002698                __aeabi_uidivmod
+ .text          0x000026a0        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
+                0x000026a0                __aeabi_idiv0
+                0x000026a0                __aeabi_ldiv0
+ .text.__errno  0x000026a4        0xc c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+                0x000026a4                __errno
  .text.__libc_init_array
-                0x00002568       0x4c c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
-                0x00002568                __libc_init_array
- .text.memset   0x000025b4       0x10 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
-                0x000025b4                memset
+                0x000026b0       0x4c c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+                0x000026b0                __libc_init_array
+ .text.memset   0x000026fc       0x10 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+                0x000026fc                memset
  *(.plt)
  *(.gnu.warning)
  *(.glue_7t)
- .glue_7t       0x000025c4        0x0 linker stubs
+ .glue_7t       0x0000270c        0x0 linker stubs
  *(.glue_7)
- .glue_7        0x000025c4        0x0 linker stubs
+ .glue_7        0x0000270c        0x0 linker stubs
  *(.vfp11_veneer)
- .vfp11_veneer  0x000025c4        0x0 linker stubs
+ .vfp11_veneer  0x0000270c        0x0 linker stubs
  *(.bootloader)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
  *(.gcc_except_table)
 
-.v4_bx          0x000025c4        0x0
- .v4_bx         0x000025c4        0x0 linker stubs
+.v4_bx          0x0000270c        0x0
+ .v4_bx         0x0000270c        0x0 linker stubs
 
-.iplt           0x000025c4        0x0
- .iplt          0x000025c4        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+.iplt           0x0000270c        0x0
+ .iplt          0x0000270c        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
 
-.eh_frame       0x000025c4        0x4
+.eh_frame       0x0000270c        0x4
  *(.eh_frame)
- .eh_frame      0x000025c4        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
- .eh_frame      0x000025c4        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
+ .eh_frame      0x0000270c        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .eh_frame      0x0000270c        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
                 [!provide]                PROVIDE (__exidx_start, .)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x000025c8                __exidx_end = .
+                0x00002710                __exidx_end = .
 
-.rodata         0x000025c8      0x318
+.rodata         0x00002710      0x350
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x000025c8      0x1c0 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
- .rodata        0x00002788       0xef .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
- *fill*         0x00002877        0x1 
- .rodata        0x00002878       0x2e .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
-                0x00002878                cyImoFreqMhz2Reg
+ .rodata        0x00002710      0x1c0 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .rodata        0x000028d0      0x128 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+ .rodata        0x000029f8       0x2e .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
+                0x000029f8                cyImoFreqMhz2Reg
  .rodata.str1.1
-                0x000028a6        0x2 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
-                0x000028a8                . = ALIGN (0x4)
+                0x00002a26        0x2 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+                0x00002a28                . = ALIGN (0x4)
  *(.init)
- .init          0x000028a8        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
-                0x000028a8                _init
- .init          0x000028ac        0x8 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
-                0x000028b4                . = ALIGN (0x4)
-                0x000028b4                __preinit_array_start = .
+ .init          0x00002a28        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+                0x00002a28                _init
+ .init          0x00002a2c        0x8 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+                0x00002a34                . = ALIGN (0x4)
+                0x00002a34                __preinit_array_start = .
  *(.preinit_array)
-                0x000028b4                __preinit_array_end = .
-                0x000028b4                . = ALIGN (0x4)
-                0x000028b4                __init_array_start = .
+                0x00002a34                __preinit_array_end = .
+                0x00002a34                . = ALIGN (0x4)
+                0x00002a34                __init_array_start = .
  *(SORT(.init_array.*))
  *(.init_array)
- .init_array    0x000028b4        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
- .init_array    0x000028b8        0x4 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
-                0x000028bc                __init_array_end = .
-                0x000028bc                . = ALIGN (0x4)
+ .init_array    0x00002a34        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .init_array    0x00002a38        0x4 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+                0x00002a3c                __init_array_end = .
+                0x00002a3c                . = ALIGN (0x4)
  *(.fini)
- .fini          0x000028bc        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
-                0x000028bc                _fini
- .fini          0x000028c0        0x8 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
-                0x000028c8                . = ALIGN (0x4)
-                0x000028c8                __fini_array_start = .
+ .fini          0x00002a3c        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+                0x00002a3c                _fini
+ .fini          0x00002a40        0x8 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+                0x00002a48                . = ALIGN (0x4)
+                0x00002a48                __fini_array_start = .
  *(.fini_array)
- .fini_array    0x000028c8        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .fini_array    0x00002a48        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
  *(SORT(.fini_array.*))
-                0x000028cc                __fini_array_end = .
-                0x000028cc                . = ALIGN (0x4)
+                0x00002a4c                __fini_array_end = .
+                0x00002a4c                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *crtend.o(.ctors)
-                0x000028cc                . = ALIGN (0x4)
+                0x00002a4c                . = ALIGN (0x4)
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *crtend.o(.dtors)
-                0x000028cc                . = ALIGN (0x4)
-                0x000028cc                __cy_regions = .
-                0x000028cc        0x4 LONG 0x28e0 __cy_region_init_ram
-                0x000028d0        0x4 LONG 0x200000c0 __cy_region_start_data
-                0x000028d4        0x4 LONG 0x90 __cy_region_init_size_ram
-                0x000028d8        0x4 LONG 0xe8 __cy_region_zero_size_ram
-                0x000028dc                __cy_regions_end = .
-                0x000028e0                . = ALIGN (0x8)
- *fill*         0x000028dc        0x4 
-                0x000028e0                _etext = .
+                0x00002a4c                . = ALIGN (0x4)
+                0x00002a4c                __cy_regions = .
+                0x00002a4c        0x4 LONG 0x2a60 __cy_region_init_ram
+                0x00002a50        0x4 LONG 0x200000c0 __cy_region_start_data
+                0x00002a54        0x4 LONG 0x98 __cy_region_init_size_ram
+                0x00002a58        0x4 LONG 0xe8 __cy_region_zero_size_ram
+                0x00002a5c                __cy_regions_end = .
+                0x00002a60                . = ALIGN (0x8)
+ *fill*         0x00002a5c        0x4 
+                0x00002a60                _etext = .
 
 .cy_checksum_exclude
-                0x000028e0        0x0
+                0x00002a60        0x0
  *(.cy_checksum_exclude)
 
 .ramvectors     0x20000000       0xc0
@@ -978,7 +1002,7 @@ END GROUP
 .noinit
  *(.noinit)
 
-.data           0x200000c0       0x90 load address 0x000028e0
+.data           0x200000c0       0x98 load address 0x00002a60
                 0x200000c0                __cy_region_start_data = .
  *(.jcr)
  .jcr           0x200000c0        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
@@ -987,66 +1011,66 @@ END GROUP
  *(.got)
  *(.shdata)
  *(.data .data.* .gnu.linkonce.d.*)
- .data          0x200000c4       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
- .data          0x200000d4       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
-                0x200000d4                CySysClkPumpConfig
-                0x200000d8                cydelay32kMs
-                0x200000dc                cydelayFreqKhz
-                0x200000e0                cydelayFreqMhz
-                0x200000e4                cydelayFreqHz
- .data          0x200000e8        0x4 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLFClk.o)
+ .data          0x200000c4       0x18 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+ .data          0x200000dc       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
+                0x200000dc                CySysClkPumpConfig
+                0x200000e0                cydelay32kMs
+                0x200000e4                cydelayFreqKhz
+                0x200000e8                cydelayFreqMhz
+                0x200000ec                cydelayFreqHz
+ .data          0x200000f0        0x4 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLFClk.o)
  .data.impure_data
-                0x200000ec       0x60 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+                0x200000f4       0x60 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
  .data._impure_ptr
-                0x2000014c        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
-                0x2000014c                _impure_ptr
-                0x20000150                . = ALIGN (0x8)
+                0x20000154        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+                0x20000154                _impure_ptr
+                0x20000158                . = ALIGN (0x8)
  *(.ram)
-                0x20000150                _edata = .
+                0x20000158                _edata = .
 
-.igot.plt       0x20000150        0x0 load address 0x00002970
- .igot.plt      0x20000150        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+.igot.plt       0x20000158        0x0 load address 0x00002af8
+ .igot.plt      0x20000158        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
 
-.bss            0x20000150       0xe8 load address 0x00002970
-                0x20000150                PROVIDE (__bss_start__, .)
+.bss            0x20000158       0xe8 load address 0x00002af8
+                0x20000158                PROVIDE (__bss_start__, .)
  *(.shbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
- .bss           0x20000150       0x1c c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
- .bss           0x2000016c       0x82 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
- .bss           0x200001ee        0x4 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB.o)
-                0x200001ee                LINS_SCB_initVar
-                0x200001f0                LINS_SCB_IntrTxMask
- .bss           0x200001f2        0x1 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LIN_Dynamic.o)
- *fill*         0x200001f3        0x1 
- .bss           0x200001f4       0x18 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
-                0x20000208                CySysTickInitVar
- .bss           0x2000020c       0x20 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLFClk.o)
- .bss           0x2000022c        0x1 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
-                0x2000022c                PWM_R_initVar
- .bss           0x2000022d        0x1 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
-                0x2000022d                PWM_B_initVar
- .bss           0x2000022e        0x1 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
-                0x2000022e                PWM_G_initVar
+ .bss           0x20000158       0x1c c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .bss           0x20000174       0x82 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+ .bss           0x200001f6        0x4 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB.o)
+                0x200001f6                LINS_SCB_initVar
+                0x200001f8                LINS_SCB_IntrTxMask
+ .bss           0x200001fa        0x1 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LIN_Dynamic.o)
+ *fill*         0x200001fb        0x1 
+ .bss           0x200001fc       0x18 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
+                0x20000210                CySysTickInitVar
+ .bss           0x20000214       0x20 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLFClk.o)
+ .bss           0x20000234        0x1 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
+                0x20000234                PWM_R_initVar
+ .bss           0x20000235        0x1 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
+                0x20000235                PWM_B_initVar
+ .bss           0x20000236        0x1 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
+                0x20000236                PWM_G_initVar
  *(COMMON)
- *fill*         0x2000022f        0x1 
- COMMON         0x20000230        0x2 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                0x20000230                LINS_initialClockDivider
-                0x20000238                . = ALIGN (0x8)
- *fill*         0x20000232        0x6 
+ *fill*         0x20000237        0x1 
+ COMMON         0x20000238        0x2 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x20000238                LINS_initialClockDivider
+                0x20000240                . = ALIGN (0x8)
+ *fill*         0x2000023a        0x6 
  *(.ram.b)
-                0x20000238                _end = .
-                0x20000238                __end = .
-                0x20000238                PROVIDE (end, .)
-                0x20000238                PROVIDE (__bss_end__, .)
-                0x000028e0                __cy_region_init_ram = LOADADDR (.data)
-                0x00000090                __cy_region_init_size_ram = (_edata - ADDR (.data))
+                0x20000240                _end = .
+                0x20000240                __end = .
+                0x20000240                PROVIDE (end, .)
+                0x20000240                PROVIDE (__bss_end__, .)
+                0x00002a60                __cy_region_init_ram = LOADADDR (.data)
+                0x00000098                __cy_region_init_size_ram = (_edata - ADDR (.data))
                 0x000000e8                __cy_region_zero_size_ram = (_end - _edata)
 
-.heap           0x20000238       0x80 load address 0x00002970
-                0x20000238                . = _end
-                0x200002b8                . = (. + 0x80)
- *fill*         0x20000238       0x80 
-                0x200002b8                __cy_heap_limit = .
+.heap           0x20000240       0x80 load address 0x00002af8
+                0x20000240                . = _end
+                0x200002c0                . = (. + 0x80)
+ *fill*         0x20000240       0x80 
+                0x200002c0                __cy_heap_limit = .
 
 .stack          0x20000800      0x800
                 0x20000800                __cy_stack_limit = .
@@ -1082,8 +1106,8 @@ END GROUP
                 0x90600000        0x1 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
                 0x90600000                cy_meta_chipprotect
 
-.rel.dyn        0x00002970        0x0 load address 0x90600004
- .rel.iplt      0x00002970        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+.rel.dyn        0x00002af8        0x0 load address 0x90600004
+ .rel.iplt      0x00002af8        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
 
 .stab
  *(.stab)
@@ -1103,7 +1127,7 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0xa58
+.debug_aranges  0x00000000      0xa98
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x20 .\CortexM0\ARM_GCC_541\Debug\main.o
@@ -1114,57 +1138,57 @@ END GROUP
  .debug_aranges
                 0x00000070       0x48 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
  .debug_aranges
-                0x000000b8      0x218 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                0x000000b8      0x258 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
  .debug_aranges
-                0x000002d0       0x20 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_INT.o)
+                0x00000310       0x20 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_INT.o)
  .debug_aranges
-                0x000002f0       0x80 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_ISR.o)
+                0x00000330       0x80 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_ISR.o)
  .debug_aranges
-                0x00000370       0x40 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_IntClk.o)
+                0x000003b0       0x40 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_IntClk.o)
  .debug_aranges
-                0x000003b0       0x60 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB.o)
+                0x000003f0       0x60 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB.o)
  .debug_aranges
-                0x00000410       0x60 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_SPI_UART.o)
+                0x00000450       0x60 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_SPI_UART.o)
  .debug_aranges
-                0x00000470       0x68 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_UART.o)
+                0x000004b0       0x68 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_UART.o)
  .debug_aranges
-                0x000004d8       0xe0 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LIN_Dynamic.o)
+                0x00000518       0xe0 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LIN_Dynamic.o)
  .debug_aranges
-                0x000005b8      0x180 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
+                0x000005f8      0x180 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
  .debug_aranges
-                0x00000738      0x138 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLFClk.o)
+                0x00000778      0x138 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLFClk.o)
  .debug_aranges
-                0x00000870       0x98 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
+                0x000008b0       0x98 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
  .debug_aranges
-                0x00000908       0x98 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
+                0x00000948       0x98 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
  .debug_aranges
-                0x000009a0       0x98 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
+                0x000009e0       0x98 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
  .debug_aranges
-                0x00000a38       0x20 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyBootAsmGnu.o)
+                0x00000a78       0x20 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyBootAsmGnu.o)
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x5d7d
+.debug_info     0x00000000     0x5f9a
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000      0x31f .\CortexM0\ARM_GCC_541\Debug\main.o
- .debug_info    0x0000031f      0x3a1 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_info    0x000006c0       0xf8 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
- .debug_info    0x000007b8      0x3a2 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
- .debug_info    0x00000b5a     0x1a86 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
- .debug_info    0x000025e0       0xba .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_INT.o)
- .debug_info    0x0000269a      0x305 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_ISR.o)
- .debug_info    0x0000299f      0x14e .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_IntClk.o)
- .debug_info    0x00002aed      0x24c .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB.o)
- .debug_info    0x00002d39      0x220 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_SPI_UART.o)
- .debug_info    0x00002f59      0x310 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_UART.o)
- .debug_info    0x00003269      0x8ca .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LIN_Dynamic.o)
- .debug_info    0x00003b33      0xaec .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
- .debug_info    0x0000461f      0xcfe .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLFClk.o)
- .debug_info    0x0000531d      0x334 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
- .debug_info    0x00005651      0x334 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
- .debug_info    0x00005985      0x334 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
- .debug_info    0x00005cb9       0xc4 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyBootAsmGnu.o)
+ .debug_info    0x00000000      0x3fb .\CortexM0\ARM_GCC_541\Debug\main.o
+ .debug_info    0x000003fb      0x3a1 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_info    0x0000079c       0xf8 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+ .debug_info    0x00000894      0x3a2 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_info    0x00000c36     0x1bc7 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+ .debug_info    0x000027fd       0xba .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_INT.o)
+ .debug_info    0x000028b7      0x305 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_ISR.o)
+ .debug_info    0x00002bbc      0x14e .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_IntClk.o)
+ .debug_info    0x00002d0a      0x24c .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB.o)
+ .debug_info    0x00002f56      0x220 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_SPI_UART.o)
+ .debug_info    0x00003176      0x310 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_UART.o)
+ .debug_info    0x00003486      0x8ca .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LIN_Dynamic.o)
+ .debug_info    0x00003d50      0xaec .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
+ .debug_info    0x0000483c      0xcfe .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLFClk.o)
+ .debug_info    0x0000553a      0x334 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
+ .debug_info    0x0000586e      0x334 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
+ .debug_info    0x00005ba2      0x334 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
+ .debug_info    0x00005ed6       0xc4 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyBootAsmGnu.o)
 
 .debug_abbrev   0x00000000     0x1622
  *(.debug_abbrev)
@@ -1187,127 +1211,127 @@ END GROUP
  .debug_abbrev  0x000014db      0x133 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
  .debug_abbrev  0x0000160e       0x14 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyBootAsmGnu.o)
 
-.debug_line     0x00000000     0x2861
+.debug_line     0x00000000     0x2918
  *(.debug_line)
- .debug_line    0x00000000      0x1ab .\CortexM0\ARM_GCC_541\Debug\main.o
- .debug_line    0x000001ab      0x165 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_line    0x00000310      0x141 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
- .debug_line    0x00000451      0x235 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
- .debug_line    0x00000686      0xb3c .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
- .debug_line    0x000011c2       0x5d .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_INT.o)
- .debug_line    0x0000121f      0x154 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_ISR.o)
- .debug_line    0x00001373       0xb1 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_IntClk.o)
- .debug_line    0x00001424      0x12f .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB.o)
- .debug_line    0x00001553      0x11e .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_SPI_UART.o)
- .debug_line    0x00001671      0x179 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_UART.o)
- .debug_line    0x000017ea      0x298 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LIN_Dynamic.o)
- .debug_line    0x00001a82      0x460 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
- .debug_line    0x00001ee2      0x466 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLFClk.o)
- .debug_line    0x00002348      0x190 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
- .debug_line    0x000024d8      0x190 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
- .debug_line    0x00002668      0x190 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
- .debug_line    0x000027f8       0x69 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyBootAsmGnu.o)
+ .debug_line    0x00000000      0x1b9 .\CortexM0\ARM_GCC_541\Debug\main.o
+ .debug_line    0x000001b9      0x165 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_line    0x0000031e      0x141 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+ .debug_line    0x0000045f      0x235 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_line    0x00000694      0xbe5 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+ .debug_line    0x00001279       0x5d .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_INT.o)
+ .debug_line    0x000012d6      0x154 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_ISR.o)
+ .debug_line    0x0000142a       0xb1 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_IntClk.o)
+ .debug_line    0x000014db      0x12f .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB.o)
+ .debug_line    0x0000160a      0x11e .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_SPI_UART.o)
+ .debug_line    0x00001728      0x179 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_UART.o)
+ .debug_line    0x000018a1      0x298 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LIN_Dynamic.o)
+ .debug_line    0x00001b39      0x460 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
+ .debug_line    0x00001f99      0x466 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLFClk.o)
+ .debug_line    0x000023ff      0x190 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
+ .debug_line    0x0000258f      0x190 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
+ .debug_line    0x0000271f      0x190 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
+ .debug_line    0x000028af       0x69 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyBootAsmGnu.o)
 
-.debug_frame    0x00000000     0x197c
+.debug_frame    0x00000000     0x19fc
  *(.debug_frame)
  .debug_frame   0x00000000       0x30 .\CortexM0\ARM_GCC_541\Debug\main.o
  .debug_frame   0x00000030       0x8c .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
  .debug_frame   0x000000bc       0xbc .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
- .debug_frame   0x00000178      0x568 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
- .debug_frame   0x000006e0       0x2c .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_INT.o)
- .debug_frame   0x0000070c      0x110 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_ISR.o)
- .debug_frame   0x0000081c       0x60 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_IntClk.o)
- .debug_frame   0x0000087c       0xe8 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB.o)
- .debug_frame   0x00000964       0xb0 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_SPI_UART.o)
- .debug_frame   0x00000a14       0xf4 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_UART.o)
- .debug_frame   0x00000b08      0x29c .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LIN_Dynamic.o)
- .debug_frame   0x00000da4      0x3e0 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
- .debug_frame   0x00001184      0x3a8 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLFClk.o)
- .debug_frame   0x0000152c      0x134 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
- .debug_frame   0x00001660      0x134 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
- .debug_frame   0x00001794      0x134 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
- .debug_frame   0x000018c8       0x20 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
- .debug_frame   0x000018e8       0x20 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
- .debug_frame   0x00001908       0x28 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
- .debug_frame   0x00001930       0x2c c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
- .debug_frame   0x0000195c       0x20 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+ .debug_frame   0x00000178      0x5e8 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+ .debug_frame   0x00000760       0x2c .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_INT.o)
+ .debug_frame   0x0000078c      0x110 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_ISR.o)
+ .debug_frame   0x0000089c       0x60 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_IntClk.o)
+ .debug_frame   0x000008fc       0xe8 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB.o)
+ .debug_frame   0x000009e4       0xb0 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_SPI_UART.o)
+ .debug_frame   0x00000a94       0xf4 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_UART.o)
+ .debug_frame   0x00000b88      0x29c .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LIN_Dynamic.o)
+ .debug_frame   0x00000e24      0x3e0 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
+ .debug_frame   0x00001204      0x3a8 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLFClk.o)
+ .debug_frame   0x000015ac      0x134 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
+ .debug_frame   0x000016e0      0x134 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
+ .debug_frame   0x00001814      0x134 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
+ .debug_frame   0x00001948       0x20 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+ .debug_frame   0x00001968       0x20 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+ .debug_frame   0x00001988       0x28 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+ .debug_frame   0x000019b0       0x2c c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+ .debug_frame   0x000019dc       0x20 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
 
-.debug_str      0x00000000     0x2483
+.debug_str      0x00000000     0x2540
  *(.debug_str)
- .debug_str     0x00000000      0x2dd .\CortexM0\ARM_GCC_541\Debug\main.o
-                                0x325 (size before relaxing)
- .debug_str     0x000002dd      0x11b .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_str     0x00000000      0x337 .\CortexM0\ARM_GCC_541\Debug\main.o
+                                0x37f (size before relaxing)
+ .debug_str     0x00000337      0x11b .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
                                 0x2f9 (size before relaxing)
- .debug_str     0x000003f8       0xd5 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+ .debug_str     0x00000452       0xd5 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
                                 0x202 (size before relaxing)
- .debug_str     0x000004cd      0x135 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_str     0x00000527      0x135 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
                                 0x335 (size before relaxing)
- .debug_str     0x00000602      0xae0 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
-                                0xdb4 (size before relaxing)
- .debug_str     0x000010e2       0x30 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_INT.o)
+ .debug_str     0x0000065c      0xb43 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+                                0xe66 (size before relaxing)
+ .debug_str     0x0000119f       0x30 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_INT.o)
                                 0x1ed (size before relaxing)
- .debug_str     0x00001112       0xf0 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_ISR.o)
+ .debug_str     0x000011cf       0xf0 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_ISR.o)
                                 0x348 (size before relaxing)
- .debug_str     0x00001202       0x95 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_IntClk.o)
+ .debug_str     0x000012bf       0x95 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_IntClk.o)
                                 0x295 (size before relaxing)
- .debug_str     0x00001297      0x12e .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB.o)
+ .debug_str     0x00001354      0x12e .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB.o)
                                 0x323 (size before relaxing)
- .debug_str     0x000013c5       0xea .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_SPI_UART.o)
+ .debug_str     0x00001482       0xea .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_SPI_UART.o)
                                 0x32a (size before relaxing)
- .debug_str     0x000014af      0x133 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_UART.o)
+ .debug_str     0x0000156c      0x133 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_UART.o)
                                 0x3ac (size before relaxing)
- .debug_str     0x000015e2      0x16b .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LIN_Dynamic.o)
+ .debug_str     0x0000169f      0x16b .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LIN_Dynamic.o)
                                 0x54e (size before relaxing)
- .debug_str     0x0000174d      0x40b .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
+ .debug_str     0x0000180a      0x40b .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
                                 0x6ea (size before relaxing)
- .debug_str     0x00001b58      0x527 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLFClk.o)
+ .debug_str     0x00001c15      0x527 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLFClk.o)
                                 0x771 (size before relaxing)
- .debug_str     0x0000207f      0x178 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
+ .debug_str     0x0000213c      0x178 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
                                 0x385 (size before relaxing)
- .debug_str     0x000021f7      0x146 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
+ .debug_str     0x000022b4      0x146 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
                                 0x385 (size before relaxing)
- .debug_str     0x0000233d      0x146 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
+ .debug_str     0x000023fa      0x146 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
                                 0x385 (size before relaxing)
 
-.debug_loc      0x00000000     0x3059
+.debug_loc      0x00000000     0x311c
  *(.debug_loc)
- .debug_loc     0x00000000       0x64 .\CortexM0\ARM_GCC_541\Debug\main.o
- .debug_loc     0x00000064      0x118 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_loc     0x0000017c      0x14f .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
- .debug_loc     0x000002cb     0x1237 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
- .debug_loc     0x00001502       0x82 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_ISR.o)
- .debug_loc     0x00001584       0x13 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_IntClk.o)
- .debug_loc     0x00001597       0x7e .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB.o)
- .debug_loc     0x00001615       0x96 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_SPI_UART.o)
- .debug_loc     0x000016ab      0x1e4 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_UART.o)
- .debug_loc     0x0000188f      0x80a .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LIN_Dynamic.o)
- .debug_loc     0x00002099      0x599 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
- .debug_loc     0x00002632      0x9b5 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLFClk.o)
- .debug_loc     0x00002fe7       0x26 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
- .debug_loc     0x0000300d       0x26 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
- .debug_loc     0x00003033       0x26 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
+ .debug_loc     0x00000000       0xc5 .\CortexM0\ARM_GCC_541\Debug\main.o
+ .debug_loc     0x000000c5      0x118 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_loc     0x000001dd      0x14f .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_loc     0x0000032c     0x1299 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+ .debug_loc     0x000015c5       0x82 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_ISR.o)
+ .debug_loc     0x00001647       0x13 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_IntClk.o)
+ .debug_loc     0x0000165a       0x7e .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB.o)
+ .debug_loc     0x000016d8       0x96 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_SPI_UART.o)
+ .debug_loc     0x0000176e      0x1e4 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_UART.o)
+ .debug_loc     0x00001952      0x80a .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LIN_Dynamic.o)
+ .debug_loc     0x0000215c      0x599 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
+ .debug_loc     0x000026f5      0x9b5 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLFClk.o)
+ .debug_loc     0x000030aa       0x26 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
+ .debug_loc     0x000030d0       0x26 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
+ .debug_loc     0x000030f6       0x26 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
 
 .debug_macinfo
  *(.debug_macinfo)
 
-.debug_ranges   0x00000000      0x920
+.debug_ranges   0x00000000      0x960
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x10 .\CortexM0\ARM_GCC_541\Debug\main.o
  .debug_ranges  0x00000010       0x28 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
  .debug_ranges  0x00000038       0x38 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
- .debug_ranges  0x00000070      0x208 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
- .debug_ranges  0x00000278       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_INT.o)
- .debug_ranges  0x00000288       0x70 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_ISR.o)
- .debug_ranges  0x000002f8       0x30 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_IntClk.o)
- .debug_ranges  0x00000328       0x50 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB.o)
- .debug_ranges  0x00000378       0x50 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_SPI_UART.o)
- .debug_ranges  0x000003c8       0x58 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_UART.o)
- .debug_ranges  0x00000420       0xd0 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LIN_Dynamic.o)
- .debug_ranges  0x000004f0      0x170 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
- .debug_ranges  0x00000660      0x128 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLFClk.o)
- .debug_ranges  0x00000788       0x88 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
- .debug_ranges  0x00000810       0x88 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
- .debug_ranges  0x00000898       0x88 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
+ .debug_ranges  0x00000070      0x248 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS.o)
+ .debug_ranges  0x000002b8       0x10 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_INT.o)
+ .debug_ranges  0x000002c8       0x70 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_ISR.o)
+ .debug_ranges  0x00000338       0x30 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_IntClk.o)
+ .debug_ranges  0x00000368       0x50 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB.o)
+ .debug_ranges  0x000003b8       0x50 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_SPI_UART.o)
+ .debug_ranges  0x00000408       0x58 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LINS_SCB_UART.o)
+ .debug_ranges  0x00000460       0xd0 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(LIN_Dynamic.o)
+ .debug_ranges  0x00000530      0x170 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLib.o)
+ .debug_ranges  0x000006a0      0x128 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(CyLFClk.o)
+ .debug_ranges  0x000007c8       0x88 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_R.o)
+ .debug_ranges  0x00000850       0x88 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_B.o)
+ .debug_ranges  0x000008d8       0x88 .\CortexM0\ARM_GCC_541\Debug\LIN_Slave-RGB_CMD_Reader_Setter.a(PWM_G.o)
 
 .comment        0x00000000       0x6e
  .comment       0x00000000       0x6e .\CortexM0\ARM_GCC_541\Debug\main.o

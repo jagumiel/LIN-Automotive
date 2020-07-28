@@ -1,4 +1,4 @@
---------------- Build Started: 07/27/2020 13:10:11 Project: ECU-RGB_Command_Sender, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+--------------- Build Started: 07/28/2020 12:56:45 Project: ECU-RGB_Command_Sender, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
 The code generation step is up to date.
 arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/main.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c main.c -o .\CortexM0\ARM_GCC_541\Debug\main.o
 arm-none-eabi-ar.exe -rs .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a .\CortexM0\ARM_GCC_541\Debug\CyFlash.o .\CortexM0\ARM_GCC_541\Debug\CyLib.o .\CortexM0\ARM_GCC_541\Debug\cyPm.o .\CortexM0\ARM_GCC_541\Debug\cyutils.o .\CortexM0\ARM_GCC_541\Debug\CyLFClk.o .\CortexM0\ARM_GCC_541\Debug\UART_MASTER.o .\CortexM0\ARM_GCC_541\Debug\UART_MASTER_SPI_UART.o .\CortexM0\ARM_GCC_541\Debug\UART_MASTER_SPI_UART_INT.o .\CortexM0\ARM_GCC_541\Debug\UART_MASTER_PM.o .\CortexM0\ARM_GCC_541\Debug\UART_MASTER_UART.o .\CortexM0\ARM_GCC_541\Debug\UART_MASTER_BOOT.o .\CortexM0\ARM_GCC_541\Debug\UART_MASTER_UART_BOOT.o .\CortexM0\ARM_GCC_541\Debug\UART_MASTER_SCBCLK.o .\CortexM0\ARM_GCC_541\Debug\UART_MASTER_tx.o .\CortexM0\ARM_GCC_541\Debug\UART_MASTER_tx_PM.o .\CortexM0\ARM_GCC_541\Debug\UART_MASTER_rx.o .\CortexM0\ARM_GCC_541\Debug\UART_MASTER_rx_PM.o .\CortexM0\ARM_GCC_541\Debug\UART_MASTER_SCB_IRQ.o .\CortexM0\ARM_GCC_541\Debug\cy_em_eeprom.o .\CortexM0\ARM_GCC_541\Debug\LedRed.o .\CortexM0\ARM_GCC_541\Debug\LedRed_PM.o .\CortexM0\ARM_GCC_541\Debug\UART_PC.o .\CortexM0\ARM_GCC_541\Debug\UART_PC_SPI_UART.o .\CortexM0\ARM_GCC_541\Debug\UART_PC_SPI_UART_INT.o .\CortexM0\ARM_GCC_541\Debug\UART_PC_PM.o .\CortexM0\ARM_GCC_541\Debug\UART_PC_UART.o .\CortexM0\ARM_GCC_541\Debug\UART_PC_BOOT.o .\CortexM0\ARM_GCC_541\Debug\UART_PC_UART_BOOT.o .\CortexM0\ARM_GCC_541\Debug\UART_PC_SCBCLK.o .\CortexM0\ARM_GCC_541\Debug\UART_PC_tx.o .\CortexM0\ARM_GCC_541\Debug\UART_PC_tx_PM.o .\CortexM0\ARM_GCC_541\Debug\UART_PC_rx.o .\CortexM0\ARM_GCC_541\Debug\UART_PC_rx_PM.o .\CortexM0\ARM_GCC_541\Debug\CyBootAsmGnu.o
@@ -9,6 +9,6 @@ No ELF section .cychecksum found, creating one
 Application checksum calculated and stored in ELF section .cychecksum
 Checksum calculated and stored in ELF section .cymeta
 cyelftool.exe -S "D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.elf"
-Flash used: 4504 of 32768 bytes (13,7 %).
+Flash used: 4632 of 32768 bytes (14,1 %).
 SRAM used: 2640 of 4096 bytes (64,5 %). Stack: 2048 bytes. Heap: 128 bytes.
---------------- Build Succeeded: 07/27/2020 13:10:13 ---------------
+--------------- Build Succeeded: 07/28/2020 12:56:50 ---------------

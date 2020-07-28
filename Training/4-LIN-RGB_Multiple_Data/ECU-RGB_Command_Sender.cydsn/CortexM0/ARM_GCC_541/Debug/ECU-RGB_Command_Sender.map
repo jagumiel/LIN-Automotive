@@ -433,7 +433,7 @@ END GROUP
                 0x00000001                cy_project_type_bootloader = (appl_start == 0x0)?0x1:0x0
                 0x00000000                cy_project_type_app_for_stack_and_copier = (CY_APP_FOR_STACK_AND_COPIER == 0x1)?0x1:0x0
 
-.text           0x00000000      0xf30
+.text           0x00000000      0xfb0
  CREATE_OBJECT_SYMBOLS
                 0x00000000                PROVIDE (__cy_interrupt_vector, RomVectors)
  *(.romvectors)
@@ -462,239 +462,241 @@ END GROUP
                 0x00000224       0x20 .\CortexM0\ARM_GCC_541\Debug\main.o
                 0x00000224                LIN_Checksum_Calculation
  .text.getResults
-                0x00000244       0x64 .\CortexM0\ARM_GCC_541\Debug\main.o
+                0x00000244       0xb0 .\CortexM0\ARM_GCC_541\Debug\main.o
                 0x00000244                getResults
+ .text.getData  0x000002f4       0x90 .\CortexM0\ARM_GCC_541\Debug\main.o
+                0x000002f4                getData
  .text.sendFrame
-                0x000002a8       0x3c .\CortexM0\ARM_GCC_541\Debug\main.o
-                0x000002a8                sendFrame
- .text.main     0x000002e4       0xa4 .\CortexM0\ARM_GCC_541\Debug\main.o
-                0x000002e4                main
+                0x00000384       0x3c .\CortexM0\ARM_GCC_541\Debug\main.o
+                0x00000384                sendFrame
+ .text.main     0x000003c0       0x48 .\CortexM0\ARM_GCC_541\Debug\main.o
+                0x000003c0                main
  .text.CYMEMZERO
-                0x00000388        0xc .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000408        0xc .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.IntDefaultHandler
-                0x00000394       0x10 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
-                0x00000394                IntDefaultHandler
- .text.Start_c  0x000003a4       0x48 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
-                0x000003a4                Start_c
+                0x00000414       0x10 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+                0x00000414                IntDefaultHandler
+ .text.Start_c  0x00000424       0x48 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+                0x00000424                Start_c
  .text.initialize_psoc
-                0x000003ec       0x40 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
-                0x000003ec                initialize_psoc
+                0x0000046c       0x40 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+                0x0000046c                initialize_psoc
  .text.CyIntEnable
-                0x0000042c       0x14 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
-                0x0000042c                CyIntEnable
+                0x000004ac       0x14 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
+                0x000004ac                CyIntEnable
  .text.CyIntDisable
-                0x00000440       0x14 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
-                0x00000440                CyIntDisable
- .text.CyHalt   0x00000454        0x4 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
-                0x00000454                CyHalt
+                0x000004c0       0x14 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
+                0x000004c0                CyIntDisable
+ .text.CyHalt   0x000004d4        0x4 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
+                0x000004d4                CyHalt
  .text.CyIntSetVector
-                0x00000458       0x24 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
-                0x00000458                CyIntSetVector
+                0x000004d8       0x24 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
+                0x000004d8                CyIntSetVector
  .text.CyIntSetPriority
-                0x0000047c       0x4c .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
-                0x0000047c                CyIntSetPriority
+                0x000004fc       0x4c .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
+                0x000004fc                CyIntSetPriority
  .text.CyDelayUs
-                0x000004c8       0x14 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
-                0x000004c8                CyDelayUs
+                0x00000548       0x14 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
+                0x00000548                CyDelayUs
  .text.CySysClkWriteImoFreq
-                0x000004dc      0x164 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
-                0x000004dc                CySysClkWriteImoFreq
+                0x0000055c      0x164 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
+                0x0000055c                CySysClkWriteImoFreq
  .text.CySysWdtLocked
-                0x00000640       0x14 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLFClk.o)
+                0x000006c0       0x14 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLFClk.o)
  .text.CySysWdtLock
-                0x00000654       0x1c .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLFClk.o)
-                0x00000654                CySysWdtLock
+                0x000006d4       0x1c .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLFClk.o)
+                0x000006d4                CySysWdtLock
  .text.CySysWdtUnlock
-                0x00000670       0x30 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLFClk.o)
-                0x00000670                CySysWdtUnlock
+                0x000006f0       0x30 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLFClk.o)
+                0x000006f0                CySysWdtUnlock
  .text.CySysWdtClearInterrupt
-                0x000006a0       0x4c .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLFClk.o)
-                0x000006a0                CySysWdtClearInterrupt
+                0x00000720       0x4c .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLFClk.o)
+                0x00000720                CySysWdtClearInterrupt
  .text.CySysWdtIsr
-                0x000006ec       0xa4 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLFClk.o)
-                0x000006ec                CySysWdtIsr
+                0x0000076c       0xa4 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLFClk.o)
+                0x0000076c                CySysWdtIsr
  .text.UART_MASTER_ScbEnableIntr
-                0x00000790        0xc .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER.o)
+                0x00000810        0xc .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER.o)
  .text.UART_MASTER_ScbModePostEnable
-                0x0000079c        0x8 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER.o)
+                0x0000081c        0x8 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER.o)
  .text.UART_MASTER_Init
-                0x000007a4        0x8 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER.o)
-                0x000007a4                UART_MASTER_Init
+                0x00000824        0x8 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER.o)
+                0x00000824                UART_MASTER_Init
  .text.UART_MASTER_Enable
-                0x000007ac       0x1c .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER.o)
-                0x000007ac                UART_MASTER_Enable
+                0x0000082c       0x1c .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER.o)
+                0x0000082c                UART_MASTER_Enable
  .text.UART_MASTER_Start
-                0x000007c8       0x20 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER.o)
-                0x000007c8                UART_MASTER_Start
+                0x00000848       0x20 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER.o)
+                0x00000848                UART_MASTER_Start
  .text.UART_MASTER_SpiUartWriteTxData
-                0x000007e8       0x70 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART.o)
-                0x000007e8                UART_MASTER_SpiUartWriteTxData
+                0x00000868       0x70 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART.o)
+                0x00000868                UART_MASTER_SpiUartWriteTxData
  .text.UART_MASTER_UartInit
-                0x00000858       0xe4 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_UART.o)
-                0x00000858                UART_MASTER_UartInit
+                0x000008d8       0xe4 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_UART.o)
+                0x000008d8                UART_MASTER_UartInit
  .text.UART_MASTER_UartPostEnable
-                0x0000093c       0x2c .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_UART.o)
-                0x0000093c                UART_MASTER_UartPostEnable
+                0x000009bc       0x2c .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_UART.o)
+                0x000009bc                UART_MASTER_UartPostEnable
  .text.UART_MASTER_UartSendBreakBlocking
-                0x00000968       0x58 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_UART.o)
-                0x00000968                UART_MASTER_UartSendBreakBlocking
+                0x000009e8       0x58 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_UART.o)
+                0x000009e8                UART_MASTER_UartSendBreakBlocking
  .text.LedRed_Write
-                0x000009c0       0x18 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(LedRed.o)
-                0x000009c0                LedRed_Write
+                0x00000a40       0x18 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(LedRed.o)
+                0x00000a40                LedRed_Write
  .text.UART_PC_ScbModePostEnable
-                0x000009d8        0x8 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC.o)
+                0x00000a58        0x8 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC.o)
  .text.UART_PC_Init
-                0x000009e0        0x8 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC.o)
-                0x000009e0                UART_PC_Init
+                0x00000a60        0x8 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC.o)
+                0x00000a60                UART_PC_Init
  .text.UART_PC_Enable
-                0x000009e8       0x18 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC.o)
-                0x000009e8                UART_PC_Enable
+                0x00000a68       0x18 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC.o)
+                0x00000a68                UART_PC_Enable
  .text.UART_PC_Start
-                0x00000a00       0x20 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC.o)
-                0x00000a00                UART_PC_Start
+                0x00000a80       0x20 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC.o)
+                0x00000a80                UART_PC_Start
  .text.UART_PC_SpiUartReadRxData
-                0x00000a20        0xc .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_SPI_UART.o)
-                0x00000a20                UART_PC_SpiUartReadRxData
+                0x00000aa0        0xc .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_SPI_UART.o)
+                0x00000aa0                UART_PC_SpiUartReadRxData
  .text.UART_PC_SpiUartGetRxBufferSize
-                0x00000a2c       0x10 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_SPI_UART.o)
-                0x00000a2c                UART_PC_SpiUartGetRxBufferSize
+                0x00000aac       0x10 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_SPI_UART.o)
+                0x00000aac                UART_PC_SpiUartGetRxBufferSize
  .text.UART_PC_SpiUartWriteTxData
-                0x00000a3c       0x1c .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_SPI_UART.o)
-                0x00000a3c                UART_PC_SpiUartWriteTxData
+                0x00000abc       0x1c .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_SPI_UART.o)
+                0x00000abc                UART_PC_SpiUartWriteTxData
  .text.UART_PC_UartInit
-                0x00000a58       0x9c .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_UART.o)
-                0x00000a58                UART_PC_UartInit
+                0x00000ad8       0x9c .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_UART.o)
+                0x00000ad8                UART_PC_UartInit
  .text.UART_PC_UartPostEnable
-                0x00000af4       0x24 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_UART.o)
-                0x00000af4                UART_PC_UartPostEnable
+                0x00000b74       0x24 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_UART.o)
+                0x00000b74                UART_PC_UartPostEnable
  .text.UART_PC_UartGetChar
-                0x00000b18       0x2c .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_UART.o)
-                0x00000b18                UART_PC_UartGetChar
+                0x00000b98       0x2c .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_UART.o)
+                0x00000b98                UART_PC_UartGetChar
  .text.UART_PC_UartPutString
-                0x00000b44       0x18 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_UART.o)
-                0x00000b44                UART_PC_UartPutString
- *fill*         0x00000b5c        0x4 
- .text          0x00000b60       0x24 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyBootAsmGnu.o)
-                0x00000b60                CyDelayCycles
-                0x00000b74                CyEnterCriticalSection
-                0x00000b7c                CyExitCriticalSection
+                0x00000bc4       0x18 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_UART.o)
+                0x00000bc4                UART_PC_UartPutString
+ *fill*         0x00000bdc        0x4 
+ .text          0x00000be0       0x24 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyBootAsmGnu.o)
+                0x00000be0                CyDelayCycles
+                0x00000bf4                CyEnterCriticalSection
+                0x00000bfc                CyExitCriticalSection
  .text.UART_MASTER_SPI_UART_ISR
-                0x00000b84       0xe4 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART_INT.o)
-                0x00000b84                UART_MASTER_SPI_UART_ISR
- .text          0x00000c68      0x114 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
-                0x00000c68                __aeabi_uidiv
-                0x00000c68                __udivsi3
-                0x00000d74                __aeabi_uidivmod
- .text          0x00000d7c        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
-                0x00000d7c                __aeabi_idiv0
-                0x00000d7c                __aeabi_ldiv0
- .text.atoi     0x00000d80        0xc c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-atoi.o)
-                0x00000d80                atoi
- .text.__errno  0x00000d8c        0xc c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
-                0x00000d8c                __errno
+                0x00000c04       0xe4 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART_INT.o)
+                0x00000c04                UART_MASTER_SPI_UART_ISR
+ .text          0x00000ce8      0x114 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+                0x00000ce8                __aeabi_uidiv
+                0x00000ce8                __udivsi3
+                0x00000df4                __aeabi_uidivmod
+ .text          0x00000dfc        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
+                0x00000dfc                __aeabi_idiv0
+                0x00000dfc                __aeabi_ldiv0
+ .text.atoi     0x00000e00        0xc c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-atoi.o)
+                0x00000e00                atoi
+ .text.__errno  0x00000e0c        0xc c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+                0x00000e0c                __errno
  .text.__libc_init_array
-                0x00000d98       0x4c c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
-                0x00000d98                __libc_init_array
- .text.memset   0x00000de4       0x10 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
-                0x00000de4                memset
+                0x00000e18       0x4c c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+                0x00000e18                __libc_init_array
+ .text.memset   0x00000e64       0x10 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+                0x00000e64                memset
  .text._strtol_r
-                0x00000df4      0x124 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-strtol.o)
-                0x00000df4                _strtol_r
- .text.strtol   0x00000f18       0x18 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-strtol.o)
-                0x00000f18                strtol
+                0x00000e74      0x124 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-strtol.o)
+                0x00000e74                _strtol_r
+ .text.strtol   0x00000f98       0x18 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-strtol.o)
+                0x00000f98                strtol
  *(.plt)
  *(.gnu.warning)
  *(.glue_7t)
- .glue_7t       0x00000f30        0x0 linker stubs
+ .glue_7t       0x00000fb0        0x0 linker stubs
  *(.glue_7)
- .glue_7        0x00000f30        0x0 linker stubs
+ .glue_7        0x00000fb0        0x0 linker stubs
  *(.vfp11_veneer)
- .vfp11_veneer  0x00000f30        0x0 linker stubs
+ .vfp11_veneer  0x00000fb0        0x0 linker stubs
  *(.bootloader)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
  *(.gcc_except_table)
 
-.v4_bx          0x00000f30        0x0
- .v4_bx         0x00000f30        0x0 linker stubs
+.v4_bx          0x00000fb0        0x0
+ .v4_bx         0x00000fb0        0x0 linker stubs
 
-.iplt           0x00000f30        0x0
- .iplt          0x00000f30        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+.iplt           0x00000fb0        0x0
+ .iplt          0x00000fb0        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
 
-.eh_frame       0x00000f30        0x4
+.eh_frame       0x00000fb0        0x4
  *(.eh_frame)
- .eh_frame      0x00000f30        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
- .eh_frame      0x00000f30        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
+ .eh_frame      0x00000fb0        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .eh_frame      0x00000fb0        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
                 [!provide]                PROVIDE (__exidx_start, .)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00000f34                __exidx_end = .
+                0x00000fb4                __exidx_end = .
 
-.rodata         0x00000f34      0x1d4
+.rodata         0x00000fb4      0x1d4
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata.str1.4
-                0x00000f34       0x60 .\CortexM0\ARM_GCC_541\Debug\main.o
- .rodata        0x00000f94        0xc .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
- .rodata        0x00000fa0       0x2e .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
-                0x00000fa0                cyImoFreqMhz2Reg
+                0x00000fb4       0x60 .\CortexM0\ARM_GCC_541\Debug\main.o
+ .rodata        0x00001014        0xc .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .rodata        0x00001020       0x2e .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
+                0x00001020                cyImoFreqMhz2Reg
  .rodata.str1.1
-                0x00000fce        0x2 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+                0x0000104e        0x2 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
  .rodata._ctype_
-                0x00000fd0      0x101 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-ctype_.o)
-                0x00000fd0                _ctype_
-                0x000010d4                . = ALIGN (0x4)
- *fill*         0x000010d1        0x3 
+                0x00001050      0x101 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-ctype_.o)
+                0x00001050                _ctype_
+                0x00001154                . = ALIGN (0x4)
+ *fill*         0x00001151        0x3 
  *(.init)
- .init          0x000010d4        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
-                0x000010d4                _init
- .init          0x000010d8        0x8 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
-                0x000010e0                . = ALIGN (0x4)
-                0x000010e0                __preinit_array_start = .
+ .init          0x00001154        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+                0x00001154                _init
+ .init          0x00001158        0x8 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+                0x00001160                . = ALIGN (0x4)
+                0x00001160                __preinit_array_start = .
  *(.preinit_array)
-                0x000010e0                __preinit_array_end = .
-                0x000010e0                . = ALIGN (0x4)
-                0x000010e0                __init_array_start = .
+                0x00001160                __preinit_array_end = .
+                0x00001160                . = ALIGN (0x4)
+                0x00001160                __init_array_start = .
  *(SORT(.init_array.*))
  *(.init_array)
- .init_array    0x000010e0        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
- .init_array    0x000010e4        0x4 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
-                0x000010e8                __init_array_end = .
-                0x000010e8                . = ALIGN (0x4)
+ .init_array    0x00001160        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .init_array    0x00001164        0x4 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+                0x00001168                __init_array_end = .
+                0x00001168                . = ALIGN (0x4)
  *(.fini)
- .fini          0x000010e8        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
-                0x000010e8                _fini
- .fini          0x000010ec        0x8 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
-                0x000010f4                . = ALIGN (0x4)
-                0x000010f4                __fini_array_start = .
+ .fini          0x00001168        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+                0x00001168                _fini
+ .fini          0x0000116c        0x8 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+                0x00001174                . = ALIGN (0x4)
+                0x00001174                __fini_array_start = .
  *(.fini_array)
- .fini_array    0x000010f4        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .fini_array    0x00001174        0x4 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
  *(SORT(.fini_array.*))
-                0x000010f8                __fini_array_end = .
-                0x000010f8                . = ALIGN (0x4)
+                0x00001178                __fini_array_end = .
+                0x00001178                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *crtend.o(.ctors)
-                0x000010f8                . = ALIGN (0x4)
+                0x00001178                . = ALIGN (0x4)
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *crtend.o(.dtors)
-                0x000010f8                . = ALIGN (0x4)
-                0x000010f8                __cy_regions = .
-                0x000010f8        0x4 LONG 0x1108 __cy_region_init_ram
-                0x000010fc        0x4 LONG 0x200000c0 __cy_region_start_data
-                0x00001100        0x4 LONG 0x90 __cy_region_init_size_ram
-                0x00001104        0x4 LONG 0x80 __cy_region_zero_size_ram
-                0x00001108                __cy_regions_end = .
-                0x00001108                . = ALIGN (0x8)
-                0x00001108                _etext = .
+                0x00001178                . = ALIGN (0x4)
+                0x00001178                __cy_regions = .
+                0x00001178        0x4 LONG 0x1188 __cy_region_init_ram
+                0x0000117c        0x4 LONG 0x200000c0 __cy_region_start_data
+                0x00001180        0x4 LONG 0x90 __cy_region_init_size_ram
+                0x00001184        0x4 LONG 0x80 __cy_region_zero_size_ram
+                0x00001188                __cy_regions_end = .
+                0x00001188                . = ALIGN (0x8)
+                0x00001188                _etext = .
 
 .cy_checksum_exclude
-                0x00001108        0x0
+                0x00001188        0x0
  *(.cy_checksum_exclude)
 
 .ramvectors     0x20000000       0xc0
@@ -706,7 +708,7 @@ END GROUP
 .noinit
  *(.noinit)
 
-.data           0x200000c0       0x90 load address 0x00001108
+.data           0x200000c0       0x90 load address 0x00001188
                 0x200000c0                __cy_region_start_data = .
  *(.jcr)
  .jcr           0x200000c0        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
@@ -715,10 +717,9 @@ END GROUP
  *(.got)
  *(.shdata)
  *(.data .data.* .gnu.linkonce.d.*)
- .data          0x200000c4        0x9 .\CortexM0\ARM_GCC_541\Debug\main.o
-                0x200000c4                packet
-                0x200000cc                id
- *fill*         0x200000cd        0x3 
+ .data          0x200000c4        0xc .\CortexM0\ARM_GCC_541\Debug\main.o
+                0x200000c4                id
+                0x200000c8                packet
  .data          0x200000d0       0x14 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
                 0x200000d0                CySysClkPumpConfig
                 0x200000d4                cydelay32kMs
@@ -738,10 +739,10 @@ END GROUP
  *(.ram)
                 0x20000150                _edata = .
 
-.igot.plt       0x20000150        0x0 load address 0x00001198
+.igot.plt       0x20000150        0x0 load address 0x00001218
  .igot.plt      0x20000150        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
 
-.bss            0x20000150       0x80 load address 0x00001198
+.bss            0x20000150       0x80 load address 0x00001218
                 0x20000150                PROVIDE (__bss_start__, .)
  *(.shbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
@@ -775,11 +776,11 @@ END GROUP
                 0x200001d0                __end = .
                 0x200001d0                PROVIDE (end, .)
                 0x200001d0                PROVIDE (__bss_end__, .)
-                0x00001108                __cy_region_init_ram = LOADADDR (.data)
+                0x00001188                __cy_region_init_ram = LOADADDR (.data)
                 0x00000090                __cy_region_init_size_ram = (_edata - ADDR (.data))
                 0x00000080                __cy_region_zero_size_ram = (_end - _edata)
 
-.heap           0x200001d0       0x80 load address 0x00001198
+.heap           0x200001d0       0x80 load address 0x00001218
                 0x200001d0                . = _end
                 0x20000250                . = (. + 0x80)
  *fill*         0x200001d0       0x80 
@@ -819,8 +820,8 @@ END GROUP
                 0x90600000        0x1 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
                 0x90600000                cy_meta_chipprotect
 
-.rel.dyn        0x00001198        0x0 load address 0x90600004
- .rel.iplt      0x00001198        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+.rel.dyn        0x00001218        0x0 load address 0x90600004
+ .rel.iplt      0x00001218        0x0 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
 
 .stab
  *(.stab)
@@ -840,184 +841,184 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x678
+.debug_aranges  0x00000000      0x680
  *(.debug_aranges)
  .debug_aranges
-                0x00000000       0x48 .\CortexM0\ARM_GCC_541\Debug\main.o
+                0x00000000       0x50 .\CortexM0\ARM_GCC_541\Debug\main.o
  .debug_aranges
-                0x00000048       0x30 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000050       0x30 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
  .debug_aranges
-                0x00000078       0x18 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+                0x00000080       0x18 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
  .debug_aranges
-                0x00000090       0x48 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+                0x00000098       0x48 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
  .debug_aranges
-                0x000000d8      0x180 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
+                0x000000e0      0x180 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
  .debug_aranges
-                0x00000258      0x138 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLFClk.o)
+                0x00000260      0x138 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLFClk.o)
  .debug_aranges
-                0x00000390       0x70 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER.o)
+                0x00000398       0x70 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER.o)
  .debug_aranges
-                0x00000400       0x60 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART.o)
+                0x00000408       0x60 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART.o)
  .debug_aranges
-                0x00000460       0x68 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_UART.o)
+                0x00000468       0x68 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_UART.o)
  .debug_aranges
-                0x000004c8       0x48 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(LedRed.o)
+                0x000004d0       0x48 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(LedRed.o)
  .debug_aranges
-                0x00000510       0x60 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC.o)
+                0x00000518       0x60 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC.o)
  .debug_aranges
-                0x00000570       0x60 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_SPI_UART.o)
+                0x00000578       0x60 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_SPI_UART.o)
  .debug_aranges
-                0x000005d0       0x68 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_UART.o)
+                0x000005d8       0x68 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_UART.o)
  .debug_aranges
-                0x00000638       0x20 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyBootAsmGnu.o)
+                0x00000640       0x20 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyBootAsmGnu.o)
  .debug_aranges
-                0x00000658       0x20 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART_INT.o)
+                0x00000660       0x20 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART_INT.o)
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x3a43
+.debug_info     0x00000000     0x3aa8
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000      0x585 .\CortexM0\ARM_GCC_541\Debug\main.o
- .debug_info    0x00000585      0x27b .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_info    0x00000800       0xf8 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
- .debug_info    0x000008f8      0x3a2 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
- .debug_info    0x00000c9a      0xaec .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
- .debug_info    0x00001786      0xcfe .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLFClk.o)
- .debug_info    0x00002484      0x2fb .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER.o)
- .debug_info    0x0000277f      0x372 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART.o)
- .debug_info    0x00002af1      0x3f8 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_UART.o)
- .debug_info    0x00002ee9      0x19d .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(LedRed.o)
- .debug_info    0x00003086      0x24c .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC.o)
- .debug_info    0x000032d2      0x220 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_SPI_UART.o)
- .debug_info    0x000034f2      0x310 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_UART.o)
- .debug_info    0x00003802       0xbb .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyBootAsmGnu.o)
- .debug_info    0x000038bd      0x186 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART_INT.o)
+ .debug_info    0x00000000      0x5ea .\CortexM0\ARM_GCC_541\Debug\main.o
+ .debug_info    0x000005ea      0x27b .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_info    0x00000865       0xf8 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+ .debug_info    0x0000095d      0x3a2 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_info    0x00000cff      0xaec .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
+ .debug_info    0x000017eb      0xcfe .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLFClk.o)
+ .debug_info    0x000024e9      0x2fb .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER.o)
+ .debug_info    0x000027e4      0x372 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART.o)
+ .debug_info    0x00002b56      0x3f8 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_UART.o)
+ .debug_info    0x00002f4e      0x19d .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(LedRed.o)
+ .debug_info    0x000030eb      0x24c .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC.o)
+ .debug_info    0x00003337      0x220 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_SPI_UART.o)
+ .debug_info    0x00003557      0x310 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_UART.o)
+ .debug_info    0x00003867       0xbb .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyBootAsmGnu.o)
+ .debug_info    0x00003922      0x186 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART_INT.o)
 
-.debug_abbrev   0x00000000     0x11c9
+.debug_abbrev   0x00000000     0x11e3
  *(.debug_abbrev)
- .debug_abbrev  0x00000000      0x1b2 .\CortexM0\ARM_GCC_541\Debug\main.o
- .debug_abbrev  0x000001b2      0x150 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_abbrev  0x00000302       0x5d .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
- .debug_abbrev  0x0000035f      0x1d7 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
- .debug_abbrev  0x00000536      0x1e0 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
- .debug_abbrev  0x00000716      0x210 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLFClk.o)
- .debug_abbrev  0x00000926      0x130 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER.o)
- .debug_abbrev  0x00000a56      0x168 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART.o)
- .debug_abbrev  0x00000bbe      0x136 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_UART.o)
- .debug_abbrev  0x00000cf4       0xc8 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(LedRed.o)
- .debug_abbrev  0x00000dbc       0xed .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC.o)
- .debug_abbrev  0x00000ea9      0x14f .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_SPI_UART.o)
- .debug_abbrev  0x00000ff8      0x123 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_UART.o)
- .debug_abbrev  0x0000111b       0x14 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyBootAsmGnu.o)
- .debug_abbrev  0x0000112f       0x9a .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART_INT.o)
+ .debug_abbrev  0x00000000      0x1cc .\CortexM0\ARM_GCC_541\Debug\main.o
+ .debug_abbrev  0x000001cc      0x150 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_abbrev  0x0000031c       0x5d .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+ .debug_abbrev  0x00000379      0x1d7 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_abbrev  0x00000550      0x1e0 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
+ .debug_abbrev  0x00000730      0x210 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLFClk.o)
+ .debug_abbrev  0x00000940      0x130 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER.o)
+ .debug_abbrev  0x00000a70      0x168 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART.o)
+ .debug_abbrev  0x00000bd8      0x136 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_UART.o)
+ .debug_abbrev  0x00000d0e       0xc8 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(LedRed.o)
+ .debug_abbrev  0x00000dd6       0xed .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC.o)
+ .debug_abbrev  0x00000ec3      0x14f .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_SPI_UART.o)
+ .debug_abbrev  0x00001012      0x123 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_UART.o)
+ .debug_abbrev  0x00001135       0x14 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyBootAsmGnu.o)
+ .debug_abbrev  0x00001149       0x9a .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART_INT.o)
 
-.debug_line     0x00000000     0x1ad2
+.debug_line     0x00000000     0x1b3b
  *(.debug_line)
- .debug_line    0x00000000      0x340 .\CortexM0\ARM_GCC_541\Debug\main.o
- .debug_line    0x00000340      0x139 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_line    0x00000479      0x141 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
- .debug_line    0x000005ba      0x235 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
- .debug_line    0x000007ef      0x460 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
- .debug_line    0x00000c4f      0x466 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLFClk.o)
- .debug_line    0x000010b5      0x169 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER.o)
- .debug_line    0x0000121e      0x159 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART.o)
- .debug_line    0x00001377      0x1b1 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_UART.o)
- .debug_line    0x00001528       0xbe .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(LedRed.o)
- .debug_line    0x000015e6      0x12d .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC.o)
- .debug_line    0x00001713      0x11d .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_SPI_UART.o)
- .debug_line    0x00001830      0x176 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_UART.o)
- .debug_line    0x000019a6       0x69 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyBootAsmGnu.o)
- .debug_line    0x00001a0f       0xc3 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART_INT.o)
+ .debug_line    0x00000000      0x3a9 .\CortexM0\ARM_GCC_541\Debug\main.o
+ .debug_line    0x000003a9      0x139 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_line    0x000004e2      0x141 .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+ .debug_line    0x00000623      0x235 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_line    0x00000858      0x460 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
+ .debug_line    0x00000cb8      0x466 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLFClk.o)
+ .debug_line    0x0000111e      0x169 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER.o)
+ .debug_line    0x00001287      0x159 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART.o)
+ .debug_line    0x000013e0      0x1b1 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_UART.o)
+ .debug_line    0x00001591       0xbe .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(LedRed.o)
+ .debug_line    0x0000164f      0x12d .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC.o)
+ .debug_line    0x0000177c      0x11d .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_SPI_UART.o)
+ .debug_line    0x00001899      0x176 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_UART.o)
+ .debug_line    0x00001a0f       0x69 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyBootAsmGnu.o)
+ .debug_line    0x00001a78       0xc3 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART_INT.o)
 
-.debug_frame    0x00000000     0x10ac
+.debug_frame    0x00000000     0x10cc
  *(.debug_frame)
- .debug_frame   0x00000000       0xc0 .\CortexM0\ARM_GCC_541\Debug\main.o
- .debug_frame   0x000000c0       0x68 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_frame   0x00000128       0xbc .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
- .debug_frame   0x000001e4      0x3e0 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
- .debug_frame   0x000005c4      0x3a8 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLFClk.o)
- .debug_frame   0x0000096c      0x114 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER.o)
- .debug_frame   0x00000a80       0xc8 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART.o)
- .debug_frame   0x00000b48      0x100 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_UART.o)
- .debug_frame   0x00000c48       0x70 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(LedRed.o)
- .debug_frame   0x00000cb8       0xe8 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC.o)
- .debug_frame   0x00000da0       0xb0 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_SPI_UART.o)
- .debug_frame   0x00000e50       0xf4 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_UART.o)
- .debug_frame   0x00000f44       0x2c .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART_INT.o)
- .debug_frame   0x00000f70       0x20 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
- .debug_frame   0x00000f90       0x40 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-atoi.o)
- .debug_frame   0x00000fd0       0x20 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
- .debug_frame   0x00000ff0       0x28 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
- .debug_frame   0x00001018       0x2c c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
- .debug_frame   0x00001044       0x20 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
- .debug_frame   0x00001064       0x48 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-strtol.o)
+ .debug_frame   0x00000000       0xe0 .\CortexM0\ARM_GCC_541\Debug\main.o
+ .debug_frame   0x000000e0       0x68 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_frame   0x00000148       0xbc .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_frame   0x00000204      0x3e0 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
+ .debug_frame   0x000005e4      0x3a8 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLFClk.o)
+ .debug_frame   0x0000098c      0x114 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER.o)
+ .debug_frame   0x00000aa0       0xc8 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART.o)
+ .debug_frame   0x00000b68      0x100 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_UART.o)
+ .debug_frame   0x00000c68       0x70 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(LedRed.o)
+ .debug_frame   0x00000cd8       0xe8 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC.o)
+ .debug_frame   0x00000dc0       0xb0 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_SPI_UART.o)
+ .debug_frame   0x00000e70       0xf4 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_UART.o)
+ .debug_frame   0x00000f64       0x2c .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART_INT.o)
+ .debug_frame   0x00000f90       0x20 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+ .debug_frame   0x00000fb0       0x40 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-atoi.o)
+ .debug_frame   0x00000ff0       0x20 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+ .debug_frame   0x00001010       0x28 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+ .debug_frame   0x00001038       0x2c c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+ .debug_frame   0x00001064       0x20 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+ .debug_frame   0x00001084       0x48 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-strtol.o)
 
-.debug_str      0x00000000     0x18e3
+.debug_str      0x00000000     0x1905
  *(.debug_str)
- .debug_str     0x00000000      0x336 .\CortexM0\ARM_GCC_541\Debug\main.o
-                                0x391 (size before relaxing)
- .debug_str     0x00000336       0xbb .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_str     0x00000000      0x358 .\CortexM0\ARM_GCC_541\Debug\main.o
+                                0x3b3 (size before relaxing)
+ .debug_str     0x00000358       0xbb .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
                                 0x275 (size before relaxing)
- .debug_str     0x000003f1       0xcb .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
+ .debug_str     0x00000413       0xcb .\CortexM0\ARM_GCC_541\Debug\cymetadata.o
                                 0x1f8 (size before relaxing)
- .debug_str     0x000004bc      0x140 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_str     0x000004de      0x140 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
                                 0x32c (size before relaxing)
- .debug_str     0x000005fc      0x4d0 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
+ .debug_str     0x0000061e      0x4d0 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
                                 0x6e1 (size before relaxing)
- .debug_str     0x00000acc      0x530 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLFClk.o)
+ .debug_str     0x00000aee      0x530 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLFClk.o)
                                 0x768 (size before relaxing)
- .debug_str     0x00000ffc      0x1d8 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER.o)
+ .debug_str     0x0000101e      0x1d8 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER.o)
                                 0x3d5 (size before relaxing)
- .debug_str     0x000011d4      0x227 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART.o)
+ .debug_str     0x000011f6      0x227 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART.o)
                                 0x423 (size before relaxing)
- .debug_str     0x000013fb      0x129 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_UART.o)
+ .debug_str     0x0000141d      0x129 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_UART.o)
                                 0x490 (size before relaxing)
- .debug_str     0x00001524       0xa5 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(LedRed.o)
+ .debug_str     0x00001546       0xa5 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(LedRed.o)
                                 0x268 (size before relaxing)
- .debug_str     0x000015c9      0x121 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC.o)
+ .debug_str     0x000015eb      0x121 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC.o)
                                 0x30b (size before relaxing)
- .debug_str     0x000016ea      0x10c .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_SPI_UART.o)
+ .debug_str     0x0000170c      0x10c .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_SPI_UART.o)
                                 0x317 (size before relaxing)
- .debug_str     0x000017f6       0xa2 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_UART.o)
+ .debug_str     0x00001818       0xa2 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_UART.o)
                                 0x394 (size before relaxing)
- .debug_str     0x00001898       0x4b .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART_INT.o)
+ .debug_str     0x000018ba       0x4b .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART_INT.o)
                                 0x2fa (size before relaxing)
 
-.debug_loc      0x00000000     0x1ba2
+.debug_loc      0x00000000     0x1bfb
  *(.debug_loc)
- .debug_loc     0x00000000      0x2a8 .\CortexM0\ARM_GCC_541\Debug\main.o
- .debug_loc     0x000002a8       0xa9 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_loc     0x00000351      0x14f .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
- .debug_loc     0x000004a0      0x599 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
- .debug_loc     0x00000a39      0x9b5 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLFClk.o)
- .debug_loc     0x000013ee       0x7e .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER.o)
- .debug_loc     0x0000146c      0x170 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART.o)
- .debug_loc     0x000015dc      0x1ef .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_UART.o)
- .debug_loc     0x000017cb       0xa2 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(LedRed.o)
- .debug_loc     0x0000186d       0x7e .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC.o)
- .debug_loc     0x000018eb       0x96 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_SPI_UART.o)
- .debug_loc     0x00001981      0x1e4 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_UART.o)
- .debug_loc     0x00001b65       0x3d .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART_INT.o)
+ .debug_loc     0x00000000      0x301 .\CortexM0\ARM_GCC_541\Debug\main.o
+ .debug_loc     0x00000301       0xa9 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_loc     0x000003aa      0x14f .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_loc     0x000004f9      0x599 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
+ .debug_loc     0x00000a92      0x9b5 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLFClk.o)
+ .debug_loc     0x00001447       0x7e .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER.o)
+ .debug_loc     0x000014c5      0x170 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART.o)
+ .debug_loc     0x00001635      0x1ef .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_UART.o)
+ .debug_loc     0x00001824       0xa2 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(LedRed.o)
+ .debug_loc     0x000018c6       0x7e .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC.o)
+ .debug_loc     0x00001944       0x96 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_SPI_UART.o)
+ .debug_loc     0x000019da      0x1e4 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_UART.o)
+ .debug_loc     0x00001bbe       0x3d .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART_INT.o)
 
 .debug_macinfo
  *(.debug_macinfo)
 
-.debug_ranges   0x00000000      0x588
+.debug_ranges   0x00000000      0x5a8
  *(.debug_ranges)
- .debug_ranges  0x00000000       0x50 .\CortexM0\ARM_GCC_541\Debug\main.o
- .debug_ranges  0x00000050       0x20 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_ranges  0x00000070       0x38 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
- .debug_ranges  0x000000a8      0x170 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
- .debug_ranges  0x00000218      0x128 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLFClk.o)
- .debug_ranges  0x00000340       0x60 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER.o)
- .debug_ranges  0x000003a0       0x50 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART.o)
- .debug_ranges  0x000003f0       0x58 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_UART.o)
- .debug_ranges  0x00000448       0x38 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(LedRed.o)
- .debug_ranges  0x00000480       0x50 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC.o)
- .debug_ranges  0x000004d0       0x50 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_SPI_UART.o)
- .debug_ranges  0x00000520       0x58 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_UART.o)
- .debug_ranges  0x00000578       0x10 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART_INT.o)
+ .debug_ranges  0x00000000       0x70 .\CortexM0\ARM_GCC_541\Debug\main.o
+ .debug_ranges  0x00000070       0x20 .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_ranges  0x00000090       0x38 .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o
+ .debug_ranges  0x000000c8      0x170 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLib.o)
+ .debug_ranges  0x00000238      0x128 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(CyLFClk.o)
+ .debug_ranges  0x00000360       0x60 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER.o)
+ .debug_ranges  0x000003c0       0x50 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART.o)
+ .debug_ranges  0x00000410       0x58 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_UART.o)
+ .debug_ranges  0x00000468       0x38 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(LedRed.o)
+ .debug_ranges  0x000004a0       0x50 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC.o)
+ .debug_ranges  0x000004f0       0x50 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_SPI_UART.o)
+ .debug_ranges  0x00000540       0x58 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_PC_UART.o)
+ .debug_ranges  0x00000598       0x10 .\CortexM0\ARM_GCC_541\Debug\ECU-RGB_Command_Sender.a(UART_MASTER_SPI_UART_INT.o)
 
 .comment        0x00000000       0x6e
  .comment       0x00000000       0x6e .\CortexM0\ARM_GCC_541\Debug\main.o

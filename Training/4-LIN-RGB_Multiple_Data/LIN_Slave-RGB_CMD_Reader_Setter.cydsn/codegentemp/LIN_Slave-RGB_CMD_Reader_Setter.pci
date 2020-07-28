@@ -1,5 +1,5 @@
 # LIN_Slave-RGB_CMD_Reader_Setter
-# 2020-07-27 11:20:47Z
+# 2020-07-28 08:22:45Z
 
 # IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
 dont_use_io iocell 3 2

@@ -1,5 +1,5 @@
 -- Project:   LIN_Slave-RGB_CMD_Reader_Setter
--- Generated: 07/27/2020 13:20:47
+-- Generated: 07/28/2020 10:22:45
 -- PSoC Creator  4.2
 
 ENTITY \LIN_Slave-RGB_CMD_Reader_Setter\ IS
