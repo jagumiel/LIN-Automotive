@@ -26,10 +26,10 @@
   <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\UART_MASTER_SPI_UART_PVT.h" value="HEADER;;;;;UART_MASTER" />
   <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\UART_MASTER_PVT.h" value="HEADER;;;;;UART_MASTER" />
   <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\UART_MASTER_BOOT.h" value="HEADER;;;;;UART_MASTER" />
-  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\LedRed.c" value="SOURCE_C;CortexM0;;;;LedRed" />
-  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\LedRed.h" value="HEADER;;;;;LedRed" />
-  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\LedRed_aliases.h" value="HEADER;;;;;LedRed" />
-  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\LedRed_PM.c" value="SOURCE_C;CortexM0;;;;LedRed" />
+  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\LedBlue.c" value="SOURCE_C;CortexM0;;;;LedBlue" />
+  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\LedBlue.h" value="HEADER;;;;;LedBlue" />
+  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\LedBlue_aliases.h" value="HEADER;;;;;LedBlue" />
+  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\LedBlue_PM.c" value="SOURCE_C;CortexM0;;;;LedBlue" />
   <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\UART_PC.c" value="SOURCE_C;CortexM0;;;;UART_PC" />
   <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\UART_PC.h" value="HEADER;;;;;UART_PC" />
   <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\UART_PC_SPI_UART.h" value="HEADER;;;;;UART_PC" />
@@ -43,6 +43,29 @@
   <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\UART_PC_SPI_UART_PVT.h" value="HEADER;;;;;UART_PC" />
   <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\UART_PC_PVT.h" value="HEADER;;;;;UART_PC" />
   <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\UART_PC_BOOT.h" value="HEADER;;;;;UART_PC" />
+  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\SW1.c" value="SOURCE_C;CortexM0;;;;SW1" />
+  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\SW1.h" value="HEADER;;;;;SW1" />
+  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\SW1_aliases.h" value="HEADER;;;;;SW1" />
+  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\SW1_PM.c" value="SOURCE_C;CortexM0;;;;SW1" />
+  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\LedGreen.c" value="SOURCE_C;CortexM0;;;;LedGreen" />
+  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\LedGreen.h" value="HEADER;;;;;LedGreen" />
+  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\LedGreen_aliases.h" value="HEADER;;;;;LedGreen" />
+  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\LedGreen_PM.c" value="SOURCE_C;CortexM0;;;;LedGreen" />
+  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\LedRed.c" value="SOURCE_C;CortexM0;;;;LedRed" />
+  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\LedRed.h" value="HEADER;;;;;LedRed" />
+  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\LedRed_aliases.h" value="HEADER;;;;;LedRed" />
+  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\LedRed_PM.c" value="SOURCE_C;CortexM0;;;;LedRed" />
+  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\Clock_50kHz.c" value="SOURCE_C;CortexM0;;;;Clock_50kHz" />
+  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\Clock_50kHz.h" value="HEADER;;;;;Clock_50kHz" />
+  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\PWM_B.c" value="SOURCE_C;CortexM0;;;;PWM_B" />
+  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\PWM_B.h" value="HEADER;;;;;PWM_B" />
+  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\PWM_B_PM.c" value="SOURCE_C;CortexM0;;;;PWM_B" />
+  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\PWM_G.c" value="SOURCE_C;CortexM0;;;;PWM_G" />
+  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\PWM_G.h" value="HEADER;;;;;PWM_G" />
+  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\PWM_G_PM.c" value="SOURCE_C;CortexM0;;;;PWM_G" />
+  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\PWM_R.c" value="SOURCE_C;CortexM0;;;;PWM_R" />
+  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\PWM_R.h" value="HEADER;;;;;PWM_R" />
+  <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\PWM_R_PM.c" value="SOURCE_C;CortexM0;;;;PWM_R" />
   <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\UART_MASTER_SCBCLK.c" value="SOURCE_C;CortexM0;;;;UART_MASTER_SCBCLK" />
   <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\UART_MASTER_SCBCLK.h" value="HEADER;;;;;UART_MASTER_SCBCLK" />
   <file name="D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\4-LIN-RGB_Multiple_Data\ECU-RGB_Command_Sender.cydsn\codegentemp\UART_MASTER_tx.c" value="SOURCE_C;CortexM0;;;;UART_MASTER_tx" />

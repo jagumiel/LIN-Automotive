@@ -79,7 +79,6 @@ int main(void)
     		red     = l_u8_rd_RedValue();
             green   = l_u8_rd_GreenValue();
             blue    = l_u8_rd_BlueValue();
-    		
             
             PWM_R_WriteCompare(red);
             PWM_G_WriteCompare(green);

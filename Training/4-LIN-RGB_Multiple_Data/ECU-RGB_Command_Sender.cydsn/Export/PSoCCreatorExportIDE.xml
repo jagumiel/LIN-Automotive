@@ -138,6 +138,29 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\UART_PC_rx.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\UART_PC_rx_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\UART_PC_rx_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SW1.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SW1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SW1_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SW1_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LedBlue.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LedBlue.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LedBlue_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LedBlue_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LedGreen.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LedGreen.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LedGreen_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LedGreen_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Clock_50kHz.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Clock_50kHz.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWM_B.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWM_B.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWM_B_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWM_G.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWM_G.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWM_G_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWM_R.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWM_R.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\PWM_R_PM.c</File>
         </Files>
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\codegentemp">

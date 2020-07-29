@@ -11,6 +11,12 @@ Verifying bitstream.
 
 ---------Processing bitstream.---------
 
+Utilized "udb_hv_b@[UDB Pair=(0,0)]"
+Utilized "udb_hc@[UDB Pair=(0,0)]"
+Utilized "udb_hc@[UDB Pair=(0,1)]"
+Utilized "dsi_hc@[DSI=(1,0)][side=bottom]"
+Utilized "dsi_hv_a@[DSI=(1,0)][side=bottom]"
+Utilized "dsi_hc@[DSI=(1,1)][side=bottom]"
 
 
 ----------------------------------------------------------------------

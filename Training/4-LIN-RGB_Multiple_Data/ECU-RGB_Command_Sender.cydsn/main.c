@@ -29,12 +29,13 @@
 #include "project.h"
 #include "LIN_Frame_Calculations.h"
 
-volatile unsigned char Sensor_data[8];
+volatile unsigned char Sensor_data[10];
 const uint8_t sync = 0x55;
 uint8_t id = 0x10;
 uint8_t packet[PACKET_SIZE] = {0x00, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
 uint8_t pid = 0x00;
 uint8_t checksum = 0x00;
+uint8_t colors[3];
 
 void getResults(char cmd, char ledValue[]){
     /* Gets the scratch buffer data (string of chars) and places it into color variables (as integers). */
@@ -123,14 +124,35 @@ _Bool getData(){
     return 0;
 }
 
-void sendFrame(void){
+void getSlaveResponse(){
+    
+    //_ClearRxBuffer();
+    for (int i=0; i<10; i++){
+        Sensor_data[i] = UART_MASTER_UartGetChar();
+    }
+    colors[0]=Sensor_data[3];
+    colors[1]=Sensor_data[4];
+    colors[2]=Sensor_data[5];
+}
+
+void sendFrame(int send){
     UART_MASTER_UartSendBreakBlocking(13);                          // Break
     UART_MASTER_UartPutChar(sync);                                  // Sync (0x55)
     UART_MASTER_UartPutChar(pid);                                   // Protected ID (PID). Se obtiene a partir del ID.
-    for(int i=0; i<8; i++){
-        UART_MASTER_UartPutChar(packet[i]);                         // Command Frame
+    if(send==1){                                                    // If the porpouse is to send a command without response.
+        for(int i=0; i<8; i++){
+            UART_MASTER_UartPutChar(packet[i]);                     // Command Frame
+        }
+        UART_MASTER_UartPutChar(checksum);                          // Checksum. En LIN 2.2 se obtiene a partir del PID y del CMD enviado.*/
+    }else{                                                          // If a response is expected
+        getSlaveResponse();
     }
-    UART_MASTER_UartPutChar(checksum);                              // Checksum. En LIN 2.2 se obtiene a partir del PID y del CMD enviado.*/
+}
+
+void setLeds(){
+    PWM_R_WriteCompare(colors[0]);
+    PWM_G_WriteCompare(colors[1]);
+    PWM_B_WriteCompare(colors[2]);    
 }
 
 
@@ -142,9 +164,15 @@ int main(void){
     /* Start UART/LIN Master */
     UART_MASTER_Start();
     UART_PC_Start();
+    
+    /* Start PWM components */
+    PWM_R_Start();
+    PWM_G_Start();
+    PWM_B_Start();
+    PWM_R_WriteCompare(0);
+    PWM_G_WriteCompare(0);
+    PWM_B_WriteCompare(0);
 
-    /* Turn off the led */
-    LedRed_Write(1);
     
     UART_PC_UartPutString("Introduce the values for the RGB colors using this pattern: Wrrrgggbbb.\n\r Example: W255090030\n\r");
 
@@ -156,7 +184,14 @@ int main(void){
         if(getData()==1){
             pid=LIN_PID_Calculator(id);
             checksum= LIN_Checksum_Calculation(pid, packet);
-            sendFrame();
+            sendFrame(1);
+        }
+        if(SW1_Read()==0){
+            id=0x11;
+            pid=LIN_PID_Calculator(id);
+            sendFrame(0);
+            setLeds(); //3,4,5
+            CyDelay(100);
         }
 	}
 }

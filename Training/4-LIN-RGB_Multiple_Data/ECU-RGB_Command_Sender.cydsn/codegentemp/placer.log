@@ -6,7 +6,7 @@
 
 #Build Date:         Dec  5 2017 15:35:27
 
-#File Generated:     Jul 27 2020 11:09:31
+#File Generated:     Jul 29 2020 11:00:54
 
 #Purpose:            
 
@@ -42,21 +42,20 @@ D2053: Starting placement of the design
 
 Phase 2
 Phase 3
-I2659: No Constrained paths were found. The placer will run in non-timing driven mode.
 
 Design Statistics after Packing
-    Number of Combinational MCs 	:	0
-    Number of Sequential MCs    	:	0
-    Number of DPs               	:	0
-    Number of Controls          	:	0
-    Number of Status            	:	0
+    Number of Combinational MCs 	:	3
+    Number of Sequential MCs    	:	12
+    Number of DPs               	:	3
+    Number of Controls          	:	3
+    Number of Status            	:	3
     Number of SyncCells         	:	0
     Number of count7cells       	:	0
 
 Device Utilization Summary after Packing
-    Macrocells                  :	0/32
-    UDBS                        :	0/4
-    IOs                         :	5/36
+    Macrocells                  :	15/32
+    UDBS                        :	3/4
+    IOs                         :	8/36
 
 
 D2088: Phase 3, elapsed time : 0.0 (sec)
@@ -64,10 +63,109 @@ D2088: Phase 3, elapsed time : 0.0 (sec)
 Phase 4
 D2088: Phase 4, elapsed time : 0.0 (sec)
 
+Phase 6
+
+######################################################################
+Placement Timing Summary
+
+The timing summary is based on estimated routing delays after
+placement. For final timing report, please carry out the timing
+analysis after routing.
+======================================================================
+
+######################################################################
+                     Clock Summary 
+======================================================================
+Number of clocks: 11
+Clock: Clock_50kHz          | Frequency:  53.4 MHz | Target:   0.1 MHz
+Clock: CyHFClk              | Frequency: N/A       | Target:  48.0 MHz
+Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
+Clock: CyIMO                | Frequency: N/A       | Target:  48.0 MHz
+Clock: CyLFClk              | Frequency: N/A       | Target:   0.0 MHz
+Clock: CyRouted1            | Frequency: N/A       | Target:  48.0 MHz
+Clock: CySysClk             | Frequency: N/A       | Target:  48.0 MHz
+Clock: UART_MASTER_SCBCLK   | Frequency: N/A       | Target:   0.2 MHz
+Clock: UART_MASTER_SCBCLK(FFB) | Frequency: N/A       | Target:   0.2 MHz
+Clock: UART_PC_SCBCLK       | Frequency: N/A       | Target:   1.4 MHz
+Clock: UART_PC_SCBCLK(FFB)  | Frequency: N/A       | Target:   1.4 MHz
+
+======================================================================
+                     End of Clock Summary
+######################################################################
+
+D2088: Phase 6, elapsed time : 0.0 (sec)
+
+Phase 7
+######################################################################
+                     Clock Summary 
+======================================================================
+Number of clocks: 11
+Clock: Clock_50kHz          | Frequency:  53.4 MHz | Target:   0.1 MHz
+Clock: CyHFClk              | Frequency: N/A       | Target:  48.0 MHz
+Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
+Clock: CyIMO                | Frequency: N/A       | Target:  48.0 MHz
+Clock: CyLFClk              | Frequency: N/A       | Target:   0.0 MHz
+Clock: CyRouted1            | Frequency: N/A       | Target:  48.0 MHz
+Clock: CySysClk             | Frequency: N/A       | Target:  48.0 MHz
+Clock: UART_MASTER_SCBCLK   | Frequency: N/A       | Target:   0.2 MHz
+Clock: UART_MASTER_SCBCLK(FFB) | Frequency: N/A       | Target:   0.2 MHz
+Clock: UART_PC_SCBCLK       | Frequency: N/A       | Target:   1.4 MHz
+Clock: UART_PC_SCBCLK(FFB)  | Frequency: N/A       | Target:   1.4 MHz
+
+======================================================================
+                     End of Clock Summary
+######################################################################
+D2088: Phase 7, elapsed time : 0.1 (sec)
+
+Final Design Statistics
+    Number of Combinational MCs 	:	3
+    Number of Sequential MCs    	:	12
+    Number of DPs               	:	3
+    Number of Controls          	:	3
+    Number of Status            	:	3
+    Number of SyncCells         	:	0
+    Number of count7cells       	:	0
+    Number of IOs       	:	8
+
+Device Utilization Summary
+    Macrocells                  :	15/32
+    IOs                         :	8/36
+
+
+
+######################################################################
+Placement Timing Summary
+
+The timing summary is based on estimated routing delays after
+placement. For final timing report, please carry out the timing
+analysis after routing.
+======================================================================
+
+
+######################################################################
+                     Clock Summary 
+======================================================================
+Number of clocks: 11
+Clock: Clock_50kHz          | Frequency:  53.4 MHz | Target:   0.1 MHz
+Clock: CyHFClk              | Frequency: N/A       | Target:  48.0 MHz
+Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
+Clock: CyIMO                | Frequency: N/A       | Target:  48.0 MHz
+Clock: CyLFClk              | Frequency: N/A       | Target:   0.0 MHz
+Clock: CyRouted1            | Frequency: N/A       | Target:  48.0 MHz
+Clock: CySysClk             | Frequency: N/A       | Target:  48.0 MHz
+Clock: UART_MASTER_SCBCLK   | Frequency: N/A       | Target:   0.2 MHz
+Clock: UART_MASTER_SCBCLK(FFB) | Frequency: N/A       | Target:   0.2 MHz
+Clock: UART_PC_SCBCLK       | Frequency: N/A       | Target:   1.4 MHz
+Clock: UART_PC_SCBCLK(FFB)  | Frequency: N/A       | Target:   1.4 MHz
+
+======================================================================
+                     End of Clock Summary
+######################################################################
+
 Phase 8
 D2088: Phase 8, elapsed time : 0.0 (sec)
 
 D2054: Placement of the design completed successfully
 
-I2076: Total run-time: 0.2 sec.
+I2076: Total run-time: 0.3 sec.
 
