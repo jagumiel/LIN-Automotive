@@ -34,12 +34,12 @@ Right now I am using the Cypress CY8CKIT-042 + 026. At the end of this Readme.md
 - **LIN-Internal-Light-Control**
 
   This project emulates the function of the internal light. It works with interruptions.
-
+ 
+- **LIN-RGB_Multiple_Data**
   
-  This project is interesting because it works with different frames with different lengths of data.
-  
-  - **LIN-RGB_Multiple_Data**
    On this project, the user can introduce a numerical value through the PC (UART communication) and change the RGB LED colors of the development board. It is able to change colours individually or in group. For example, if you write "R217" it sets red led to that value (values are comprehended between 0-255). If you want to modify all the values, you can write "W018096123", which is the same to "R010", G"096" and "B123". When you press the SW2 button, Slave sends back it's value, and master sets the date on its' own LED. 
+This project is interesting because it works with different frames with different lengths of data.
+
   
 
 ### Compiling
