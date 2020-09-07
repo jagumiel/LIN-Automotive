@@ -1,0 +1,71 @@
+// Generated with Intrepid LIN LDF Tool
+
+LIN_description_file ;
+
+LIN_protocol_version = "2.2";
+LIN_language_version = "2.2";
+LIN_speed = 19.2 kbps;
+
+Nodes {
+  Master: Illumination_ECU, 5 ms, 0.5 ms;
+  Slaves: AmbientLight_Slave;
+}
+
+
+composite {
+}
+
+Signals {
+	Color: 8, 0x00, Illumination_ECU, AmbientLight_Slave;
+	ColorValue: 8, 0x00, Illumination_ECU, AmbientLight_Slave;
+	RedValue: 8, 0x00, Illumination_ECU, AmbientLight_Slave;
+	GreenValue: 8, 0x00, Illumination_ECU, AmbientLight_Slave;
+	BlueValue: 8, 0x00, Illumination_ECU, AmbientLight_Slave;
+	OutRedValue: 8, 0x00, AmbientLight_Slave, Illumination_ECU;
+	OutGreenValue: 8, 0x00, AmbientLight_Slave, Illumination_ECU;
+	OutBlueValue: 8, 0x00, AmbientLight_Slave, Illumination_ECU;
+}
+
+
+Frames {
+	modifySingleColor: 0x01, Illumination_ECU, 8 {
+		Color, 0;
+		ColorValue, 8;
+}
+	modifyMultiColor: 0x10, Illumination_ECU, 8 {
+		RedValue, 0;
+		GreenValue, 8;
+		BlueValue, 16;
+}
+	getColorInfo: 0x11, AmbientLight_Slave, 8 {
+		OutRedValue, 8;
+		OutGreenValue, 16;
+		OutBlueValue, 24;
+}
+}
+
+
+Schedule_tables {
+	MySchedule { 
+		modifySingleColor delay 150 ms;
+		modifyMultiColor delay 400 ms;
+		getColorInfo delay 300 ms;
+	} 
+}
+
+
+Signal_encoding_types {
+	Color { 
+		physical_value, 0 ,255 ,0 ,0 ,"Lum";
+	} 
+	RGB_Color_Selection { 
+		logical_value, 0 ,"Red";
+		logical_value, 1 ,"Green";
+		logical_value, 16 ,"Blue";
+	} 
+}
+
+Signal_representation {
+	Color: ColorValue, RedValue, GreenValue, BlueValue, OutRedValue, OutGreenValue, OutBlueValue;
+	RGB_Color_Selection: Color;
+}
