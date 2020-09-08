@@ -1,0 +1,44 @@
+LIN_description_file ;
+LIN_protocol_version = "2.2" ;
+LIN_language_version = "2.2" ;
+LIN_speed = 9.600 kbps ;
+Nodes {
+    Master:ECU_Master,5.0000 ms,0.1000 ms ;
+    Slaves:LedController_Slave;
+}
+Signals {
+    color:8,0x00,ECU_Master,LedController_Slave;
+    status:8,0x00,LedController_Slave,ECU_Master;
+}
+Frames {
+    setColor:0x10,ECU_Master,8{
+        color,0;
+    }
+    getColor:0x11,LedController_Slave,8{
+        status,8;
+    }
+}
+Schedule_tables {
+    mySchedule {
+        setColor delay 200.0000 ms ;
+        getColor delay 200.0000 ms ;
+    }
+}
+Signal_encoding_types {
+    ColorSet {
+        logical_value,0x00,"Off" ;
+        logical_value,0x11,"Red" ;
+        logical_value,0x22,"Green" ;
+        logical_value,0x33,"Blue" ;
+    }
+    ColorStatus {
+        logical_value,0xAA,"Red" ;
+        logical_value,0xBB,"Green" ;
+        logical_value,0xCC,"Blue" ;
+        logical_value,0xDD,"Off" ;
+    }
+}
+Signal_representation {
+    ColorSet:color;
+    ColorStatus:status;
+}
