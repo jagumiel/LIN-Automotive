@@ -1,0 +1,13 @@
+# Test_Sonceboz
+# 2020-09-09 12:10:16Z
+
+# IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 2
+# IO_3@[IOP=(3)][IoId=(3)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 3
+set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
+set_io "\UART_MASTER:tx(0)\" iocell 0 5
+set_io "\UART_MASTER:rx(0)\" iocell 0 4
+set_io "SW1(0)" iocell 0 7
+set_io "NSLP(0)" iocell 0 0
+set_io "LED(0)" iocell 1 6

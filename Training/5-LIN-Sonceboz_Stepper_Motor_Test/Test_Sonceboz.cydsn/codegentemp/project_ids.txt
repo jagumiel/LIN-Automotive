@@ -1,0 +1,6 @@
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|10a6dd34-6d26-4725-ac07-4a4fd9120bef
+D:\Users\jagumiel\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|4d5d4e83-6ad4-4e6c-aa07-182a0f739712
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|e5e7fe5a-ba91-4b85-82ba-b13c5702fe96
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|bbc4e9d9-5894-4fff-bbce-d5efdde4a557
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|28f35c05-7de6-4d0f-8fb6-13e3871a97c4
+D:\Users\jagumiel\Documents\PSoC Creator\LIN-Automotive\5-Test_Sonceboz-1\Test_Sonceboz.cydsn\Test_Sonceboz.cyprj|65c948fe-837c-4f0c-bdcf-927b6ec8c1aa
