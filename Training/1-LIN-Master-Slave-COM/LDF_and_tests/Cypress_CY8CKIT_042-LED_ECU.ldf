@@ -1,0 +1,44 @@
+LIN_description_file ;
+LIN_protocol_version = "2.2" ;
+LIN_language_version = "2.2" ;
+LIN_speed = 9.600 kbps ;
+Nodes {
+    Master:master,5.0000 ms,0.5000 ms ;
+    Slaves:Slave;
+}
+Signals {
+    setColor:8,0x00,master,Slave;
+    getColor:8,0x00,Slave,master;
+}
+Frames {
+    inFrame:0x10,master,8{
+        setColor,0;
+    }
+    outFrame:0x11,Slave,8{
+        getColor,0;
+    }
+}
+Schedule_tables {
+    Ecu_Schedule {
+        inFrame delay 150.0000 ms ;
+        outFrame delay 100.0000 ms ;
+    }
+}
+Signal_encoding_types {
+    ColorToSet {
+        logical_value,0x00,"Off" ;
+        logical_value,0x11,"Red" ;
+        logical_value,0x22,"Green" ;
+        logical_value,0x33,"Blue" ;
+    }
+    ColorToGet {
+        logical_value,0xAA,"Off" ;
+        logical_value,0xBB,"Red" ;
+        logical_value,0xCC,"Green" ;
+        logical_value,0xDD,"Blue" ;
+    }
+}
+Signal_representation {
+    ColorToSet:setColor;
+    ColorToGet:getColor;
+}
