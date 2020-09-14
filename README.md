@@ -43,6 +43,7 @@ This project is interesting because it works with different frames with differen
 - **LIN-Sonceboz_Stepper_Motor_Test**
 
   This is a real project in a very early stage. The code just calibrates a stepper motor and assigns it 2 positions, so it can be rotating CW and CCW in a loop. It is the first step to make more complex designs and controls. All this is done using the LIN protocol.
+  A second version has been done using capsense as an input to set the motor position.
 
   
 
