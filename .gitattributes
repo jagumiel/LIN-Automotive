@@ -32,3 +32,12 @@ Training/3-LIN-Internal-Light-Control/LIN-Internal_Light_Slave_Control.cydsn/Gen
 Training/4-LIN-RGB_Multiple_Data/ECU-RGB_Command_Sender.cydsn/Generated_Source/** linguist-vendored
 Training/4-LIN-RGB_Multiple_Data/LIN_Slave-RGB_CMD_Reader_Setter.cydsn/Generated_Source/** linguist-vendored
 Training/5-LIN-Sonceboz_Stepper_Motor_Test/Test_Sonceboz.cydsn/Generated_Source/** linguist-vendored
+Training/1-LIN-Master-Slave-COM/Master-UART/LIN_Master-UART.cydsn/codegentemp/** linguist-vendored
+Training/1-LIN-Master-Slave-COM/Master-UART/Lin test_Copy_02.cydsn/codegentemp/** linguist-vendored
+Training/1-LIN-Master-Slave-COM/Slave-LIN/LIN_Slave_CY8CKIT-042.cydsn/codegentemp/** linguist-vendored
+Training/2-LIN-Master-Orders/LIN-Master-Orders/LIN-Master-Orders.cydsn/codegentemp/** linguist-vendored
+Training/3-LIN-Internal-Light-Control/LIN-Internal_Light_ECU.cydsn/codegentemp/** linguist-vendored
+Training/3-LIN-Internal-Light-Control/LIN-Internal_Light_Slave_Control.cydsn/codegentemp/** linguist-vendored
+Training/4-LIN-RGB_Multiple_Data/ECU-RGB_Command_Sender.cydsn/codegentemp/** linguist-vendored
+Training/4-LIN-RGB_Multiple_Data/LIN_Slave-RGB_CMD_Reader_Setter.cydsn/codegentemp/** linguist-vendored
+Training/5-LIN-Sonceboz_Stepper_Motor_Test/Test_Sonceboz.cydsn/codegentemp/** linguist-vendored
