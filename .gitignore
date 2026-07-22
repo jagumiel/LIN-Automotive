@@ -1,0 +1,47 @@
+# Operating-system files
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editor and temporary files
+*~
+*.swp
+*.swo
+*.tmp
+*.bak
+.idea/
+.vs/
+
+# PSoC Creator user-specific settings
+*.cyprj.*
+*.cywrk.*
+
+# PSoC Creator generated source and intermediate data
+**/Generated_Source/
+**/codegentemp/
+**/CortexM*/
+**/Export/
+**/Archive/
+**/Backup/
+
+# PSoC Creator generated reports and metadata
+**/*.cydsn/*.cycdx
+**/*.cydsn/*.cyfit
+**/*.cydsn/*.rpt
+**/*.cydsn/*.svd
+**/*.cydsn/*_timing.html
+**/*.cydsn/*.log
+**/*.cydsn/ComponentUpdateLog.txt
+
+# Locally built utility binaries
+Utilities/*.o
+Utilities/*.obj
+Utilities/*.exe
+Utilities/checksum_calculator
+Utilities/full_frame_calculator
+Utilities/pid_calculator
+
+# Keep the PSoC design and application sources under version control:
+# *.cyprj, *.cywrk, *.cysch, *.cymacro, *.cydwr, *.c, *.h, *.ldf and *.sdf
